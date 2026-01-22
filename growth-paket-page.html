@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Growth-Paket von M2 Cybersec - IT-Sicherheit für wachsende Startups und KMUs. Multi-Target Security-Checks mit detailliertem Report.">
+    <meta name="keywords" content="Growth-Paket, IT-Sicherheit KMU, Multi-Target Check, Security Report, Cybersecurity für Startups">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Growth-Paket - IT-Sicherheit für wachsende Unternehmen | M2 Cybersec">
+    <meta property="og:description" content="Umfassende Security-Checks für 2-3 kritische Systeme mit detailliertem Report und Basisrichtlinien.">
+    
+    <title>Growth-Paket - IT-Sicherheit für KMUs & Startups | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2-cybersec.de/growth-paket/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero-package {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero-package::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .package-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 252, 246, 0.1);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 50px;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-package h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-white);
+            line-height: 1.2;
+        }
+
+        .hero-package h1 span {
+            color: var(--primary-cyan);
+        }
+
+        .hero-package p {
+            font-size: 1.25rem;
+            color: var(--secondary-light-gray);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-white);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-light-gray);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--secondary-light-gray);
+            line-height: 1.7;
+        }
+
+        .ideal-for {
+            background: rgba(0, 252, 246, 0.03);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 252, 246, 0.2);
+            margin: 3rem 0;
+        }
+
+        .ideal-for h3 {
+            color: var(--primary-cyan);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ideal-for ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ideal-for li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--secondary-light-gray);
+            font-size: 1.1rem;
+        }
+
+        .ideal-for li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--primary-cyan);
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+
+        .price {
+            font-size: 3rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price-note {
+            color: var(--secondary-light-gray);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero-package h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../index.html" class="logo">M2 Cybersec</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero-package">
+            <div class="hero-content">
+                <span class="package-badge">FÜR WACHSENDE TEAMS</span>
+                <h1>Das <span>Growth-Paket</span></h1>
+                <p>IT-Sicherheit für wachsende Startups mit produktiven Systemen. Umfassende Prüfung mehrerer kritischer Ziele mit detailliertem Report.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
+            
+            <h2 class="section-title">Was du bekommst</h2>
+            <p class="section-subtitle">Professionelle Security-Checks mit tiefergehender Analyse und praktischen Richtlinien.</p>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Multi-Target Check</h3>
+                    <p>Wir prüfen 2–3 kritische Systeme (z. B. Web-App, API oder Server). So erkennst du früh potenzielle Schwachstellen in Live-Umgebungen.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🔬</span>
+                    <h3>Detaillierte Analyse</h3>
+                    <p>Wir gehen tiefer als ein Quick-Check: Risiken werden bewertet und du bekommst praktische Handlungsempfehlungen, die sofort umgesetzt werden können.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Ausführlicher Report</h3>
+                    <p>Alle Findings in einem strukturierten Report: Schwachstellen, Prioritäten und empfohlene Maßnahmen. Ideal für Management und Entwickler.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🔄</span>
+                    <h3>Wiederholte Checkups</h3>
+                    <p>Insgesamt 3 umfassende Security-Checks pro Jahr für kritische Ziele – damit dein Team kontinuierlich geschützt bleibt.</p>
+                </article>
+            </div>
+
+            <div class="ideal-for">
+                <h3>Ideal für:</h3>
+                <ul>
+                    <li>Startups mit produktiven Systemen und mehreren Anwendungen</li>
+                    <li>KMUs mit wachsender IT-Infrastruktur</li>
+                    <li>Teams, die regelmäßige Security-Audits benötigen</li>
+                    <li>Unternehmen mit Web-Apps, APIs und Server-Infrastruktur</li>
+                    <li>Organisationen, die Compliance-Anforderungen erfüllen müssen</li>
+                    <li>Firmen, die Passwort- und MFA-Richtlinien implementieren wollen</li>
+                </ul>
+            </div>
+
+            <div class="pricing-box">
+                <h3 style="color: var(--primary-white); margin-bottom: 1rem;">Investition in deine Sicherheit</h3>
+                <div class="price">Auf Anfrage</div>
+                <p class="price-note">Individuelle Preisgestaltung je nach Anzahl der Systeme und Projektumfang</p>
+                <a href="../index.html#contact" class="cta-button">Jetzt anfragen</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
