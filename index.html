@@ -22,10 +22,10 @@
       "name": "M2 Cybersec UG",
       "description": "Professionelle Cybersecurity-Lösungen und IT-Sicherheitsberatung",
       "url": "https://m2-cybersec.de",
-      "email": "info@m2-cybersec.de",
-      "telephone": "+49-123-456789",
+      "email": "info@m2cybersec.de",
+      "telephone": "0221 94334961",
       "address": {
-        "@type": "PostalAddress",
+        "@type": "Amandusstraße 77, 50769 Köln",
         "addressCountry": "DE"
       }
     }
@@ -80,10 +80,24 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-cyan);
             letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -542,7 +556,10 @@
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
-        <div class="logo" role="heading" aria-level="1">M2 Cybersec</div>
+        <a href="#home" class="logo" role="heading" aria-level="1">
+            <img src="assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -614,14 +631,14 @@
             <p class="section-subtitle">Vertrauen Sie auf Expertise, Zertifizierung und nachweisbare Ergebnisse</p>
             <div class="features-grid">
                 <article class="feature-item">
-                    <div class="feature-number">10+</div>
-                    <h4>Jahre Erfahrung</h4>
-                    <p>Langjährige Expertise im Bereich Cybersecurity und IT-Sicherheit mit hunderten erfolgreich abgeschlossenen Projekten</p>
+                    <div class="feature-number">🎯</div>
+                    <h4>Praxisnahe Lösungen</h4>
+                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre individuellen Anforderungen</p>
                 </article>
                 <article class="feature-item">
-                    <div class="feature-number">100%</div>
-                    <h4>Zertifiziert</h4>
-                    <p>Höchste Qualitätsstandards durch internationale Zertifizierungen wie OSCP, CEH und ISO 27001 Lead Auditor</p>
+                    <div class="feature-number">🔐</div>
+                    <h4>Ganzheitlicher Ansatz</h4>
+                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
                 </article>
                 <article class="feature-item">
                     <div class="feature-number">24/7</div>
@@ -629,9 +646,9 @@
                     <p>Rund um die Uhr erreichbar für Ihre Sicherheitsanliegen – weil Cyberangriffe keine Bürozeiten kennen</p>
                 </article>
                 <article class="feature-item">
-                    <div class="feature-number">∞</div>
-                    <h4>Maßgeschneidert</h4>
-                    <p>Individuelle Sicherheitslösungen perfekt auf Ihre spezifischen Anforderungen und Unternehmensstrukturen abgestimmt</p>
+                    <div class="feature-number">✓</div>
+                    <h4>Transparente Kommunikation</h4>
+                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf Management-Ebene</p>
                 </article>
             </div>
         </section>
@@ -683,15 +700,15 @@
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>M2 Cybersec UG</h4>
+                <img src="assets/logo.png" alt="M2 Cybersec Logo" style="height: 60px; width: auto; margin-bottom: 1rem;">
                 <p>Ihr Partner für professionelle Cybersecurity-Lösungen und umfassende IT-Sicherheit.</p>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#services">Penetration Testing</a>
-                <a href="#services">Security Consulting</a>
-                <a href="#services">Incident Response</a>
-                <a href="#services">Compliance Management</a>
+                <a href="#services">Starter-Paket</a>
+                <a href="#services">Growth-Paket</a>
+                <a href="#services">Scale-Paket</a>
+                <a href="#services">Enterprise-Paket</a>
             </div>
             <div class="footer-section">
                 <h4>Unternehmen</h4>
