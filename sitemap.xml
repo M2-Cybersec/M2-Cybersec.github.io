@@ -6,7 +6,7 @@
 
     <!-- Hauptseite -->
     <url>
-        <loc>https://m2cybersec.de.de/</loc>
+        <loc>https://m2cybersec.de/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,28 +14,28 @@
 
     <!-- Pakete -->
     <url>
-        <loc>https://m2cybersec.de.de/starter-paket/</loc>
+        <loc>https://m2cybersec.de/starter-paket/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/growth-paket/</loc>
+        <loc>https://m2cybersec.de/growth-paket/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/scale-paket/</loc>
+        <loc>https://m2cybersec.de/scale-paket/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/enterprise-paket/</loc>
+        <loc>https://m2cybersec.de/enterprise-paket/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -43,21 +43,21 @@
 
     <!-- Services -->
     <url>
-        <loc>https://m2cybersec.de.de/sicherheit-fuer-kmu/</loc>
+        <loc>https://m2cybersec.de/sicherheit-fuer-kmu/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/awareness-training-fuer-kmu/</loc>
+        <loc>https://m2cybersec.de/awareness-training-fuer-kmu/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/red-team-plus/</loc>
+        <loc>https://m2cybersec.de/red-team-plus/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -65,14 +65,14 @@
 
     <!-- Rechtliches -->
     <url>
-        <loc>https://m2cybersec.de.de/impressum/</loc>
+        <loc>https://m2cybersec.de/impressum/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de.de/datenschutz/</loc>
+        <loc>https://m2cybersec.de/datenschutz/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
