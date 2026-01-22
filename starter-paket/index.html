@@ -57,11 +57,24 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-cyan);
             text-decoration: none;
             letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -325,7 +338,10 @@
 </head>
 <body>
     <nav class="navbar" role="navigation">
-        <a href="../index.html" class="logo">M2 Cybersec</a>
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
         <ul class="nav-links">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
