@@ -1,0 +1,18 @@
+repository/
+├── index.html (Hauptseite mit 7 Service-Cards)
+├── assets/
+│   └── logo.png  ← Dein Logo hier platzieren
+├── starter-paket/
+│   └── index.html ✓
+├── growth-paket/
+│   └── index.html ✓
+├── scale-paket/
+│   └── index.html ✓
+├── enterprise-paket/
+│   └── index.html ✓
+├── sicherheit-fuer-kmu/
+│   └── index.html ✓ NEU
+├── awareness-training-fuer-kmu/
+│   └── index.html ✓ NEU
+└── red-team-plus/
+    └── index.html ✓ NEU

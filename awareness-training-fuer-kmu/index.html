@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Starter-Paket von M2 Cybersec - Security-Check für Startups und junge Unternehmen. Schneller Einstieg in IT-Sicherheit mit kompakter Analyse.">
-    <meta name="keywords" content="Starter-Paket, IT-Sicherheit Startups, Security-Check, Cybersecurity für Gründer, MVP Sicherheit">
+    <meta name="description" content="Awareness+ Training für KMU - Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Cyber-Risikomanagement. Stärken Sie Ihre IT-Sicherheit nachhaltig.">
+    <meta name="keywords" content="Awareness Training, Phishing-Schulung, Ransomware-Schutz, Security Awareness, Mitarbeiterschulung, Cyber-Risikomanagement">
     <meta name="robots" content="index, follow">
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Starter-Paket - IT-Sicherheit für Startups | M2 Cybersec">
-    <meta property="og:description" content="Schneller Security-Check für dein Startup. Kompakte Analyse und klare Handlungsempfehlungen.">
+    <meta property="og:title" content="Awareness+ Training - Mitarbeiterschulung für IT-Sicherheit | M2 Cybersec">
+    <meta property="og:description" content="Schützen Sie Ihr Unternehmen mit gezielten Security-Awareness-Schulungen für Ihre Mitarbeitenden.">
     
-    <title>Starter-Paket - Security-Check für Startups | M2 Cybersec UG</title>
-    <link rel="canonical" href="https://m2-cybersec.de/starter-paket/">
+    <title>Awareness+ Training - Interaktive Mitarbeiterschulung für IT-Sicherheit | M2 Cybersec</title>
+    <link rel="canonical" href="https://m2-cybersec.de/awareness-training-fuer-kmu/">
     
     <style>
         * {
@@ -94,8 +94,8 @@
             color: var(--primary-cyan);
         }
 
-        .hero-package {
-            min-height: 60vh;
+        .hero-service {
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,7 +105,7 @@
             position: relative;
         }
 
-        .hero-package::before {
+        .hero-service::before {
             content: '';
             position: absolute;
             top: 0;
@@ -119,10 +119,10 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
-        .package-badge {
+        .service-badge {
             display: inline-block;
             padding: 0.5rem 1.5rem;
             background: rgba(0, 252, 246, 0.1);
@@ -135,7 +135,7 @@
             letter-spacing: 1px;
         }
 
-        .hero-package h1 {
+        .hero-service h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -143,15 +143,16 @@
             line-height: 1.2;
         }
 
-        .hero-package h1 span {
+        .hero-service h1 span {
             color: var(--primary-cyan);
         }
 
-        .hero-package p {
+        .hero-service p {
             font-size: 1.25rem;
             color: var(--secondary-light-gray);
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto 2.5rem;
+            line-height: 1.8;
         }
 
         .section {
@@ -173,103 +174,80 @@
             margin-bottom: 3rem;
         }
 
-        .features-grid {
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .training-modules {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .feature-card {
+        .module-card {
             background: rgba(255, 255, 255, 0.02);
             border: 2px solid rgba(0, 252, 246, 0.15);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 2.8rem;
             transition: all 0.4s ease;
         }
 
-        .feature-card:hover {
+        .module-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary-cyan);
             box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
             background: rgba(0, 252, 246, 0.03);
         }
 
-        .feature-icon {
-            font-size: 3rem;
+        .module-icon {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             display: block;
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
+        .module-card h3 {
+            font-size: 1.6rem;
             margin-bottom: 1rem;
             color: var(--primary-cyan);
             font-weight: 700;
         }
 
-        .feature-card p {
+        .module-card p {
             color: var(--secondary-light-gray);
-            line-height: 1.7;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        .ideal-for {
-            background: rgba(0, 252, 246, 0.03);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            margin: 3rem 0;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .ideal-for h3 {
-            color: var(--primary-cyan);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ideal-for ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .ideal-for li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--secondary-light-gray);
-            font-size: 1.1rem;
-        }
-
-        .ideal-for li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-cyan);
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .pricing-box {
-            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid var(--primary-cyan);
+        .benefit-item {
             text-align: center;
-            margin: 3rem auto;
-            max-width: 600px;
+            padding: 2rem;
+            background: rgba(0, 252, 246, 0.02);
+            border-radius: 15px;
         }
 
-        .price {
-            font-size: 3rem;
+        .benefit-item h4 {
             color: var(--primary-cyan);
-            font-weight: 700;
-            margin: 1rem 0;
-        }
-
-        .price-note {
-            color: var(--secondary-light-gray);
-            font-size: 0.95rem;
-            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .cta-button {
@@ -290,21 +268,6 @@
             box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            gap: 0.8rem;
-        }
-
         footer {
             background: var(--primary-dark);
             padding: 3rem 5%;
@@ -314,7 +277,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero-package h1 {
+            .hero-service h1 {
                 font-size: 2.5rem;
             }
 
@@ -330,7 +293,8 @@
                 justify-content: center;
             }
 
-            .features-grid {
+            .training-modules,
+            .benefits-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -350,62 +314,69 @@
     </nav>
 
     <main>
-        <section class="hero-package">
+        <section class="hero-service">
             <div class="hero-content">
-                <span class="package-badge">FÜR STARTUPS & GRÜNDER</span>
-                <h1>Das <span>Starter-Paket</span></h1>
-                <p>Schnell und unkompliziert wissen, wie es um die Sicherheit deines Projekts steht – ohne große Budgets oder teure Komplettpakete.</p>
+                <span class="service-badge">AWARENESS+</span>
+                <h1>Interaktive <span>Mitarbeiterschulung</span> für Ihre IT-Sicherheit</h1>
+                <p>Unsere Schulung vermittelt praxisnahes Wissen zu Phishing, Ransomware, Cyberrisiken und sicherem Umgang mit Dateien, um Ihre Mitarbeitenden für reale Bedrohungen zu sensibilisieren und Ihre IT-Sicherheit nachhaltig zu stärken.</p>
             </div>
         </section>
 
         <section class="section">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
             
-            <h2 class="section-title">Was du bekommst</h2>
-            <p class="section-subtitle">Ein kompakter Security-Check mit klaren Handlungsempfehlungen für den Start.</p>
+            <h2 class="section-title">Schützen Sie Ihr Unternehmen mit gezielter IT-Sicherheits-Schulung</h2>
+            <p class="section-subtitle">Unser Awareness+-Programm stärkt Ihre Mitarbeitenden gegen Cyberangriffe und minimiert Risiken.</p>
 
-            <div class="features-grid">
-                <article class="feature-card">
-                    <span class="feature-icon">🔍</span>
-                    <h3>Externer Security-Check</h3>
-                    <p>Wir testen gezielt ein einzelnes Ziel von außen, genau so, wie es echte Hacker machen. Ein schneller Einstieg in IT-Sicherheit für Startups.</p>
+            <div class="training-modules">
+                <article class="module-card">
+                    <span class="module-icon">🎣</span>
+                    <h3>Phishing-Prävention</h3>
+                    <p>Umfassende Schulung zum sicheren Umgang mit E-Mails. Teilnehmende lernen, wie sie betrügerische E-Mails, gefälschte Webseiten und Social-Engineering-Tricks zuverlässig erkennen.</p>
+                    <p>Durch realitätsnahe Beispiele und interaktive Übungen entwickeln Mitarbeitende ein geschärftes Bewusstsein für aktuelle Cyberbedrohungen und können Risiken im Arbeitsalltag selbstständig einschätzen.</p>
                 </article>
 
-                <article class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Basis-Analyse</h3>
-                    <p>Kurze, effiziente Analyse innerhalb von 1–2 Stunden, die die größten Schwachstellen sichtbar macht. Ideal, um früh einen Überblick zu gewinnen.</p>
+                <article class="module-card">
+                    <span class="module-icon">🔐</span>
+                    <h3>Ransomware-Schutz</h3>
+                    <p>Erfahren Sie Schritt für Schritt, wie Sie Ransomware-Angriffe wirksam verhindern, Infektionswege frühzeitig erkennen und dadurch teure Datenverluste sowie Betriebsunterbrechungen vermeiden.</p>
+                    <p>Durch praxisnahe Szenarien werden Mitarbeitende befähigt, verdächtiges Verhalten sofort zu identifizieren und im Ernstfall richtig zu reagieren, bevor Schaden entsteht.</p>
                 </article>
 
-                <article class="feature-card">
-                    <span class="feature-icon">📋</span>
-                    <h3>Handlungs&shy;empfehlung</h3>
-                    <p>Klare, leicht verständliche Übersicht mit konkreten Schritten zur Verbesserung der IT-Sicherheit – kompakt, praxisnah und sofort umsetzbar.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">💬</span>
-                    <h3>Optionaler Austausch</h3>
-                    <p>Auf Wunsch besprechen wir die Ergebnisse in einem kurzen Video-Call oder per Chat. Zusätzliche Cybersecurity-Beratung für dein junges Unternehmen.</p>
+                <article class="module-card">
+                    <span class="module-icon">📊</span>
+                    <h3>Cyber-Risikomanagement</h3>
+                    <p>Wir vermitteln praxisbewährte Strategien, um Cyberrisiken frühzeitig zu identifizieren, realistisch zu bewerten und effektiv zu steuern.</p>
+                    <p>Mitarbeitende lernen, wie sie im täglichen Umgang mit Daten, Systemen und Geräten verantwortungsvoll handeln und potenzielle Schwachstellen sofort erkennen.</p>
                 </article>
             </div>
 
-            <div class="ideal-for">
-                <h3>Ideal für:</h3>
-                <ul>
-                    <li>Startups mit ersten Prototypen oder MVPs</li>
-                    <li>Gründer:innen, die schnell einen Security-Überblick benötigen</li>
-                    <li>Kleine Teams ohne dedizierte IT-Security-Ressourcen</li>
-                    <li>Unternehmen, die IT-Sicherheit von Anfang an richtig aufbauen wollen</li>
-                    <li>Projekte mit begrenztem Budget für umfassende Security-Audits</li>
-                </ul>
+            <div style="margin: 4rem 0;">
+                <h2 class="section-title">Warum Awareness+ Training?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h4>🎯 Praxisnah</h4>
+                        <p>Realistische Szenarien und interaktive Übungen basierend auf echten Bedrohungen</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>📈 Messbar</h4>
+                        <p>Nachweisbare Verbesserung des Sicherheitsbewusstseins Ihrer Mitarbeitenden</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>🔄 Nachhaltig</h4>
+                        <p>Langfristige Stärkung Ihrer Security-Kultur statt einmaliger Schulung</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>✅ Compliance</h4>
+                        <p>Erfüllung wichtiger Anforderungen moderner Cybersecurity- und Compliance-Standards</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="pricing-box">
-                <h3 style="color: var(--primary-white); margin-bottom: 1rem;">Investition in deine Sicherheit</h3>
-                <div class="price">Auf Anfrage</div>
-                <p class="price-note">Individuelle Preisgestaltung je nach Projektumfang</p>
-                <a href="../index.html#contact" class="cta-button">Jetzt anfragen</a>
+            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 20px;">
+                <h2 style="color: var(--primary-cyan); margin-bottom: 1rem;">Sichern Sie Ihr Unternehmen jetzt</h2>
+                <p style="font-size: 1.15rem; margin-bottom: 2rem; color: var(--secondary-light-gray);">Entdecken Sie, wie Awareness+ Ihre Mitarbeitenden vor Cybergefahren schützt<br>und die IT-Sicherheit nachhaltig stärkt.</p>
+                <a href="../index.html#contact" class="cta-button">Jetzt Schulung anfragen</a>
             </div>
         </section>
     </main>

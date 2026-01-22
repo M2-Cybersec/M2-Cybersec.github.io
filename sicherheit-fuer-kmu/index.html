@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT-Sicherheit für KMU - Professioneller Schutz gegen Cyberangriffe, Ransomware und Datenverlust. Risikoanalyse, Penetrationstests und Sicherheitskonzepte.">
+    <meta name="keywords" content="IT-Sicherheit KMU, Cybersecurity, Ransomware-Schutz, Penetrationstest, Sicherheitsaudit, DSGVO">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IT-Sicherheit für KMU - Professioneller Schutz | M2 Cybersec">
+    <meta property="og:description" content="Schützen Sie Ihr KMU vor Cyberangriffen mit professionellen Sicherheitslösungen.">
+    
+    <title>IT-Sicherheit für KMU - Professioneller Schutz gegen Cyberbedrohungen | M2 Cybersec</title>
+    <link rel="canonical" href="https://m2-cybersec.de/sicherheit-fuer-kmu/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero-service {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero-service::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .service-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 252, 246, 0.1);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 50px;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-service h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-white);
+            line-height: 1.2;
+        }
+
+        .hero-service h1 span {
+            color: var(--primary-cyan);
+        }
+
+        .hero-service p {
+            font-size: 1.25rem;
+            color: var(--secondary-light-gray);
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-white);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-light-gray);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .risks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .risk-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--primary-cyan);
+            border-radius: 8px;
+        }
+
+        .risk-item h4 {
+            color: var(--primary-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--secondary-light-gray);
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(0, 252, 246, 0.03);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 252, 246, 0.2);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero-service h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero-service">
+            <div class="hero-content">
+                <span class="service-badge">FÜR KMU</span>
+                <h1>IT-Sicherheit für <span>kleine und mittlere Unternehmen</span></h1>
+                <p>Ihr Schutzschild gegen moderne Cyberbedrohungen. Wir unterstützen Sie dabei, Sicherheitsrisiken frühzeitig zu erkennen, Angriffe zu verhindern und Ihr Unternehmen nachhaltig zu schützen.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
+            
+            <h2 class="section-title">Warum IT-Sicherheit gerade für KMU entscheidend ist</h2>
+            <p class="section-subtitle">Cyberkriminelle zielen zunehmend auf KMU, da diese oft weniger geschützt sind als Großunternehmen. Ein einziger erfolgreicher Angriff kann jedoch schwerwiegende Folgen haben.</p>
+
+            <div class="risks-grid">
+                <div class="risk-item">
+                    <h4>🔐 Ransomware & Erpressung</h4>
+                    <p>Verschlüsselung wichtiger Daten mit Lösegeldforderung</p>
+                </div>
+                <div class="risk-item">
+                    <h4>📁 Datenexfiltration</h4>
+                    <p>Diebstahl vertraulicher Unternehmens- und Kundendaten</p>
+                </div>
+                <div class="risk-item">
+                    <h4>🌐 Unsichere Webanwendungen</h4>
+                    <p>Angriffe über Sicherheitslücken in Online-Systemen</p>
+                </div>
+                <div class="risk-item">
+                    <h4>⚙️ Fehlkonfigurationen</h4>
+                    <p>Schwachstellen durch falsch eingestellte IT-Systeme</p>
+                </div>
+                <div class="risk-item">
+                    <h4>🎣 Social Engineering</h4>
+                    <p>Manipulation von Mitarbeitern zur Preisgabe sensibler Informationen</p>
+                </div>
+                <div class="risk-item">
+                    <h4>📧 Phishing-Angriffe</h4>
+                    <p>Betrügerische E-Mails zur Kompromittierung von Zugangsdaten</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Unsere Leistungen für KMU</h2>
+            <p class="section-subtitle">Dank unserer vielseitigen Pakete finden Unternehmen jeder Art und Größe eine passende Option.</p>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="service-icon">🔍</span>
+                    <h3>Risikoanalyse & Schwachstellenerkennung</h3>
+                    <p>Wir identifizieren sicherheitsrelevante Schwachstellen in Ihrer IT-Umgebung. Durch eine gezielte Analyse erhalten Sie klare Handlungsempfehlungen, um Angriffe zu verhindern und Risiken zu minimieren.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-icon">📋</span>
+                    <h3>Sicherheitskonzepte & Beratung</h3>
+                    <p>Wir entwickeln individuelle Sicherheitsstrategien perfekt abgestimmt auf KMU. Dazu gehören Sicherheitsrichtlinien, Maßnahmenkataloge, Schulungen und technische Sicherheitsoptimierungen.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-icon">🛡️</span>
+                    <h3>Web-Penetrationstests</h3>
+                    <p>Wir prüfen Ihre Webanwendungen realitätsnah aus Sicht eines Angreifers. So decken wir kritische Sicherheitslücken auf und zeigen Ihnen, wie Sie Ihre Systeme nachhaltig absichern.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Informationssicherheitsmanagement (ISM)</h3>
+                    <p>Wir unterstützen Sie bei der Einführung und Optimierung wirksamer Prozesse – praxisnah und effizient. Von der Analyse bis zur Umsetzung begleiten wir Ihr Unternehmen Schritt für Schritt.</p>
+                </article>
+            </div>
+
+            <div style="margin: 4rem 0;">
+                <h2 class="section-title">Vorteile für Ihr Unternehmen</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h3>💪 Erhöhte IT-Stabilität</h3>
+                        <p>Vermeiden Sie teure Ausfallzeiten und sichern Sie Ihre Produktivität langfristig durch stabile und sichere Systeme.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>📈 Transparente Reports</h3>
+                        <p>Verständliche, priorisierte und umsetzungsorientierte Berichte – damit Sie genau wissen, welche Maßnahmen wichtig sind.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>🔄 Nachhaltiger Schutz</h3>
+                        <p>Kontinuierliche Überwachung und langfristige Strategien statt kurzfristiger Lösungen für dauerhaften Schutz.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>🤝 Vertrauensstärkung</h3>
+                        <p>Zeigen Sie Ihren Kunden durch geprüfte Sicherheitsmaßnahmen, dass Sie verantwortungsvoll mit Daten umgehen.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>💰 Risikominimierung</h3>
+                        <p>Senken Sie das Risiko finanzieller Schäden durch Cyberangriffe und sorgen Sie für wirtschaftliche Stabilität.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 20px;">
+                <h2 style="color: var(--primary-cyan); margin-bottom: 1rem;">Jetzt IT-Sicherheit verbessern</h2>
+                <p style="font-size: 1.15rem; margin-bottom: 2rem; color: var(--secondary-light-gray);">Sie möchten Ihr Unternehmen vor Cyberangriffen schützen oder aktuelle Risiken prüfen lassen?<br>Wir unterstützen Sie schnell, zuverlässig und kompetent.</p>
+                <a href="../index.html#contact" class="cta-button">Jetzt unverbindlich anfragen</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
