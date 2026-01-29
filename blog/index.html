@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M2 Cybersec Blog - Aktuelle Artikel zu Cybersecurity, IT-Sicherheit, NIS2-Richtlinie, Security Audits und Best Practices.">
+    <meta name="keywords" content="Cybersecurity Blog, IT-Sicherheit, NIS2, Security Audit, IT-Budget, Cybersecurity Best Practices">
+    <meta name="robots" content="index, follow">
+    
+    <title>Blog - Cybersecurity Insights & Best Practices | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2-cybersec.de/blog/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--secondary-gray);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--secondary-light-cyan);
+            gap: 0.8rem;
+        }
+
+        .read-more::after {
+            content: ' →';
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../das-team/index.html">Team</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cybersecurity Blog</h1>
+            <p>Insights, Best Practices und aktuelle Entwicklungen aus der Welt der IT-Sicherheit</p>
+        </div>
+    </section>
+
+    <main class="content">
+        <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span>👤 Max Brinkmann</span>
+                        <span>📅 26. Juni 2025</span>
+                    </div>
+                    <h2>Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?</h2>
+                    <p>In einer zunehmend digitalisierten Geschäftswelt stellt sich für viele Unternehmen die Frage: Wie viel des IT-Budgets sollte in die Cybersicherheit fließen? Erfahren Sie die Empfehlungen des BSI und warum 10-20% des IT-Budgets der richtige Richtwert sind.</p>
+                    <a href="it-budget-cybersecurity.html" class="read-more">Weiterlesen</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span>👤 Marlon Scheer</span>
+                        <span>📅 5. November 2024</span>
+                    </div>
+                    <h2>Was ist ein Cybersecurity-Audit und warum ist sie wichtig?</h2>
+                    <p>Cybersecurity-Audits sind umfassende Überprüfungen, die Ihre IT-Sicherheit bewerten und Schwachstellen aufdecken. Erfahren Sie, warum regelmäßige Audits entscheidend für Ihre Unternehmenssicherheit sind und was dabei geprüft wird.</p>
+                    <a href="cybersecurity-audit.html" class="read-more">Weiterlesen</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span>👤 Marlon Scheer</span>
+                        <span>📅 31. Oktober 2024</span>
+                    </div>
+                    <h2>Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir Ihnen helfen können</h2>
+                    <p>Mit der NIS2-Richtlinie steht Europa ein weiterer Schritt hin zu einer sichereren digitalen Infrastruktur bevor. Erfahren Sie, was die Richtlinie bedeutet, wer betroffen ist und wie M2 Cybersec Sie bei der Umsetzung unterstützt.</p>
+                    <a href="nis2-richtlinie.html" class="read-more">Weiterlesen</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

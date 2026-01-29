@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen? BSI empfiehlt 10-20% für IT-Sicherheit.">
+    <meta name="keywords" content="IT-Budget, Cybersecurity Budget, IT-Sicherheit Kosten, BSI Empfehlung, Cybersecurity Investition">
+    <meta name="robots" content="index, follow">
+    
+    <title>IT-Budget für Cybersecurity: 10-20% Richtwert | M2 Cybersec Blog</title>
+    <link rel="canonical" href="https://m2-cybersec.de/blog/it-budget-cybersecurity/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .article-header {
+            padding: 8rem 5% 3rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-gray);
+            font-size: 0.95rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        blockquote {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-light-gray);
+        }
+
+        strong {
+            color: var(--primary-white);
+        }
+
+        a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-light-cyan);
+            text-decoration: underline;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--primary-cyan);
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../../index.html#home">Home</a></li>
+            <li><a href="../../index.html#services">Services</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="article-header">
+        <div class="article-meta">
+            <span>👤 Max Brinkmann</span>
+            <span>📅 26. Juni 2025</span>
+            <span>🏷️ Information</span>
+        </div>
+        <h1>Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?</h1>
+    </header>
+
+    <main class="content">
+        <a href="../index.html" class="back-link">← Zurück zum Blog</a>
+
+        <p>In einer zunehmend digitalisierten Geschäftswelt sind Unternehmen jeder Größe mit einer wachsenden Bedrohung durch Cyberangriffe konfrontiert. Dabei stellt sich für viele die Frage: <strong>Wie viel des IT-Budgets sollte in die Cybersicherheit fließen?</strong></p>
+
+        <h2>Warum Cybersicherheit kein Luxus, sondern Pflicht ist</h2>
+
+        <p>Cyberkriminalität verursacht jährlich Schäden in Milliardenhöhe. Besonders betroffen sind kleine und mittlere Unternehmen (KMU), die oft nicht über ausreichende Sicherheitsvorkehrungen verfügen. <strong>Cybersecurity ist längst keine rein technische Maßnahme mehr – sie ist ein strategischer Erfolgsfaktor.</strong></p>
+
+        <p>Laut einer Evaluierung des IT-Sicherheitsgesetzes 2.0 durch das Bundesamt für Sicherheit in der Informationstechnik (BSI) verursachen Cyberangriffe bei Großunternehmen durchschnittlich <strong>157.000 Euro Schaden</strong>, bei <strong>KMU rund 71.000 Euro</strong> – pro Vorfall!</p>
+
+        <h2>Der empfohlene Budgetanteil für Cybersecurity</h2>
+
+        <p>Eine pauschale Antwort auf die Frage nach dem <strong>idealen Anteil des IT-Budgets für Cybersecurity</strong> gibt es nicht – dennoch hat sich ein Richtwert etabliert.</p>
+
+        <blockquote>
+            <p><em>„Insgesamt empfehlen gängige Standards und Leitfäden, zwischen 10 bis 20 Prozent des IT-Gesamtbudgets für Informationssicherheit einzuplanen."</em></p>
+            <p>— BSI, Evaluierung IT-Sicherheitsgesetz 2.0, S. 104</p>
+        </blockquote>
+
+        <p>Diese Empfehlung zeigt klar: <strong>IT-Sicherheit ist kein optionaler Kostenfaktor</strong>, sondern ein Muss. Unternehmen – unabhängig von Größe oder Branche – sollten sich an dieser Bandbreite orientieren:</p>
+
+        <ul>
+            <li><strong>10–20 % des IT-Budgets</strong> für Cybersecurity ist ein bewährter und vom BSI gestützter Richtwert.</li>
+            <li>Bei Unternehmen mit hohem Schutzbedarf (z. B. KRITIS, Gesundheitswesen, Finanzen) kann dieser Anteil sogar höher ausfallen.</li>
+            <li>Auch KMU sollten diesen Prozentsatz als Zielgröße verstehen – zumindest aber in einen soliden Grundschutz investieren.</li>
+        </ul>
+
+        <h2>Warum sich Investitionen lohnen</h2>
+
+        <ol>
+            <li><strong>Kosten vermeiden statt Schäden reparieren:</strong> Sicherheitsmaßnahmen sind günstiger als Vorfallsbewältigung.</li>
+            <li><strong>Vertrauen schaffen:</strong> Kundendaten sind ein hohes Gut – ihre Sicherheit zahlt direkt auf die Markenreputation ein.</li>
+            <li><strong>Gesetzliche Vorgaben erfüllen:</strong> Mit dem IT-Sicherheitsgesetz 2.0 und der NIS-2-Richtlinie steigt der regulatorische Druck auf Unternehmen deutlich.</li>
+        </ol>
+
+        <h2>Fazit: Cybersecurity gehört ins Zentrum der Budgetplanung</h2>
+
+        <p>IT-Sicherheit ist ein geschäftskritisches Thema. Wer hier vorausschauend investiert, schützt nicht nur seine Systeme, sondern auch seine Geschäftsfähigkeit und Wettbewerbsposition. Ein fest definierter Budgetanteil von <strong>mindestens 10–20 % des IT-Budgets</strong> ist heute mehr als nur gute Praxis – er ist eine Notwendigkeit.</p>
+
+        <div class="cta-box">
+            <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Benötigen Sie Unterstützung bei Ihrer IT-Sicherheitsstrategie?</h3>
+            <p>Wir helfen Ihnen dabei, Ihr Cybersecurity-Budget optimal zu planen und einzusetzen.</p>
+            <a href="../../index.html#contact" class="cta-button">Jetzt Beratung anfragen</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
