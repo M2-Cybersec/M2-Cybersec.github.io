@@ -1,18 +1,34 @@
 repository/
-├── index.html (Hauptseite mit 7 Service-Cards)
+├── index.html
+├── sitemap.xml
+├── llms.txt
+├── robots.txt
+│
 ├── assets/
-│   └── logo.png  ← Dein Logo hier platzieren
-├── starter-paket/
-│   └── index.html ✓
-├── growth-paket/
-│   └── index.html ✓
-├── scale-paket/
-│   └── index.html ✓
-├── enterprise-paket/
-│   └── index.html ✓
-├── sicherheit-fuer-kmu/
-│   └── index.html ✓ NEU
-├── awareness-training-fuer-kmu/
-│   └── index.html ✓ NEU
-└── red-team-plus/
-    └── index.html ✓ NEU
+│   ├── logo.png
+│   ├── scheer.png
+│   └── brinkmann.png
+│
+├── Pakete (4):
+│   ├── starter-paket/index.html
+│   ├── growth-paket/index.html
+│   ├── scale-paket/index.html
+│   └── enterprise-paket/index.html
+│
+├── Services (3):
+│   ├── sicherheit-fuer-kmu/index.html
+│   ├── awareness-training-fuer-kmu/index.html
+│   └── red-team-plus/index.html
+│
+├── Rechtliches (2):
+│   ├── impressum/index.html
+│   └── datenschutz/index.html
+│
+├── das-team/
+│   └── index.html
+│
+└── blog/
+    ├── index.html
+    ├── it-budget-cybersecurity.html
+    ├── cybersecurity-audit.html
+    └── nis2-richtlinie.html

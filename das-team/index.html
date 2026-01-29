@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Das Team von M2 Cybersec UG - Lernen Sie Marlon Scheer (CTO) und Max Brinkmann (CEO) kennen. Experten für Cybersecurity und IT-Sicherheit.">
+    <meta name="keywords" content="M2 Cybersec Team, Marlon Scheer, Max Brinkmann, Cybersecurity Experten, CTO, CEO">
+    <meta name="robots" content="index, follow">
+    
+    <title>Das Team - Unsere Cybersecurity-Experten | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2-cybersec.de/das-team/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .team-member {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 252, 246, 0.15);
+        }
+
+        .member-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--primary-cyan);
+            background: rgba(0, 252, 246, 0.05);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .member-info h2 {
+            font-size: 2rem;
+            color: var(--primary-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-size: 1.2rem;
+            color: var(--secondary-light-cyan);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .member-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary-cyan);
+            margin: 2rem 0 1rem;
+        }
+
+        .member-info p {
+            color: var(--secondary-light-gray);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-info {
+            background: rgba(0, 252, 246, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-light-cyan);
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 968px) {
+            .team-member {
+                grid-template-columns: 2fr;
+                text-align: center;
+            }
+
+            .member-image {
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Das Team</h1>
+            <p>Lernen Sie die Experten hinter M2 Cybersec kennen</p>
+        </div>
+    </section>
+
+    <main class="content">
+        <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
+
+        <article class="team-member">
+            <div class="member-image">
+                <img src="../assets/scheer.png" alt="Marlon Scheer - CTO M2 Cybersec">
+            </div>
+            <div class="member-info">
+                <h2>Marlon Scheer</h2>
+                <p class="member-role">CTO & Co-Founder</p>
+
+                <h3>Über mich & die M2 Cybersec</h3>
+                <p>Schon früh war mir klar, dass Technik eine zentrale Rolle in meinem Leben spielen würde. Bereits während meiner Schulzeit faszinierte mich die Welt der IT, besonders die Sicherheitstechnologien, die digitale Systeme schützen.</p>
+                
+                <p>Um meine Leidenschaft mit praktischer Erfahrung zu vertiefen, absolvierte ich während der Schulzeit mehrere Praktika im IT-Sicherheitsbereich. 2022 begann ich mein Studium „Cyber Security and Privacy" an der Hochschule Bonn-Rhein-Sieg.</p>
+
+                <p>Neben dem Studium arbeitete ich intensiv an privaten Software- und App-Entwicklungsprojekten und beschäftigte mich mit neuen Sicherheitskonzepten. Mein wissenschaftliches Interesse führte mich zu verschiedenen Forschungsthemen, darunter Detektion von Waldbränden mittels Sensordatenfusion und Wireguard im Vergleich zu anderen VPN-Protokollen.</p>
+
+                <h3>Die Gründung der M2 Cybersec UG</h3>
+                <p>2024 entschied ich mich, meine eigene Firma zu gründen – die M2 Cybersec UG. Mein Ziel war es, meine Kenntnisse nicht nur für persönliche Projekte zu nutzen, sondern Unternehmen dabei zu helfen, ihre IT-Sicherheit auf ein neues Level zu heben.</p>
+
+                <h3>Meine Philosophie</h3>
+                <p>Sicherheit ist keine einmalige Lösung, sondern ein kontinuierlicher Prozess. Mit einem tiefen Verständnis für Angriffsmethoden und Sicherheitsarchitekturen arbeite ich daran, maßgeschneiderte Lösungen zu entwickeln – individuell, effizient und mit höchstem Anspruch an Qualität.</p>
+
+                <div class="contact-info">
+                    <p><strong>Kontakt:</strong></p>
+                    <p>📧 E-Mail: <a href="mailto:scheer@m2cybersec.de">scheer@m2cybersec.de</a></p>
+                    <p>📱 Telefon: <a href="tel:+491778063600">+49 177 806 3600</a></p>
+                    <p>🔑 PGP-Key: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/2F8B8D191844E2123D655FFEBEE019A3FE170D35">Download</a></p>
+                </div>
+            </div>
+        </article>
+
+        <article class="team-member">
+            <div class="member-image">
+                <img src="../assets/brinkmann.png" alt="Max Brinkmann - CEO M2 Cybersec">
+            </div>
+            <div class="member-info">
+                <h2>Max Brinkmann</h2>
+                <p class="member-role">CEO & Co-Founder</p>
+
+                <h3>Über mich</h3>
+                <p>Ich bin Mitgründer und Geschäftsführer der M2 CyberSec. Mein Weg in die Cybersecurity begann mit meiner Ausbildung als Elektriker, durch die ich ein tiefes Verständnis für Hardware und technische Systeme entwickelt habe. Diese Kenntnisse helfen mir heute dabei, Sicherheitslücken nicht nur auf Software-, sondern auch auf Hardware-Ebene zu erkennen und abzusichern.</p>
+
+                <h3>Meine Kernkompetenzen</h3>
+                <p>Mein Schwerpunkt liegt auf Social Engineering sowie der Identifikation von Schwachstellen auf Hardware-Ebene. Dabei ist es mir besonders wichtig, nicht nur technische Lösungen anzubieten, sondern auch das Bewusstsein für IT-Sicherheit zu schärfen.</p>
+
+                <h3>Meine Philosophie</h3>
+                <p>Ich bin überzeugt, dass Technologie nicht nur effizient, sondern auch sicher sein muss. Nach dem Motto von Steve Jobs: „Innovation unterscheidet zwischen einem Anführer und einem Mitläufer." setze ich mich dafür ein, unsere Kunden an vorderster Front der IT-Sicherheit zu positionieren.</p>
+
+                <div class="contact-info">
+                    <p><strong>Kontakt:</strong></p>
+                    <p>📧 E-Mail: <a href="mailto:info@m2cybersec.de">info@m2cybersec.de</a></p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
