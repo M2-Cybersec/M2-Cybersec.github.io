@@ -32,3 +32,20 @@ repository/
     ├── it-budget-cybersecurity.html
     ├── cybersecurity-audit.html
     └── nis2-richtlinie.html
+cybersecurity/
+├── baden-wuerttemberg/index.html
+├── bayern/index.html
+├── berlin/index.html
+├── brandenburg/index.html
+├── bremen/index.html
+├── hamburg/index.html
+├── hessen/index.html
+├── mecklenburg-vorpommern/index.html
+├── niedersachsen/index.html
+├── nordrhein-westfalen/index.html
+├── rheinland-pfalz/index.html
+├── saarland/index.html
+├── sachsen/index.html
+├── sachsen-anhalt/index.html
+├── schleswig-holstein/index.html
+└── thueringen/index.html
