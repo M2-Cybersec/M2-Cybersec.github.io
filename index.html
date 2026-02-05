@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="M2 Cybersec - Professionelle Cybersecurity-Lösungen, Penetration Testing, Security Consulting und IT-Sicherheitsberatung für Unternehmen in Deutschland.">
-    <meta name="keywords" content="Cybersecurity, IT-Sicherheit, Penetration Testing, Security Consulting, Incident Response, DSGVO Compliance, ISO 27001">
+    <meta name="description"
+        content="M2 Cybersec - Professionelle Cybersecurity-Lösungen, Penetration Testing, Security Consulting und IT-Sicherheitsberatung für Unternehmen in Deutschland.">
+    <meta name="keywords"
+        content="Cybersecurity, IT-Sicherheit, Penetration Testing, Security Consulting, Incident Response, DSGVO Compliance, ISO 27001">
     <meta name="author" content="M2 Cybersec">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="M2 Cybersec - Professionelle Cybersecurity-Lösungen">
-    <meta property="og:description" content="Schützen Sie Ihr Unternehmen mit modernsten Cybersecurity-Lösungen. Penetration Testing, Security Consulting und mehr.">
+    <meta property="og:description"
+        content="Schützen Sie Ihr Unternehmen mit modernsten Cybersecurity-Lösungen. Penetration Testing, Security Consulting und mehr.">
     <meta property="og:url" content="https://m2cybersec.de">
-    
+
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -30,11 +34,160 @@
       }
     }
     </script>
-    
+
     <title>M2 Cybersec - Cybersecurity-Lösungen & IT-Sicherheit | Penetration Testing</title>
-    
+
     <link rel="canonical" href="https://m2cybersec.de">
-    
+
+
+    <!-- JavaScript für FAQ Accordion Funktionalität -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    const answer = item.querySelector('.faq-answer');
+
+                    question.addEventListener('click', function () {
+                        // Toggle current item
+                        const isActive = item.classList.contains('active');
+
+                        // Optional: Close all other items (uncomment for accordion behavior)
+                        // faqItems.forEach(otherItem => {
+                        //     if (otherItem !== item) {
+                        //         otherItem.classList.remove('active');
+                        //         otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        //     }
+                        // });
+
+                        // Toggle current item
+                        if (isActive) {
+                            item.classList.remove('active');
+                            question.setAttribute('aria-expanded', 'false');
+                        } else {
+                            item.classList.add('active');
+                            question.setAttribute('aria-expanded', 'true');
+                        }
+                    });
+
+                    // Keyboard accessibility
+                    question.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            question.click();
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <!-- Schema.org FAQPage Markup für SEO -->
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Penetration Test für mein Unternehmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Kosten für einen Penetration Test variieren je nach Umfang und Komplexität Ihrer IT-Infrastruktur. Unser Starter-Paket beginnt bereits bei attraktiven Konditionen für kleine Unternehmen und Startups. Für eine individuelle Preisauskunft kontaktieren Sie uns gerne – wir erstellen Ihnen ein maßgeschneidertes Angebot basierend auf Ihren spezifischen Anforderungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert ein typischer Security-Check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale- oder Enterprise-Pakets 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können wir Ihnen einen präzisen Zeitrahmen nennen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist mein Unternehmen zu klein für professionelle Cybersecurity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Definitiv nicht! Gerade kleine und mittelständische Unternehmen (KMU) sind häufig Ziel von Cyberangriffen, da ihre Sicherheitsmaßnahmen oft weniger ausgereift sind. Mit unserem speziellen Sicherheit für KMU-Paket bieten wir auch kleineren Unternehmen professionellen Schutz zu fairen Konditionen. Cybersecurity ist keine Frage der Unternehmensgröße, sondern der Verantwortung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Penetration Testing und Vulnerability Scanning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vulnerability Scanning ist ein automatisierter Prozess, der bekannte Schwachstellen identifiziert. Penetration Testing geht deutlich weiter: Unsere Experten simulieren echte Angriffe, kombinieren verschiedene Schwachstellen und testen, ob ein Angreifer tatsächlich in Ihr System eindringen kann. Penetration Testing liefert deutlich tiefere Einblicke und praxisnahe Sicherheitsbewertungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Benötige ich eine ISO 27001 Zertifizierung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die ISO 27001 Zertifizierung ist für viele Branchen und Geschäftsbeziehungen mittlerweile Standard. Sie demonstriert, dass Ihr Informationssicherheitsmanagement internationalen Standards entspricht. Besonders bei Ausschreibungen, im B2B-Bereich und bei der DSGVO-Compliance kann eine Zertifizierung entscheidende Vorteile bringen. Wir unterstützen Sie gerne auf dem Weg zur Zertifizierung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie oft sollte ein Security-Audit durchgeführt werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir empfehlen mindestens einmal jährlich einen umfassenden Security-Audit. Bei kritischen Systemen oder nach größeren Änderungen an der IT-Infrastruktur sollten zusätzliche Tests erfolgen. Unser Growth-Paket beinhaltet beispielsweise drei Security-Checks pro Jahr, um kontinuierliche Sicherheit zu gewährleisten. Die Bedrohungslandschaft entwickelt sich ständig weiter – Ihre Sicherheitsmaßnahmen sollten dies auch tun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gefundene Schwachstellen dokumentieren wir detailliert in einem CVSS-bewerteten Report mit klaren Prioritäten. Sie erhalten konkrete Handlungsempfehlungen zur Behebung. Auf Wunsch unterstützen wir Sie auch bei der Implementierung der Sicherheitsmaßnahmen. Nach der Behebung führen wir einen Re-Test durch, um die erfolgreiche Schließung der Lücken zu verifizieren. Unser Ziel ist nicht nur das Finden, sondern das Beheben von Sicherheitsproblemen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bieten Sie auch Schulungen für Mitarbeiter an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mit unserem Awareness+ Training bieten wir spezialisierte Schulungen für Mitarbeiter an. Die meisten Sicherheitsvorfälle entstehen durch menschliche Fehler – gut geschulte Mitarbeiter sind daher Ihre erste Verteidigungslinie. Unsere interaktiven Trainings decken Themen wie Phishing-Erkennung, sicheres Passwort-Management, Social Engineering und Incident Response ab. Die Schulungen können individuell auf Ihre Branche und Unternehmenskultur angepasst werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist Red Teaming und brauche ich das?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Red Teaming ist eine ganzheitliche Sicherheitsprüfung, bei der wir wie echte Angreifer vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich besonders für Unternehmen mit hohen Sicherheitsanforderungen oder bereits etablierten Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Unser Red Team Plus-Paket bietet diesen 360°-Sicherheitsansatz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vertraulichkeit hat bei uns höchste Priorität. Alle Projekte werden unter strikten NDA-Vereinbarungen durchgeführt. Ihre Daten werden verschlüsselt übertragen und gespeichert. Nur autorisierte Teammitglieder haben Zugriff auf projektrelevante Informationen. Wir sind DSGVO-konform und arbeiten nach den höchsten Sicherheitsstandards der Branche. Unsere Berichte werden sicher an Sie übermittelt und auf Wunsch nach Projektabschluss vollständig gelöscht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet die 24/7 Notfall-Hotline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unsere 24/7 Notfall-Hotline ist für alle Kunden im Rahmen unserer Enterprise-Pakete inklusive. Für andere Pakete kann die Notfall-Hotline als zusätzliche Service-Option hinzugebucht werden. Im Ernstfall ist schnelle Reaktion entscheidend – unsere Incident Response-Experten stehen rund um die Uhr bereit, um Sie bei Sicherheitsvorfällen zu unterstützen und den Schaden zu minimieren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Unterstützen Sie auch bei DSGVO-Compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen."
+      }
+    }
+  ]
+}
+</script>
+
     <style>
         * {
             margin: 0;
@@ -182,6 +335,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -550,8 +704,134 @@
         .skip-link:focus {
             top: 0;
         }
+
+
+
+        .faq {
+            background: linear-gradient(180deg, #0d0d0d 0%, var(--primary-dark) 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 10px 30px rgba(0, 252, 246, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--primary-white);
+            text-align: left;
+            padding: 1.8rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-white);
+            margin: 0;
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover h3 {
+            color: var(--primary-cyan);
+        }
+
+        .faq-icon {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            font-weight: 300;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--secondary-light-gray);
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .faq-question[aria-expanded="true"] {
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1.3rem 1.3rem;
+            }
+
+            .faq-question h3 {
+                font-size: 1.05rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1.3rem 1.5rem 1.3rem;
+            }
+
+            .faq-answer p {
+                font-size: 0.98rem;
+            }
+        }
+
+        /* Accessibility */
+        .faq-question:focus {
+            outline: 2px solid var(--primary-cyan);
+            outline-offset: 2px;
+        }
+
+        .faq-question:focus:not(:focus-visible) {
+            outline: none;
+        }
     </style>
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
@@ -574,7 +854,8 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Professionelle Cybersecurity-Lösungen <span>für Ihr Unternehmen</span></h1>
-                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec ist Ihr Partner für umfassende IT-Sicherheit.</p>
+                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec
+                    ist Ihr Partner für umfassende IT-Sicherheit.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-button">Kostenlose Beratung</a>
                     <a href="#services" class="cta-button secondary">Unsere Services</a>
@@ -584,55 +865,63 @@
 
         <section id="services" class="section services">
             <h2 class="section-title">Unsere Cybersecurity-Services</h2>
-            <p class="section-subtitle">Maßgeschneiderte Sicherheitslösungen für jeden Bedarf – von Penetration Testing bis Compliance Management</p>
+            <p class="section-subtitle">Maßgeschneiderte Sicherheitslösungen für jeden Bedarf – von Penetration Testing
+                bis Compliance Management</p>
             <div class="services-grid">
                 <article class="service-card">
                     <a href="starter-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🚀</span>
                         <h3>Starter-Paket</h3>
-                        <p>Für Startups & Gründer: Schneller Security-Check mit kompakter Analyse. Externer Check eines einzelnen Ziels mit klaren Handlungsempfehlungen.</p>
+                        <p>Für Startups & Gründer: Schneller Security-Check mit kompakter Analyse. Externer Check eines
+                            einzelnen Ziels mit klaren Handlungsempfehlungen.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="growth-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">📈</span>
                         <h3>Growth-Paket</h3>
-                        <p>Für wachsende Teams: Multi-Target Check von 2–3 kritischen Systemen mit detailliertem Report. 3 umfassende Security-Checks pro Jahr.</p>
+                        <p>Für wachsende Teams: Multi-Target Check von 2–3 kritischen Systemen mit detailliertem Report.
+                            3 umfassende Security-Checks pro Jahr.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="scale-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🏢</span>
                         <h3>Scale-Paket</h3>
-                        <p>Für professionelle Teams: Vollständiger IT-Audit von 5+ Systemen, Code Review, CVSS-Report, Awareness-Schulungen und individueller Notfallplan.</p>
+                        <p>Für professionelle Teams: Vollständiger IT-Audit von 5+ Systemen, Code Review, CVSS-Report,
+                            Awareness-Schulungen und individueller Notfallplan.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="enterprise-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🏗️</span>
                         <h3>Enterprise-Paket</h3>
-                        <p>Komplettschutz für Unternehmen: Red-Teaming, 24/7 Monitoring, CISO-as-a-Service, Incident Response Planning und umfassende Security-Strategie.</p>
+                        <p>Komplettschutz für Unternehmen: Red-Teaming, 24/7 Monitoring, CISO-as-a-Service, Incident
+                            Response Planning und umfassende Security-Strategie.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="sicherheit-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🛡️</span>
                         <h3>Sicherheit für KMU</h3>
-                        <p>Professioneller Schutz gegen Cyberangriffe: Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für KMU.</p>
+                        <p>Professioneller Schutz gegen Cyberangriffe: Risikoanalyse, Sicherheitskonzepte,
+                            Web-Penetrationstests und Informationssicherheitsmanagement für KMU.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="awareness-training-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🎓</span>
                         <h3>Awareness+ Training</h3>
-                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Cyber-Risikomanagement. Stärken Sie das Sicherheitsbewusstsein Ihrer Teams nachhaltig.</p>
+                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Cyber-Risikomanagement. Stärken
+                            Sie das Sicherheitsbewusstsein Ihrer Teams nachhaltig.</p>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="red-team-plus/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">⚔️</span>
                         <h3>Red Team Plus</h3>
-                        <p>Ganzheitliches 360°-Sicherheitsaudit: Technische Prüfung, Mitarbeiter-Awareness-Check und physische Sicherheitsanalyse aus Angreiferperspektive.</p>
+                        <p>Ganzheitliches 360°-Sicherheitsaudit: Technische Prüfung, Mitarbeiter-Awareness-Check und
+                            physische Sicherheitsanalyse aus Angreiferperspektive.</p>
                     </a>
                 </article>
             </div>
@@ -645,22 +934,26 @@
                 <article class="feature-item">
                     <div class="feature-number">🎯</div>
                     <h4>Praxisnahe Lösungen</h4>
-                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre individuellen Anforderungen</p>
+                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre
+                        individuellen Anforderungen</p>
                 </article>
                 <article class="feature-item">
                     <div class="feature-number">🔐</div>
                     <h4>Ganzheitlicher Ansatz</h4>
-                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
+                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur
+                        Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
                 </article>
                 <article class="feature-item">
                     <div class="feature-number">24/7</div>
                     <h4>Verfügbarkeit</h4>
-                    <p>Rund um die Uhr erreichbar für Ihre Sicherheitsanliegen – weil Cyberangriffe keine Bürozeiten kennen</p>
+                    <p>Rund um die Uhr erreichbar für Ihre Sicherheitsanliegen – weil Cyberangriffe keine Bürozeiten
+                        kennen</p>
                 </article>
                 <article class="feature-item">
                     <div class="feature-number">✓</div>
                     <h4>Transparente Kommunikation</h4>
-                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf Management-Ebene</p>
+                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
+                        Management-Ebene</p>
                 </article>
             </div>
         </section>
@@ -677,7 +970,8 @@
                 <article class="process-step">
                     <div class="step-number">2</div>
                     <h4>Konzeption</h4>
-                    <p>Entwicklung einer maßgeschneiderten Sicherheitsstrategie basierend auf Ihren individuellen Anforderungen</p>
+                    <p>Entwicklung einer maßgeschneiderten Sicherheitsstrategie basierend auf Ihren individuellen
+                        Anforderungen</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">3</div>
@@ -695,12 +989,14 @@
         <section id="contact" class="section contact">
             <div class="contact-content">
                 <h2 class="section-title">Kontaktieren Sie uns</h2>
-                <p class="section-subtitle">Lassen Sie uns gemeinsam Ihre IT-Sicherheit auf das nächste Level bringen</p>
+                <p class="section-subtitle">Lassen Sie uns gemeinsam Ihre IT-Sicherheit auf das nächste Level bringen
+                </p>
                 <div class="contact-info">
                     <p><strong>E-Mail:</strong><br><a href="mailto:info@m2cybersec.de">info@m2cybersec.de</a></p>
                     <p><strong>Telefon:</strong><br><a href="tel:+49123456789">+49 (0) 221 94334961</a></p>
                     <p><strong>Notfall-Telefon:</strong><br><a href="tel:+491778063600">+49 (0) 177 8063600</a></p>
-                    <p><strong>Geschäftszeiten:</strong><br>Montag - Freitag: 09:00 - 18:00 Uhr<br>Notfall-Hotline: 24/7</p>
+                    <p><strong>Geschäftszeiten:</strong><br>Montag - Freitag: 09:00 - 18:00 Uhr<br>Notfall-Hotline: 24/7
+                    </p>
                 </div>
                 <div class="contact-buttons">
                     <a href="mailto:info@m2cybersec.de" class="cta-button">E-Mail senden</a>
@@ -708,14 +1004,237 @@
                 </div>
             </div>
         </section>
+
+        <!-- FAQ Section - SEO-optimiert mit Schema.org Markup -->
+        <section id="faq" class="section faq">
+            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            <p class="section-subtitle">Alles, was Sie über Cybersecurity und unsere Services wissen müssen</p>
+
+            <div class="faq-container">
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                        <h3 itemprop="name">Was kostet ein Penetration Test für mein Unternehmen?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Die Kosten für einen Penetration Test variieren je nach Umfang und Komplexität Ihrer
+                                IT-Infrastruktur. Unser Starter-Paket beginnt bereits bei attraktiven Konditionen für
+                                kleine Unternehmen und Startups. Für eine individuelle Preisauskunft kontaktieren Sie
+                                uns gerne – wir erstellen Ihnen ein maßgeschneidertes Angebot basierend auf Ihren
+                                spezifischen Anforderungen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                        <h3 itemprop="name">Wie lange dauert ein typischer Security-Check?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der
+                                Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale- oder
+                                Enterprise-Pakets 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können
+                                wir Ihnen einen präzisen Zeitrahmen nennen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                        <h3 itemprop="name">Ist mein Unternehmen zu klein für professionelle Cybersecurity?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Definitiv nicht! Gerade kleine und mittelständische Unternehmen (KMU) sind häufig Ziel
+                                von Cyberangriffen, da ihre Sicherheitsmaßnahmen oft weniger ausgereift sind. Mit
+                                unserem speziellen "Sicherheit für KMU"-Paket bieten wir auch kleineren Unternehmen
+                                professionellen Schutz zu fairen Konditionen. Cybersecurity ist keine Frage der
+                                Unternehmensgröße, sondern der Verantwortung.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                        <h3 itemprop="name">Was ist der Unterschied zwischen Penetration Testing und Vulnerability
+                            Scanning?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Vulnerability Scanning ist ein automatisierter Prozess, der bekannte Schwachstellen
+                                identifiziert. Penetration Testing geht deutlich weiter: Unsere Experten simulieren
+                                echte Angriffe, kombinieren verschiedene Schwachstellen und testen, ob ein Angreifer
+                                tatsächlich in Ihr System eindringen kann. Penetration Testing liefert deutlich tiefere
+                                Einblicke und praxisnahe Sicherheitsbewertungen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                        <h3 itemprop="name">Benötige ich eine ISO 27001 Zertifizierung?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Die ISO 27001 Zertifizierung ist für viele Branchen und Geschäftsbeziehungen mittlerweile
+                                Standard. Sie demonstriert, dass Ihr Informationssicherheitsmanagement internationalen
+                                Standards entspricht. Besonders bei Ausschreibungen, im B2B-Bereich und bei der
+                                DSGVO-Compliance kann eine Zertifizierung entscheidende Vorteile bringen. Wir
+                                unterstützen Sie gerne auf dem Weg zur Zertifizierung.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                        <h3 itemprop="name">Wie oft sollte ein Security-Audit durchgeführt werden?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-6" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Wir empfehlen mindestens einmal jährlich einen umfassenden Security-Audit. Bei kritischen
+                                Systemen oder nach größeren Änderungen an der IT-Infrastruktur sollten zusätzliche Tests
+                                erfolgen. Unser Growth-Paket beinhaltet beispielsweise drei Security-Checks pro Jahr, um
+                                kontinuierliche Sicherheit zu gewährleisten. Die Bedrohungslandschaft entwickelt sich
+                                ständig weiter – Ihre Sicherheitsmaßnahmen sollten dies auch tun.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+                        <h3 itemprop="name">Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-7" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Gefundene Schwachstellen dokumentieren wir detailliert in einem CVSS-bewerteten Report
+                                mit klaren Prioritäten. Sie erhalten konkrete Handlungsempfehlungen zur Behebung. Auf
+                                Wunsch unterstützen wir Sie auch bei der Implementierung der Sicherheitsmaßnahmen. Nach
+                                der Behebung führen wir einen Re-Test durch, um die erfolgreiche Schließung der Lücken
+                                zu verifizieren. Unser Ziel ist nicht nur das Finden, sondern das Beheben von
+                                Sicherheitsproblemen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+                        <h3 itemprop="name">Bieten Sie auch Schulungen für Mitarbeiter an?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-8" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Ja, mit unserem "Awareness+ Training" bieten wir spezialisierte Schulungen für
+                                Mitarbeiter an. Die meisten Sicherheitsvorfälle entstehen durch menschliche Fehler – gut
+                                geschulte Mitarbeiter sind daher Ihre erste Verteidigungslinie. Unsere interaktiven
+                                Trainings decken Themen wie Phishing-Erkennung, sicheres Passwort-Management, Social
+                                Engineering und Incident Response ab. Die Schulungen können individuell auf Ihre Branche
+                                und Unternehmenskultur angepasst werden.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
+                        <h3 itemprop="name">Was ist Red Teaming und brauche ich das?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-9" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Red Teaming ist eine ganzheitliche Sicherheitsprüfung, bei der wir wie echte Angreifer
+                                vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer
+                                Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich
+                                besonders für Unternehmen mit hohen Sicherheitsanforderungen oder bereits etablierten
+                                Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Unser "Red Team
+                                Plus"-Paket bietet diesen 360°-Sicherheitsansatz.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
+                        <h3 itemprop="name">Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-10" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Vertraulichkeit hat bei uns höchste Priorität. Alle Projekte werden unter strikten
+                                NDA-Vereinbarungen durchgeführt. Ihre Daten werden verschlüsselt übertragen und
+                                gespeichert. Nur autorisierte Teammitglieder haben Zugriff auf projektrelevante
+                                Informationen. Wir sind DSGVO-konform und arbeiten nach den höchsten
+                                Sicherheitsstandards der Branche. Unsere Berichte werden sicher an Sie übermittelt und
+                                auf Wunsch nach Projektabschluss vollständig gelöscht.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
+                        <h3 itemprop="name">Was kostet die 24/7 Notfall-Hotline?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-11" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Unsere 24/7 Notfall-Hotline ist für alle Kunden im Rahmen unserer Enterprise-Pakete
+                                inklusive. Für andere Pakete kann die Notfall-Hotline als zusätzliche Service-Option
+                                hinzugebucht werden. Im Ernstfall ist schnelle Reaktion entscheidend – unsere Incident
+                                Response-Experten stehen rund um die Uhr bereit, um Sie bei Sicherheitsvorfällen zu
+                                unterstützen und den Schaden zu minimieren.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
+                        <h3 itemprop="name">Unterstützen Sie auch bei DSGVO-Compliance?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-12" itemscope itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir
+                                unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen
+                                (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen
+                                durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt
+                                angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+
+
     </main>
 
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <img src="assets/logo.png" alt="M2 Cybersec Logo" style="height: 60px; width: auto; margin-bottom: 1rem;">
+                <img src="assets/logo.png" alt="M2 Cybersec Logo"
+                    style="height: 60px; width: auto; margin-bottom: 1rem;">
                 <p>Ihr Partner für professionelle Cybersecurity-Lösungen und umfassende IT-Sicherheit.</p>
-                <a href="https://www.allianz-fuer-cybersicherheit.de" title="Verweis zur Webpräsenz der Allianz für Cyber-Sicherheit"><img src="assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg" alt="Webpräsenz der Allianz für CyberSicherheit" /></a>
+                <a href="https://www.allianz-fuer-cybersicherheit.de"
+                    title="Verweis zur Webpräsenz der Allianz für Cyber-Sicherheit"><img
+                        src="assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
+                        alt="Webpräsenz der Allianz für CyberSicherheit" /></a>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
@@ -731,12 +1250,29 @@
                 <a href="blog/index.html">Blog</a>
                 <a href="#contact">Kontakt</a>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Rechtliches</h4>
                 <a href="impressum/index.html">Impressum</a>
                 <a href="datenschutz/index.html">Datenschutz</a>
             </div>
+
+
+            <div class="footer-section">
+                <h4>Cybersecurity für die Städte</h4>
+                <a href="cybersecurity/koeln/">Köln</a>
+                <a href="cybersecurity/duesseldorf/">Düsseldorf</a>
+                <a href="cybersecurity/dortmund/">Dortmund</a>
+                <a href="cybersecurity/bonn/">Bonn</a>
+                <a href="cybersecurity/essen/">Essen</a>
+                <a href="cybersecurity/bochum/">Bochum</a>
+                <a href="cybersecurity/wuppertal/">Wuppertal</a>
+                <a href="cybersecurity/aachen/">Aachen</a>
+                <a href="cybersecurity/krefeld/">Krefeld</a>
+                <a href="cybersecurity/duisburg/">Duisburg</a>
+            </div>
+
+
 
             <div class="footer-section">
                 <h4>Cybersecurity für die Bundesländer</h4>
@@ -763,4 +1299,5 @@
         </div>
     </footer>
 </body>
+
 </html>
