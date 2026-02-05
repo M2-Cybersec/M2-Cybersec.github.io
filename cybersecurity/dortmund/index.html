@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cybersecurity & IT-Sicherheit in Dortmund - M2 Cybersec bietet professionelle Penetrationstests, Security Audits und IT-Sicherheitsberatung für Unternehmen.">
+    <meta name="keywords" content="Cybersecurity Dortmund, IT-Sicherheit Dortmund, Penetrationstest Dortmund, Security Audit Dortmund">
+    <meta name="robots" content="index, follow">
+    
+    <title>Cybersecurity in Dortmund - Penetrationstests & IT-Sicherheit | M2 Cybersec</title>
+    <link rel="canonical" href="https://m2cybersec.de/cybersecurity/dortmund/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.7rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: var(--primary-white);
+        }
+
+        .highlight-box {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.08) 0%, rgba(0, 252, 246, 0.03) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--primary-cyan);
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 252, 246, 0.5);
+        }
+
+        ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../../index.html#home">Home</a></li>
+            <li><a href="../../index.html#services">Services</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cybersecurity in Dortmund</h1>
+            <p>Professionelle IT-Sicherheit und Penetrationstests für Unternehmen in Dortmund – M2 Cybersec ist Ihr Partner für nachhaltige Cybersicherheit.</p>
+        </div>
+    </section>
+
+    <main class="content">
+        <a href="../../index.html" class="back-link">← Zurück zur Startseite</a>
+
+        <h2>M2 Cybersec: Ihr Partner für IT-Sicherheit in Dortmund</h2>
+
+        <p>In einer Zeit zunehmender Cyberbedrohungen und digitaler Transformation stehen Unternehmen in Dortmund vor großen Herausforderungen. <strong>Gehackt zu werden ist keine Frage des „Ob", sondern des „Wann".</strong> Die digitale Landschaft ist zum Schlachtfeld geworden, auf dem nicht nur große Konzerne, sondern auch mittelständische Unternehmen und Start-ups Ziele feindlicher Attacken sein können.</p>
+
+        <p>Viele IT-Verantwortliche, Geschäftsführer und CIOs von Unternehmen in Dortmund verspüren Angst und Ungewissheit, ob ihr Unternehmen ausreichend geschützt ist. Dazu kommt die <strong>Unsicherheit, wo Schwachstellen existieren</strong>, und die <strong>fehlende Zeit</strong> in den Teams, sich wirklich mit IT-Security zu beschäftigen.</p>
+
+        <div class="highlight-box">
+            <h3>Warum M2 Cybersec?</h3>
+            <p>Wir sind nicht nur IT-Sicherheitsexperten – wir sind Ethical Hacker mit tiefem technischem Know-how und einem klaren Verständnis für unternehmerische Strukturen. Diese Kombination ermöglicht es uns, Unternehmen in Dortmund wirklich nachhaltig zu schützen.</p>
+        </div>
+
+        <h2>Unsere Cybersecurity-Services für Unternehmen in Dortmund</h2>
+
+        <div class="services-grid">
+            <article class="service-card">
+                <span class="service-icon">🔍</span>
+                <h3>Penetrationstests</h3>
+                <p>Realistische Cyberangriffe ohne Schaden – wir decken jede Schwachstelle in Ihrer IT-Infrastruktur auf, bevor es echte Hacker tun.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🛡️</span>
+                <h3>Security Audits</h3>
+                <p>Umfassende Sicherheitsüberprüfungen nach ISO 27001, BSI Grundschutz und individuellen Compliance-Anforderungen.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">📊</span>
+                <h3>Schwachstellenanalyse</h3>
+                <p>Detaillierte Analyse Ihrer Systeme, Netzwerke und Anwendungen mit klaren, priorisierten Handlungsempfehlungen.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">⚔️</span>
+                <h3>Red Teaming</h3>
+                <p>Realistische Angriffssimulationen zur Prüfung Ihrer gesamten Sicherheitsarchitektur – technisch, organisatorisch und personell.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🎓</span>
+                <h3>Security Awareness</h3>
+                <p>Praxisnahe Schulungen für Ihre Mitarbeiter, um das Sicherheitsbewusstsein nachhaltig zu stärken.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🚨</span>
+                <h3>Incident Response</h3>
+                <p>Schnelle Reaktion bei Sicherheitsvorfällen mit forensischer Analyse und Wiederherstellung der Betriebssicherheit.</p>
+            </article>
+        </div>
+
+        <h2>Unser Ansatz: Ihre Verteidigungsstrategie für Dortmund</h2>
+
+        <h3>Step 1: Realistisches Lagebild</h3>
+        <p>Wir starten immer mit einem realistischen Cyberangriff – natürlich ohne Schaden! So erhalten wir ein präzises Lagebild Ihrer IT-Sicherheit. Ob Schatten-IT, veraltete Systeme oder Nachlässigkeit bei der Belegschaft – wir decken jedes Risiko auf. In einem Workshop erarbeiten wir basierend auf den Ergebnissen einen maßgeschneiderten Maßnahmenplan.</p>
+
+        <h3>Step 2: Management-Reporting</h3>
+        <p>Wir übersetzen technische Befunde in verständliche Management-Reports. In gemeinsamen Terminen mit der Geschäftsleitung helfen wir, ganzheitliche Entscheidungen zu treffen – von Budgetplanung über Personalressourcen bis hin zu strategischen Sicherheitsinvestitionen.</p>
+
+        <h3>Step 3: Wissenstransfer</h3>
+        <p>Unsere Penetrationstests führen wir auf Wunsch live mit Ihrem Team durch, um Wissen zu transferieren. Es gibt keine Betriebsgeheimnisse bei uns. Schulungen werden dort durchgeführt, wo sie notwendig sind – damit Sie selbst in der Lage sind, Sicherheitsmaßnahmen nachhaltig umzusetzen.</p>
+
+        <h2>Warum Unternehmen in Dortmund M2 Cybersec vertrauen</h2>
+
+        <ul>
+            <li><strong>Lokale Präsenz:</strong> Persönliche Beratung und Support für Unternehmen in Dortmund</li>
+            <li><strong>Branchenexpertise:</strong> Erfahrung mit KMUs, Startups und Enterprise-Organisationen</li>
+            <li><strong>Compliance-Know-how:</strong> Unterstützung bei NIS2, ISO 27001, DSGVO, KRITIS und mehr</li>
+            <li><strong>Ethical Hacking:</strong> Echte Hacker, die wissen, wie Angreifer denken und handeln</li>
+            <li><strong>Nachhaltige Sicherheit:</strong> Keine Schnelllösungen, sondern langfristige Schutzstrategien</li>
+            <li><strong>Transparente Kommunikation:</strong> Klare Reports ohne Fachkauderwelsch</li>
+        </ul>
+
+        <div class="cta-box">
+            <h2 style="color: var(--primary-cyan); margin-bottom: 1rem;">Schützen Sie Ihr Unternehmen in Dortmund</h2>
+            <p style="font-size: 1.15rem;">Vereinbaren Sie jetzt ein kostenloses Erstgespräch und erfahren Sie, wie wir Ihre IT-Sicherheit auf das nächste Level bringen.</p>
+            <a href="../../index.html#contact" class="cta-button">Kostenlose Sicherheitsberatung anfragen</a>
+        </div>
+
+        <h2>Häufige Cyberbedrohungen für Unternehmen in Dortmund</h2>
+
+        <p>Unternehmen in Dortmund sind den gleichen Bedrohungen ausgesetzt wie überall in Deutschland:</p>
+
+        <ul>
+            <li><strong>Ransomware-Angriffe:</strong> Verschlüsselung wichtiger Daten mit Lösegeldforderung</li>
+            <li><strong>Phishing & Social Engineering:</strong> Manipulation von Mitarbeitern zur Preisgabe sensibler Informationen</li>
+            <li><strong>Supply Chain Attacks:</strong> Angriffe über kompromittierte Lieferanten und Dienstleister</li>
+            <li><strong>Zero-Day-Exploits:</strong> Ausnutzung noch unbekannter Sicherheitslücken</li>
+            <li><strong>Insider-Bedrohungen:</strong> Absichtliche oder versehentliche Gefährdung durch eigene Mitarbeiter</li>
+            <li><strong>DDoS-Attacken:</strong> Lahmlegen von Systemen durch Überlastung</li>
+        </ul>
+
+        <p>Mit professionellen Penetrationstests und Security Audits von M2 Cybersec decken Sie diese Risiken auf, bevor Angreifer sie ausnutzen können.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
