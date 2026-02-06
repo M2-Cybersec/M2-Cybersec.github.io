@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MFA allein schützt Microsoft 365 nicht ausreichend. Das sind die 7 häufigsten Sicherheitslücken in M365 – und wie Unternehmen sie schließen können.">
+    <meta name="keywords"
+        content="Microsoft 365 Sicherheit, MFA Microsoft 365, Conditional Access, Legacy Authentication, Microsoft 365 Sicherheitslücken, M365 Backup">
+
+    <meta name="robots" content="index, follow">
+
+    <title>MFA reicht nicht! | M2 Cybersec Blog</title>
+    <link rel="canonical"
+        href="https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken/">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .article-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 3rem;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(25, 24, 25, 0.7) 0%,
+                    rgba(25, 24, 25, 0.85) 50%,
+                    rgba(25, 24, 25, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .article-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-light-gray);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-excerpt {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+        }
+
+        ul,
+        ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        blockquote {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-light-gray);
+        }
+
+        strong {
+            color: var(--primary-white);
+        }
+
+        em {
+            color: var(--secondary-light-cyan);
+        }
+
+        a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-light-cyan);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box {
+            background: rgba(0, 168, 255, 0.05);
+            border: 2px solid rgba(0, 168, 255, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.05);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--primary-cyan);
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-cyan);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        pre {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 252, 246, 0.2);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary-gray);
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .article-hero {
+                min-height: 50vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../../index.html#home">Home</a></li>
+            <li><a href="../../index.html#services">Services</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="article-hero">
+        <!-- Beitragsbild hier einfügen -->
+        <div class="hero-overlay"></div>
+
+        <div class="article-header-content">
+            <div class="article-meta">
+                <span>👤 Max Brinkmann</span>
+                <span>📅 6.Februar.2026</span>
+                <span>🏷️ Information</span>
+            </div>
+            <h1>MFA reicht nicht!</h1>
+            <p class="article-excerpt">Die 7 häufigsten Sicherheitslücken in Microsoft 365</p>
+        </div>
+    </header>
+
+    <main class="content">
+        <a href="../index.html" class="back-link">← Zurück zum Blog</a>
+
+        <!-- HAUPTINHALT BEGINNT HIER -->
+
+        <p>
+            Microsoft 365 ist für viele Firmen heute gleichbedeutend mit „IT“.
+            E-Mail, Teams, SharePoint und OneDrive bilden das digitale Rückgrat des Unternehmens.
+            Genau deshalb ist Microsoft 365 eines der Hauptziele für Angriffe.
+        </p>
+
+        <h2>Warum MFA allein kein ausreichender Schutz ist</h2>
+
+        <p>
+            Viele Unternehmen aktivieren MFA, fühlen sich danach sicher und betrachten das Thema als erledigt.
+            Das ist verständlich – aber gefährlich. MFA ist ein wichtiger Schritt, aber nicht das Ende,
+            sondern der Anfang eines Sicherheitskonzepts.
+        </p>
+
+        <div class="highlight-box">
+            <h3>MFA ist kein Schutzschild</h3>
+            <p>
+                In der Praxis sind viele Microsoft-365-Tenants trotz aktivierter MFA an typischen Stellen so offen,
+                dass Angreifer weiterhin leichtes Spiel haben.
+            </p>
+        </div>
+
+        <h2>Typische Sicherheitslücken in Microsoft 365</h2>
+
+        <p>
+            Eine der häufigsten Schwachstellen ist, dass MFA nur für Administratoren aktiviert wird.
+            Angreifer gehen jedoch fast immer über normale Benutzerkonten.
+            Zusätzlich bleiben oft alte Anmeldeverfahren wie POP3 oder IMAP aktiv,
+            die MFA teilweise umgehen können.
+        </p>
+
+        <ul>
+            <li>MFA nur für Administratoren</li>
+            <li>Legacy Authentication weiterhin aktiv</li>
+            <li>Fehlende Conditional-Access-Regeln</li>
+        </ul>
+        <h2>Warum normale Benutzer das Hauptziel sind</h3>
+
+            <p>
+                Ein normaler Benutzeraccount reicht häufig aus, um Rechnungen, Kundenkommunikation
+                oder interne Daten zu kompromittieren. Dafür sind keine Admin-Rechte notwendig.
+            </p>
+
+            <blockquote>
+                <p>
+                    In den meisten realen Angriffszenarien war nicht der Admin-Account der Einstiegspunkt,
+                    sondern ein normaler Benutzer.
+                </p>
+                <p>— Erfahrung aus Sicherheitsanalysen</p>
+            </blockquote>
+
+            <h2>Weitere kritische Konfigurationsfehler</h2>
+
+            <p>
+                Viele Unternehmen haben zu viele Global Admins, kaum Logging aktiviert
+                und verlieren den Überblick über SharePoint- und OneDrive-Freigaben.
+                Ohne Monitoring bleibt ein Angriff oft wochenlang unentdeckt.
+            </p>
+
+            <ol>
+                <li><strong>Admin-Rechte reduzieren:</strong> Nur notwendige Global Admins.</li>
+                <li><strong>Logging aktivieren:</strong> Ohne Logs keine Erkennung.</li>
+                <li><strong>Backups umsetzen:</strong> Microsoft 365 benötigt ein eigenes Backup.</li>
+            </ol>
+
+            <div class="info-box">
+                <h4>💡 Empfehlung</h4>
+                <p>Best Practices</p>
+                <ul>
+                    <li><strong>Legacy Authentication deaktivieren</strong></li>
+                    <li><strong>Conditional Access konsequent nutzen</strong></li>
+                    <li><strong>Eigenständige Backup-Lösung einsetzen:</strong></li>
+                </ul>
+
+
+            </div>
+
+
+
+            <h2>Fazit</h2>
+
+            <p>
+                Microsoft 365 kann sehr sicher sein, wenn es auch wie ein Sicherheitsprodukt behandelt wird.
+                Wer hier sauber konfiguriert, vermeidet Angriffe, Ausfälle und hohe Folgekosten.
+            </p>
+
+            <!-- HAUPTINHALT ENDET HIER -->
+
+            <!-- Call-to-Action Box -->
+            <div class="cta-box">
+                <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Unser Microsoft 365 Sicherheitscheck</h3>
+                <p>Wir analysieren deinen Microsoft-365-Tenant gezielt auf diese Schwachstellen
+                    und zeigen dir konkrete Maßnahmen zur Absicherung.</p>
+                <a href="../../index.html#contact" class="cta-button">Zum Kostenloses Erstgespräch</a>
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+
+</html>

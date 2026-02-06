@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT-Sicherheitscheck für KMU: Diese 15 Prüfpunkte zeigen, wo Unternehmen wirklich angreifbar sind – praxisnah erklärt, ohne Zertifikats-Bullshit und mit klaren Maßnahmen.">
+    <meta name="keywords" content="IT-Sicherheitscheck KMU, IT Sicherheit Unternehmen, IT Sicherheitsanalyse, Cybersecurity KMU, IT Schwachstellen prüfen, IT Sicherheit Checkliste">
+    <meta name="robots" content="index, follow">
+    
+    <title>IT-Sicherheitscheck für KMU | M2 Cybersec Blog</title>
+    <link rel="canonical" href="https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .article-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 3rem;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(25, 24, 25, 0.7) 0%, 
+                rgba(25, 24, 25, 0.85) 50%,
+                rgba(25, 24, 25, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .article-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-light-gray);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-excerpt {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--secondary-light-cyan);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        blockquote {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-light-gray);
+        }
+
+        strong {
+            color: var(--primary-white);
+        }
+
+        em {
+            color: var(--secondary-light-cyan);
+        }
+
+        a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-light-cyan);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: rgba(0, 252, 246, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box {
+            background: rgba(0, 168, 255, 0.05);
+            border: 2px solid rgba(0, 168, 255, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.05);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--primary-cyan);
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-cyan);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        pre {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 252, 246, 0.2);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary-gray);
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .article-hero {
+                min-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../../index.html#home">Home</a></li>
+            <li><a href="../../index.html#services">Services</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="article-hero">
+        <div class="hero-overlay"></div>
+        
+        <div class="article-header-content">
+            <div class="article-meta">
+                <span>👤 Max Brinkmann</span>
+                <span>📅 6. Februar 2026</span>
+                <span>🏷️ Information</span>
+            </div>
+            <h1>IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen (ohne Bullshit)</h1>
+        </div>
+    </header>
+
+    <main class="content">
+        <a href="../index.html" class="back-link">← Zurück zum Blog</a>
+
+        <!-- HAUPTINHALT BEGINNT HIER -->
+        
+        <p>In vielen Unternehmen ist IT-Sicherheit ein Thema, das man gerne auf später verschiebt. Nicht aus Ignoranz, sondern weil der Alltag dominiert: Kunden, Projekte, Liefertermine, Personal. Irgendwann heißt es dann: „Wir sind eigentlich ganz gut aufgestellt.“ Genau diesen Satz höre ich ständig – und finde trotzdem innerhalb kürzester Zeit Schwachstellen, die bei einem Angriff sofort kritisch werden. Das ist kein Vorwurf, sondern der Normalzustand in vielen KMU.</p>
+
+        <h2>Warum ein realistischer IT-Sicherheitscheck bei den Basics beginnt</h2>
+        
+        <p>Wenn du einen realistischen Sicherheitscheck machen willst, musst du nicht mit ISO-Zertifikaten oder komplizierten Frameworks starten. Du musst bei den Grundlagen anfangen – bei den Punkten, die im Ernstfall wirklich den Unterschied machen. Genau dort scheitern die meisten Unternehmen, nicht an fehlenden Konzepten, sondern an Ausnahmen und Gewohnheiten.
+Empfohlenes Element</p>
+
+
+
+        <h3>Sind wirklich alle Benutzeraccounts abgesichert?</h3>
+        <p>Die wichtigste Frage lautet immer: Sind alle Benutzeraccounts konsequent abgesichert, oder gibt es Ausnahmen? Eine einzige Ausnahme reicht aus, um den gesamten Zugang zu öffnen. In der Praxis sind es oft alte Konten, Dienstaccounts oder einzelne Benutzer, für die Sicherheitsregeln „temporär“ gelockert wurden – und nie wieder angefasst wurden.</p>
+
+
+        <h3>Adminrechte sind kein Komfortfeature</h3>
+        <p>Lokale Adminrechte für Mitarbeiter wirken praktisch, sind aber hochriskant. Wird ein Rechner kompromittiert, bleibt es nicht bei diesem einen Gerät. Adminrechte machen ihn zum Sprungbrett für weitere Systeme. Genau hier eskalieren viele Angriffe innerhalb kürzester Zeit.</p>
+
+        <h3>Patchmanagement: Mehr als nur Windows Updates</h3>
+        <p>Beim Patchstand geht es nicht nur um Windows-Updates. Server, NAS-Systeme, Firewalls, VPN-Gateways, Druckserver und andere Infrastruktur laufen oft jahrelang „einfach so“. Genau diese vergessenen Systeme sind in der Realität häufig das Einfallstor für Angreifer.</p>
+
+        <h3>Backup heißt nicht „existiert irgendwo“</h3>
+        <p>Beim Thema Backup zählt nicht, ob es eines gibt, sondern ob es im Ernstfall funktioniert. Ist es offline oder immutable? Ist es logisch und physisch getrennt? Wurde ein Restore jemals getestet? Viele Unternehmen haben Backups, aber niemand hat je geprüft, ob sie wirklich wiederherstellbar sind.</p>
+
+        <h3>Ohne Monitoring bleibt ein Angriff unsichtbar</h3>
+        <p>Viele Unternehmen merken nicht, dass Anmeldeversuche stattfinden, Passwörter geraten werden oder ungewöhnliche Aktivitäten laufen. Ohne Monitoring können Angriffe tagelang unbemerkt bleiben. Wenn sie auffallen, ist der Schaden meist bereits entstanden.</p>
+
+        <h2>Was einen guten IT-Sicherheitscheck wirklich ausmacht</h2>
+        <p>Ein guter Sicherheitscheck ist kein 50-seitiger Bericht. Er ist eine klare, priorisierte Liste von Maßnahmen, die sich sofort umsetzen lassen, ohne den Betrieb lahmzulegen. Wer die Basics sauber im Griff hat, ist bereits sehr weit – deutlich weiter als viele glauben.</p>
+
+        <div class="info-box">
+            <h4>💡 TL;DR</h4>
+            <p>IT-Sicherheit ist kein Zustand, sondern ein System</p>
+        </div>
+
+            <h2>Fazit</h2>
+
+        <p>IT-Sicherheit ist nichts, was man einmal erreicht und dann abhakt. Sie ist ein System, das gepflegt werden muss. Unternehmen, die das verstanden haben, sind langfristig sicherer als jene, die einmal im Jahr eine schöne PDF bekommen und danach wieder alles liegen lassen.</p>
+
+        <!-- HAUPTINHALT ENDET HIER -->
+
+        <!-- Call-to-Action Box -->
+        <div class="cta-box">
+            <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Du willst wissen, wo dein Unternehmen wirklich steht?</h3>
+            <p>Wir prüfen deine IT strukturiert, praxisnah und ohne Buzzwords. Kein Verkaufsgespräch, kein Zertifikats-Zirkus – sondern klare Aussagen und konkrete Maßnahmen, die wirklich etwas bringen.</p>
+            <a href="../../index.html#contact" class="cta-button">IT-Sicherheitscheck für KMU anfragen</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
