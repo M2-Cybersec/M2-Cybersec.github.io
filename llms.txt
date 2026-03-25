@@ -1,144 +1,69 @@
-# M2 Cybersec UG - Cybersecurity Solutions
+# M2 Cybersec
 
-> Professionelle Cybersecurity-Lösungen für Startups, KMUs und Unternehmen
+> M2 Cybersec UG (haftungsbeschränkt) – Professionelle Cybersecurity-Lösungen und IT-Sicherheitsberatung für Unternehmen in Deutschland. Spezialisiert auf Penetration Testing, Security Audits, Awareness-Trainings und Compliance-Beratung.
 
-## Company Information
+Gegründet 2024 von Marlon Scheer (CEO & Founder), Student der Hochschule Bonn-Rhein-Sieg im Studiengang "Cyber Security and Privacy". Mitglied der Allianz für Cyber-Sicherheit (BSI).
 
-- **Company Name**: M2 Cybersec UG (haftungsbeschränkt)
-- **Address**: Amandusstraße 77, 50769 Köln, Germany
-- **Contact**: info@m2cybersec.de | +49 (0) 221 94334961
-- **Website**: https://m2cybersec.de.de
-- **Registration**: HRB 121047, Amtsgericht Köln
-- **VAT ID**: DE449862969
+Kontakt: info@m2cybersec.de | +49 (0) 221 94334961 | Notfall: +49 (0) 177 8063600 (24/7)
+Geschäftszeiten: Mo–Fr 09:00–18:00 Uhr | Notfall-Hotline: 24/7
+Terminbuchung: https://cal.eu/marlonscheer
 
-## Services Overview
+## Services
 
-M2 Cybersec provides comprehensive cybersecurity solutions tailored to different business sizes and needs:
+- [Starter-Paket](https://m2cybersec.de/starter-paket/index.html): Für Startups & Gründer. Externer Security-Check eines einzelnen Ziels mit kompakter Analyse und klaren Handlungsempfehlungen.
+- [Growth-Paket](https://m2cybersec.de/growth-paket/index.html): Für wachsende Teams. Multi-Target Check von 2–3 kritischen Systemen mit detailliertem Report. 3 umfassende Security-Checks pro Jahr.
+- [Scale-Paket](https://m2cybersec.de/scale-paket/index.html): Für professionelle Teams. Vollständiger IT-Audit von 5+ Systemen, Code Review, CVSS-Report, Awareness-Schulungen und individueller Notfallplan.
+- [Enterprise-Paket](https://m2cybersec.de/enterprise-paket/index.html): Komplettschutz für Unternehmen. Red-Teaming, 24/7 Monitoring, CISO-as-a-Service, Incident Response Planning und umfassende Security-Strategie.
+- [Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/index.html): Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für kleine und mittelständische Unternehmen.
+- [Awareness+ Training](https://m2cybersec.de/awareness-training-fuer-kmu/index.html): Interaktive Mitarbeiterschulungen zu Phishing, Ransomware und Cyber-Risikomanagement.
+- [Red Team Plus](https://m2cybersec.de/red-team-plus/index.html): Ganzheitliches 360°-Sicherheitsaudit – technische Prüfung, Mitarbeiter-Awareness-Check und physische Sicherheitsanalyse aus Angreiferperspektive.
 
-### Security Packages
+## Team
 
-1. **Starter-Paket** (For Startups & Founders)
-   - Quick external security check
-   - Basic analysis (1-2 hours)
-   - Single target testing
-   - Clear action recommendations
-   - Optional consultation call
-   - URL: https://m2cybersec.de.de/starter-paket/
+- [Das Team](https://m2cybersec.de/das-team/index.html): Marlon Scheer – CEO & Founder. Studium Cyber Security and Privacy, H-BRS. Gründung M2 Cybersec UG 2024.
 
-2. **Growth-Paket** (For Growing Teams)
-   - Multi-target security check (2-3 systems)
-   - Detailed analysis and reporting
-   - 3 comprehensive security checks per year
-   - Password and MFA baseline policies
-   - Structured PDF reports
-   - URL: https://m2cybersec.de.de/growth-paket/
+## Blog
 
-3. **Scale-Paket** (For Professional Teams)
-   - Comprehensive security check (5+ systems)
-   - External and internal testing
-   - Source code review
-   - Detailed CVSS reports with action plans
-   - 3 awareness training sessions per year
-   - Custom incident response plan
-   - URL: https://m2cybersec.de.de/scale-paket/
+- [Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?](https://m2cybersec.de/blog/it-budget-cybersecurity.html)
+- [Was ist ein Cybersecurity-Audit und warum ist er wichtig?](https://m2cybersec.de/blog/cybersecurity-audit.html)
+- [Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir helfen](https://m2cybersec.de/blog/nis2-richtlinie.html)
+- [Ransomware in 2026: Warum „Wir sind zu klein" der teuerste Satz im Unternehmen ist](https://m2cybersec.de/blog/ransomware-2026.html)
+- [IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen](https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte.html)
+- [MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365](https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken.html)
 
-4. **Enterprise-Paket** (For Enterprise Organizations)
-   - Complete infrastructure and cloud assessment
-   - Red-teaming simulations
-   - Extended CVSS reports with risk dashboard
-   - Awareness and incident response training
-   - CISO-as-a-Service consulting
-   - 24/7 monitoring and incident response
-   - URL: https://m2cybersec.de.de/enterprise-paket/
+## Regionale Präsenz (Cybersecurity für Städte in NRW und weitere)
 
-### Additional Services
+- [Köln](https://m2cybersec.de/cybersecurity/koeln/)
+- [Düsseldorf](https://m2cybersec.de/cybersecurity/duesseldorf/)
+- [Dortmund](https://m2cybersec.de/cybersecurity/dortmund/)
+- [Bonn](https://m2cybersec.de/cybersecurity/bonn/)
+- [Essen](https://m2cybersec.de/cybersecurity/essen/)
+- [Bochum](https://m2cybersec.de/cybersecurity/bochum/)
+- [Wuppertal](https://m2cybersec.de/cybersecurity/wuppertal/)
+- [Aachen](https://m2cybersec.de/cybersecurity/aachen/)
+- [Krefeld](https://m2cybersec.de/cybersecurity/krefeld/)
+- [Duisburg](https://m2cybersec.de/cybersecurity/duisburg/)
 
-1. **IT Security for SMEs**
-   - Risk analysis and vulnerability detection
-   - Security concepts and consulting
-   - Web application penetration testing
-   - Information security management (ISM)
-   - URL: https://m2cybersec.de.de/sicherheit-fuer-kmu/
+## Regionale Präsenz (Bundesländer)
 
-2. **Awareness+ Training**
-   - Phishing prevention training
-   - Ransomware protection education
-   - Cyber risk management strategies
-   - Interactive employee training sessions
-   - URL: https://m2cybersec.de.de/awareness-training-fuer-kmu/
+- [Baden-Württemberg](https://m2cybersec.de/cybersecurity/baden-wuerttemberg/)
+- [Bayern](https://m2cybersec.de/cybersecurity/bayern/)
+- [Berlin](https://m2cybersec.de/cybersecurity/berlin/)
+- [Brandenburg](https://m2cybersec.de/cybersecurity/brandenburg/)
+- [Bremen](https://m2cybersec.de/cybersecurity/bremen/)
+- [Hamburg](https://m2cybersec.de/cybersecurity/hamburg/)
+- [Hessen](https://m2cybersec.de/cybersecurity/hessen/)
+- [Mecklenburg-Vorpommern](https://m2cybersec.de/cybersecurity/mecklenburg-vorpommern/)
+- [Niedersachsen](https://m2cybersec.de/cybersecurity/niedersachsen/)
+- [Nordrhein-Westfalen](https://m2cybersec.de/cybersecurity/nordrhein-westfalen/)
+- [Rheinland-Pfalz](https://m2cybersec.de/cybersecurity/rheinland-pfalz/)
+- [Saarland](https://m2cybersec.de/cybersecurity/saarland/)
+- [Sachsen](https://m2cybersec.de/cybersecurity/sachsen/)
+- [Sachsen-Anhalt](https://m2cybersec.de/cybersecurity/sachsen-anhalt/)
+- [Schleswig-Holstein](https://m2cybersec.de/cybersecurity/schleswig-holstein/)
+- [Thüringen](https://m2cybersec.de/cybersecurity/thueringen/)
 
-3. **Red Team Plus**
-   - 360° security audit
-   - Technical penetration testing
-   - Employee awareness checks
-   - Physical security assessments
-   - Realistic threat scenario simulations
-   - URL: https://m2cybersec.de.de/red-team-plus/
+## Rechtliches
 
-## Core Competencies
-
-- Penetration Testing & Ethical Hacking
-- Security Consulting & Strategy
-- Risk Assessment & Compliance (DSGVO, ISO 27001, NIS2)
-- Incident Response & Forensics
-- Security Awareness Training
-- CISO-as-a-Service
-- 24/7 Security Monitoring
-
-## Target Audience
-
-- Startups and early-stage companies
-- Small and medium-sized enterprises (SMEs)
-- Growing tech teams
-- Enterprise organizations
-- Companies requiring compliance (ISO 27001, KRITIS, NIS2)
-- Organizations with existing IT service providers seeking independent audits
-
-## Key Differentiators
-
-- Tailored solutions for different company sizes
-- Practical, actionable recommendations
-- Holistic approach (technical, organizational, human factors)
-- Transparent communication and reports
-- 24/7 availability for security incidents
-- Independent external security assessments
-
-## Legal Information
-
-- **Impressum**: https://m2cybersec.de.de/impressum/
-- **Privacy Policy**: https://m2cybersec.de.de/datenschutz/
-
-## Navigation Structure
-
-```
-/                           - Homepage
-/starter-paket/             - Starter Package
-/growth-paket/              - Growth Package
-/scale-paket/               - Scale Package
-/enterprise-paket/          - Enterprise Package
-/sicherheit-fuer-kmu/       - SME Security Solutions
-/awareness-training-fuer-kmu/ - Awareness Training
-/red-team-plus/             - Red Team Plus Service
-/impressum/                 - Legal Notice
-/datenschutz/               - Privacy Policy
-```
-
-## SEO Keywords
-
-Primary: Cybersecurity, IT-Sicherheit, Penetrationstest, Security Consulting
-Secondary: Ransomware-Schutz, DSGVO Compliance, ISO 27001, Red Team, Awareness Training
-Industry: KMU, Startups, Enterprise, Mittelstand
-Location: Köln, Germany
-
-## Technology Stack
-
-- Static HTML/CSS website
-- No external dependencies
-- GitHub Pages compatible
-- Mobile-responsive design
-- SEO-optimized structure
-
----
-
-Last Updated: 2026-01-22
-Version: 1.0
+- [Impressum](https://m2cybersec.de/rechtliches/impressum.html)
+- [Datenschutz](https://m2cybersec.de/rechtliches/datenschutz.html)
