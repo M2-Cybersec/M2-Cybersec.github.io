@@ -4,19 +4,22 @@
 
 Gegründet 2024 von Marlon Scheer (CEO & Founder), Student der Hochschule Bonn-Rhein-Sieg im Studiengang "Cyber Security and Privacy". Mitglied der Allianz für Cyber-Sicherheit (BSI).
 
-Kontakt: info@m2cybersec.de | +49 (0) 221 94334961 | Notfall: +49 (0) 177 8063600 (24/7)
-Geschäftszeiten: Mo–Fr 09:00–18:00 Uhr | Notfall-Hotline: 24/7
-Terminbuchung: https://cal.eu/marlonscheer
+Kontakt: info@m2cybersec.de | +49 (0) 221 94334961
+Geschäftszeiten: Mo–Fr 09:00–18:00 Uhr
+Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer
 
 ## Services
 
-- [Starter-Paket](https://m2cybersec.de/starter-paket/index.html): Für Startups & Gründer. Externer Security-Check eines einzelnen Ziels mit kompakter Analyse und klaren Handlungsempfehlungen.
-- [Growth-Paket](https://m2cybersec.de/growth-paket/index.html): Für wachsende Teams. Multi-Target Check von 2–3 kritischen Systemen mit detailliertem Report. 3 umfassende Security-Checks pro Jahr.
-- [Scale-Paket](https://m2cybersec.de/scale-paket/index.html): Für professionelle Teams. Vollständiger IT-Audit von 5+ Systemen, Code Review, CVSS-Report, Awareness-Schulungen und individueller Notfallplan.
-- [Enterprise-Paket](https://m2cybersec.de/enterprise-paket/index.html): Komplettschutz für Unternehmen. Red-Teaming, 24/7 Monitoring, CISO-as-a-Service, Incident Response Planning und umfassende Security-Strategie.
-- [Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/index.html): Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für kleine und mittelständische Unternehmen.
-- [Awareness+ Training](https://m2cybersec.de/awareness-training-fuer-kmu/index.html): Interaktive Mitarbeiterschulungen zu Phishing, Ransomware und Cyber-Risikomanagement.
-- [Red Team Plus](https://m2cybersec.de/red-team-plus/index.html): Ganzheitliches 360°-Sicherheitsaudit – technische Prüfung, Mitarbeiter-Awareness-Check und physische Sicherheitsanalyse aus Angreiferperspektive.
+- [Starter-Paket](https://m2cybersec.de/starter-paket/): Für Startups & Gründer. Externer Security-Check eines einzelnen Ziels mit kompakter Analyse und klaren Handlungsempfehlungen.
+- [Growth-Paket](https://m2cybersec.de/growth-paket/): Für wachsende Teams. Multi-Target Check von 2–3 kritischen Systemen mit detailliertem Report. 3 umfassende Security-Checks pro Jahr.
+- [Scale-Paket](https://m2cybersec.de/scale-paket/): Für professionelle Teams. Vollständiger IT-Audit von 5+ Systemen, Code Review, CVSS-Report, Awareness-Schulungen und individueller Notfallplan.
+- [Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/): Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für kleine und mittelständische Unternehmen.
+- [Awareness+ Training](https://m2cybersec.de/awareness-training-fuer-kmu/): Interaktive Mitarbeiterschulungen zu Phishing, Ransomware und Cyber-Risikomanagement.
+- [Red Team Plus](https://m2cybersec.de/red-team-plus/) ⭐ FLAGGSCHIFF: Ganzheitliches 360°-Sicherheitsaudit – technische Prüfung (Pentest), Mitarbeiter-Awareness-Check (Social Engineering, Phishing) und physische Sicherheitsanalyse aus Angreiferperspektive. Inkl. CVSS-Report, Executive Summary und Re-Test-Option.
+
+## Kostenloser Quick-Scan
+
+Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 30 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), Top-3-Findings als PDF. Buchbar unter https://cal.eu/marlonscheer
 
 ## Team
 

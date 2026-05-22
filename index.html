@@ -446,6 +446,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            padding-top: 1rem;
         }
 
         .service-card {
@@ -489,15 +490,21 @@
             border-color: var(--primary-cyan);
             background: rgba(0, 252, 246, 0.04);
             box-shadow: 0 0 40px rgba(0, 252, 246, 0.12);
+            overflow: visible;
+            padding-top: 3.5rem;
         }
 
         .service-card.featured:hover {
             box-shadow: 0 20px 60px rgba(0, 252, 246, 0.35);
         }
 
+        .service-card.featured::before {
+            display: none;
+        }
+
         .service-badge {
             position: absolute;
-            top: -15px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--primary-cyan);
@@ -508,6 +515,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             white-space: nowrap;
+            z-index: 2;
         }
 
         /* Quick-Scan Section */
@@ -1090,7 +1098,45 @@
                     <a href="https://cal.eu/marlonscheer" class="cta-button">Jetzt Quick-Scan buchen &rarr;</a>
                 </div>
                 <div class="quick-scan-visual">
-                    <div class="scan-icon">🔍</div>
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:160px;height:160px;display:block;margin:0 auto 1.5rem;">
+                        <defs>
+                            <radialGradient id="scanGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#00fcf6" stop-opacity="0.12"/>
+                                <stop offset="100%" stop-color="#00fcf6" stop-opacity="0"/>
+                            </radialGradient>
+                            <mask id="scanMask">
+                                <circle cx="100" cy="100" r="92" fill="white"/>
+                            </mask>
+                        </defs>
+                        <circle cx="100" cy="100" r="92" fill="url(#scanGlow)"/>
+                        <circle cx="100" cy="100" r="92" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.25"/>
+                        <circle cx="100" cy="100" r="62" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.25"/>
+                        <circle cx="100" cy="100" r="32" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.3"/>
+                        <line x1="100" y1="8" x2="100" y2="192" stroke="#00fcf6" stroke-width="0.6" opacity="0.15"/>
+                        <line x1="8" y1="100" x2="192" y2="100" stroke="#00fcf6" stroke-width="0.6" opacity="0.15"/>
+                        <g mask="url(#scanMask)">
+                            <path d="M100,100 L100,8 A92,92 0 0,1 181,146 Z" fill="rgba(0,252,246,0.08)">
+                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                            <line x1="100" y1="100" x2="100" y2="8" stroke="#00fcf6" stroke-width="2" opacity="0.85">
+                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="3s" repeatCount="indefinite"/>
+                            </line>
+                        </g>
+                        <circle cx="148" cy="58" r="4" fill="#00fcf6">
+                            <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="148" cy="58" r="9" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="64" cy="138" r="3" fill="#00fcf6">
+                            <animate attributeName="opacity" values="0.7;0.1;0.7" dur="3.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="155" cy="130" r="2" fill="#00fcf6" opacity="0.6">
+                            <animate attributeName="opacity" values="0.6;0;0.6" dur="1.9s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="100" cy="100" r="5" fill="#00fcf6"/>
+                        <circle cx="100" cy="100" r="11" fill="none" stroke="#00fcf6" stroke-width="1.5" opacity="0.5"/>
+                    </svg>
                     <p>Kein Risiko, kein aktives Testing – wir analysieren ausschließlich öffentlich zugängliche Informationen und zeigen Ihnen Ihr Risikoprofil aus Angreiferperspektive.</p>
                 </div>
             </div>

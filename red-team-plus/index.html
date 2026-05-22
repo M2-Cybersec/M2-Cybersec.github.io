@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Red Team Plus - Ganzheitliches Sicherheitsaudit mit technischer Prüfung, Awareness-Check und physischer Sicherheitsanalyse. Realistischer 360°-Security-Test.">
-    <meta name="keywords" content="Red Team, Sicherheitsaudit, Penetrationstest, Social Engineering, Physische Sicherheit, Security Assessment">
+    <meta name="description" content="Red Team Plus – Ganzheitliches 360°-Sicherheitsaudit: Technische Prüfung, Social Engineering und physische Sicherheitsanalyse für Unternehmen in Deutschland. Unser Flaggschiff-Produkt.">
+    <meta name="keywords" content="Red Team, Red Teaming, 360 Grad Sicherheitsaudit, Penetrationstest, Social Engineering, Physische Sicherheit, Security Assessment, NIS2, ISO 27001, CVSS">
     <meta name="robots" content="index, follow">
-    
+
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Red Team Plus - 360° Sicherheitsaudit | M2 Cybersec">
-    <meta property="og:description" content="Ganzheitliche Sicherheitsprüfung: Technisch, menschlich und physisch. Realistische Bedrohungsszenarien für Ihr Unternehmen.">
-    
-    <title>Red Team Plus - Ganzheitliches Sicherheitsaudit & Penetrationstest | M2 Cybersec</title>
+    <meta property="og:title" content="Red Team Plus – 360° Sicherheitsaudit | M2 Cybersec">
+    <meta property="og:description" content="Ganzheitliche Sicherheitsprüfung: Technisch, menschlich, physisch. Wir denken und handeln wie echte Angreifer – damit Sie wissen, wo Sie wirklich stehen.">
+    <meta property="og:url" content="https://m2cybersec.de/red-team-plus/">
+
+    <title>Red Team Plus – Ganzheitliches 360° Sicherheitsaudit | M2 Cybersec</title>
     <link rel="canonical" href="https://m2cybersec.de/red-team-plus/">
-        <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary-dark: #191819;
@@ -31,464 +28,734 @@
             --secondary-light-gray: #CECECE;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: var(--primary-dark);
+            background: linear-gradient(200deg, var(--primary-dark) 0%, #00181e 100%);
             color: var(--primary-white);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Navbar */
         .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: rgba(25, 24, 25, 0.98);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 1000;
             border-bottom: 2px solid var(--primary-cyan);
             box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
         }
-
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            letter-spacing: 1px;
+            display: flex; align-items: center; gap: 0.8rem;
+            font-size: 1.8rem; font-weight: 700;
+            color: var(--primary-cyan); text-decoration: none; letter-spacing: 1px;
         }
-
-        .logo-image {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover .logo-image {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
+        .logo-image { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover .logo-image { transform: scale(1.05); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
-            color: var(--primary-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            color: var(--primary-white); text-decoration: none;
+            transition: color 0.3s ease; font-weight: 500;
         }
+        .nav-links a:hover { color: var(--primary-cyan); }
 
-        .nav-links a:hover {
-            color: var(--primary-cyan);
-        }
-
-        .hero-service {
-            min-height: 70vh;
-            display: flex;
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 5% 4rem;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            gap: 4rem;
+            padding: 10rem 8% 6rem;
             position: relative;
+            overflow: hidden;
         }
-
-        .hero-service::before {
+        .hero::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 65% 50%, rgba(0, 252, 246, 0.07) 0%, transparent 60%);
             pointer-events: none;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-        }
-
-        .service-badge {
+        .hero-text { position: relative; z-index: 1; }
+        .hero-badge {
             display: inline-block;
-            padding: 0.5rem 1.5rem;
+            padding: 0.4rem 1.2rem;
             background: rgba(0, 252, 246, 0.1);
-            border: 2px solid var(--primary-cyan);
+            border: 1px solid rgba(0, 252, 246, 0.4);
             border-radius: 50px;
             color: var(--primary-cyan);
-            font-weight: 600;
+            font-size: 0.8rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
             margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
         }
-
-        .hero-service h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-white);
-            line-height: 1.2;
+        .hero h1 {
+            font-size: 3.5rem; font-weight: 800;
+            line-height: 1.15; margin-bottom: 1.5rem;
         }
-
-        .hero-service h1 span {
-            color: var(--primary-cyan);
+        .hero h1 span { color: var(--primary-cyan); }
+        .hero-desc {
+            font-size: 1.15rem; color: var(--secondary-light-gray);
+            line-height: 1.8; margin-bottom: 2.5rem; max-width: 520px;
         }
+        .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-        .hero-service p {
-            font-size: 1.25rem;
-            color: var(--secondary-light-gray);
-            max-width: 850px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
+        .hero-visual {
+            position: relative; z-index: 1;
+            display: flex; justify-content: center; align-items: center;
         }
+        .hero-svg { width: 100%; max-width: 420px; height: auto; }
 
-        .section {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-white);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            color: var(--secondary-light-gray);
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            gap: 0.8rem;
-        }
-
-        .components-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .component-item {
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 4px solid var(--primary-cyan);
-            border-radius: 8px;
-        }
-
-        .component-item h4 {
-            color: var(--primary-cyan);
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.15);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
-            background: rgba(0, 252, 246, 0.03);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--secondary-light-gray);
-            line-height: 1.7;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .process-step {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0, 252, 246, 0.02);
-            border-radius: 15px;
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .process-step h4 {
-            color: var(--primary-cyan);
-            margin-bottom: 0.8rem;
-        }
-
-        .target-audience {
-            background: rgba(0, 252, 246, 0.03);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            margin: 3rem 0;
-        }
-
-        .target-audience ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-        }
-
-        .target-audience li {
-            padding: 0.8rem 0 0.8rem 2rem;
-            position: relative;
-            color: var(--secondary-light-gray);
-        }
-
-        .target-audience li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-cyan);
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
+        /* CTA Buttons */
         .cta-button {
             display: inline-block;
-            padding: 1.1rem 2.8rem;
+            padding: 1rem 2.4rem;
             background: var(--primary-cyan);
             color: var(--primary-dark);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.05rem;
+            text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 1rem;
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
+            border: 2px solid var(--primary-cyan);
         }
-
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
         }
+        .cta-button.secondary { background: transparent; color: var(--primary-cyan); }
+        .cta-button.secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); }
 
+        /* Stats bar */
+        .stats-bar {
+            background: rgba(0, 252, 246, 0.03);
+            border-top: 1px solid rgba(0, 252, 246, 0.15);
+            border-bottom: 1px solid rgba(0, 252, 246, 0.15);
+            padding: 2.5rem 5%;
+        }
+        .stats-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; text-align: center;
+        }
+        .stat-number {
+            font-size: 2.6rem; font-weight: 800;
+            color: var(--primary-cyan); line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.88rem; color: var(--secondary-light-gray);
+            margin-top: 0.5rem; line-height: 1.4;
+        }
+
+        /* Sections */
+        .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.78rem; font-weight: 700;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--primary-cyan); margin-bottom: 0.8rem;
+        }
+        .section-title {
+            font-size: 2.5rem; font-weight: 700;
+            margin-bottom: 1rem; color: var(--primary-white);
+        }
+        .section-subtitle {
+            color: var(--secondary-light-gray); font-size: 1.1rem;
+            max-width: 700px; margin-bottom: 3rem; line-height: 1.8;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: var(--primary-cyan); text-decoration: none;
+            font-weight: 600; transition: gap 0.3s ease;
+            margin-bottom: 3rem;
+        }
+        .back-link:hover { gap: 0.8rem; }
+
+        /* Three Pillars */
+        .pillars-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem; margin-top: 2rem;
+        }
+        .pillar {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px; padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+        }
+        .pillar::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 3px; background: var(--primary-cyan);
+            transform: scaleX(0); transition: transform 0.4s ease;
+        }
+        .pillar:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 252, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 252, 246, 0.1);
+        }
+        .pillar:hover::after { transform: scaleX(1); }
+        .pillar-number {
+            font-size: 3.5rem; font-weight: 800;
+            color: rgba(0, 252, 246, 0.12);
+            line-height: 1; margin-bottom: 1rem;
+        }
+        .pillar h3 {
+            font-size: 1.4rem; font-weight: 700;
+            color: var(--primary-cyan); margin-bottom: 1rem;
+        }
+        .pillar > p { color: var(--secondary-light-gray); line-height: 1.7; font-size: 0.98rem; }
+        .pillar-items { margin-top: 1.2rem; list-style: none; }
+        .pillar-items li {
+            color: var(--secondary-light-gray); padding: 0.4rem 0;
+            font-size: 0.92rem;
+            display: flex; align-items: flex-start; gap: 0.6rem;
+        }
+        .pillar-items li::before { content: '→'; color: var(--primary-cyan); flex-shrink: 0; }
+
+        /* Comparison */
+        .comparison-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 2rem; margin-top: 2rem;
+        }
+        .comparison-col {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 252, 246, 0.15);
+            border-radius: 20px; padding: 2.5rem;
+        }
+        .comparison-col.featured {
+            border-color: var(--primary-cyan);
+            background: rgba(0, 252, 246, 0.04);
+            box-shadow: 0 0 40px rgba(0, 252, 246, 0.1);
+        }
+        .comparison-col h3 {
+            font-size: 1.4rem; font-weight: 700;
+            margin-bottom: 1.5rem; color: var(--primary-white);
+        }
+        .comparison-col.featured h3 { color: var(--primary-cyan); }
+        .comparison-list { list-style: none; }
+        .comparison-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; align-items: center; gap: 0.8rem;
+            color: var(--secondary-light-gray); font-size: 0.95rem;
+        }
+        .comparison-list li:last-child { border-bottom: none; }
+        .check { color: var(--primary-cyan); font-weight: bold; flex-shrink: 0; }
+        .cross { color: var(--secondary-gray); flex-shrink: 0; font-size: 1.1rem; }
+
+        /* Process */
+        .process-timeline { margin-top: 3rem; }
+        .process-item {
+            display: grid; grid-template-columns: 80px 1fr;
+            gap: 2rem; margin-bottom: 2.5rem; align-items: start;
+        }
+        .process-num {
+            width: 60px; height: 60px;
+            background: var(--primary-cyan); color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; font-weight: 800; flex-shrink: 0;
+        }
+        .process-body h4 { color: var(--primary-cyan); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .process-body p { color: var(--secondary-light-gray); line-height: 1.7; }
+        .duration {
+            display: inline-block; margin-top: 0.6rem;
+            font-size: 0.78rem; color: var(--primary-cyan);
+            background: rgba(0, 252, 246, 0.1);
+            padding: 0.2rem 0.8rem; border-radius: 50px;
+        }
+
+        /* Deliverables */
+        .deliverables-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-top: 2rem;
+        }
+        .deliverable {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 252, 246, 0.15);
+            border-radius: 15px; padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .deliverable:hover {
+            border-color: var(--primary-cyan);
+            background: rgba(0, 252, 246, 0.04);
+        }
+        .deliverable-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+        .deliverable h4 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.5rem; }
+        .deliverable p { color: var(--secondary-light-gray); font-size: 0.88rem; line-height: 1.6; }
+
+        /* Target audience */
+        .target-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; margin-top: 2rem;
+        }
+        .target-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 252, 246, 0.1);
+            transition: border-color 0.3s ease;
+        }
+        .target-item:hover { border-color: rgba(0, 252, 246, 0.3); }
+        .target-icon { font-size: 1.8rem; flex-shrink: 0; }
+        .target-item h4 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.3rem; }
+        .target-item p { color: var(--secondary-light-gray); font-size: 0.88rem; line-height: 1.5; }
+
+        /* Trust bar */
+        .trust-bar {
+            background: rgba(0, 252, 246, 0.03);
+            border-top: 1px solid rgba(0, 252, 246, 0.15);
+            border-bottom: 1px solid rgba(0, 252, 246, 0.15);
+            padding: 2rem 5%;
+        }
+        .trust-inner {
+            max-width: 1000px; margin: 0 auto;
+            display: flex; gap: 3rem; flex-wrap: wrap;
+            justify-content: center; align-items: center;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            color: var(--secondary-light-gray); font-size: 0.88rem;
+        }
+        .trust-item .ticon { color: var(--primary-cyan); font-size: 1.2rem; }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 6rem 5%;
+            background: rgba(0, 252, 246, 0.03);
+            border-top: 1px solid rgba(0, 252, 246, 0.15);
+        }
+        .final-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .final-cta h2 span { color: var(--primary-cyan); }
+        .final-cta p {
+            color: var(--secondary-light-gray); font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* Footer */
         footer {
             background: var(--primary-dark);
-            padding: 3rem 5%;
+            padding: 2rem 5%;
             border-top: 2px solid var(--primary-cyan);
             text-align: center;
-            color: var(--secondary-light-gray);
+            color: var(--secondary-light-gray); font-size: 0.88rem;
+        }
+        footer a { color: var(--primary-cyan); text-decoration: none; margin: 0 0.5rem; }
+
+        /* Divider */
+        .section-divider {
+            border: none;
+            border-top: 1px solid rgba(0, 252, 246, 0.1);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .hero-service h1 {
-                font-size: 2.5rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .features-grid,
-            .process-steps {
+            .hero {
                 grid-template-columns: 1fr;
+                padding: 8rem 5% 4rem;
+                gap: 2rem;
+                min-height: auto;
             }
+            .hero h1 { font-size: 2.3rem; }
+            .hero-visual { display: none; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .stat-number { font-size: 2rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .deliverables-grid { grid-template-columns: 1fr; }
+            .target-grid { grid-template-columns: 1fr; }
+            .process-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+            .navbar {
+                flex-direction: column; gap: 1rem; padding: 1rem 3%;
+            }
+            .nav-links {
+                gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+            }
+            .section-title { font-size: 2rem; }
+            .hero-cta-group { flex-direction: column; align-items: flex-start; }
+            .trust-inner { gap: 1.5rem; }
+            .final-cta { padding: 4rem 5%; }
+            .final-cta h2 { font-size: 1.9rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .stats-inner { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .stat-number { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation">
-        <a href="../index.html" class="logo">
-            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
-            <span>M2 Cybersec</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="../index.html#services">Services</a></li>
-            <li><a href="../index.html#contact">Kontakt</a></li>
-        </ul>
-    </nav>
 
-    <main>
-        <section class="hero-service">
-            <div class="hero-content">
-                <span class="service-badge">RED TEAM PLUS</span>
-                <h1><span>360°</span> Sicherheitsaudit</h1>
-                <p>Klassische Sicherheitsaudits decken Schwachstellen in IT-Systemen auf – doch moderne Angriffe hören hier nicht auf. Mit Red Team Plus gehen wir einen Schritt weiter und prüfen Ihr Unternehmen ganzheitlich.</p>
+<nav class="navbar" role="navigation" aria-label="Hauptnavigation">
+    <a href="../index.html" class="logo">
+        <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+        <span>M2 Cybersec</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../index.html#contact">Kontakt</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-badge">Red Team Plus &nbsp;·&nbsp; Unser Flaggschiff</div>
+            <h1>Angriff ist die <span>beste Verteidigung.</span></h1>
+            <p class="hero-desc">Klassische Pentests prüfen Systeme – Red Team Plus prüft Ihr Unternehmen. Technisch, menschlich, physisch. Wir denken und handeln wie echte Angreifer, damit Sie wissen, wo Sie wirklich stehen.</p>
+            <div class="hero-cta-group">
+                <a href="https://cal.eu/marlonscheer" class="cta-button">Jetzt kostenlos anfragen</a>
+                <a href="#methodology" class="cta-button secondary">Wie es funktioniert</a>
             </div>
-        </section>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <svg class="hero-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#00fcf6" stop-opacity="0.14"/>
+                        <stop offset="100%" stop-color="#00fcf6" stop-opacity="0"/>
+                    </radialGradient>
+                    <mask id="heroMask">
+                        <circle cx="200" cy="200" r="185" fill="white"/>
+                    </mask>
+                </defs>
+                <circle cx="200" cy="200" r="185" fill="url(#heroGlow)"/>
+                <circle cx="200" cy="200" r="185" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.2"/>
+                <circle cx="200" cy="200" r="140" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.2"/>
+                <circle cx="200" cy="200" r="95"  fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.25"/>
+                <circle cx="200" cy="200" r="50"  fill="none" stroke="#00fcf6" stroke-width="1.5" opacity="0.35"/>
+                <line x1="200" y1="15"  x2="200" y2="385" stroke="#00fcf6" stroke-width="0.7" opacity="0.15"/>
+                <line x1="15"  y1="200" x2="385" y2="200" stroke="#00fcf6" stroke-width="0.7" opacity="0.15"/>
+                <line x1="70"  y1="70"  x2="330" y2="330" stroke="#00fcf6" stroke-width="0.5" opacity="0.1"/>
+                <line x1="330" y1="70"  x2="70"  y2="330" stroke="#00fcf6" stroke-width="0.5" opacity="0.1"/>
+                <g mask="url(#heroMask)">
+                    <path d="M200,200 L200,15 A185,185 0 0,1 370,268 Z" fill="rgba(0,252,246,0.07)">
+                        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="4s" repeatCount="indefinite"/>
+                    </path>
+                    <line x1="200" y1="200" x2="200" y2="15" stroke="#00fcf6" stroke-width="2" opacity="0.9">
+                        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="4s" repeatCount="indefinite"/>
+                    </line>
+                </g>
+                <circle cx="290" cy="118" r="5" fill="#00fcf6">
+                    <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="290" cy="118" r="12" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.35">
+                    <animate attributeName="opacity" values="0.35;0;0.35" dur="2.1s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="128" cy="282" r="4" fill="#00fcf6">
+                    <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3.3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="128" cy="282" r="10" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0;0.3" dur="3.3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="312" cy="265" r="3" fill="#00fcf6">
+                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="200" cy="200" r="6" fill="#00fcf6"/>
+                <circle cx="200" cy="200" r="13" fill="none" stroke="#00fcf6" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+        </div>
+    </section>
 
-        <section class="section">
-            <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
-            
-            <h2 class="section-title">Was ist Red Team Plus?</h2>
-            <p class="section-subtitle">Ein realistisches Gesamtbild der Sicherheitslage Ihres Unternehmens durch technische, menschliche und physische Sicherheitsprüfung.</p>
-
-            <div class="components-grid">
-                <div class="component-item">
-                    <h4>💻 Technischer Audit</h4>
-                    <p>Prüfung Ihrer Systeme, Netzwerke und Anwendungen auf Schwachstellen mit modernsten Penetrationstesting-Methoden.</p>
-                </div>
-                <div class="component-item">
-                    <h4>👥 Mitarbeiter-Awareness-Check</h4>
-                    <p>Testen von Phishing-Resistenz, Social Engineering und internen Prozessen zur Identifikation menschlicher Schwachstellen.</p>
-                </div>
-                <div class="component-item">
-                    <h4>🏢 Physische Sicherheitsprüfung</h4>
-                    <p>Analyse von Zugangskontrollen, Gebäude- und Büro-Sicherheit sowie physischen Schutzmechanismen.</p>
-                </div>
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div>
+                <div class="stat-number">360°</div>
+                <div class="stat-label">Vollständige Abdeckung – technisch, menschlich, physisch</div>
             </div>
-
-            <div style="margin: 4rem 0;">
-                <h2 class="section-title">Warum Red Team Plus?</h2>
-                <div class="features-grid">
-                    <article class="feature-card">
-                        <span class="feature-icon">🎯</span>
-                        <h3>Ganzheitlich</h3>
-                        <p>Wir prüfen nicht nur Ihre IT-Systeme, sondern auch die menschliche und physische Komponente. So entsteht ein vollständiges Bild Ihrer Sicherheitslage.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <span class="feature-icon">⚔️</span>
-                        <h3>Realitätsnah</h3>
-                        <p>Unsere Methoden orientieren sich an realen Bedrohungsszenarien. Dadurch sehen Sie, wie Angreifer tatsächlich vorgehen würden – nicht nur in der Theorie.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <span class="feature-icon">🔍</span>
-                        <h3>Objektiv</h3>
-                        <p>Als externer Spezialist agieren wir unabhängig von Ihrem IT-Dienstleister und geben Ihnen eine ehrliche Einschätzung der Sicherheitslage.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <span class="feature-icon">⚙️</span>
-                        <h3>Individuell</h3>
-                        <p>Unsere Testszenarien werden speziell auf Ihre Organisation und Risikolage zugeschnitten – statt Standardlösungen erhalten Sie praxisnahe Erkenntnisse.</p>
-                    </article>
-                </div>
+            <div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Angriffsdimensionen in einem einzigen Audit</div>
             </div>
-
-            <div style="margin: 4rem 0;">
-                <h2 class="section-title">Der Red Team Plus Zyklus</h2>
-                <p class="section-subtitle">Alle entscheidenden Schritte von der Planung bis zum Report</p>
-                
-                <div class="process-steps">
-                    <article class="process-step">
-                        <div class="step-number">1</div>
-                        <h4>Planung & Scope</h4>
-                        <p>Definition der Ziele und Testbereiche</p>
-                    </article>
-                    <article class="process-step">
-                        <div class="step-number">2</div>
-                        <h4>Technischer Angriff</h4>
-                        <p>Penetrationstests auf IT-Systeme</p>
-                    </article>
-                    <article class="process-step">
-                        <div class="step-number">3</div>
-                        <h4>Social Engineering</h4>
-                        <p>Tests der Mitarbeiter-Awareness</p>
-                    </article>
-                    <article class="process-step">
-                        <div class="step-number">4</div>
-                        <h4>Physische Tests</h4>
-                        <p>Sicherheitschecks vor Ort</p>
-                    </article>
-                    <article class="process-step">
-                        <div class="step-number">5</div>
-                        <h4>Reporting</h4>
-                        <p>Verständlicher Bericht mit Maßnahmen</p>
-                    </article>
-                </div>
+            <div>
+                <div class="stat-number">CVSS</div>
+                <div class="stat-label">Standardisierte Risikobewertung nach CVSS 3.1</div>
             </div>
+            <div>
+                <div class="stat-number">NDA</div>
+                <div class="stat-label">100 % vertraulich, schriftlich garantiert</div>
+            </div>
+        </div>
+    </div>
 
-            <div class="target-audience">
-                <h3 style="color: var(--primary-cyan); font-size: 1.8rem;">Für wen ist Red Team Plus gedacht?</h3>
-                <ul>
-                    <li>Unternehmen mit bestehendem IT-Dienstleister, die eine unabhängige Sicherheitsprüfung wollen</li>
-                    <li>Organisationen, die Compliance-Anforderungen erfüllen müssen (z. B. ISO 27001, KRITIS, NIS2)</li>
-                    <li>Firmen, die wissen wollen, wie ein echter Angreifer vorgehen würde</li>
-                    <li>Unternehmen mit hohen Sicherheitsanforderungen und kritischen Geschäftsprozessen</li>
-                    <li>Organisationen, die ihre Sicherheitslage realistisch bewerten möchten</li>
+    <section class="section">
+        <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
+
+        <!-- Pillars -->
+        <span class="section-label">Das Fundament</span>
+        <h2 class="section-title">Drei Dimensionen. Ein vollständiges Bild.</h2>
+        <p class="section-subtitle">Ein echter Angreifer stoppt nicht an den Grenzen Ihrer IT-Infrastruktur. Deshalb prüfen wir alle drei Ebenen, auf denen Angriffe in der Praxis stattfinden.</p>
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="pillar-number">01</div>
+                <h3>💻 Technischer Audit</h3>
+                <p>Wir prüfen Ihre Systeme, Netzwerke und Anwendungen mit denselben Werkzeugen, die echte Angreifer nutzen.</p>
+                <ul class="pillar-items">
+                    <li>Externer Perimeter-Scan &amp; Reconnaissance</li>
+                    <li>Web-Application Penetration Testing</li>
+                    <li>Netzwerk- &amp; Infrastrukturanalyse</li>
+                    <li>Credential &amp; Password Auditing</li>
+                    <li>Cloud-Konfigurationsprüfung (optional)</li>
                 </ul>
             </div>
-
-            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 20px;">
-                <h2 style="color: var(--primary-cyan); margin-bottom: 1rem;">Gehen Sie über klassische Audits hinaus</h2>
-                <p style="font-size: 1.15rem; margin-bottom: 2rem; color: var(--secondary-light-gray);">Mit Red Team Plus erhalten Sie eine 360°-Analyse Ihrer Sicherheitslage<br>aus technischer, menschlicher und physischer Sicht.</p>
-                <a href="../index.html#contact" class="cta-button">Jetzt unverbindlich anfragen</a>
+            <div class="pillar">
+                <div class="pillar-number">02</div>
+                <h3>👥 Menschlicher Faktor</h3>
+                <p>Die meisten Sicherheitsvorfälle beginnen nicht mit einem Exploit – sondern mit einem Menschen, der auf etwas hereinfällt.</p>
+                <ul class="pillar-items">
+                    <li>Targeted Phishing-Simulation</li>
+                    <li>Vishing (Telefon-Social-Engineering)</li>
+                    <li>Pretexting- &amp; Impersonation-Szenarien</li>
+                    <li>Awareness-Level-Bewertung der Belegschaft</li>
+                    <li>Interne Prozess- &amp; Eskalationsprüfung</li>
+                </ul>
             </div>
-        </section>
-    </main>
+            <div class="pillar">
+                <div class="pillar-number">03</div>
+                <h3>🏢 Physische Sicherheit</h3>
+                <p>Ein Angreifer, der physisch ins Büro gelangt, kann alle technischen Maßnahmen umgehen. Wir prüfen, ob das möglich ist.</p>
+                <ul class="pillar-items">
+                    <li>Zugangskontrollanalyse</li>
+                    <li>Tailgating- &amp; Impersonation-Tests</li>
+                    <li>Prüfung sensibler Bereiche &amp; Serverräume</li>
+                    <li>Clean-Desk-Policy-Bewertung</li>
+                    <li>Analyse physischer Sicherheitssysteme</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
-    </footer>
+    <hr class="section-divider">
+
+    <!-- Comparison -->
+    <section class="section">
+        <span class="section-label">Vergleich</span>
+        <h2 class="section-title">Red Team Plus vs. Klassischer Pentest</h2>
+        <p class="section-subtitle">Was unterscheidet Red Team Plus vom klassischen Penetrationstest – und warum macht das für Ihr Unternehmen einen entscheidenden Unterschied?</p>
+        <div class="comparison-grid">
+            <div class="comparison-col">
+                <h3>Klassischer Penetrationstest</h3>
+                <ul class="comparison-list">
+                    <li><span class="check">✓</span> Technische IT-Schwachstellen</li>
+                    <li><span class="check">✓</span> Netzwerk- &amp; Systemscan</li>
+                    <li><span class="check">✓</span> CVSS-Report</li>
+                    <li><span class="cross">✗</span> Social Engineering</li>
+                    <li><span class="cross">✗</span> Phishing-Simulationen</li>
+                    <li><span class="cross">✗</span> Physische Sicherheit</li>
+                    <li><span class="cross">✗</span> Kombinierte Angriffsketten</li>
+                    <li><span class="cross">✗</span> Ganzheitliche Risikobewertung</li>
+                    <li><span class="cross">✗</span> Executive Summary für Geschäftsleitung</li>
+                </ul>
+            </div>
+            <div class="comparison-col featured">
+                <h3>⚔️ Red Team Plus</h3>
+                <ul class="comparison-list">
+                    <li><span class="check">✓</span> Technische IT-Schwachstellen</li>
+                    <li><span class="check">✓</span> Netzwerk- &amp; Systemscan</li>
+                    <li><span class="check">✓</span> CVSS-Report</li>
+                    <li><span class="check">✓</span> Social Engineering</li>
+                    <li><span class="check">✓</span> Phishing-Simulationen</li>
+                    <li><span class="check">✓</span> Physische Sicherheit</li>
+                    <li><span class="check">✓</span> Kombinierte Angriffsketten</li>
+                    <li><span class="check">✓</span> Ganzheitliche Risikobewertung</li>
+                    <li><span class="check">✓</span> Executive Summary für Geschäftsleitung</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Methodology -->
+    <section class="section" id="methodology">
+        <span class="section-label">Methodik</span>
+        <h2 class="section-title">So läuft Red Team Plus ab</h2>
+        <p class="section-subtitle">Transparent, strukturiert und auf Ihr Unternehmen zugeschnitten – von der ersten Absprache bis zur abschließenden Präsentation.</p>
+        <div class="process-timeline">
+            <div class="process-item">
+                <div class="process-num">1</div>
+                <div class="process-body">
+                    <h4>Kick-off &amp; Scope-Definition</h4>
+                    <p>In einem gemeinsamen Gespräch definieren wir Ziele, Testbereiche und Ausschlüsse. Wir klären rechtliche Rahmenbedingungen und unterzeichnen den NDA. Der Scope wird schriftlich festgehalten – kein Test ohne klare Autorisierung.</p>
+                    <span class="duration">ca. 1–2 Tage</span>
+                </div>
+            </div>
+            <div class="process-item">
+                <div class="process-num">2</div>
+                <div class="process-body">
+                    <h4>Reconnaissance &amp; Open-Source Intelligence</h4>
+                    <p>Wir sammeln alle öffentlich verfügbaren Informationen über Ihr Unternehmen – genau wie ein echter Angreifer. DNS-Einträge, Subdomains, Mitarbeiterdaten, Technologie-Stack, mögliche Einstiegspunkte über Social Media und Jobbörsen.</p>
+                    <span class="duration">ca. 2–3 Tage</span>
+                </div>
+            </div>
+            <div class="process-item">
+                <div class="process-num">3</div>
+                <div class="process-body">
+                    <h4>Aktive Angriffsphase</h4>
+                    <p>Technische Penetrationstests, Social-Engineering-Versuche und physische Tests laufen koordiniert. Wir dokumentieren jeden Schritt, jede Schwachstelle, jeden erfolgreichen Angriffspfad mit Beweisen – Screenshots, Logs und Videos.</p>
+                    <span class="duration">ca. 5–15 Tage (je nach Scope)</span>
+                </div>
+            </div>
+            <div class="process-item">
+                <div class="process-num">4</div>
+                <div class="process-body">
+                    <h4>Analyse &amp; Report-Erstellung</h4>
+                    <p>Alle Findings werden nach CVSS 3.1 bewertet und priorisiert. Der Report enthält einen Executive Summary für die Geschäftsleitung und einen technischen Deep-Dive mit konkreten Remediation-Schritten für Ihr IT-Team.</p>
+                    <span class="duration">ca. 3–5 Tage</span>
+                </div>
+            </div>
+            <div class="process-item">
+                <div class="process-num">5</div>
+                <div class="process-body">
+                    <h4>Präsentation &amp; Maßnahmenplanung</h4>
+                    <p>Wir präsentieren die Ergebnisse persönlich – auf Wunsch getrennt für IT-Team und Geschäftsleitung. Gemeinsam priorisieren wir Maßnahmen. Optional: Re-Test nach Umsetzung der kritischen Findings.</p>
+                    <span class="duration">ca. 1 Tag</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Deliverables -->
+    <section class="section">
+        <span class="section-label">Was Sie erhalten</span>
+        <h2 class="section-title">Ihre Deliverables</h2>
+        <p class="section-subtitle">Kein Pauschalreport von der Stange – alle Dokumente werden individuell für Ihr Unternehmen erstellt und sicher verschlüsselt übermittelt.</p>
+        <div class="deliverables-grid">
+            <div class="deliverable">
+                <span class="deliverable-icon">📄</span>
+                <h4>Executive Summary</h4>
+                <p>Management-taugliche Zusammenfassung der Sicherheitslage ohne technisches Kauderwelsch – für fundierte Entscheidungen auf Geschäftsleitungsebene.</p>
+            </div>
+            <div class="deliverable">
+                <span class="deliverable-icon">🔬</span>
+                <h4>Technischer Detailreport</h4>
+                <p>Vollständige Dokumentation aller Findings mit CVSS-Bewertung, Proof-of-Concept und Remediation-Leitfaden für Ihr IT-Team.</p>
+            </div>
+            <div class="deliverable">
+                <span class="deliverable-icon">📹</span>
+                <h4>Beweissicherung</h4>
+                <p>Screenshots, Logs und Videos aller kritischen Angriffspfade – transparent nachvollziehbar und revisionssicher dokumentiert.</p>
+            </div>
+            <div class="deliverable">
+                <span class="deliverable-icon">🗺️</span>
+                <h4>Attack Path Mapping</h4>
+                <p>Visuelle Darstellung der gefundenen Angriffsketten – von der ersten Schwachstelle bis zum möglichen Ziel, für technische und nicht-technische Leser.</p>
+            </div>
+            <div class="deliverable">
+                <span class="deliverable-icon">📋</span>
+                <h4>Priorisierter Maßnahmenplan</h4>
+                <p>Klare Handlungsempfehlungen mit Prioritäten und Aufwandsschätzungen – damit Sie wissen, was sofort zu tun ist und was warten kann.</p>
+            </div>
+            <div class="deliverable">
+                <span class="deliverable-icon">🔁</span>
+                <h4>Re-Test (optional)</h4>
+                <p>Nach Umsetzung der Maßnahmen prüfen wir auf Wunsch erneut, ob die kritischen Schwachstellen erfolgreich geschlossen wurden.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Target audience -->
+    <section class="section">
+        <span class="section-label">Für wen</span>
+        <h2 class="section-title">Red Team Plus ist richtig für Sie, wenn…</h2>
+        <div class="target-grid">
+            <div class="target-item">
+                <div class="target-icon">🏭</div>
+                <div>
+                    <h4>Sie einen externen IT-Dienstleister haben</h4>
+                    <p>…und wissen wollen, ob er wirklich gute Arbeit leistet – unabhängig und objektiv bewertet von außen.</p>
+                </div>
+            </div>
+            <div class="target-item">
+                <div class="target-icon">📜</div>
+                <div>
+                    <h4>Compliance-Anforderungen bestehen</h4>
+                    <p>ISO 27001, NIS2, KRITIS oder branchenspezifische Vorschriften verlangen regelmäßige, nachweisbare Sicherheitsprüfungen.</p>
+                </div>
+            </div>
+            <div class="target-item">
+                <div class="target-icon">🎯</div>
+                <div>
+                    <h4>Sie wissen wollen, wie ein echter Angriff aussieht</h4>
+                    <p>Nicht in der Theorie – sondern mit realen Methoden, bevor ein echter Angreifer die Antwort für Sie findet.</p>
+                </div>
+            </div>
+            <div class="target-item">
+                <div class="target-icon">🏗️</div>
+                <div>
+                    <h4>Ihre Sicherheitsmaßnahmen auf dem Prüfstand stehen sollen</h4>
+                    <p>Sie haben bereits in Security investiert – jetzt wollen Sie wissen, ob sich dieser Aufwand tatsächlich gelohnt hat.</p>
+                </div>
+            </div>
+            <div class="target-item">
+                <div class="target-icon">🔒</div>
+                <div>
+                    <h4>Kritische Daten oder Prozesse zu schützen sind</h4>
+                    <p>Kundendaten, Geschäftsgeheimnisse, Produktionssysteme – bei hohem Schadenspotenzial braucht es mehr als einen Standard-Pentest.</p>
+                </div>
+            </div>
+            <div class="target-item">
+                <div class="target-icon">📈</div>
+                <div>
+                    <h4>Sie Ihre Sicherheitsinvestition rechtfertigen müssen</h4>
+                    <p>Geschäftsleitung oder Aufsichtsrat fordern Belege für den Status der IT-Sicherheit – unser Report liefert genau das.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust bar -->
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-item"><span class="ticon">🔐</span> NDA vor Projektstart</div>
+            <div class="trust-item"><span class="ticon">📜</span> DSGVO-konform</div>
+            <div class="trust-item"><span class="ticon">🏅</span> Allianz für Cyber-Sicherheit (BSI)</div>
+            <div class="trust-item"><span class="ticon">🎓</span> Studiengang Cyber Security &amp; Privacy, H-BRS</div>
+            <div class="trust-item"><span class="ticon">🔏</span> Verschlüsselte Datenübertragung</div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Bereit für <span>echte Sicherheit?</span></h2>
+        <p>Buchen Sie ein kostenloses Erstgespräch. In 30 Minuten erfahren Sie, ob und wie Red Team Plus zu Ihrer Situation passt – unverbindlich, ohne Verkaufsdruck.</p>
+        <div class="final-cta-buttons">
+            <a href="https://cal.eu/marlonscheer" class="cta-button">Jetzt Termin buchen</a>
+            <a href="mailto:info@m2cybersec.de" class="cta-button secondary">info@m2cybersec.de</a>
+        </div>
+    </section>
+
+</main>
+
+<footer role="contentinfo">
+    <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten. &nbsp;|&nbsp;
+        <a href="../rechtliches/impressum.html">Impressum</a>
+        <a href="../rechtliches/datenschutz.html">Datenschutz</a>
+    </p>
+</footer>
+
 </body>
 </html>

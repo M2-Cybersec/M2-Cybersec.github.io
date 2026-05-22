@@ -7,9 +7,17 @@
     <!-- Hauptseite -->
     <url>
         <loc>https://m2cybersec.de/</loc>
-        <lastmod>2026-01-22</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- Team -->
+    <url>
+        <loc>https://m2cybersec.de/das-team/</loc>
+        <lastmod>2026-05-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
     </url>
 
     <!-- Pakete -->
@@ -29,13 +37,6 @@
 
     <url>
         <loc>https://m2cybersec.de/scale-paket/</loc>
-        <lastmod>2026-01-22</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://m2cybersec.de/enterprise-paket/</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -131,9 +132,9 @@
 
     <url>
         <loc>https://m2cybersec.de/red-team-plus/</loc>
-        <lastmod>2026-01-22</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
     <!-- Cybersecurity nach Bundesland -->
     <url>
