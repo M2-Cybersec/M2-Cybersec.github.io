@@ -777,15 +777,11 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
+                font-size: 1.05rem;
             }
 
             .navbar {
@@ -794,12 +790,18 @@
                 padding: 1rem 3%;
             }
 
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .section {
                 padding: 4rem 5%;
             }
 
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .cta-buttons {
@@ -811,6 +813,30 @@
             .features-grid,
             .process-steps {
                 grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section {
+                padding: 3rem 4%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
             }
         }
 
