@@ -102,7 +102,7 @@
       "name": "Wie lange dauert ein typischer Security-Check?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale- oder Enterprise-Pakets 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können wir Ihnen einen präzisen Zeitrahmen nennen."
+        "text": "Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale-Pakets oder Red Team Plus 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können wir Ihnen einen präzisen Zeitrahmen nennen."
       }
     },
     {
@@ -158,7 +158,15 @@
       "name": "Was ist Red Teaming und brauche ich das?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Red Teaming ist eine ganzheitliche Sicherheitsprüfung, bei der wir wie echte Angreifer vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich besonders für Unternehmen mit hohen Sicherheitsanforderungen oder bereits etablierten Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Unser Red Team Plus-Paket bietet diesen 360°-Sicherheitsansatz."
+        "text": "Red Teaming ist eine ganzheitliche Sicherheitsprüfung, bei der wir wie echte Angreifer vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich besonders für Unternehmen mit hohen Sicherheitsanforderungen oder bereits etablierten Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Erfahren Sie mehr über unser 360°-Sicherheitsaudit Red Team Plus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der kostenlose Quick-Scan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unser Quick-Scan ist eine kostenlose, unverbindliche Analyse Ihrer externen IT-Angriffsfläche. In 30 Minuten zeigen wir Ihnen, was ein potenzieller Angreifer heute schon über Ihr Unternehmen sehen kann – ohne dass wir irgendetwas aktiv testen oder angreifen. Sie erhalten anschließend ein 1-seitiges PDF mit den Top-3-Findings und konkreten Handlungsempfehlungen."
       }
     },
     {
@@ -167,14 +175,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Vertraulichkeit hat bei uns höchste Priorität. Alle Projekte werden unter strikten NDA-Vereinbarungen durchgeführt. Ihre Daten werden verschlüsselt übertragen und gespeichert. Nur autorisierte Teammitglieder haben Zugriff auf projektrelevante Informationen. Wir sind DSGVO-konform und arbeiten nach den höchsten Sicherheitsstandards der Branche. Unsere Berichte werden sicher an Sie übermittelt und auf Wunsch nach Projektabschluss vollständig gelöscht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was kostet die 24/7 Notfall-Hotline?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Unsere 24/7 Notfall-Hotline ist für alle Kunden im Rahmen unserer Enterprise-Pakete inklusive. Für andere Pakete kann die Notfall-Hotline als zusätzliche Service-Option hinzugebucht werden. Im Ernstfall ist schnelle Reaktion entscheidend – unsere Incident Response-Experten stehen rund um die Uhr bereit, um Sie bei Sicherheitsvorfällen zu unterstützen und den Schaden zu minimieren."
       }
     },
     {
@@ -483,6 +483,94 @@
             border-color: var(--primary-cyan);
             box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
             background: rgba(0, 252, 246, 0.03);
+        }
+
+        .service-card.featured {
+            border-color: var(--primary-cyan);
+            background: rgba(0, 252, 246, 0.04);
+            box-shadow: 0 0 40px rgba(0, 252, 246, 0.12);
+        }
+
+        .service-card.featured:hover {
+            box-shadow: 0 20px 60px rgba(0, 252, 246, 0.35);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            padding: 0.3rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* Quick-Scan Section */
+        .quick-scan {
+            background: rgba(0, 252, 246, 0.03);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 252, 246, 0.2);
+        }
+
+        .quick-scan-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .quick-scan-features {
+            list-style: none;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .quick-scan-features li {
+            color: var(--secondary-light-gray);
+            padding: 0.6rem 0;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quick-scan-features li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .quick-scan-visual {
+            background: rgba(0, 252, 246, 0.04);
+            border: 1px solid rgba(0, 252, 246, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .quick-scan-visual .scan-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-scan-visual p {
+            color: var(--secondary-light-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .quick-scan-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         .service-icon {
@@ -894,6 +982,7 @@
                     ist Ihr Partner für umfassende IT-Sicherheit.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-button">Kostenlose Beratung</a>
+                    <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Kostenloser Quick-Scan</a>
                     <a href="#services" class="cta-button secondary">Unsere Services</a>
                 </div>
             </div>
@@ -929,14 +1018,6 @@
                     </a>
                 </article>
                 <article class="service-card">
-                    <a href="enterprise-paket/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true">🏗️</span>
-                        <h3>Enterprise-Paket</h3>
-                        <p>Komplettschutz für Unternehmen: Red-Teaming, 24/7 Monitoring, CISO-as-a-Service, Incident
-                            Response Planning und umfassende Security-Strategie.</p>
-                    </a>
-                </article>
-                <article class="service-card">
                     <a href="sicherheit-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🛡️</span>
                         <h3>Sicherheit für KMU</h3>
@@ -952,7 +1033,8 @@
                             Sie das Sicherheitsbewusstsein Ihrer Teams nachhaltig.</p>
                     </a>
                 </article>
-                <article class="service-card">
+                <article class="service-card featured">
+                    <span class="service-badge">Unser Flaggschiff</span>
                     <a href="red-team-plus/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">⚔️</span>
                         <h3>Red Team Plus</h3>
@@ -980,10 +1062,10 @@
                         Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
                 </article>
                 <article class="feature-item">
-                    <div class="feature-number">24/7</div>
-                    <h4>Verfügbarkeit</h4>
-                    <p>Rund um die Uhr erreichbar für Ihre Sicherheitsanliegen – weil Cyberangriffe keine Bürozeiten
-                        kennen</p>
+                    <div class="feature-number">⚡</div>
+                    <h4>Schnelle Reaktionszeit</h4>
+                    <p>Schnelle Rückmeldung auf Ihre Anfragen – weil Sicherheitsfragen keine langen Wartezeiten
+                        verdienen</p>
                 </article>
                 <article class="feature-item">
                     <div class="feature-number">✓</div>
@@ -991,6 +1073,26 @@
                     <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
                         Management-Ebene</p>
                 </article>
+            </div>
+        </section>
+
+        <section id="quick-scan" class="section quick-scan">
+            <h2 class="section-title">Kostenloser Quick-Scan</h2>
+            <p class="section-subtitle">In 30 Minuten zeigen wir Ihnen, was ein Angreifer heute schon über Ihr Unternehmen weiß – ohne dass wir irgendetwas angreifen.</p>
+            <div class="quick-scan-grid">
+                <div>
+                    <ul class="quick-scan-features">
+                        <li>Externe Angriffsfläche Ihrer Domain analysiert</li>
+                        <li>E-Mail-Sicherheit (SPF, DKIM, DMARC) geprüft</li>
+                        <li>Top-3-Findings als PDF-Report</li>
+                        <li>100% kostenlos und unverbindlich</li>
+                    </ul>
+                    <a href="https://cal.eu/marlonscheer" class="cta-button">Jetzt Quick-Scan buchen &rarr;</a>
+                </div>
+                <div class="quick-scan-visual">
+                    <div class="scan-icon">🔍</div>
+                    <p>Kein Risiko, kein aktives Testing – wir analysieren ausschließlich öffentlich zugängliche Informationen und zeigen Ihnen Ihr Risikoprofil aus Angreiferperspektive.</p>
+                </div>
             </div>
         </section>
 
@@ -1030,15 +1132,13 @@
                 <div class="contact-info">
                     <p><strong>E-Mail:</strong><br><a href="mailto:info@m2cybersec.de">info@m2cybersec.de</a></p>
                     <p><strong>Telefon:</strong><br><a href="tel:+4922194334961">+49 (0) 221 94334961</a></p>
-                    <p><strong>Notfall-Telefon:</strong><br><a href="tel:+491778063600">+49 (0) 177 8063600</a></p>
-                    <p><strong>Geschäftszeiten:</strong><br>Montag - Freitag: 09:00 - 18:00 Uhr<br>Notfall-Hotline: 24/7
-                    </p>
+                    <p><strong>Geschäftszeiten:</strong><br>Montag - Freitag: 09:00 - 18:00 Uhr</p>
                 </div>
                 <div class="contact-buttons">
                     <a href="mailto:info@m2cybersec.de" class="cta-button">E-Mail senden</a>
                     <a href="tel:+4922194334961" class="cta-button secondary">Jetzt anrufen</a>
-                    <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Kostenlose
-                        Erstberatung</a>
+                    <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Kostenlose Erstberatung</a>
+                    <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Quick-Scan buchen</a>
                 </div>
 
             </div>
@@ -1077,8 +1177,8 @@
                         itemtype="https://schema.org/Answer">
                         <div itemprop="text">
                             <p>Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der
-                                Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale- oder
-                                Enterprise-Pakets 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können
+                                Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale-Pakets oder
+                                Red Team Plus 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können
                                 wir Ihnen einen präzisen Zeitrahmen nennen.</p>
                         </div>
                     </div>
@@ -1201,8 +1301,9 @@
                                 vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer
                                 Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich
                                 besonders für Unternehmen mit hohen Sicherheitsanforderungen oder bereits etablierten
-                                Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Unser "Red Team
-                                Plus"-Paket bietet diesen 360°-Sicherheitsansatz.</p>
+                                Sicherheitsmaßnahmen, die auf den Prüfstand gestellt werden sollen. Erfahren Sie mehr
+                                über unser 360°-Sicherheitsaudit <a href="red-team-plus/index.html"
+                                style="color: var(--primary-cyan); text-decoration: none; font-weight: 600;">Red Team Plus</a>.</p>
                         </div>
                     </div>
                 </article>
@@ -1227,17 +1328,17 @@
 
                 <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
-                        <h3 itemprop="name">Was kostet die 24/7 Notfall-Hotline?</h3>
+                        <h3 itemprop="name">Was ist der kostenlose Quick-Scan?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer" id="faq-11" itemscope itemprop="acceptedAnswer"
                         itemtype="https://schema.org/Answer">
                         <div itemprop="text">
-                            <p>Unsere 24/7 Notfall-Hotline ist für alle Kunden im Rahmen unserer Enterprise-Pakete
-                                inklusive. Für andere Pakete kann die Notfall-Hotline als zusätzliche Service-Option
-                                hinzugebucht werden. Im Ernstfall ist schnelle Reaktion entscheidend – unsere Incident
-                                Response-Experten stehen rund um die Uhr bereit, um Sie bei Sicherheitsvorfällen zu
-                                unterstützen und den Schaden zu minimieren.</p>
+                            <p>Unser Quick-Scan ist eine kostenlose, unverbindliche Analyse Ihrer externen
+                                IT-Angriffsfläche. In 30 Minuten zeigen wir Ihnen, was ein potenzieller Angreifer heute
+                                schon über Ihr Unternehmen sehen kann – ohne dass wir irgendetwas aktiv testen oder
+                                angreifen. Sie erhalten anschließend ein 1-seitiges PDF mit den Top-3-Findings und
+                                konkreten Handlungsempfehlungen.</p>
                         </div>
                     </div>
                 </article>
@@ -1278,10 +1379,10 @@
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#services">Starter-Paket</a>
-                <a href="#services">Growth-Paket</a>
-                <a href="#services">Scale-Paket</a>
-                <a href="#services">Enterprise-Paket</a>
+                <a href="starter-paket/index.html">Starter-Paket</a>
+                <a href="growth-paket/index.html">Growth-Paket</a>
+                <a href="scale-paket/index.html">Scale-Paket</a>
+                <a href="red-team-plus/index.html">Red Team Plus</a>
             </div>
             <div class="footer-section">
                 <h4>Unternehmen</h4>
