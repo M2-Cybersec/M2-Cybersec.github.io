@@ -1229,6 +1229,24 @@
 
         .pricing-name span { color: var(--primary-cyan); }
 
+        .pricing-name span.tier-lite {
+            color: #b0b0b0;
+        }
+
+        .pricing-name span.tier-pro {
+            background: linear-gradient(90deg, #b8860b 0%, #ffd700 35%, #fffacd 55%, #ffd700 75%, #b8860b 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShimmer 3s linear infinite;
+        }
+
+        @keyframes goldShimmer {
+            0%   { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
         .pricing-price { margin: 1.4rem 0 1rem; }
 
         .pricing-price-label {
@@ -1420,7 +1438,7 @@
 
                 <!-- Red Team Lite -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span>Lite</span></h3>
+                    <h3 class="pricing-name">Red Team <span class="tier-lite">Lite</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">Auf Anfrage</div>
                         <div class="pricing-price-sub">Individuelles Angebot</div>
@@ -1460,7 +1478,7 @@
 
                 <!-- Red Team Pro -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span>Pro</span></h3>
+                    <h3 class="pricing-name">Red Team <span class="tier-pro">Pro</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">Auf Anfrage</div>
                         <div class="pricing-price-sub">Individuelles Angebot</div>
