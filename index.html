@@ -1005,7 +1005,7 @@
 
         .references-track-wrapper {
             overflow: hidden;
-            -webkit-mask-image: linear-gradient(to right, white 0%, transparent 0%, black 8%, black 92%, transparent 100%, white 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
             mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
         }
 
@@ -1013,7 +1013,7 @@
             display: flex;
             align-items: center;
             width: max-content;
-            animation: references-scroll 28s linear infinite;
+            animation: references-scroll 32s linear infinite;
             will-change: transform;
         }
 
@@ -1021,49 +1021,56 @@
             animation-play-state: paused;
         }
 
-        .references-track img {
-            height: 60px;
-            width: auto;
-            max-width: 180px;
-            object-fit: contain;
-            flex-shrink: 0;
-            user-select: none;
-            -webkit-user-drag: none;
-            padding: 0 2.5rem;
+        .ref-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3rem;
+            height: 70px;
             border-right: 1px solid #e8e8e8;
+            flex-shrink: 0;
+            box-sizing: content-box;
         }
 
-        .references-track img:last-child {
-            border-right: none;
+        .ref-logo img {
+            height: 52px;
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         @keyframes references-scroll {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .references-track {
-                animation: none;
-            }
+            .references-track { animation: none; }
         }
 
         @media (max-width: 768px) {
-            .references-strip {
-                padding: 1.8rem 0;
+            .references-strip { padding: 1.8rem 0; }
+            .ref-logo {
+                padding: 0 2rem;
+                height: 56px;
             }
-            .references-track img {
-                height: 46px;
-                max-width: 140px;
-                padding: 0 1.8rem;
+            .ref-logo img {
+                height: 40px;
+                max-width: 120px;
             }
         }
 
         @media (max-width: 420px) {
-            .references-track img {
-                height: 38px;
-                max-width: 110px;
-                padding: 0 1.4rem;
+            .ref-logo {
+                padding: 0 1.5rem;
+                height: 48px;
+            }
+            .ref-logo img {
+                height: 32px;
+                max-width: 95px;
             }
         }
     </style>
@@ -1110,19 +1117,34 @@
             <p class="references-label">Vertrauen von Unternehmen in ganz Deutschland</p>
             <div class="references-track-wrapper">
                 <div class="references-track">
-                    <img src="assets/references/Akip-710x450.jpg" alt="AKIP" loading="lazy">
-                    <img src="assets/references/FF_DQ.avif" alt="Referenz" loading="lazy">
-                    <img src="assets/references/logo-01.avif" alt="Referenz" loading="lazy">
-                    <img src="assets/references/logo-dark.png" alt="Referenz" loading="lazy">
-                    <img src="assets/references/Logo_KaDo.png" alt="KaDo" loading="lazy">
-                    <img src="assets/references/logo.png" alt="Referenz" loading="lazy">
-                    <!-- Duplikat für nahtlose Schleife -->
-                    <img src="assets/references/Akip-710x450.jpg" alt="" aria-hidden="true" loading="lazy">
-                    <img src="assets/references/FF_DQ.avif" alt="" aria-hidden="true" loading="lazy">
-                    <img src="assets/references/logo-01.avif" alt="" aria-hidden="true" loading="lazy">
-                    <img src="assets/references/logo-dark.png" alt="" aria-hidden="true" loading="lazy">
-                    <img src="assets/references/Logo_KaDo.png" alt="" aria-hidden="true" loading="lazy">
-                    <img src="assets/references/logo.png" alt="" aria-hidden="true" loading="lazy">
+                    <!-- Set 1 (sichtbar für Screenreader) -->
+                    <div class="ref-logo"><img src="assets/references/Akip-710x450.jpg" alt="AKIP"></div>
+                    <div class="ref-logo"><img src="assets/references/FF_DQ.avif" alt="Referenz"></div>
+                    <div class="ref-logo"><img src="assets/references/logo-01.avif" alt="Referenz"></div>
+                    <div class="ref-logo"><img src="assets/references/logo-dark.png" alt="Referenz"></div>
+                    <div class="ref-logo"><img src="assets/references/Logo_KaDo.png" alt="KaDo"></div>
+                    <div class="ref-logo"><img src="assets/references/logo.png" alt="Referenz"></div>
+                    <!-- Set 2 -->
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Akip-710x450.jpg" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/FF_DQ.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-01.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-dark.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Logo_KaDo.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo.png" alt=""></div>
+                    <!-- Set 3 -->
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Akip-710x450.jpg" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/FF_DQ.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-01.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-dark.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Logo_KaDo.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo.png" alt=""></div>
+                    <!-- Set 4 -->
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Akip-710x450.jpg" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/FF_DQ.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-01.avif" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-dark.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Logo_KaDo.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo.png" alt=""></div>
                 </div>
             </div>
         </section>
