@@ -6,7 +6,7 @@ Gegründet 2024 von Marlon Scheer (CEO & Founder), Student der Hochschule Bonn-R
 
 Kontakt: info@m2cybersec.de | +49 (0) 221 94334961
 Geschäftszeiten: Mo–Fr 09:00–18:00 Uhr
-Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer
+Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quickscan
 
 ## Services
 
@@ -19,7 +19,7 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer
 
 ## Kostenloser Quick-Scan
 
-Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 30 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), Top-3-Findings als PDF. Buchbar unter https://cal.eu/marlonscheer
+Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 30 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), Top-3-Findings als PDF. Buchbar unter https://cal.eu/marlonscheer/quickscan
 
 ## Team
 
