@@ -989,10 +989,8 @@
 
         /* References Strip */
         .references-strip {
-            padding: 2rem 0 2.2rem;
-            background: rgba(0, 252, 246, 0.03);
-            border-top: 1px solid rgba(0, 252, 246, 0.1);
-            border-bottom: 1px solid rgba(0, 252, 246, 0.1);
+            padding: 2.2rem 0;
+            background: #ffffff;
             overflow: hidden;
         }
 
@@ -1001,20 +999,19 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--secondary-gray);
-            margin-bottom: 1.4rem;
+            color: #999;
+            margin-bottom: 1.6rem;
         }
 
         .references-track-wrapper {
             overflow: hidden;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, white 0%, transparent 0%, black 8%, black 92%, transparent 100%, white 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
         }
 
         .references-track {
             display: flex;
             align-items: center;
-            gap: 3.5rem;
             width: max-content;
             animation: references-scroll 28s linear infinite;
             will-change: transform;
@@ -1025,19 +1022,19 @@
         }
 
         .references-track img {
-            height: 38px;
+            height: 60px;
             width: auto;
-            max-width: 140px;
+            max-width: 180px;
             object-fit: contain;
-            filter: grayscale(100%) brightness(220%) opacity(0.55);
-            transition: filter 0.35s ease;
             flex-shrink: 0;
             user-select: none;
             -webkit-user-drag: none;
+            padding: 0 2.5rem;
+            border-right: 1px solid #e8e8e8;
         }
 
-        .references-track img:hover {
-            filter: grayscale(0%) brightness(100%) opacity(1);
+        .references-track img:last-child {
+            border-right: none;
         }
 
         @keyframes references-scroll {
@@ -1053,26 +1050,20 @@
 
         @media (max-width: 768px) {
             .references-strip {
-                padding: 1.6rem 0 1.8rem;
-            }
-            .references-track {
-                gap: 2.5rem;
-                animation-duration: 22s;
+                padding: 1.8rem 0;
             }
             .references-track img {
-                height: 30px;
-                max-width: 110px;
+                height: 46px;
+                max-width: 140px;
+                padding: 0 1.8rem;
             }
         }
 
         @media (max-width: 420px) {
-            .references-track {
-                gap: 2rem;
-                animation-duration: 18s;
-            }
             .references-track img {
-                height: 26px;
-                max-width: 90px;
+                height: 38px;
+                max-width: 110px;
+                padding: 0 1.4rem;
             }
         }
     </style>
