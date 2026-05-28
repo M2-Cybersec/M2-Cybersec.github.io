@@ -293,89 +293,128 @@
         }
 
         /* Hero Section */
-
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10rem 5% 4rem;
+            padding: 10rem 5% 5rem;
             position: relative;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
             overflow: hidden;
-
+            background: #000;
         }
 
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.32) contrast(1.15);
+        }
 
-        .hero::before {
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(0, 252, 246, 0.07) 0%, transparent 70%);
+            z-index: 1;
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 1000px;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.35);
+            color: var(--primary-cyan);
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 2.2rem;
+            text-decoration: none;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-badge:hover {
+            background: rgba(0, 252, 246, 0.15);
+            box-shadow: 0 0 24px rgba(0, 252, 246, 0.2);
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 4.2rem;
+            margin-bottom: 1.8rem;
             font-weight: 800;
             color: var(--primary-white);
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease-out;
+            line-height: 1.15;
+            animation: fadeInUp 0.8s ease-out 0.15s backwards;
         }
 
-        .hero h1 span {
-            color: var(--primary-cyan);
+        .hero-word-container {
             display: block;
-            margin-top: 0.5rem;
+            position: relative;
+            height: 1.22em;
+            overflow: hidden;
         }
 
-        .hero-video {
+        .hero-word {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            left: 0;
+            right: 0;
+            color: var(--primary-cyan);
+            text-shadow: 0 0 50px rgba(0, 252, 246, 0.45);
+            opacity: 0;
+            transform: translateY(110%);
+            animation: heroWordCycle 9s ease-in-out infinite;
+        }
 
-            width: 220%;
-            height: 220%;
+        .hero-word:nth-child(1) { animation-delay: 0s; }
+        .hero-word:nth-child(2) { animation-delay: 3s; }
+        .hero-word:nth-child(3) { animation-delay: 6s; }
 
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-
-            z-index: -1;
-            filter: brightness(0.4) contrast(1.2);
-
+        @keyframes heroWordCycle {
+            0%   { opacity: 0; transform: translateY(110%); }
+            7%   { opacity: 1; transform: translateY(0); }
+            28%  { opacity: 1; transform: translateY(0); }
+            35%  { opacity: 0; transform: translateY(-110%); }
+            100% { opacity: 0; transform: translateY(-110%); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 3rem;
             color: var(--secondary-light-gray);
-            max-width: 700px;
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            line-height: 1.75;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
         }
 
         .cta-buttons {
@@ -383,7 +422,7 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
         }
 
         .cta-button {
@@ -1073,6 +1112,219 @@
                 max-width: 160px;
             }
         }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 7rem 5%;
+            position: relative;
+            overflow: hidden;
+            background: #080808;
+            max-width: 100%;
+        }
+
+        .pricing-section .section-title,
+        .pricing-section .section-subtitle {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 70px 80px;
+            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .pricing-glow-top {
+            position: absolute;
+            top: -180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 252, 246, 0.1) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            align-items: center;
+        }
+
+        .pricing-card {
+            background: linear-gradient(160deg, #1c1c1c 0%, #111111 55%, #1c1c1c 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 2.5rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+        .pricing-card:nth-child(2) { transition-delay: 0.25s; }
+        .pricing-card:nth-child(3) { transition-delay: 0.4s; }
+
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(0, 252, 246, 0.35);
+            background: linear-gradient(160deg, #0f2222 0%, #091818 55%, #0f2222 100%);
+            box-shadow: 0 0 50px rgba(0, 252, 246, 0.12), 0 0 120px rgba(0, 252, 246, 0.06);
+            transform: translateY(35px) scale(1.04);
+        }
+
+        .pricing-card.featured.visible {
+            transform: translateY(0) scale(1.04);
+        }
+
+        .pricing-card:not(.featured):hover {
+            border-color: rgba(0, 252, 246, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(-6px);
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 0 70px rgba(0, 252, 246, 0.22), 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: translateY(-6px) scale(1.04);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            padding: 0.3rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .pricing-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-name span { color: var(--primary-cyan); }
+
+        .pricing-price { margin: 1.4rem 0 1rem; }
+
+        .pricing-price-label {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary-white);
+        }
+
+        .pricing-price-sub {
+            font-size: 0.85rem;
+            color: var(--secondary-gray);
+            margin-top: 0.25rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.93rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.65;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 0.95rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .pricing-cta-outline {
+            background: linear-gradient(135deg, #222, #2a2a2a);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: var(--primary-white);
+        }
+
+        .pricing-cta-outline:hover {
+            border-color: rgba(0, 252, 246, 0.4);
+            color: var(--primary-cyan);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-cta-primary {
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            border: none;
+        }
+
+        .pricing-cta-primary:hover {
+            background: var(--secondary-light-cyan);
+            box-shadow: 0 8px 32px rgba(0, 252, 246, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .pricing-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+            margin: 0.5rem 0 1.2rem;
+        }
+
+        .pricing-features { list-style: none; }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            padding: 0.35rem 0;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+            .pricing-card.featured,
+            .pricing-card.featured.visible,
+            .pricing-card.featured:hover {
+                transform: none;
+            }
+            .pricing-card.featured.visible { transform: translateY(0); }
+            .pricing-card.featured:hover   { transform: translateY(-6px); }
+        }
     </style>
 </head>
 
@@ -1095,15 +1347,24 @@
 
     <main id="main-content">
         <section id="home" class="hero">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/hero_vid.webm" type="video/webm">
+                <source src="assets/hero_vid.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay" aria-hidden="true"></div>
             <div class="hero-content">
-                <video autoplay muted loop playsinline class="hero-video">
-                    <source src="assets/hero_vid.webm" type="video/webm">
-                    <source src="assets/hero_vid.mp4" type="video/mp4">
-
-                </video>
-                <h1>Professionelle Cybersecurity-Lösungen <span>für Ihr Unternehmen</span></h1>
-                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec
-                    ist Ihr Partner für umfassende IT-Sicherheit.</p>
+                <a href="https://cal.eu/marlonscheer" class="hero-badge">
+                    Kostenloser Quick-Scan verfügbar <span aria-hidden="true">→</span>
+                </a>
+                <h1>
+                    Ihr Unternehmen.
+                    <span class="hero-word-container" aria-label="Sicher. Resilient. Compliant.">
+                        <span class="hero-word" aria-hidden="true">Sicher.</span>
+                        <span class="hero-word" aria-hidden="true">Resilient.</span>
+                        <span class="hero-word" aria-hidden="true">Compliant.</span>
+                    </span>
+                </h1>
+                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec ist Ihr Partner für umfassende IT-Sicherheit.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-button">Kostenlose Beratung</a>
                     <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Kostenloser Quick-Scan</a>
@@ -1203,6 +1464,77 @@
                             physische Sicherheitsanalyse aus Angreiferperspektive.</p>
                     </a>
                 </article>
+            </div>
+        </section>
+
+        <!-- Red Team Pricing -->
+        <section id="pricing" class="pricing-section">
+            <div class="pricing-grid-bg" aria-hidden="true"></div>
+            <div class="pricing-glow-top" aria-hidden="true"></div>
+            <h2 class="section-title">Red Team Services</h2>
+            <p class="section-subtitle">Ganzheitliche Sicherheitsprüfung aus echter Angreiferperspektive – wählen Sie die passende Tiefe für Ihre Anforderungen.</p>
+            <div class="pricing-grid">
+
+                <!-- Red Team Lite -->
+                <article class="pricing-card">
+                    <h3 class="pricing-name">Red Team <span>Lite</span></h3>
+                    <div class="pricing-price">
+                        <div class="pricing-price-label">Auf Anfrage</div>
+                        <div class="pricing-price-sub">Individuelles Angebot</div>
+                    </div>
+                    <p class="pricing-desc">Technischer Einstieg in professionelles Red Teaming. Ideal für Unternehmen, die erstmals eine realistische Angriffssimulation durchführen lassen wollen.</p>
+                    <a href="#contact" class="pricing-cta pricing-cta-outline">Jetzt anfragen</a>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>Technischer Pentest (1 Ziel)</li>
+                        <li>CVSS-bewerteter Schwachstellenreport</li>
+                        <li>Executive Summary</li>
+                        <li>30-minütige Ergebnisbesprechung</li>
+                        <li>Konkrete Handlungsempfehlungen</li>
+                    </ul>
+                </article>
+
+                <!-- Red Team Plus -->
+                <article class="pricing-card featured">
+                    <div class="pricing-badge">Unser Flaggschiff</div>
+                    <h3 class="pricing-name">Red Team <span>Plus</span></h3>
+                    <div class="pricing-price">
+                        <div class="pricing-price-label">Auf Anfrage</div>
+                        <div class="pricing-price-sub">Individuelles Angebot</div>
+                    </div>
+                    <p class="pricing-desc">Ganzheitliches 360°-Sicherheitsaudit: Technische Prüfung, Social Engineering und Mitarbeiter-Awareness-Check aus echter Angreiferperspektive.</p>
+                    <a href="#contact" class="pricing-cta pricing-cta-primary">Jetzt anfragen</a>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>Alles aus Red Team Lite</li>
+                        <li>Social Engineering Check</li>
+                        <li>Phishing-Simulation (Mitarbeiter)</li>
+                        <li>CVSS-Report + Executive Summary</li>
+                        <li>Re-Test inklusive</li>
+                        <li>Dedizierter Ansprechpartner</li>
+                    </ul>
+                </article>
+
+                <!-- Red Team Pro -->
+                <article class="pricing-card">
+                    <h3 class="pricing-name">Red Team <span>Pro</span></h3>
+                    <div class="pricing-price">
+                        <div class="pricing-price-label">Auf Anfrage</div>
+                        <div class="pricing-price-sub">Individuelles Angebot</div>
+                    </div>
+                    <p class="pricing-desc">Maximale Angriffssimulation für höchste Sicherheitsanforderungen: Physische Analyse, Multi-Target-Prüfung und vollständiges Red Team Engagement.</p>
+                    <a href="#contact" class="pricing-cta pricing-cta-outline">Jetzt anfragen</a>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>Alles aus Red Team Plus</li>
+                        <li>Physische Sicherheitsanalyse</li>
+                        <li>Multi-Target (3+ Systeme)</li>
+                        <li>Detaillierter Maßnahmenplan</li>
+                        <li>Quartalsweise Re-Tests</li>
+                        <li>SLA-Reaktionszeiten</li>
+                    </ul>
+                </article>
+
             </div>
         </section>
 
@@ -1638,6 +1970,22 @@
             <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+
+    <script>
+        // Pricing cards: scroll-triggered reveal
+        const pricingObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    pricingObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            pricingObserver.observe(card);
+        });
+    </script>
 </body>
 
 </html>
