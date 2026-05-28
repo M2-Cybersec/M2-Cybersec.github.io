@@ -27,12 +27,15 @@ Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unterne
 
 ## Blog
 
-- [Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?](https://m2cybersec.de/blog/it-budget-cybersecurity.html)
-- [Was ist ein Cybersecurity-Audit und warum ist er wichtig?](https://m2cybersec.de/blog/cybersecurity-audit.html)
-- [Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir helfen](https://m2cybersec.de/blog/nis2-richtlinie.html)
-- [Ransomware in 2026: Warum „Wir sind zu klein" der teuerste Satz im Unternehmen ist](https://m2cybersec.de/blog/ransomware-2026.html)
-- [IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen](https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte.html)
-- [MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365](https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken.html)
+- [Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?](https://m2cybersec.de/blog/it-budget-cybersecurity/)
+- [Was ist ein Cybersecurity-Audit und warum ist er wichtig?](https://m2cybersec.de/blog/cybersecurity-audit/)
+- [Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir helfen](https://m2cybersec.de/blog/nis2-richtlinie/)
+- [Ransomware in 2026: Warum „Wir sind zu klein" der teuerste Satz im Unternehmen ist](https://m2cybersec.de/blog/ransomware-2026/)
+- [IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen](https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte/)
+- [MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365](https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken/)
+- [Vercel gehackt: Wie ein KI-Tool zum Einfallstor wurde](https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit/)
+- [EU-Altersverifikations-App in 2 Minuten geknackt](https://m2cybersec.de/blog/eu-altersverifikation-app-sicherheitsluecke/)
+- [CVE-2026-33826: Kritische Windows AD-Lücke – Notfall-Patch jetzt](https://m2cybersec.de/blog/cve-2026-33826-windows-active-directory-patch/)
 
 ## Regionale Präsenz (Cybersecurity für Städte in NRW und weitere)
 
