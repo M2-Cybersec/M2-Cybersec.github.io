@@ -986,6 +986,95 @@
         .faq-question:focus:not(:focus-visible) {
             outline: none;
         }
+
+        /* References Strip */
+        .references-strip {
+            padding: 2rem 0 2.2rem;
+            background: rgba(0, 252, 246, 0.03);
+            border-top: 1px solid rgba(0, 252, 246, 0.1);
+            border-bottom: 1px solid rgba(0, 252, 246, 0.1);
+            overflow: hidden;
+        }
+
+        .references-label {
+            text-align: center;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--secondary-gray);
+            margin-bottom: 1.4rem;
+        }
+
+        .references-track-wrapper {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+        }
+
+        .references-track {
+            display: flex;
+            align-items: center;
+            gap: 3.5rem;
+            width: max-content;
+            animation: references-scroll 28s linear infinite;
+            will-change: transform;
+        }
+
+        .references-track:hover {
+            animation-play-state: paused;
+        }
+
+        .references-track img {
+            height: 38px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(220%) opacity(0.55);
+            transition: filter 0.35s ease;
+            flex-shrink: 0;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .references-track img:hover {
+            filter: grayscale(0%) brightness(100%) opacity(1);
+        }
+
+        @keyframes references-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .references-track {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .references-strip {
+                padding: 1.6rem 0 1.8rem;
+            }
+            .references-track {
+                gap: 2.5rem;
+                animation-duration: 22s;
+            }
+            .references-track img {
+                height: 30px;
+                max-width: 110px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .references-track {
+                gap: 2rem;
+                animation-duration: 18s;
+            }
+            .references-track img {
+                height: 26px;
+                max-width: 90px;
+            }
+        }
     </style>
 </head>
 
@@ -1021,6 +1110,28 @@
                     <a href="#contact" class="cta-button">Kostenlose Beratung</a>
                     <a href="https://cal.eu/marlonscheer" class="cta-button secondary">Kostenloser Quick-Scan</a>
                     <a href="#services" class="cta-button secondary">Unsere Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Referenzen-Leiste -->
+        <section class="references-strip" aria-label="Unsere Referenzen">
+            <p class="references-label">Vertrauen von Unternehmen in ganz Deutschland</p>
+            <div class="references-track-wrapper">
+                <div class="references-track">
+                    <img src="assets/references/Akip-710x450.jpg" alt="AKIP" loading="lazy">
+                    <img src="assets/references/FF_DQ.avif" alt="Referenz" loading="lazy">
+                    <img src="assets/references/logo-01.avif" alt="Referenz" loading="lazy">
+                    <img src="assets/references/logo-dark.png" alt="Referenz" loading="lazy">
+                    <img src="assets/references/Logo_KaDo.png" alt="KaDo" loading="lazy">
+                    <img src="assets/references/logo.png" alt="Referenz" loading="lazy">
+                    <!-- Duplikat für nahtlose Schleife -->
+                    <img src="assets/references/Akip-710x450.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <img src="assets/references/FF_DQ.avif" alt="" aria-hidden="true" loading="lazy">
+                    <img src="assets/references/logo-01.avif" alt="" aria-hidden="true" loading="lazy">
+                    <img src="assets/references/logo-dark.png" alt="" aria-hidden="true" loading="lazy">
+                    <img src="assets/references/Logo_KaDo.png" alt="" aria-hidden="true" loading="lazy">
+                    <img src="assets/references/logo.png" alt="" aria-hidden="true" loading="lazy">
                 </div>
             </div>
         </section>
