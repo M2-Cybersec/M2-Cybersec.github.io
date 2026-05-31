@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Growth-Paket von M2 Cybersec - IT-Sicherheit für wachsende Startups und KMUs. Multi-Target Security-Checks mit detailliertem Report.">
-    <meta name="keywords" content="Growth-Paket, IT-Sicherheit KMU, Multi-Target Check, Security Report, Cybersecurity für Startups">
+    <meta name="description" content="Growth Guard von M2 Cybersec – Security-Abo für wachsende Teams ab 349 €/Monat. 3× Security-Checks, Phishing-Simulation, Quartalsgespräche und Compliance-Dokumentation.">
+    <meta name="keywords" content="Growth Guard, IT-Sicherheit KMU, Security Abo, Phishing-Simulation, Compliance, Cybersecurity für Startups, 349 Euro Monat">
     <meta name="robots" content="index, follow">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Growth-Paket - IT-Sicherheit für wachsende Unternehmen | M2 Cybersec">
-    <meta property="og:description" content="Umfassende Security-Checks für 2-3 kritische Systeme mit detailliertem Report und Basisrichtlinien.">
-    
-    <title>Growth-Paket - IT-Sicherheit für KMUs & Startups | M2 Cybersec UG</title>
-    <link rel="canonical" href="https://m2cybersec.de/growth-paket/">
-        <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
-    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Growth Guard – Security-Abo für wachsende Teams | M2 Cybersec">
+    <meta property="og:description" content="Für Teams, die wachsen und Compliance brauchen. 349 €/Monat – 3× Security-Checks, Phishing-Simulation und Quartalsgespräche.">
+    <meta property="og:url" content="https://m2cybersec.de/growth-paket/">
+
+    <title>Growth Guard – Security-Abo für KMUs &amp; wachsende Teams ab 349 €/Monat | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2cybersec.de/growth-paket/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary-dark: #191819;
@@ -32,9 +28,7 @@
             --secondary-light-gray: #CECECE;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -69,35 +63,15 @@
             letter-spacing: 1px;
         }
 
-        .logo-image {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
+        .logo-image { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover .logo-image { transform: scale(1.05); }
 
-        .logo:hover .logo-image {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--primary-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-cyan);
-        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--primary-white); text-decoration: none; transition: all 0.3s ease; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-cyan); }
 
         .hero-package {
-            min-height: 60vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,19 +84,12 @@
         .hero-package::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; }
 
         .package-badge {
             display: inline-block;
@@ -139,41 +106,37 @@
 
         .hero-package h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 800;
             color: var(--primary-white);
             line-height: 1.2;
         }
 
-        .hero-package h1 span {
+        .hero-package h1 span { color: var(--primary-cyan); }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .hero-price {
+            font-size: 2.4rem;
+            font-weight: 800;
             color: var(--primary-cyan);
+            margin-bottom: 0.4rem;
         }
 
-        .hero-package p {
-            font-size: 1.25rem;
-            color: var(--secondary-light-gray);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
+        .hero-price-note {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+            margin-bottom: 2.5rem;
         }
 
-        .section {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-white);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            color: var(--secondary-light-gray);
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-        }
+        .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-white); font-weight: 700; }
+        .section-subtitle { color: var(--secondary-light-gray); font-size: 1.15rem; margin-bottom: 3rem; }
 
         .features-grid {
             display: grid;
@@ -197,23 +160,9 @@
             background: rgba(0, 252, 246, 0.03);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--secondary-light-gray);
-            line-height: 1.7;
-        }
+        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-cyan); font-weight: 700; }
+        .feature-card p { color: var(--secondary-light-gray); line-height: 1.7; }
 
         .ideal-for {
             background: rgba(0, 252, 246, 0.03);
@@ -223,17 +172,8 @@
             margin: 3rem 0;
         }
 
-        .ideal-for h3 {
-            color: var(--primary-cyan);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ideal-for ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        .ideal-for h3 { color: var(--primary-cyan); font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .ideal-for ul { list-style: none; padding: 0; }
         .ideal-for li {
             padding: 0.8rem 0;
             padding-left: 2rem;
@@ -241,7 +181,6 @@
             color: var(--secondary-light-gray);
             font-size: 1.1rem;
         }
-
         .ideal-for li::before {
             content: '✓';
             position: absolute;
@@ -258,39 +197,36 @@
             border: 2px solid var(--primary-cyan);
             text-align: center;
             margin: 3rem auto;
-            max-width: 600px;
+            max-width: 640px;
         }
 
-        .price {
-            font-size: 3rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-            margin: 1rem 0;
-        }
+        .pricing-box h3 { color: var(--primary-white); margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .price { font-size: 3rem; color: var(--primary-cyan); font-weight: 700; margin: 0.8rem 0; }
+        .price-note { color: var(--secondary-light-gray); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.8rem; }
 
-        .price-note {
-            color: var(--secondary-light-gray);
-            font-size: 0.95rem;
-            margin-top: 1rem;
-        }
+        .pricing-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
         .cta-button {
             display: inline-block;
-            padding: 1.1rem 2.8rem;
+            padding: 1.1rem 2.4rem;
             background: var(--primary-cyan);
             color: var(--primary-dark);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
+            border: 2px solid var(--primary-cyan);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4); }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary-cyan);
         }
+
+        .cta-button.secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); }
 
         .back-link {
             display: inline-flex;
@@ -303,9 +239,7 @@
             transition: all 0.3s ease;
         }
 
-        .back-link:hover {
-            gap: 0.8rem;
-        }
+        .back-link:hover { gap: 0.8rem; }
 
         footer {
             background: var(--primary-dark);
@@ -316,25 +250,12 @@
         }
 
         @media (max-width: 768px) {
-            .hero-package h1 {
-                font-size: 2.5rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-package h1 { font-size: 2.5rem; }
+            .hero-price { font-size: 1.8rem; }
+            .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
+            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -354,61 +275,71 @@
     <main>
         <section class="hero-package">
             <div class="hero-content">
-                <span class="package-badge">FÜR WACHSENDE TEAMS</span>
-                <h1>Das <span>Growth-Paket</span></h1>
-                <p>IT-Sicherheit für wachsende Startups mit produktiven Systemen. Umfassende Prüfung mehrerer kritischer Ziele mit detailliertem Report.</p>
+                <span class="package-badge">FÜR WACHSENDE TEAMS &amp; KMUS</span>
+                <h1><span>Growth Guard</span></h1>
+                <p class="hero-tagline">„Für Teams, die wachsen und Compliance brauchen."</p>
+                <div class="hero-price">349 €/Monat</div>
+                <p class="hero-price-note">Jahresvertrag &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
             </div>
         </section>
 
         <section class="section">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
-            
+
             <h2 class="section-title">Was ist enthalten:</h2>
-            <p class="section-subtitle">Professionelle Security-Checks mit tiefergehender Analyse und praktischen Richtlinien.</p>
+            <p class="section-subtitle">Professionelle Security für produktive Systeme – mit Compliance-Dokumentation und regelmäßigem Austausch.</p>
 
             <div class="features-grid">
                 <article class="feature-card">
                     <span class="feature-icon">🎯</span>
-                    <h3>Multi-Target Check</h3>
-                    <p>Wir prüfen 2–3 kritische Systeme (z. B. Web-App, API oder Server). So erkennen SIe früh potenzielle Schwachstellen in Live-Umgebungen.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">🔬</span>
-                    <h3>Detaillierte Analyse</h3>
-                    <p>Wir gehen tiefer als ein Quick-Check: Risiken werden bewertet und Sie bekommen praktische Handlungsempfehlungen, die sofort umgesetzt werden können.</p>
+                    <h3>3× jährliche Security-Checks</h3>
+                    <p>Dreimal im Jahr prüfen wir je 2–3 kritische Systeme (Web-App, API, Server) auf Schwachstellen – wie echte Angreifer vorgehen.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-icon">📊</span>
-                    <h3>Ausführlicher Report</h3>
-                    <p>Alle Findings in einem strukturierten Report: Schwachstellen, Prioritäten und empfohlene Maßnahmen. Ideal für Management und Entwickler.</p>
+                    <h3>Monatlicher Report + Quartalsgespräch</h3>
+                    <p>Jeden Monat ein strukturierter Sicherheitsbericht mit Risikobewertung. Dazu ein 30-minütiges Ergebnissgespräch pro Quartal mit einem festen Ansprechpartner.</p>
                 </article>
 
                 <article class="feature-card">
-                    <span class="feature-icon">🔄</span>
-                    <h3>Wiederholte Checkups</h3>
-                    <p>Insgesamt 3 umfassende Security-Checks pro Jahr für kritische Ziele – damit Ihr Team kontinuierlich geschützt bleibt.</p>
+                    <span class="feature-icon">🎓</span>
+                    <h3>2× Awareness-Schulungen</h3>
+                    <p>Zweimal jährlich schulen wir bis zu 25 Mitarbeiter zu Phishing, Social Engineering und sicherem Arbeitsalltag – praxisnah und branchenspezifisch.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🎣</span>
+                    <h3>Phishing-Simulation</h3>
+                    <p>Einmal jährlich simulieren wir einen echten Phishing-Angriff auf eure Mitarbeiter – kontrolliert, lehrreich und ohne echten Schaden.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">📋</span>
+                    <h3>Compliance-Dokumentation</h3>
+                    <p>Alle Reports sind nutzbar als Nachweis für DSGVO, NIS2 und Kundennachweise. Strukturierte Risikobewertung mit konkreten Handlungsempfehlungen.</p>
                 </article>
             </div>
 
             <div class="ideal-for">
                 <h3>Ideal für:</h3>
                 <ul>
-                    <li>Startups mit produktiven Systemen und mehreren Anwendungen</li>
+                    <li>Wachsende Startups mit produktiven Systemen und mehreren Anwendungen</li>
                     <li>KMUs mit wachsender IT-Infrastruktur</li>
-                    <li>Teams, die regelmäßige Security-Audits benötigen</li>
-                    <li>Unternehmen mit Web-Apps, APIs und Server-Infrastruktur</li>
-                    <li>Organisationen, die Compliance-Anforderungen erfüllen müssen</li>
-                    <li>Firmen, die Passwort- und MFA-Richtlinien implementieren wollen</li>
+                    <li>Teams mit Compliance-Bedarf (DSGVO, NIS2)</li>
+                    <li>Unternehmen, die regelmäßige Security-Audits benötigen</li>
+                    <li>Firmen, die Mitarbeiterbewusstsein aktiv stärken wollen</li>
                 </ul>
             </div>
 
             <div class="pricing-box">
-                <h3 style="color: var(--primary-white); margin-bottom: 1rem;">Investition in Ihre Sicherheit</h3>
-                <div class="price">Auf Anfrage</div>
-                <p class="price-note">Individuelle Preisgestaltung je nach Anzahl der Systeme und Projektumfang</p>
-                <a href="../index.html#contact" class="cta-button">Jetzt anfragen</a>
+                <h3>Growth Guard</h3>
+                <div class="price">349 €/Monat</div>
+                <p class="price-note">12-Monats-Laufzeit &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
+                <div class="pricing-buttons">
+                    <a href="../index.html#contact" class="cta-button">Jetzt starten &rarr;</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button secondary">Kostenloser Quick-Scan zuerst &rarr;</a>
+                </div>
             </div>
         </section>
     </main>

@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Starter-Paket von M2 Cybersec - Security-Check für Startups und junge Unternehmen. Schneller Einstieg in IT-Sicherheit mit kompakter Analyse.">
-    <meta name="keywords" content="Starter-Paket, IT-Sicherheit Startups, Security-Check, Cybersecurity für Gründer, MVP Sicherheit">
+    <meta name="description" content="Startup Shield von M2 Cybersec – Ihr erster Security-Partner für 149 €/Monat. Jährlicher Security-Check, monatlicher Lagebericht und Awareness-Training für Startups und Gründer. NRW-Förderung möglich.">
+    <meta name="keywords" content="Startup Shield, IT-Sicherheit Startups, Security-Check, Cybersecurity für Gründer, NRW-Förderung, Startup Security Abo, 149 Euro Monat">
     <meta name="robots" content="index, follow">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Starter-Paket - IT-Sicherheit für Startups | M2 Cybersec">
-    <meta property="og:description" content="Schneller Security-Check für Ihr Startup. Kompakte Analyse und klare Handlungsempfehlungen.">
-    
-    <title>Starter-Paket - Security-Check für Startups | M2 Cybersec UG</title>
-    <link rel="canonical" href="https://m2cybersec.de/starter-paket/">
-        <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
-    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Startup Shield – Security-Abo für Startups ab 149 €/Monat | M2 Cybersec">
+    <meta property="og:description" content="Euer erster Security-Partner für 149 €/Monat. Jährlicher Check, monatlicher Report, Awareness-Training – fertig in 5 Werktagen. NRW-Förderung möglich.">
+    <meta property="og:url" content="https://m2cybersec.de/starter-paket/">
+
+    <title>Startup Shield – Security-Abo für Startups ab 149 €/Monat | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2cybersec.de/starter-paket/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary-dark: #191819;
@@ -32,9 +28,7 @@
             --secondary-light-gray: #CECECE;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -69,35 +63,15 @@
             letter-spacing: 1px;
         }
 
-        .logo-image {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
+        .logo-image { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover .logo-image { transform: scale(1.05); }
 
-        .logo:hover .logo-image {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--primary-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-cyan);
-        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--primary-white); text-decoration: none; transition: all 0.3s ease; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-cyan); }
 
         .hero-package {
-            min-height: 60vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,19 +84,12 @@
         .hero-package::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; }
 
         .package-badge {
             display: inline-block;
@@ -139,41 +106,37 @@
 
         .hero-package h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 800;
             color: var(--primary-white);
             line-height: 1.2;
         }
 
-        .hero-package h1 span {
+        .hero-package h1 span { color: var(--primary-cyan); }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .hero-price {
+            font-size: 2.4rem;
+            font-weight: 800;
             color: var(--primary-cyan);
+            margin-bottom: 0.4rem;
         }
 
-        .hero-package p {
-            font-size: 1.25rem;
-            color: var(--secondary-light-gray);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
+        .hero-price-note {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+            margin-bottom: 2.5rem;
         }
 
-        .section {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-white);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            color: var(--secondary-light-gray);
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-        }
+        .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-white); font-weight: 700; }
+        .section-subtitle { color: var(--secondary-light-gray); font-size: 1.15rem; margin-bottom: 3rem; }
 
         .features-grid {
             display: grid;
@@ -197,23 +160,21 @@
             background: rgba(0, 252, 246, 0.03);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
+        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-cyan); font-weight: 700; }
+        .feature-card p { color: var(--secondary-light-gray); line-height: 1.7; }
+
+        .foerder-box {
+            background: linear-gradient(135deg, rgba(0, 160, 90, 0.1) 0%, rgba(0, 160, 90, 0.04) 100%);
+            border: 2px solid rgba(0, 200, 110, 0.4);
+            border-radius: 20px;
+            padding: 2.5rem 3rem;
+            margin: 3rem 0;
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--secondary-light-gray);
-            line-height: 1.7;
-        }
+        .foerder-box h3 { color: #5cffc4; font-size: 1.6rem; margin-bottom: 1rem; }
+        .foerder-box p { color: #b8f5d4; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0.8rem; }
+        .foerder-box p:last-of-type { margin-bottom: 1.5rem; }
 
         .ideal-for {
             background: rgba(0, 252, 246, 0.03);
@@ -223,17 +184,8 @@
             margin: 3rem 0;
         }
 
-        .ideal-for h3 {
-            color: var(--primary-cyan);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ideal-for ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        .ideal-for h3 { color: var(--primary-cyan); font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .ideal-for ul { list-style: none; padding: 0; }
         .ideal-for li {
             padding: 0.8rem 0;
             padding-left: 2rem;
@@ -241,7 +193,6 @@
             color: var(--secondary-light-gray);
             font-size: 1.1rem;
         }
-
         .ideal-for li::before {
             content: '✓';
             position: absolute;
@@ -258,38 +209,55 @@
             border: 2px solid var(--primary-cyan);
             text-align: center;
             margin: 3rem auto;
-            max-width: 600px;
+            max-width: 640px;
         }
 
-        .price {
-            font-size: 3rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-            margin: 1rem 0;
-        }
+        .pricing-box h3 { color: var(--primary-white); margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .price { font-size: 3rem; color: var(--primary-cyan); font-weight: 700; margin: 0.8rem 0; }
+        .price-note { color: var(--secondary-light-gray); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.8rem; }
 
-        .price-note {
-            color: var(--secondary-light-gray);
-            font-size: 0.95rem;
-            margin-top: 1rem;
-        }
+        .pricing-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
         .cta-button {
             display: inline-block;
-            padding: 1.1rem 2.8rem;
+            padding: 1.1rem 2.4rem;
             background: var(--primary-cyan);
             color: var(--primary-dark);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
+            border: 2px solid var(--primary-cyan);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4); }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary-cyan);
+        }
+
+        .cta-button.secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); }
+
+        .foerder-box .cta-button {
+            background: #00c86e;
+            color: #051a0d;
+            border-color: #00c86e;
+        }
+
+        .foerder-box .cta-button:hover { background: #00e87a; box-shadow: 0 15px 35px rgba(0, 200, 110, 0.4); border-color: #00e87a; }
+
+        .quickscan-note {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--primary-cyan);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 2rem;
+            margin: 3rem 0;
+            color: var(--secondary-light-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-style: italic;
         }
 
         .back-link {
@@ -303,9 +271,7 @@
             transition: all 0.3s ease;
         }
 
-        .back-link:hover {
-            gap: 0.8rem;
-        }
+        .back-link:hover { gap: 0.8rem; }
 
         footer {
             background: var(--primary-dark);
@@ -316,25 +282,13 @@
         }
 
         @media (max-width: 768px) {
-            .hero-package h1 {
-                font-size: 2.5rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-package h1 { font-size: 2.5rem; }
+            .hero-price { font-size: 1.8rem; }
+            .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
+            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .foerder-box { padding: 2rem; }
+            .pricing-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -354,60 +308,82 @@
     <main>
         <section class="hero-package">
             <div class="hero-content">
-                <span class="package-badge">FÜR STARTUPS & GRÜNDER</span>
-                <h1>Das <span>Starter-Paket</span></h1>
-                <p>Schnell und unkompliziert wissen, wie es um die Sicherheit deines Projekts steht – ohne große Budgets oder teure Komplettpakete.</p>
+                <span class="package-badge">FÜR STARTUPS &amp; GRÜNDER</span>
+                <h1><span>Startup Shield</span></h1>
+                <p class="hero-tagline">„Dein erster Security-Partner. Fertig in 5 Werktagen."</p>
+                <div class="hero-price">149 €/Monat</div>
+                <p class="hero-price-note">Jahresvertrag &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
             </div>
         </section>
 
         <section class="section">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
-            
+
             <h2 class="section-title">Was ist enthalten:</h2>
-            <p class="section-subtitle">Ein kompakter Security-Check mit klaren Handlungsempfehlungen für den Start.</p>
+            <p class="section-subtitle">Ein vollständiges Security-Paket für den Einstieg – monatlich aktiv, jährlich geprüft.</p>
 
             <div class="features-grid">
                 <article class="feature-card">
                     <span class="feature-icon">🔍</span>
-                    <h3>Externer Security-Check</h3>
-                    <p>Wir testen gezielt ein einzelnes Ziel von außen, genau so, wie es echte Hacker machen. Ein schneller Einstieg in IT-Sicherheit für Startups.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Basis-Analyse</h3>
-                    <p>Kurze, effiziente Analyse innerhalb von 1–2 Stunden, die die größten Schwachstellen sichtbar macht. Ideal, um früh einen Überblick zu gewinnen.</p>
+                    <h3>Jährlicher Security-Check</h3>
+                    <p>Externer Pentest einer Domain und einer Web-App oder API – wie echte Angreifer vorgehen. Wir decken auf, was wirklich gefährlich ist.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-icon">📋</span>
-                    <h3>Handlungs&shy;empfehlung</h3>
-                    <p>Klare, leicht verständliche Übersicht mit konkreten Schritten zur Verbesserung der IT-Sicherheit – kompakt, praxisnah und sofort umsetzbar.</p>
+                    <h3>Monatlicher Lagebericht</h3>
+                    <p>Jeden Monat ein 1-seitiger Security-Bericht: aktuelle CVEs, relevante Bedrohungen und ein konkreter Security-Tipp für euer Team.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🎓</span>
+                    <h3>Jährliches Awareness-Training</h3>
+                    <p>90-minütige Gruppenschulung für bis zu 10 Mitarbeiter: Phishing, Social Engineering, Passwortsicherheit – praxisnah und interaktiv.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">📄</span>
+                    <h3>Startup-Report in eurer Sprache</h3>
+                    <p>5 Seiten, kein Enterprise-Kauderwelsch. Nutzbar als Nachweis für Investoren und Partner bei Due Diligence.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-icon">💬</span>
-                    <h3>Optionaler Austausch</h3>
-                    <p>Auf Wunsch besprechen wir die Ergebnisse in einem kurzen Video-Call oder per Chat. Zusätzliche Cybersecurity-Beratung für Ihr junges Unternehmen.</p>
+                    <h3>Optionaler Ergebniscall</h3>
+                    <p>30 Minuten mit einem unserer Experten – wir erklären alles auf Augenhöhe, ohne Fachchinesisch.</p>
                 </article>
+            </div>
+
+            <div class="foerder-box">
+                <h3>🎉 NRW-Förderung: Bis zu 80 % Kostenübernahme möglich!</h3>
+                <p>Das Land NRW fördert Security-Checks für KMUs mit bis zu 80 % der Kosten. Das bedeutet: Euer Startup Shield kann effektiv ab ~30 €/Monat kosten.</p>
+                <p>Wir helfen euch beim Förderantrag – kostenlos und unkompliziert.</p>
+                <a href="mailto:info@m2cybersec.de?subject=NRW-Förderung Startup Shield" class="cta-button">Jetzt anfragen &amp; Förderung prüfen &rarr;</a>
             </div>
 
             <div class="ideal-for">
                 <h3>Ideal für:</h3>
                 <ul>
                     <li>Startups mit ersten Prototypen oder MVPs</li>
-                    <li>Gründer:innen, die schnell einen Security-Überblick benötigen</li>
-                    <li>Kleine Teams ohne dedizierte IT-Security-Ressourcen</li>
-                    <li>Unternehmen, die IT-Sicherheit von Anfang an richtig aufbauen wollen</li>
-                    <li>Projekte mit begrenztem Budget für umfassende Security-Audits</li>
+                    <li>Gründer:innen, die Security von Anfang an richtig aufbauen wollen</li>
+                    <li>Teams, die einen Nachweis für Investoren oder Partner brauchen</li>
+                    <li>Kleine Unternehmen ohne dedizierte IT-Security-Ressourcen</li>
+                    <li>NRW-Startups, die Fördergelder nutzen wollen</li>
                 </ul>
             </div>
 
             <div class="pricing-box">
-                <h3 style="color: var(--primary-white); margin-bottom: 1rem;">Investition in Ihre Sicherheit</h3>
-                <div class="price">Auf Anfrage</div>
-                <p class="price-note">Individuelle Preisgestaltung je nach Projektumfang</p>
-                <a href="../index.html#contact" class="cta-button">Jetzt anfragen</a>
+                <h3>Startup Shield</h3>
+                <div class="price">149 €/Monat</div>
+                <p class="price-note">12-Monats-Laufzeit &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
+                <div class="pricing-buttons">
+                    <a href="../index.html#contact" class="cta-button">Jetzt starten &rarr;</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button secondary">Kostenloser Quick-Scan zuerst &rarr;</a>
+                </div>
+            </div>
+
+            <div class="quickscan-note">
+                Der kostenlose Quick-Scan zeigt euch in 30 Minuten eure größten Risiken – aber ohne aktives Testing. Das Startup Shield geht einen Schritt weiter: Wir prüfen euer System wie echte Angreifer und liefern euch monatlich einen Überblick über eure Sicherheitslage.
             </div>
         </section>
     </main>
