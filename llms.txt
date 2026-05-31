@@ -17,6 +17,10 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quicks
 - [Awareness+ Training](https://m2cybersec.de/awareness-training-fuer-kmu/): Interaktive Mitarbeiterschulungen zu Phishing, Ransomware und Cyber-Risikomanagement. 490 €/Session (bis 25 Mitarbeiter, 90 Min., inkl. Teilnahmezertifikate). Auch als Add-on zu jedem Abo-Paket buchbar.
 - [Red Team Plus](https://m2cybersec.de/red-team-plus/) ⭐ FLAGGSCHIFF: Ganzheitliches 360°-Sicherheitsaudit – technische Prüfung (Pentest), Mitarbeiter-Awareness-Check (Social Engineering, Phishing) und physische Sicherheitsanalyse aus Angreiferperspektive. Inkl. CVSS-Report, Executive Summary und Re-Test-Option. Auf Anfrage (kein Abo).
 
+## NRW-Förderung
+
+- [NRW-Förderung für Cybersecurity](https://m2cybersec.de/nrw-foerderung/): Das Land NRW übernimmt bis zu 80 % der Kosten für Security-Checks bei KMUs mit Sitz in NRW. Förderfähig: Pentests, Security-Checks, Awareness-Schulungen, Sicherheitsberatung. M2 Cybersec unterstützt beim Förderantrag kostenlos. Effektiver Preis Startup Shield: ab ~30 €/Monat.
+
 ## Kostenloser Quick-Scan
 
 Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 30 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), Top-3-Findings als PDF. Buchbar unter https://cal.eu/marlonscheer/quickscan

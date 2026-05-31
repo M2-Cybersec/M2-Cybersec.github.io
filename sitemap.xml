@@ -115,6 +115,14 @@
 </url>
 
 
+    <!-- NRW-Förderung -->
+    <url>
+        <loc>https://m2cybersec.de/nrw-foerderung/</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Services -->
     <url>
         <loc>https://m2cybersec.de/sicherheit-fuer-kmu/</loc>
