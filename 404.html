@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>Seite nicht gefunden | M2 Cybersec</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-gray: #CECECE;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -4px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            max-width: 480px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-cyan);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 2px solid var(--primary-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .logo {
+            position: absolute;
+            top: 1.5rem;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+        }
+
+        .logo img { height: 36px; width: auto; }
+
+        @media (max-width: 480px) {
+            .error-code { font-size: 5rem; }
+            h1 { font-size: 1.4rem; }
+            .buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="logo">
+        <img src="/assets/logo.png" alt="M2 Cybersec Logo">
+        <span>M2 Cybersec</span>
+    </a>
+
+    <div class="error-code">404</div>
+    <h1>Diese Seite wurde nicht gefunden</h1>
+    <p>Die gesuchte Seite existiert nicht oder wurde verschoben. Kein Grund zur Panik – wir helfen Ihnen weiter.</p>
+
+    <div class="buttons">
+        <a href="/" class="btn btn-primary">Zur Startseite →</a>
+        <a href="/#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+    </div>
+</body>
+</html>

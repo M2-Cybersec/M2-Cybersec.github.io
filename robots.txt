@@ -2,6 +2,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /prompts/
+Disallow: /templates/
 
 # Sitemaps
 Sitemap: https://m2cybersec.de/sitemap.xml
