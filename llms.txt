@@ -10,7 +10,8 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quicks
 
 ## Services
 
-- [Startup Shield](https://m2cybersec.de/starter-paket/): Für Startups & Gründer. 149 €/Monat (Jahresvertrag). Jährlicher externer Security-Check (1 Domain + Web-App/API), monatlicher Lagebericht, jährliches Awareness-Training (bis 10 Mitarbeiter), kompakter 5-seitiger Report.
+- [Startup Shield](https://m2cybersec.de/starter-paket/): Für Startups & Gründer. 149 €/Monat (Jahresvertrag). Jährlicher externer Security-Check (1 Domain + Web-App/API), monatlicher Lagebericht, jährliches Awareness-Training (bis 10 Mitarbeiter), kompakter 5-seitiger Report. NRW-Förderung möglich (bis zu 80 %, effektiv ab ~30 €/Monat).
+- [NRW-Förderung für Cybersecurity](https://m2cybersec.de/nrw-foerderung/): Informationsseite zur NRW-Förderung von Cybersecurity-Maßnahmen für KMU. Bis zu 80 % Förderquote, 4-Schritte-Prozess, Berechtigungsprüfung.
 - [Growth Guard](https://m2cybersec.de/growth-paket/): Für wachsende Teams und KMUs mit Compliance-Bedarf. 349 €/Monat (Jahresvertrag). 3× jährliche Security-Checks (je 2–3 kritische Systeme), monatlicher Report + Quartalsgespräch, 2× Awareness-Schulungen (bis 25 Mitarbeiter), 1× Phishing-Simulation, Compliance-Dokumentation.
 - [Scale Secure](https://m2cybersec.de/scale-paket/): Für professionelle Teams mit komplexer Infrastruktur und ISO/NIS2-Bedarf. 749 €/Monat (Jahresvertrag). 4× Security-Checks (5+ Systeme), Code Review & Architektur-Check, monatlicher CVSS-Report + dedizierter Ansprechpartner, 3× Awareness-Schulungen + Phishing-Simulationen, Notfallplan, Re-Tests, SLA-Reaktionszeiten.
 - [Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/): Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für kleine und mittelständische Unternehmen.

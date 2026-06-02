@@ -1113,6 +1113,76 @@
             }
         }
 
+        /* NRW-Förderung Banner */
+        .nrw-banner {
+            background: linear-gradient(135deg, rgba(0, 100, 60, 0.12) 0%, rgba(0, 252, 246, 0.04) 100%);
+            border-top: 2px solid rgba(0, 180, 100, 0.35);
+            border-bottom: 2px solid rgba(0, 180, 100, 0.35);
+            padding: 2.5rem 5%;
+            text-align: center;
+        }
+
+        .nrw-banner-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nrw-banner-text h3 {
+            color: #00c060;
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .nrw-banner-text p {
+            color: var(--secondary-light-gray);
+            font-size: 1rem;
+            max-width: 600px;
+        }
+
+        .nrw-link {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background: rgba(0, 192, 96, 0.12);
+            color: #00c060;
+            border: 2px solid #00c060;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nrw-link:hover {
+            background: #00c060;
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 192, 96, 0.3);
+        }
+
+        .service-nrw-tag {
+            display: inline-block;
+            background: rgba(0, 192, 96, 0.12);
+            border: 1px solid rgba(0, 192, 96, 0.45);
+            border-radius: 50px;
+            padding: 0.2rem 0.75rem;
+            color: #00c060;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .nrw-banner-inner { flex-direction: column; gap: 1.2rem; }
+            .nrw-banner-text p { font-size: 0.9rem; }
+        }
+
         /* Pricing Section */
         .pricing-section {
             padding: 7rem 5%;
@@ -1437,6 +1507,17 @@
             </div>
         </section>
 
+        <!-- NRW-Förderung Banner -->
+        <section class="nrw-banner" aria-label="NRW-Förderung">
+            <div class="nrw-banner-inner">
+                <div class="nrw-banner-text">
+                    <h3>🏛️ Startup Shield – bis zu 80 % NRW-gefördert</h3>
+                    <p>Unternehmen in Nordrhein-Westfalen können Cybersecurity-Maßnahmen über NRW-Förderprogramme bezuschussen lassen – effektiv ab ca. 30 €/Monat.</p>
+                </div>
+                <a href="nrw-foerderung/index.html" class="nrw-link">Förderung prüfen →</a>
+            </div>
+        </section>
+
         <!-- Red Team Pricing -->
         <section id="pricing" class="pricing-section">
             <div class="pricing-grid-bg" aria-hidden="true"></div>
@@ -1521,6 +1602,7 @@
                         <h3>Startup Shield</h3>
                         <span class="service-price">ab 149 €/mtl.</span>
                         <p>Für Startups &amp; Gründer: Jährlicher Security-Check, monatlicher Lagebericht, Awareness-Training und kompakter Report – fertig in 5 Werktagen.</p>
+                        <span class="service-nrw-tag">NRW-Förderung möglich</span>
                     </a>
                 </article>
                 <article class="service-card">

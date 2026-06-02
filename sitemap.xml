@@ -131,6 +131,13 @@
     </url>
 
     <url>
+        <loc>https://m2cybersec.de/nrw-foerderung/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
         <loc>https://m2cybersec.de/red-team-plus/</loc>
         <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>

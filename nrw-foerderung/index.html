@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NRW-Förderung für Cybersecurity: So bezuschussen Unternehmen in Nordrhein-Westfalen ihren Security-Schutz über Förderprogramme – bis zu 80 % der Kosten.">
+    <meta name="keywords" content="NRW Förderung Cybersecurity, Digitalisierungsförderung NRW, IT-Sicherheit gefördert, Förderprogramm KMU NRW, Startup Shield NRW">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NRW-Förderung für Cybersecurity | M2 Cybersec">
+    <meta property="og:description" content="Bis zu 80 % Ihrer Cybersecurity-Kosten können NRW-Unternehmen über Förderprogramme bezuschussen lassen. Jetzt prüfen, ob Sie berechtigt sind.">
+    <meta property="og:url" content="https://m2cybersec.de/nrw-foerderung/">
+
+    <title>NRW-Förderung für Cybersecurity – Bis zu 80 % gefördert | M2 Cybersec</title>
+    <link rel="canonical" href="https://m2cybersec.de/nrw-foerderung/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-dark: #191819;
+            --primary-cyan: #00fcf6;
+            --primary-white: #ffffff;
+            --secondary-gray: #515151;
+            --secondary-light-cyan: #5cfff3;
+            --secondary-light-gray: #CECECE;
+            --nrw-green: #00c060;
+            --nrw-green-light: #00e070;
+            --nrw-green-dim: rgba(0, 192, 96, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(25, 24, 25, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-image { height: 45px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover .logo-image { transform: scale(1.05); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--primary-white); text-decoration: none; transition: all 0.3s ease; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-cyan); }
+
+        /* Hero */
+        .hero-nrw {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0a1a0e 100%);
+            position: relative;
+        }
+
+        .hero-nrw::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 192, 96, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+        .nrw-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--nrw-green-dim);
+            border: 2px solid var(--nrw-green);
+            border-radius: 50px;
+            color: var(--nrw-green);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-nrw h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            color: var(--primary-white);
+            line-height: 1.2;
+        }
+
+        .hero-nrw h1 span { color: var(--nrw-green); }
+
+        .hero-nrw p {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Kenndaten Grid */
+        .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+
+        .kenndaten-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .kenndaten-card {
+            background: var(--nrw-green-dim);
+            border: 2px solid rgba(0, 192, 96, 0.3);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .kenndaten-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--nrw-green);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .kenndaten-label {
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+        }
+
+        /* Was wird gefördert */
+        .section-title { font-size: 2.2rem; font-weight: 700; color: var(--primary-white); margin-bottom: 0.8rem; }
+        .section-subtitle { color: var(--secondary-light-gray); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+        .foerder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .foerder-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 192, 96, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .foerder-card:hover {
+            border-color: var(--nrw-green);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 192, 96, 0.15);
+        }
+
+        .foerder-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+        .foerder-card h3 { font-size: 1.2rem; color: var(--nrw-green); margin-bottom: 0.6rem; font-weight: 700; }
+        .foerder-card p { color: var(--secondary-light-gray); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Berechtigung */
+        .berechtigung-box {
+            background: var(--nrw-green-dim);
+            border: 2px solid rgba(0, 192, 96, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .berechtigung-box h3 { color: var(--nrw-green); font-size: 1.6rem; margin-bottom: 1.5rem; }
+
+        .berechtigung-list { list-style: none; padding: 0; }
+        .berechtigung-list li {
+            padding: 0.75rem 0 0.75rem 2.2rem;
+            position: relative;
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            border-bottom: 1px solid rgba(0, 192, 96, 0.1);
+        }
+        .berechtigung-list li:last-child { border-bottom: none; }
+        .berechtigung-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--nrw-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 4-Schritte-Prozess */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 192, 96, 0.2);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--nrw-green);
+            color: var(--primary-dark);
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .step-card h4 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .step-card p { color: var(--secondary-light-gray); font-size: 0.88rem; line-height: 1.5; }
+
+        /* Hinweis-Box */
+        .hinweis-box {
+            background: rgba(255, 200, 0, 0.05);
+            border-left: 3px solid rgba(255, 200, 0, 0.5);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            color: var(--secondary-light-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .hinweis-box strong { color: rgba(255, 200, 0, 0.9); }
+
+        /* CTA */
+        .cta-section {
+            background: var(--nrw-green-dim);
+            border: 2px solid rgba(0, 192, 96, 0.35);
+            border-radius: 20px;
+            padding: 3.5rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 { font-size: 2rem; color: var(--primary-white); margin-bottom: 0.8rem; }
+        .cta-section p { color: var(--secondary-light-gray); margin-bottom: 2rem; font-size: 1.05rem; }
+
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.4rem;
+            background: var(--nrw-green);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--nrw-green);
+        }
+
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 192, 96, 0.4); }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--nrw-green);
+        }
+
+        .cta-button.secondary:hover { background: var(--nrw-green); color: var(--primary-dark); }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--nrw-green);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover { gap: 0.8rem; }
+
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 5%;
+            border-top: 2px solid var(--primary-cyan);
+            text-align: center;
+            color: var(--secondary-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero-nrw h1 { font-size: 2.2rem; }
+            .kenndaten-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
+            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+            .berechtigung-box { padding: 2rem; }
+            .cta-section { padding: 2.5rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .kenndaten-grid { grid-template-columns: 1fr 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <span>M2 Cybersec</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero-nrw">
+            <div class="hero-content">
+                <span class="nrw-badge">NRW-FÖRDERUNG &middot; CYBERSECURITY</span>
+                <h1>Startup Shield <span>bis zu 80 % gefördert</span></h1>
+                <p>Unternehmen in Nordrhein-Westfalen können Cybersecurity-Maßnahmen über staatliche Förderprogramme bezuschussen lassen – und so ihren Schutz für effektiv rund 30 €/Monat erhalten.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
+
+            <h2 class="section-title">Die wichtigsten Kenndaten</h2>
+            <p class="section-subtitle">Was NRW-Unternehmen über die Förderung wissen müssen</p>
+
+            <div class="kenndaten-grid">
+                <div class="kenndaten-card">
+                    <div class="kenndaten-value">80 %</div>
+                    <div class="kenndaten-label">maximale Förderquote der förderfähigen Kosten</div>
+                </div>
+                <div class="kenndaten-card">
+                    <div class="kenndaten-value">~30 €</div>
+                    <div class="kenndaten-label">effektiver Monatsbeitrag nach Förderung (Startup Shield)</div>
+                </div>
+                <div class="kenndaten-card">
+                    <div class="kenndaten-value">KMU</div>
+                    <div class="kenndaten-label">Zielgruppe: Kleine und mittlere Unternehmen in NRW</div>
+                </div>
+                <div class="kenndaten-card">
+                    <div class="kenndaten-value">0 €</div>
+                    <div class="kenndaten-label">Einrichtungsgebühr beim Startup Shield</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Was wird gefördert?</h2>
+            <p class="section-subtitle">Diese Leistungen aus dem Startup Shield sind typischerweise förderfähig</p>
+
+            <div class="foerder-grid">
+                <div class="foerder-card">
+                    <span class="foerder-icon">🔍</span>
+                    <h3>Penetration Tests &amp; Security-Checks</h3>
+                    <p>Externe Sicherheitsprüfungen Ihrer IT-Infrastruktur, Web-Apps und APIs gelten als Investition in die Informationssicherheit.</p>
+                </div>
+                <div class="foerder-card">
+                    <span class="foerder-icon">🎓</span>
+                    <h3>Awareness-Trainings</h3>
+                    <p>Mitarbeiterschulungen zu Phishing, Social Engineering und sicherem Umgang mit IT-Systemen sind ein klassisches Förderthema.</p>
+                </div>
+                <div class="foerder-card">
+                    <span class="foerder-icon">📋</span>
+                    <h3>Security-Beratung &amp; Reports</h3>
+                    <p>Externe Beratungsleistungen und Dokumentation zur IT-Sicherheit werden in der Regel als förderfähige Dienstleistungen anerkannt.</p>
+                </div>
+                <div class="foerder-card">
+                    <span class="foerder-icon">📄</span>
+                    <h3>Compliance-Dokumentation</h3>
+                    <p>Maßnahmen zur Erfüllung gesetzlicher Anforderungen (NIS2, DSGVO) können ebenfalls bezuschusst werden.</p>
+                </div>
+            </div>
+
+            <div class="berechtigung-box">
+                <h3>Bin ich förderberechtigt?</h3>
+                <ul class="berechtigung-list">
+                    <li>Ihr Unternehmen hat seinen Sitz in Nordrhein-Westfalen</li>
+                    <li>Sie sind ein kleines oder mittleres Unternehmen (KMU) nach EU-Definition</li>
+                    <li>Weniger als 250 Mitarbeiter und Jahresumsatz unter 50 Mio. € oder Jahresbilanzsumme unter 43 Mio. €</li>
+                    <li>Die geplanten Maßnahmen wurden noch nicht begonnen (Vorhabenbeginn)</li>
+                    <li>Kein laufendes Insolvenzverfahren</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">So geht's in 4 Schritten</h2>
+            <p class="section-subtitle">Von der Anfrage bis zur Förderung – einfach und begleitet</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Quick-Scan buchen</h4>
+                    <p>Kostenloser 30-minütiger Quick-Scan – wir analysieren Ihre IT-Angriffsfläche und prüfen gemeinsam Ihre Förderoption.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Förderantrag stellen</h4>
+                    <p>Wir unterstützen Sie bei der Vorbereitung der notwendigen Unterlagen für die zuständige Bewilligungsbehörde.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Bewilligung abwarten</h4>
+                    <p>Nach Antragstellung und Bewilligung kann das Projekt starten. Wir stimmen den Zeitplan mit Ihnen ab.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Startup Shield starten</h4>
+                    <p>Ihr Schutz beginnt. Nach Projektabschluss erfolgt die Abrechnung – Förderquote direkt vom Staat übernommen.</p>
+                </div>
+            </div>
+
+            <div class="hinweis-box">
+                <strong>Hinweis:</strong> Förderprogramme und deren genaue Konditionen ändern sich regelmäßig. Die hier dargestellten Informationen sind allgemeiner Natur. Ob und in welcher Höhe eine Förderung für Ihr konkretes Vorhaben möglich ist, klären wir gerne im kostenlosen Quick-Scan gemeinsam mit Ihnen – sprechen Sie uns einfach an.
+            </div>
+
+            <div class="cta-section">
+                <h3>Förderung prüfen &amp; Startup Shield starten</h3>
+                <p>Buchen Sie jetzt Ihren kostenlosen Quick-Scan. Wir analysieren Ihre Sicherheitslage und klären gemeinsam, ob eine NRW-Förderung für Ihr Unternehmen infrage kommt.</p>
+                <div class="cta-buttons">
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button">Kostenloser Quick-Scan →</a>
+                    <a href="../starter-paket/index.html" class="cta-button secondary">Startup Shield ansehen →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
