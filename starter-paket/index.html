@@ -328,6 +328,93 @@
         .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
         .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+        /* Monthly report highlight */
+        .feature-item.featured {
+            background: rgba(0, 252, 246, 0.04);
+            border-radius: 10px;
+            padding: 1.2rem 1rem;
+            margin: 0 -1rem;
+            border-bottom: 1px solid rgba(0, 252, 246, 0.1);
+        }
+
+        .monthly-badge {
+            display: inline-block;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 0.1rem 0.55rem;
+            border-radius: 50px;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            top: -1px;
+        }
+
+        /* Report spotlight */
+        .report-spotlight {
+            border: 1px solid rgba(0, 252, 246, 0.2);
+            border-left: 3px solid var(--primary-cyan);
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2rem 2rem 2.2rem;
+            margin-bottom: 3rem;
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        .report-spotlight-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .report-spotlight h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .report-spotlight > p {
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .report-card {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+        }
+
+        .report-card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 0.2rem;
+        }
+
+        .report-card p {
+            font-size: 0.82rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .report-grid { grid-template-columns: 1fr; }
+        }
+
         .package-nav {
             display: flex;
             justify-content: space-between;
@@ -439,11 +526,11 @@
                         <p>Externer Pentest einer Domain und einer Web-App oder API – wie echte Angreifer vorgehen. CVSS-bewertet, priorisiert, in 5 Werktagen geliefert.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item featured">
                     <span class="feature-emoji">📋</span>
                     <div class="feature-text">
-                        <h3>Monatlicher Lagebericht</h3>
-                        <p>1-seitiger Security-Bericht jeden Monat: aktuelle CVEs, relevante Bedrohungen für eure Branche und ein konkreter Sicherheitstipp für euer Team.</p>
+                        <h3>Monatlicher Lagebericht <span class="monthly-badge">jeden Monat</span></h3>
+                        <p>Euer laufendes Security-Update: aktuelle CVEs, Bedrohungslage und ein konkreter Tipp – immer auf eure Situation zugeschnitten.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -465,6 +552,30 @@
                     <div class="feature-text">
                         <h3>Optionaler Ergebniscall</h3>
                         <p>30 Minuten mit einem Experten auf Augenhöhe – wir erklären alle Findings ohne Fachsprache und beantworten eure Fragen direkt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-spotlight">
+                <div class="report-spotlight-label">Monatlicher Lagebericht – was euch jeden Monat erreicht</div>
+                <h3>Eure Sicherheitslage auf einen Blick</h3>
+                <p>Das ist der Kern eures Abos: Während andere Dienste einmalig prüfen und dann schweigen, bekommt ihr jeden Monat ein kompaktes Update – damit ihr nie im Dunkeln tappt.</p>
+                <div class="report-grid">
+                    <div class="report-card">
+                        <div class="report-card-title">🔴 Aktuelle CVEs</div>
+                        <p>Neu entdeckte Sicherheitslücken, die für eure Technologien und euren Stack relevant sind – priorisiert nach Kritikalität.</p>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-card-title">🌍 Bedrohungslage</div>
+                        <p>Was gerade in eurer Branche passiert: aktive Angriffskampagnen, Phishing-Wellen und neue Angriffsvektoren auf Unternehmen wie eurem.</p>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-card-title">✅ Security-Tipp des Monats</div>
+                        <p>Eine konkrete, sofort umsetzbare Maßnahme für euer Team – kein theoretisches Fachwissen, sondern direkt anwendbar.</p>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-card-title">📊 Euer Sicherheitsstatus</div>
+                        <p>Kurze Einschätzung eurer aktuellen Lage: Was hat sich verbessert, was solltet ihr als Nächstes angehen?</p>
                     </div>
                 </div>
             </div>
