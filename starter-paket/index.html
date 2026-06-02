@@ -328,27 +328,16 @@
         .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
         .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        /* Note */
-        .note {
-            border-left: 3px solid rgba(0, 252, 246, 0.3);
-            padding: 1rem 1.4rem;
-            color: var(--secondary-light-gray);
-            font-size: 0.88rem;
-            line-height: 1.65;
-            font-style: italic;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Package Nav */
         .package-nav {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
 
         .package-nav a {
-            color: var(--primary-cyan);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
@@ -356,6 +345,8 @@
         }
 
         .package-nav a:hover { opacity: 0.75; }
+        .package-nav .prev { color: var(--secondary-light-gray); }
+        .package-nav .next { color: var(--primary-cyan); }
 
         /* Footer */
         footer {
@@ -496,10 +487,8 @@
                 </div>
             </div>
 
-            <p class="note">Der kostenlose Quick-Scan zeigt euch in 30 Minuten eure größten Risiken – ohne aktives Testing. Das Startup Shield geht weiter: Wir prüfen euer System wie echte Angreifer und liefern euch monatlich einen Überblick über eure Sicherheitslage.</p>
-
             <div class="package-nav">
-                <a href="../growth-paket/index.html">Team wächst? Growth Guard ansehen – 349 €/Monat →</a>
+                <a href="../growth-paket/index.html" class="next">Team wächst? Growth Guard ansehen – 349 €/Monat →</a>
             </div>
         </div>
     </main>
