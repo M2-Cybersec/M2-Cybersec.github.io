@@ -496,14 +496,16 @@
             background: rgba(255, 255, 255, 0.02);
             border: 2px solid rgba(0, 252, 246, 0.15);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 1.8rem 2rem;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .service-card a {
-            display: block;
+            display: flex;
+            flex-direction: column;
             height: 100%;
         }
 
@@ -625,21 +627,37 @@
         }
 
         .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
             display: block;
         }
 
         .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.4rem;
             color: var(--primary-cyan);
             font-weight: 700;
         }
 
         .service-card p {
             color: var(--secondary-light-gray);
-            line-height: 1.7;
+            line-height: 1.65;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .service-mehr {
+            display: inline-block;
+            margin-top: 1.2rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.2px;
+            transition: letter-spacing 0.2s ease;
+        }
+
+        .service-card:hover .service-mehr {
+            letter-spacing: 0.6px;
         }
 
         /* Features Section */
@@ -1417,10 +1435,11 @@
 
         .service-price {
             display: block;
-            color: var(--primary-cyan);
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
+            color: var(--primary-white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            opacity: 0.7;
         }
 
     </style>
@@ -1601,25 +1620,28 @@
                     <a href="starter-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🚀</span>
                         <h3>Startup Shield</h3>
-                        <span class="service-price">ab 149 €/mtl.</span>
-                        <p>Für Startups &amp; Gründer: Jährlicher Security-Check, monatlicher Lagebericht, Awareness-Training und kompakter Report – fertig in 5 Werktagen.</p>
+                        <span class="service-price">ab 149 €/Monat</span>
+                        <p>Jährlicher Security-Check, monatlicher Lagebericht und Awareness-Training für Startups &amp; Gründer.</p>
                         <span class="service-nrw-tag">NRW-Förderung möglich</span>
+                        <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="growth-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">📈</span>
                         <h3>Growth Guard</h3>
-                        <span class="service-price">ab 349 €/mtl.</span>
-                        <p>Für wachsende Teams: 3× jährliche Security-Checks, Phishing-Simulation, Quartalsgespräche und Compliance-Dokumentation.</p>
+                        <span class="service-price">ab 349 €/Monat</span>
+                        <p>3× Security-Checks, Phishing-Simulation, Quartalsgespräche und Compliance-Dokumentation für wachsende Teams.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
                 <article class="service-card">
                     <a href="scale-paket/index.html" style="text-decoration: none; color: inherit;">
                         <span class="service-icon" aria-hidden="true">🏢</span>
                         <h3>Scale Secure</h3>
-                        <span class="service-price">ab 749 €/mtl.</span>
-                        <p>Für professionelle Teams: 4× Security-Checks, Code Review, CVSS-Report, Notfallplan, Re-Tests und SLA-Reaktionszeiten.</p>
+                        <span class="service-price">ab 749 €/Monat</span>
+                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und SLA für professionelle Teams.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
                 <article class="service-card">
@@ -1627,7 +1649,8 @@
                         <span class="service-icon" aria-hidden="true">🎓</span>
                         <h3>Awareness+ Training</h3>
                         <span class="service-price">490 €/Session</span>
-                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Social Engineering – einzeln buchbar oder als Add-on zu jedem Abo.</p>
+                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Social Engineering – einzeln oder als Abo-Add-on.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
                 <article class="service-card">
@@ -1635,7 +1658,8 @@
                         <span class="service-icon" aria-hidden="true">🛡️</span>
                         <h3>Sicherheit für KMU</h3>
                         <span class="service-price">Auf Anfrage</span>
-                        <p>Risikoanalyse, Sicherheitskonzepte und Web-Pentests für kleine und mittelständische Unternehmen – individuell nach Bedarf.</p>
+                        <p>Risikoanalyse, Sicherheitskonzepte und Web-Pentests für KMU – individuell nach Bedarf.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
             </div>
