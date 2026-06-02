@@ -68,11 +68,11 @@
         .logo:hover .logo-image { transform: scale(1.05); }
 
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--primary-white); text-decoration: none; transition: all 0.3s ease; font-weight: 500; }
+        .nav-links a { color: var(--primary-white); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
         .nav-links a:hover { color: var(--primary-cyan); }
 
-        .hero-package {
-            min-height: 65vh;
+        .hero {
+            min-height: 55vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,181 +82,250 @@
             position: relative;
         }
 
-        .hero-package::before {
+        .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.07) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .hero-content { position: relative; z-index: 1; max-width: 900px; }
+        .hero-inner { position: relative; z-index: 1; max-width: 780px; }
 
         .package-badge {
             display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(0, 252, 246, 0.1);
-            border: 2px solid var(--primary-cyan);
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.4);
             border-radius: 50px;
             color: var(--primary-cyan);
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        .hero-package h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.8rem;
+        .hero h1 {
+            font-size: 3.2rem;
             font-weight: 800;
             color: var(--primary-white);
-            line-height: 1.2;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
         }
 
-        .hero-package h1 span { color: var(--primary-cyan); }
+        .hero h1 span { color: var(--primary-cyan); }
 
-        .hero-tagline {
-            font-size: 1.2rem;
+        .hero-sub {
+            font-size: 1.1rem;
             color: var(--secondary-light-gray);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
             font-style: italic;
         }
 
-        .hero-price {
-            font-size: 2.4rem;
+        .hero-price-row {
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary-cyan);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
-        .hero-price-note {
-            font-size: 0.95rem;
+        .hero-price-meta {
+            font-size: 0.88rem;
             color: var(--secondary-gray);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-white); font-weight: 700; }
-        .section-subtitle { color: var(--secondary-light-gray); font-size: 1.15rem; margin-bottom: 3rem; }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.15);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
-            background: rgba(0, 252, 246, 0.03);
-        }
-
-        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
-        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-cyan); font-weight: 700; }
-        .feature-card p { color: var(--secondary-light-gray); line-height: 1.7; }
-
-        .ideal-for {
-            background: rgba(0, 252, 246, 0.03);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            margin: 3rem 0;
-        }
-
-        .ideal-for h3 { color: var(--primary-cyan); font-size: 1.8rem; margin-bottom: 1.5rem; }
-        .ideal-for ul { list-style: none; padding: 0; }
-        .ideal-for li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--secondary-light-gray);
-            font-size: 1.1rem;
-        }
-        .ideal-for li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-cyan);
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .pricing-box {
-            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid var(--primary-cyan);
-            text-align: center;
-            margin: 3rem auto;
-            max-width: 640px;
-        }
-
-        .pricing-box h3 { color: var(--primary-white); margin-bottom: 0.5rem; font-size: 1.6rem; }
-        .price { font-size: 3rem; color: var(--primary-cyan); font-weight: 700; margin: 0.8rem 0; }
-        .price-note { color: var(--secondary-light-gray); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.8rem; }
-
-        .pricing-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-        .cta-button {
+        .btn {
             display: inline-block;
-            padding: 1.1rem 2.4rem;
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            text-decoration: none;
+            padding: 0.95rem 2.2rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid var(--primary-cyan);
         }
 
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4); }
+        .btn-primary { background: var(--primary-cyan); color: var(--primary-dark); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 252, 246, 0.4); }
+        .btn-secondary { background: transparent; color: var(--primary-cyan); }
+        .btn-secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); transform: translateY(-3px); }
 
-        .cta-button.secondary {
-            background: transparent;
-            color: var(--primary-cyan);
-        }
-
-        .cta-button.secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); }
+        .page-body { max-width: 900px; margin: 0 auto; padding: 3rem 5% 5rem; }
 
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-cyan);
+            gap: 0.4rem;
+            color: var(--secondary-light-gray);
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s ease;
         }
 
-        .back-link:hover { gap: 0.8rem; }
+        .back-link:hover { color: var(--primary-cyan); }
+
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(0, 252, 246, 0.12);
+            border: 1px solid rgba(0, 252, 246, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .fact {
+            background: rgba(0, 252, 246, 0.03);
+            padding: 1.4rem 1.2rem;
+            text-align: center;
+        }
+
+        .fact-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-label {
+            font-size: 0.78rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.3;
+        }
+
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(0, 252, 246, 0.12);
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:last-child { border-bottom: none; }
+
+        .feature-emoji {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 2.4rem;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.6;
+        }
+
+        .ideal-list {
+            list-style: none;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ideal-list li {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--secondary-light-gray);
+            padding: 0.4rem 0;
+        }
+
+        .ideal-list li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.06) 0%, rgba(0, 252, 246, 0.02) 100%);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-box h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary-white); margin-bottom: 0.4rem; }
+        .pricing-big { font-size: 3rem; font-weight: 800; color: var(--primary-cyan); margin: 0.5rem 0 0.3rem; line-height: 1; }
+        .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
+        .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .package-nav {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .package-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .package-nav a:hover { opacity: 0.75; }
+        .package-nav .prev { color: var(--secondary-light-gray); }
+        .package-nav .next { color: var(--primary-cyan); }
 
         footer {
             background: var(--primary-dark);
-            padding: 3rem 5%;
+            padding: 2.5rem 5%;
             border-top: 2px solid var(--primary-cyan);
             text-align: center;
             color: var(--secondary-light-gray);
+            font-size: 0.9rem;
         }
 
+        footer a { color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: var(--primary-cyan); }
+
         @media (max-width: 768px) {
-            .hero-package h1 { font-size: 2.5rem; }
-            .hero-price { font-size: 1.8rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-price-row { font-size: 1.8rem; }
             .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
             .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-            .features-grid { grid-template-columns: 1fr; }
-            .pricing-buttons { flex-direction: column; align-items: center; }
+            .quick-facts { grid-template-columns: repeat(2, 1fr); }
+            .hero-ctas { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -274,88 +343,112 @@
     </nav>
 
     <main>
-        <section class="hero-package">
-            <div class="hero-content">
-                <span class="package-badge">FÜR WACHSENDE TEAMS &amp; KMUS</span>
+        <section class="hero">
+            <div class="hero-inner">
+                <span class="package-badge">Für wachsende Teams &amp; KMUs</span>
                 <h1><span>Growth Guard</span></h1>
-                <p class="hero-tagline">„Für Teams, die wachsen und Compliance brauchen."</p>
-                <div class="hero-price">349 €/Monat</div>
-                <p class="hero-price-note">Jahresvertrag &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
+                <p class="hero-sub">„Für Teams, die wachsen und Compliance brauchen."</p>
+                <div class="hero-price-row">349 €/Monat</div>
+                <p class="hero-price-meta">Jahresvertrag · monatlich zahlbar · keine versteckten Kosten</p>
+                <div class="hero-ctas">
+                    <a href="../index.html#contact" class="btn btn-primary">Jetzt starten →</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-secondary">Kostenloser Quick-Scan</a>
+                </div>
             </div>
         </section>
 
-        <section class="section">
+        <div class="page-body">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
 
-            <h2 class="section-title">Was ist enthalten:</h2>
-            <p class="section-subtitle">Professionelle Security für produktive Systeme – mit Compliance-Dokumentation und regelmäßigem Austausch.</p>
-
-            <div class="features-grid">
-                <article class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3>3× jährliche Security-Checks</h3>
-                    <p>Dreimal im Jahr prüfen wir je 2–3 kritische Systeme (Web-App, API, Server) auf Schwachstellen – wie echte Angreifer vorgehen.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3>Monatlicher Report + Quartalsgespräch</h3>
-                    <p>Jeden Monat ein strukturierter Sicherheitsbericht mit Risikobewertung. Dazu ein 30-minütiges Ergebnissgespräch pro Quartal mit einem festen Ansprechpartner.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">🎓</span>
-                    <h3>2× Awareness-Schulungen</h3>
-                    <p>Zweimal jährlich schulen wir bis zu 25 Mitarbeiter zu Phishing, Social Engineering und sicherem Arbeitsalltag – praxisnah und branchenspezifisch.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">🎣</span>
-                    <h3>Phishing-Simulation</h3>
-                    <p>Einmal jährlich simulieren wir einen echten Phishing-Angriff auf eure Mitarbeiter – kontrolliert, lehrreich und ohne echten Schaden.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">📋</span>
-                    <h3>Compliance-Dokumentation</h3>
-                    <p>Alle Reports sind nutzbar als Nachweis für DSGVO, NIS2 und Kundennachweise. Strukturierte Risikobewertung mit konkreten Handlungsempfehlungen.</p>
-                </article>
-            </div>
-
-            <div class="ideal-for">
-                <h3>Ideal für:</h3>
-                <ul>
-                    <li>Wachsende Startups mit produktiven Systemen und mehreren Anwendungen</li>
-                    <li>KMUs mit wachsender IT-Infrastruktur</li>
-                    <li>Teams mit Compliance-Bedarf (DSGVO, NIS2)</li>
-                    <li>Unternehmen, die regelmäßige Security-Audits benötigen</li>
-                    <li>Firmen, die Mitarbeiterbewusstsein aktiv stärken wollen</li>
-                </ul>
-            </div>
-
-            <div class="pricing-box">
-                <h3>Growth Guard</h3>
-                <div class="price">349 €/Monat</div>
-                <p class="price-note">12-Monats-Laufzeit &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
-                <div class="pricing-buttons">
-                    <a href="../index.html#contact" class="cta-button">Jetzt starten &rarr;</a>
-                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button secondary">Kostenloser Quick-Scan zuerst &rarr;</a>
+            <div class="quick-facts">
+                <div class="fact">
+                    <div class="fact-value">349 €</div>
+                    <div class="fact-label">pro Monat<br>(Jahresvertrag)</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">3×</div>
+                    <div class="fact-label">Security-Checks<br>pro Jahr</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">25</div>
+                    <div class="fact-label">Mitarbeiter<br>im Training</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">Quartals-<br>call</div>
+                    <div class="fact-label">fester<br>Ansprechpartner</div>
                 </div>
             </div>
 
-            <div style="border-top: 1px solid rgba(0,252,246,0.1); margin-top: 3rem; padding-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                <a href="../starter-paket/index.html" style="color: var(--secondary-light-gray); text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#00fcf6'" onmouseout="this.style.color='#CECECE'">← Startup Shield – 149 €/Monat</a>
-                <a href="../scale-paket/index.html" style="color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: gap 0.2s ease;">Scale Secure ansehen – 749 €/Monat →</a>
+            <h2 class="section-heading">Was ist enthalten</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="feature-emoji">🎯</span>
+                    <div class="feature-text">
+                        <h3>3× jährliche Security-Checks</h3>
+                        <p>Dreimal im Jahr prüfen wir je 2–3 kritische Systeme (Web-App, API, Server) auf Schwachstellen – CVSS-bewertet, priorisiert, mit konkreten Handlungsempfehlungen.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">📊</span>
+                    <div class="feature-text">
+                        <h3>Monatlicher Report + Quartalsgespräch</h3>
+                        <p>Jeden Monat ein strukturierter Sicherheitsbericht mit Risikobewertung. Dazu ein 30-minütiger Call pro Quartal mit einem festen Ansprechpartner.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">🎓</span>
+                    <div class="feature-text">
+                        <h3>2× Awareness-Schulungen (bis 25 MA)</h3>
+                        <p>Zweimal jährlich interaktive Schulungen: Phishing, Social Engineering, sicherer Arbeitsalltag – praxisnah und branchenspezifisch anpassbar.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">🎣</span>
+                    <div class="feature-text">
+                        <h3>Phishing-Simulation</h3>
+                        <p>Einmal jährlich simulieren wir einen echten Phishing-Angriff auf euer Team – kontrolliert, lehrreich, mit anschließender Auswertung und Empfehlungen.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">📋</span>
+                    <div class="feature-text">
+                        <h3>Compliance-Dokumentation</h3>
+                        <p>Alle Reports sind direkt nutzbar als Nachweis für DSGVO, NIS2 und Kundenanforderungen. Strukturierte Risikobewertung mit priorisierten Maßnahmen.</p>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <h2 class="section-heading">Ideal für</h2>
+            <ul class="ideal-list">
+                <li>Wachsende Startups mit produktiven Systemen und mehreren Anwendungen</li>
+                <li>KMUs mit zunehmender IT-Infrastruktur und wachsendem Team</li>
+                <li>Unternehmen mit Compliance-Bedarf (DSGVO, NIS2, Kundenvorgaben)</li>
+                <li>Teams, die regelmäßige Security-Audits und Reporting benötigen</li>
+                <li>Firmen, die das Sicherheitsbewusstsein ihrer Mitarbeiter aktiv stärken wollen</li>
+            </ul>
+
+            <div class="pricing-box">
+                <h3>Growth Guard</h3>
+                <div class="pricing-big">349 €/Monat</div>
+                <p class="pricing-meta">12-Monats-Laufzeit · monatlich zahlbar · keine Einrichtungsgebühr</p>
+                <div class="pricing-btns">
+                    <a href="../index.html#contact" class="btn btn-primary">Jetzt starten →</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-secondary">Quick-Scan buchen</a>
+                </div>
+            </div>
+
+            <div class="package-nav">
+                <a href="../starter-paket/index.html" class="prev">← Startup Shield – 149 €/Monat</a>
+                <a href="../scale-paket/index.html" class="next">Scale Secure ansehen – 749 €/Monat →</a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem;">
-            <a href="../rechtliches/impressum.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Impressum</a>
-            &middot;
-            <a href="../rechtliches/datenschutz.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Datenschutz</a>
+        <p style="margin-top: 0.6rem;">
+            <a href="../rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="../rechtliches/datenschutz.html">Datenschutz</a>
         </p>
     </footer>
 </body>

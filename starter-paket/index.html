@@ -38,6 +38,7 @@
             line-height: 1.6;
         }
 
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -68,11 +69,12 @@
         .logo:hover .logo-image { transform: scale(1.05); }
 
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--primary-white); text-decoration: none; transition: all 0.3s ease; font-weight: 500; }
+        .nav-links a { color: var(--primary-white); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
         .nav-links a:hover { color: var(--primary-cyan); }
 
-        .hero-package {
-            min-height: 65vh;
+        /* Hero */
+        .hero {
+            min-height: 55vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,193 +84,300 @@
             position: relative;
         }
 
-        .hero-package::before {
+        .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.07) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .hero-content { position: relative; z-index: 1; max-width: 900px; }
+        .hero-inner { position: relative; z-index: 1; max-width: 780px; }
 
         .package-badge {
             display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(0, 252, 246, 0.1);
-            border: 2px solid var(--primary-cyan);
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.4);
             border-radius: 50px;
             color: var(--primary-cyan);
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        .hero-package h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.8rem;
+        .hero h1 {
+            font-size: 3.2rem;
             font-weight: 800;
             color: var(--primary-white);
-            line-height: 1.2;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
         }
 
-        .hero-package h1 span { color: var(--primary-cyan); }
+        .hero h1 span { color: var(--primary-cyan); }
 
-        .hero-tagline {
-            font-size: 1.2rem;
+        .hero-sub {
+            font-size: 1.1rem;
             color: var(--secondary-light-gray);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
             font-style: italic;
         }
 
-        .hero-price {
-            font-size: 2.4rem;
+        .hero-price-row {
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary-cyan);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
-        .hero-price-note {
-            font-size: 0.95rem;
+        .hero-price-meta {
+            font-size: 0.88rem;
             color: var(--secondary-gray);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-white); font-weight: 700; }
-        .section-subtitle { color: var(--secondary-light-gray); font-size: 1.15rem; margin-bottom: 3rem; }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.15);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
-            background: rgba(0, 252, 246, 0.03);
-        }
-
-        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
-        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-cyan); font-weight: 700; }
-        .feature-card p { color: var(--secondary-light-gray); line-height: 1.7; }
-
-        .ideal-for {
-            background: rgba(0, 252, 246, 0.03);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            margin: 3rem 0;
-        }
-
-        .ideal-for h3 { color: var(--primary-cyan); font-size: 1.8rem; margin-bottom: 1.5rem; }
-        .ideal-for ul { list-style: none; padding: 0; }
-        .ideal-for li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--secondary-light-gray);
-            font-size: 1.1rem;
-        }
-        .ideal-for li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-cyan);
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .pricing-box {
-            background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid var(--primary-cyan);
-            text-align: center;
-            margin: 3rem auto;
-            max-width: 640px;
-        }
-
-        .pricing-box h3 { color: var(--primary-white); margin-bottom: 0.5rem; font-size: 1.6rem; }
-        .price { font-size: 3rem; color: var(--primary-cyan); font-weight: 700; margin: 0.8rem 0; }
-        .price-note { color: var(--secondary-light-gray); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.8rem; }
-
-        .pricing-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-        .cta-button {
+        .btn {
             display: inline-block;
-            padding: 1.1rem 2.4rem;
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            text-decoration: none;
+            padding: 0.95rem 2.2rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid var(--primary-cyan);
         }
 
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4); }
+        .btn-primary { background: var(--primary-cyan); color: var(--primary-dark); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 252, 246, 0.4); }
+        .btn-secondary { background: transparent; color: var(--primary-cyan); }
+        .btn-secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); transform: translateY(-3px); }
 
-        .cta-button.secondary {
-            background: transparent;
-            color: var(--primary-cyan);
-        }
-
-        .cta-button.secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); }
-
-        .quickscan-note {
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 3px solid var(--primary-cyan);
-            border-radius: 0 12px 12px 0;
-            padding: 1.5rem 2rem;
-            margin: 3rem 0;
-            color: var(--secondary-light-gray);
-            font-size: 1rem;
-            line-height: 1.7;
-            font-style: italic;
-        }
+        /* Page body */
+        .page-body { max-width: 900px; margin: 0 auto; padding: 3rem 5% 5rem; }
 
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-cyan);
+            gap: 0.4rem;
+            color: var(--secondary-light-gray);
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover { color: var(--primary-cyan); }
+
+        /* NRW Banner */
+        .nrw-banner {
+            background: rgba(0, 192, 96, 0.07);
+            border: 1px solid rgba(0, 192, 96, 0.3);
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .nrw-banner-text strong { color: #00c060; font-size: 0.95rem; display: block; margin-bottom: 0.15rem; }
+        .nrw-banner-text span { color: var(--secondary-light-gray); font-size: 0.85rem; }
+
+        .nrw-btn {
+            display: inline-block;
+            padding: 0.55rem 1.3rem;
+            background: rgba(0, 192, 96, 0.1);
+            color: #00c060;
+            border: 1px solid #00c060;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            white-space: nowrap;
             transition: all 0.3s ease;
         }
 
-        .back-link:hover { gap: 0.8rem; }
+        .nrw-btn:hover { background: #00c060; color: var(--primary-dark); }
 
+        /* Quick Facts */
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(0, 252, 246, 0.12);
+            border: 1px solid rgba(0, 252, 246, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .fact {
+            background: rgba(0, 252, 246, 0.03);
+            padding: 1.4rem 1.2rem;
+            text-align: center;
+        }
+
+        .fact-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-label {
+            font-size: 0.78rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.3;
+        }
+
+        /* Section heading */
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(0, 252, 246, 0.12);
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:last-child { border-bottom: none; }
+
+        .feature-emoji {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 2.4rem;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.6;
+        }
+
+        /* Ideal für */
+        .ideal-list {
+            list-style: none;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ideal-list li {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--secondary-light-gray);
+            padding: 0.4rem 0;
+        }
+
+        .ideal-list li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        /* Pricing Box */
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.06) 0%, rgba(0, 252, 246, 0.02) 100%);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-box h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary-white); margin-bottom: 0.4rem; }
+        .pricing-big { font-size: 3rem; font-weight: 800; color: var(--primary-cyan); margin: 0.5rem 0 0.3rem; line-height: 1; }
+        .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
+        .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* Note */
+        .note {
+            border-left: 3px solid rgba(0, 252, 246, 0.3);
+            padding: 1rem 1.4rem;
+            color: var(--secondary-light-gray);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Package Nav */
+        .package-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .package-nav a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .package-nav a:hover { opacity: 0.75; }
+
+        /* Footer */
         footer {
             background: var(--primary-dark);
-            padding: 3rem 5%;
+            padding: 2.5rem 5%;
             border-top: 2px solid var(--primary-cyan);
             text-align: center;
             color: var(--secondary-light-gray);
+            font-size: 0.9rem;
         }
 
+        footer a { color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: var(--primary-cyan); }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-package h1 { font-size: 2.5rem; }
-            .hero-price { font-size: 1.8rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-price-row { font-size: 1.8rem; }
             .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
             .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-            .features-grid { grid-template-columns: 1fr; }
-            .pricing-buttons { flex-direction: column; align-items: center; }
+            .quick-facts { grid-template-columns: repeat(2, 1fr); }
+            .hero-ctas { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -286,99 +395,120 @@
     </nav>
 
     <main>
-        <section class="hero-package">
-            <div class="hero-content">
-                <span class="package-badge">FÜR STARTUPS &amp; GRÜNDER</span>
+        <section class="hero">
+            <div class="hero-inner">
+                <span class="package-badge">Für Startups &amp; Gründer</span>
                 <h1><span>Startup Shield</span></h1>
-                <p class="hero-tagline">„Dein erster Security-Partner. Fertig in 5 Werktagen."</p>
-                <div class="hero-price">149 €/Monat</div>
-                <p class="hero-price-note">Jahresvertrag &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
+                <p class="hero-sub">„Euer erster Security-Partner. Fertig in 5 Werktagen."</p>
+                <div class="hero-price-row">149 €/Monat</div>
+                <p class="hero-price-meta">Jahresvertrag · monatlich zahlbar · keine versteckten Kosten</p>
+                <div class="hero-ctas">
+                    <a href="../index.html#contact" class="btn btn-primary">Jetzt starten →</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-secondary">Kostenloser Quick-Scan</a>
+                </div>
             </div>
         </section>
 
-        <section class="section">
+        <div class="page-body">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
 
-            <div style="background: rgba(0,192,96,0.08); border: 2px solid rgba(0,192,96,0.35); border-radius: 16px; padding: 1.6rem 2rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
-                <div>
-                    <div style="color: #00c060; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem;">🏛️ NRW-Förderung möglich</div>
-                    <div style="color: var(--secondary-light-gray); font-size: 0.92rem;">Unternehmen in Nordrhein-Westfalen können das Startup Shield über Förderprogramme bezuschussen lassen – effektiv ab ca. 30 €/Monat.</div>
+            <div class="nrw-banner">
+                <div class="nrw-banner-text">
+                    <strong>🏛️ NRW-Förderung möglich</strong>
+                    <span>Unternehmen in NRW können das Startup Shield bezuschussen lassen – effektiv ab ca. 30 €/Monat.</span>
                 </div>
-                <a href="../nrw-foerderung/index.html" style="display: inline-block; padding: 0.7rem 1.6rem; background: rgba(0,192,96,0.12); color: #00c060; border: 2px solid #00c060; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.88rem; white-space: nowrap; transition: all 0.3s ease;" onmouseover="this.style.background='#00c060';this.style.color='#191819'" onmouseout="this.style.background='rgba(0,192,96,0.12)';this.style.color='#00c060'">Förderung prüfen →</a>
+                <a href="../nrw-foerderung/index.html" class="nrw-btn">Förderung prüfen →</a>
             </div>
 
-            <h2 class="section-title">Was ist enthalten:</h2>
-            <p class="section-subtitle">Ein vollständiges Security-Paket für den Einstieg – monatlich aktiv, jährlich geprüft.</p>
-
-            <div class="features-grid">
-                <article class="feature-card">
-                    <span class="feature-icon">🔍</span>
-                    <h3>Jährlicher Security-Check</h3>
-                    <p>Externer Pentest einer Domain und einer Web-App oder API – wie echte Angreifer vorgehen. Wir decken auf, was wirklich gefährlich ist.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">📋</span>
-                    <h3>Monatlicher Lagebericht</h3>
-                    <p>Jeden Monat ein 1-seitiger Security-Bericht: aktuelle CVEs, relevante Bedrohungen und ein konkreter Security-Tipp für euer Team.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">🎓</span>
-                    <h3>Jährliches Awareness-Training</h3>
-                    <p>90-minütige Gruppenschulung für bis zu 10 Mitarbeiter: Phishing, Social Engineering, Passwortsicherheit – praxisnah und interaktiv.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">📄</span>
-                    <h3>Startup-Report in eurer Sprache</h3>
-                    <p>5 Seiten, kein Enterprise-Kauderwelsch. Nutzbar als Nachweis für Investoren und Partner bei Due Diligence.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon">💬</span>
-                    <h3>Optionaler Ergebniscall</h3>
-                    <p>30 Minuten mit einem unserer Experten – wir erklären alles auf Augenhöhe, ohne Fachchinesisch.</p>
-                </article>
+            <div class="quick-facts">
+                <div class="fact">
+                    <div class="fact-value">149 €</div>
+                    <div class="fact-label">pro Monat<br>(Jahresvertrag)</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">1×</div>
+                    <div class="fact-label">Pentest<br>pro Jahr</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">10</div>
+                    <div class="fact-label">Mitarbeiter<br>im Training</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">5 Tage</div>
+                    <div class="fact-label">bis zum<br>ersten Report</div>
+                </div>
             </div>
 
-            <div class="ideal-for">
-                <h3>Ideal für:</h3>
-                <ul>
-                    <li>Startups mit ersten Prototypen oder MVPs</li>
-                    <li>Gründer:innen, die Security von Anfang an richtig aufbauen wollen</li>
-                    <li>Teams, die einen Nachweis für Investoren oder Partner brauchen</li>
-                    <li>Kleine Unternehmen ohne dedizierte IT-Security-Ressourcen</li>
-                </ul>
+            <h2 class="section-heading">Was ist enthalten</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="feature-emoji">🔍</span>
+                    <div class="feature-text">
+                        <h3>Jährlicher Security-Check</h3>
+                        <p>Externer Pentest einer Domain und einer Web-App oder API – wie echte Angreifer vorgehen. CVSS-bewertet, priorisiert, in 5 Werktagen geliefert.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">📋</span>
+                    <div class="feature-text">
+                        <h3>Monatlicher Lagebericht</h3>
+                        <p>1-seitiger Security-Bericht jeden Monat: aktuelle CVEs, relevante Bedrohungen für eure Branche und ein konkreter Sicherheitstipp für euer Team.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">🎓</span>
+                    <div class="feature-text">
+                        <h3>Awareness-Training (bis 10 MA)</h3>
+                        <p>90-minütige Schulung für bis zu 10 Mitarbeiter: Phishing erkennen, Social Engineering, sichere Passwörter – praxisnah und interaktiv.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">📄</span>
+                    <div class="feature-text">
+                        <h3>Startup-Report (5 Seiten)</h3>
+                        <p>Kein Enterprise-Kauderwelsch. Klarer Bericht in eurer Sprache – nutzbar als Nachweis bei Investoren-Gesprächen und Due Diligence.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">💬</span>
+                    <div class="feature-text">
+                        <h3>Optionaler Ergebniscall</h3>
+                        <p>30 Minuten mit einem Experten auf Augenhöhe – wir erklären alle Findings ohne Fachsprache und beantworten eure Fragen direkt.</p>
+                    </div>
+                </div>
             </div>
+
+            <h2 class="section-heading">Ideal für</h2>
+            <ul class="ideal-list">
+                <li>Startups mit ersten Prototypen oder produktiven MVPs</li>
+                <li>Gründer:innen, die Security von Anfang an richtig aufbauen wollen</li>
+                <li>Teams, die einen Sicherheitsnachweis für Investoren oder Partner brauchen</li>
+                <li>Kleine Unternehmen ohne dedizierte IT-Security-Ressourcen</li>
+            </ul>
 
             <div class="pricing-box">
                 <h3>Startup Shield</h3>
-                <div class="price">149 €/Monat</div>
-                <p class="price-note">12-Monats-Laufzeit &middot; monatlich zahlbar &middot; keine versteckten Kosten</p>
-                <div class="pricing-buttons">
-                    <a href="../index.html#contact" class="cta-button">Jetzt starten &rarr;</a>
-                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button secondary">Kostenloser Quick-Scan zuerst &rarr;</a>
+                <div class="pricing-big">149 €/Monat</div>
+                <p class="pricing-meta">12-Monats-Laufzeit · monatlich zahlbar · keine Einrichtungsgebühr</p>
+                <div class="pricing-btns">
+                    <a href="../index.html#contact" class="btn btn-primary">Jetzt starten →</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-secondary">Quick-Scan buchen</a>
                 </div>
             </div>
 
-            <div class="quickscan-note">
-                Der kostenlose Quick-Scan zeigt euch in 30 Minuten eure größten Risiken – aber ohne aktives Testing. Das Startup Shield geht einen Schritt weiter: Wir prüfen euer System wie echte Angreifer und liefern euch monatlich einen Überblick über eure Sicherheitslage.
-            </div>
+            <p class="note">Der kostenlose Quick-Scan zeigt euch in 30 Minuten eure größten Risiken – ohne aktives Testing. Das Startup Shield geht weiter: Wir prüfen euer System wie echte Angreifer und liefern euch monatlich einen Überblick über eure Sicherheitslage.</p>
 
-            <div style="border-top: 1px solid rgba(0,252,246,0.1); margin-top: 3rem; padding-top: 2rem; text-align: center;">
-                <p style="color: var(--secondary-light-gray); font-size: 0.95rem; margin-bottom: 1rem;">Euer Team wächst? Dann ist der nächste Schritt:</p>
-                <a href="../growth-paket/index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1rem; transition: gap 0.2s ease;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.5rem'">Growth Guard ansehen – 349 €/Monat →</a>
+            <div class="package-nav">
+                <a href="../growth-paket/index.html">Team wächst? Growth Guard ansehen – 349 €/Monat →</a>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem;">
-            <a href="../rechtliches/impressum.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Impressum</a>
-            &middot;
-            <a href="../rechtliches/datenschutz.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Datenschutz</a>
+        <p style="margin-top: 0.6rem;">
+            <a href="../rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="../rechtliches/datenschutz.html">Datenschutz</a>
         </p>
     </footer>
 </body>
