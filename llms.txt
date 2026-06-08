@@ -74,3 +74,4 @@ Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unterne
 
 - [Impressum](https://m2cybersec.de/rechtliches/impressum.html)
 - [Datenschutz](https://m2cybersec.de/rechtliches/datenschutz.html)
+- [security.txt](https://m2cybersec.de/.well-known/security.txt): Kontakt für verantwortungsvolle Sicherheitsmeldungen (RFC 9116)

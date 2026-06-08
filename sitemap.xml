@@ -327,6 +327,14 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Security -->
+    <url>
+        <loc>https://m2cybersec.de/.well-known/security.txt</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
     <!-- Rechtliches -->
     <url>
         <loc>https://m2cybersec.de/impressum/</loc>
