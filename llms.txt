@@ -10,7 +10,7 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quicks
 
 ## Services
 
-- [Kostenloser Quick-Scan](https://m2cybersec.de/quick-scan/): Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche. In ca. 15 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), exponierte Dienste, Top-3-Findings als PDF-Report. Rein passiv, kein aktiver Angriff. Idealer Einstieg. Terminbuchung: https://cal.eu/marlonscheer/quickscan
+- [Kostenloser Quick-Scan](https://m2cybersec.de/quick-scan/): Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche. In ca. 15 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), exponierte Dienste, priorisierte Findings als PDF-Report. Rein passiv, kein aktiver Angriff. Idealer Einstieg. Terminbuchung: https://cal.eu/marlonscheer/quickscan
 - [Startup Shield](https://m2cybersec.de/starter-paket/): Für Startups & Gründer. 149 €/Monat (Jahresvertrag). Jährlicher externer Security-Check (1 Domain + Web-App/API), monatlicher Lagebericht, jährliches Awareness-Training (bis 10 Mitarbeiter), kompakter 5-seitiger Report. NRW-Förderung möglich (bis zu 80 %, effektiv ab ~30 €/Monat).
 - [NRW-Förderung für Cybersecurity](https://m2cybersec.de/nrw-foerderung/): Informationsseite zur NRW-Förderung von Cybersecurity-Maßnahmen für KMU. Bis zu 80 % Förderquote, 4-Schritte-Prozess, Berechtigungsprüfung.
 - [Growth Guard](https://m2cybersec.de/growth-paket/): Für wachsende Teams und KMUs mit Compliance-Bedarf. 349 €/Monat (Jahresvertrag). 3× jährliche Security-Checks (je 2–3 kritische Systeme), monatlicher Report + Quartalsgespräch, 2× Awareness-Schulungen (bis 25 Mitarbeiter), 1× Phishing-Simulation, Compliance-Dokumentation.
@@ -21,7 +21,7 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quicks
 
 ## Kostenloser Quick-Scan
 
-Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 15 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), Top-3-Findings als PDF. Detaillierte Infoseite: https://m2cybersec.de/quick-scan/ – Buchbar unter https://cal.eu/marlonscheer/quickscan
+Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unternehmens. In ca. 15 Minuten: Domain-Analyse, E-Mail-Sicherheit (SPF, DKIM, DMARC), priorisierte Findings als PDF. Detaillierte Infoseite: https://m2cybersec.de/quick-scan/ – Buchbar unter https://cal.eu/marlonscheer/quickscan
 
 ## Team
 
