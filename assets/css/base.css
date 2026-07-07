@@ -1,0 +1,347 @@
+/* ==========================================================================
+   M2 Cybersec – base.css
+   Zentrales Stylesheet: Design-Tokens, Fonts, Navbar, Footer, Buttons.
+   Seitenspezifisches CSS bleibt inline in der jeweiligen Seite.
+   ========================================================================== */
+
+/* --- Fonts (Brand: Nekst für Display, Helvetica Now für Fließtext) ------- */
+/* Lizenzhinweis: kommerzielle Fonts – Fallback-Stack muss immer sauber
+   funktionieren, damit die Fonts notfalls entfernbar sind. */
+
+@font-face {
+    font-family: 'Nekst';
+    src: url('/assets/fonts/nekst-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nekst';
+    src: url('/assets/fonts/nekst-semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nekst';
+    src: url('/assets/fonts/nekst-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Now';
+    src: url('/assets/fonts/helvetica-now-var.woff2') format('woff2-variations');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --- Design-Tokens -------------------------------------------------------- */
+
+:root {
+    /* Markenfarben */
+    --primary-dark: #191819;
+    --primary-cyan: #00fcf6;
+    --primary-white: #ffffff;
+    --secondary-gray: #515151;          /* nur für Flächen/Borders – nicht für Text auf dunklem Grund */
+    --secondary-light-cyan: #5cfff3;
+    --secondary-light-gray: #CECECE;
+
+    /* Korrigierte Grautöne (WCAG-konform auf #191819) */
+    --text-muted: #9a9a9a;              /* Metatexte, Labels – ersetzt #515151 als Textfarbe */
+
+    /* Typografie */
+    --font-display: 'Nekst', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    /* Radius-Skala (Pille nur für Buttons/Badges) */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-pill: 50px;
+
+    /* Schatten-Skala */
+    --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --shadow-cyan: 0 8px 28px rgba(0, 252, 246, 0.25);
+
+    /* Bewegung */
+    --transition-fast: 150ms ease;
+    --transition-base: 220ms ease;
+
+    /* Abstände (Sektionen) */
+    --section-pad: 6rem 5%;
+}
+
+/* --- Reset & Grundlagen --------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--primary-dark);
+    color: var(--primary-white);
+    line-height: 1.6;
+}
+
+/* --- Accessibility -------------------------------------------------------- */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-cyan);
+    color: var(--primary-dark);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-cyan);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* --- Navbar ---------------------------------------------------------------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(25, 24, 25, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary-cyan);
+    box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 45px;
+    width: auto;
+    transition: transform var(--transition-base);
+}
+
+.logo:hover .logo-image {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--primary-white);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-cyan);
+    transition: width var(--transition-base);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary-cyan);
+}
+
+/* --- Buttons ---------------------------------------------------------------
+   Ein System: .btn + .btn-primary / .btn-secondary / .btn-ghost
+   (.cta-button ist der Alt-Alias und wird in Block C ersetzt) */
+
+.btn,
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+        background var(--transition-base), color var(--transition-base);
+    border: 2px solid var(--primary-cyan);
+}
+
+.btn-primary,
+.cta-button {
+    background: var(--primary-cyan);
+    color: var(--primary-dark);
+}
+
+.btn-primary:hover,
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-cyan);
+}
+
+.btn-secondary,
+.cta-button.secondary {
+    background: transparent;
+    color: var(--primary-cyan);
+}
+
+.btn-secondary:hover,
+.cta-button.secondary:hover {
+    background: var(--primary-cyan);
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-cyan);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--secondary-light-gray);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-ghost:hover {
+    color: var(--primary-white);
+    border-color: var(--primary-white);
+}
+
+/* --- Footer ----------------------------------------------------------------
+   Standard: schlanker, zentrierter Footer mit Impressum/Datenschutz.
+   Homepage nutzt zusätzlich .footer-content (Spalten-Grid). */
+
+footer {
+    background: var(--primary-dark);
+    padding: 3rem 5%;
+    border-top: 2px solid var(--primary-cyan);
+    text-align: center;
+    color: var(--secondary-light-gray);
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--secondary-light-gray);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+footer a:hover {
+    color: var(--primary-cyan);
+}
+
+.footer-legal {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    margin: 0 0.5rem;
+}
+
+/* Homepage-Footer (Spalten) */
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    text-align: left;
+}
+
+.footer-section h4 {
+    color: var(--primary-cyan);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--secondary-light-gray);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--secondary-gray);
+    text-align: center;
+    color: var(--secondary-light-gray);
+}
+
+/* --- Responsive ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 3%;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .btn,
+    .cta-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}

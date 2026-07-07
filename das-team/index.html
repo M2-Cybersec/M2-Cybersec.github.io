@@ -18,84 +18,14 @@
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
     
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-dark: #191819;
-            --primary-cyan: #00fcf6;
-            --primary-white: #ffffff;
-            --secondary-gray: #515151;
-            --secondary-light-cyan: #5cfff3;
-            --secondary-light-gray: #CECECE;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--primary-dark);
             color: var(--primary-white);
             line-height: 1.8;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(25, 24, 25, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary-cyan);
-            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .logo-image {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover .logo-image {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--primary-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-cyan);
         }
 
         .hero {
@@ -232,14 +162,6 @@
             text-decoration: underline;
         }
 
-        footer {
-            background: var(--primary-dark);
-            padding: 3rem 5%;
-            border-top: 2px solid var(--primary-cyan);
-            text-align: center;
-            color: var(--secondary-light-gray);
-        }
-
         @media (max-width: 968px) {
             .team-member {
                 grid-template-columns: 1fr;
@@ -257,18 +179,8 @@
             h1 {
                 font-size: 2.2rem;
             }
-
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+        
+        
         }
 
         @media (max-width: 420px) {
@@ -283,6 +195,8 @@
             .content {
                 padding: 2.5rem 4%;
             }
+        
+        
         }
     </style>
 </head>
@@ -339,39 +253,13 @@
                 </div>
             </div>
         </article>
-<!--
-        <article class="team-member">
-            <div class="member-image">
-                <img src="../assets/brinkmann.png" alt="Max Brinkmann - CEO M2 Cybersec">
-            </div>
-            <div class="member-info">
-                <h2>Max Brinkmann</h2>
-                <p class="member-role">CEO & Co-Founder</p>
-
-                <h3>Über mich</h3>
-                <p>Ich bin Mitgründer und Geschäftsführer der M2 CyberSec. Mein Weg in die Cybersecurity begann mit meiner Ausbildung als Elektriker, durch die ich ein tiefes Verständnis für Hardware und technische Systeme entwickelt habe. Diese Kenntnisse helfen mir heute dabei, Sicherheitslücken nicht nur auf Software-, sondern auch auf Hardware-Ebene zu erkennen und abzusichern.</p>
-
-                <h3>Meine Kernkompetenzen</h3>
-                <p>Mein Schwerpunkt liegt auf Social Engineering sowie der Identifikation von Schwachstellen auf Hardware-Ebene. Dabei ist es mir besonders wichtig, nicht nur technische Lösungen anzubieten, sondern auch das Bewusstsein für IT-Sicherheit zu schärfen.</p>
-
-                <h3>Meine Philosophie</h3>
-                <p>Ich bin überzeugt, dass Technologie nicht nur effizient, sondern auch sicher sein muss. Nach dem Motto von Steve Jobs: „Innovation unterscheidet zwischen einem Anführer und einem Mitläufer." setze ich mich dafür ein, unsere Kunden an vorderster Front der IT-Sicherheit zu positionieren.</p>
-
-                <div class="contact-info">
-                    <p><strong>Kontakt:</strong></p>
-                    <p>📧 E-Mail: <a href="mailto:info@m2cybersec.de">info@m2cybersec.de</a></p>
-                </div>
-            </div>
-        </article>
-    -->
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem;">
-            <a href="../rechtliches/impressum.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Impressum</a>
-            &middot;
-            <a href="../rechtliches/datenschutz.html" style="color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem;">Datenschutz</a>
+        <p class="footer-legal">
+            <a href="/rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="/rechtliches/datenschutz.html">Datenschutz</a>
         </p>
     </footer>
 </body>

@@ -17,59 +17,15 @@
     <link rel="canonical" href="https://m2cybersec.de/growth-paket/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --primary-dark: #191819;
-            --primary-cyan: #00fcf6;
-            --primary-white: #ffffff;
-            --secondary-gray: #515151;
-            --secondary-light-cyan: #5cfff3;
-            --secondary-light-gray: #CECECE;
-        }
-
-        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--primary-dark);
             color: var(--primary-white);
             line-height: 1.6;
         }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(25, 24, 25, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary-cyan);
-            box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .logo-image { height: 45px; width: auto; transition: transform 0.3s ease; }
-        .logo:hover .logo-image { transform: scale(1.05); }
-
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--primary-white); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
-        .nav-links a:hover { color: var(--primary-cyan); }
 
         .hero {
             min-height: 55vh;
@@ -137,22 +93,6 @@
         }
 
         .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-        .btn {
-            display: inline-block;
-            padding: 0.95rem 2.2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-cyan);
-        }
-
-        .btn-primary { background: var(--primary-cyan); color: var(--primary-dark); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 252, 246, 0.4); }
-        .btn-secondary { background: transparent; color: var(--primary-cyan); }
-        .btn-secondary:hover { background: var(--primary-cyan); color: var(--primary-dark); transform: translateY(-3px); }
 
         .page-body { max-width: 900px; margin: 0 auto; padding: 3rem 5% 5rem; }
 
@@ -307,25 +247,13 @@
         .package-nav .prev { color: var(--secondary-light-gray); }
         .package-nav .next { color: var(--primary-cyan); }
 
-        footer {
-            background: var(--primary-dark);
-            padding: 2.5rem 5%;
-            border-top: 2px solid var(--primary-cyan);
-            text-align: center;
-            color: var(--secondary-light-gray);
-            font-size: 0.9rem;
-        }
-
-        footer a { color: var(--secondary-light-gray); text-decoration: none; margin: 0 0.5rem; }
-        footer a:hover { color: var(--primary-cyan); }
-
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero-price-row { font-size: 1.8rem; }
-            .navbar { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
-            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
             .quick-facts { grid-template-columns: repeat(2, 1fr); }
             .hero-ctas { flex-direction: column; align-items: center; }
+        
+        
         }
     </style>
 </head>
@@ -444,11 +372,11 @@
         </div>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 0.6rem;">
-            <a href="../rechtliches/impressum.html">Impressum</a> &middot;
-            <a href="../rechtliches/datenschutz.html">Datenschutz</a>
+        <p class="footer-legal">
+            <a href="/rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="/rechtliches/datenschutz.html">Datenschutz</a>
         </p>
     </footer>
 </body>
