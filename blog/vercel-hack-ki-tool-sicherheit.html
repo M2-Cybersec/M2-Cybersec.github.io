@@ -98,6 +98,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -318,7 +319,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../../index.html#home">Home</a></li>
             <li><a href="../../index.html#services">Services</a></li>
             <li><a href="../index.html">Blog</a></li>
@@ -330,11 +336,11 @@
         <div class="hero-grid"></div>
         <div class="hero-overlay"></div>
         <div class="article-header-content">
-            <div class="category-badge">🔐 Incident Analysis</div>
+            <div class="category-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Incident Analysis</div>
             <div class="article-meta">
-                <span>👤 Marlon Scheer</span>
-                <span>📅 April 2026</span>
-                <span>🏷️ KI-Sicherheit · OAuth · Datenschutz</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> April 2026</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> KI-Sicherheit · OAuth · Datenschutz</span>
             </div>
             <h1>Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde</h1>
             <p class="article-excerpt">Ein Mitarbeiter, ein KI-Tool, eine OAuth-Verbindung mit zu vielen Rechten – und plötzlich sind Millionen Nutzerdaten in den Händen von ShinyHunters. Was wirklich passiert ist und was das für Ihr Unternehmen bedeutet.</p>
@@ -368,7 +374,7 @@
         <p>Genau diese Verbindung wurde zum Angriffspunkt. Die Hackergruppe <strong>ShinyHunters</strong> – bekannt durch vorherige Angriffe auf Ticketmaster, Santander und andere Großunternehmen – kompromittierte diese OAuth-Verbindung. Damit hatten sie plötzlich Zugriff mit den vollen Berechtigungen des Tools: Zugang zu E-Mails, internen Systemen, potenziell zu API Keys und Kundendaten.</p>
 
         <div class="attack-chain">
-            <h4>🔴 Die Angriffskette im Überblick</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Die Angriffskette im Überblick</h4>
             <ol style="color: var(--secondary-light-gray); margin-left: 1.5rem;">
                 <li>Mitarbeiter verbindet Context.ai mit seinem Google-Account (OAuth)</li>
                 <li>Context.ai erhält weitreichende Berechtigungen (Lesen, Schreiben, Zugriff auf Workspace)</li>
@@ -386,7 +392,7 @@
         <p>Stattdessen authentifizieren sich die Angreifer mit einem gültigen Token, der von einer vertrauenswürdigen Verbindung ausgestellt wurde. Aus Sicht der Systeme sieht alles völlig legitim aus. Genau das macht diese Angriffsmethode so effektiv – und so schwer zu erkennen.</p>
 
         <div class="warning-box">
-            <h4>⚠️ Das unterschätzte Risiko in Ihrem Unternehmen</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Das unterschätzte Risiko in Ihrem Unternehmen</h4>
             <p>In fast jedem Unternehmen existieren Dutzende solcher OAuth-Verbindungen. Tools, die Mitarbeiter vor Monaten oder Jahren verknüpft haben – Slack-Integrationen, Kalender-Sync-Tools, KI-Assistenten, Productivity-Apps. Viele davon ohne Wissen der IT-Abteilung. Viele mit Rechten, die weit über das Notwendige hinausgehen.</p>
         </div>
 
@@ -420,7 +426,7 @@
         <p>In der Praxis sieht das oft anders aus. Apps fordern bei der Einrichtung maximale Berechtigungen an – und Mitarbeiter klicken auf "Erlauben", weil sie das Tool nutzen möchten und nicht die Zeit haben, jede Berechtigung einzeln zu prüfen. Das Ergebnis: Tools mit Admin-ähnlichen Rechten, die eigentlich nur Lesezugriff auf einen Kalender bräuchten.</p>
 
         <div class="info-box">
-            <h4>💡 Best Practices für sichere KI-Tool-Integration</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Best Practices für sichere KI-Tool-Integration</h4>
             <p><strong>Berechtigungen minimieren:</strong> Prüfen Sie bei jeder neuen App-Verbindung, ob alle angeforderten Berechtigungen wirklich notwendig sind. Viele Tools funktionieren auch mit eingeschränkten Rechten.</p>
             <p style="margin-top: 1rem;"><strong>Zentrale Verwaltung:</strong> Definieren Sie, welche Tools in Ihrem Unternehmen für die Verbindung mit Unternehmenskonten freigegeben sind. Nicht genehmigte Apps sollten blockiert werden.</p>
             <p style="margin-top: 1rem;"><strong>Regelmäßige Audits:</strong> Planen Sie quartalsweise Reviews aller OAuth-Verbindungen. Nicht mehr genutzte Apps sollten sofort widerrufen werden.</p>
@@ -459,7 +465,7 @@
         <p>Besonders relevant im deutschen Kontext: Die <strong>DSGVO</strong> verpflichtet Unternehmen dazu, technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten zu ergreifen. Unkontrollierte OAuth-Verbindungen mit Zugriff auf Kundendaten können als unzureichende Schutzmaßnahme gewertet werden und zu erheblichen Bußgeldern führen – zusätzlich zum Reputationsschaden eines Datenlecks.</p>
 
         <div class="warning-box">
-            <h4>⚠️ DSGVO-Relevanz</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> DSGVO-Relevanz</h4>
             <p>Können Sie als Unternehmen nachweisen, welche Drittanbieter-Apps Zugriff auf personenbezogene Daten haben und wie dieser Zugriff kontrolliert wird? Eine fehlende Übersicht der OAuth-Verbindungen kann bei einer DSGVO-Prüfung problematisch werden.</p>
         </div>
 
@@ -474,7 +480,7 @@
         <div class="cta-box">
             <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Blinde Flecken in Ihrer App-Sicherheit schließen?</h3>
             <p>Wir identifizieren unkontrollierte OAuth-Verbindungen, übermäßige Drittanbieter-Berechtigungen und weitere Angriffsflächen in Ihrer Infrastruktur – bevor Angreifer es tun. Sprechen Sie uns an für ein kostenloses Erstgespräch.</p>
-            <a href="../../index.html#contact" class="cta-button">Jetzt Kontakt aufnehmen</a>
+            <a href="../../index.html#contact" class="btn btn-primary">Jetzt Kontakt aufnehmen</a>
         </div>
     </main>
 

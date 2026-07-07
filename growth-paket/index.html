@@ -20,6 +20,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -168,8 +169,9 @@
 
         .feature-item:last-child { border-bottom: none; }
 
-        .feature-emoji {
+        .feature-icon {
             font-size: 1.5rem;
+            color: var(--primary-cyan);
             line-height: 1;
             flex-shrink: 0;
             width: 2.4rem;
@@ -263,7 +265,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#contact">Kontakt</a></li>
@@ -310,35 +317,35 @@
             <h2 class="section-heading">Was ist enthalten</h2>
             <div class="feature-list">
                 <div class="feature-item">
-                    <span class="feature-emoji">🎯</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
                     <div class="feature-text">
                         <h3>3× jährliche Security-Checks</h3>
                         <p>Dreimal im Jahr prüfen wir je 2–3 kritische Systeme (Web-App, API, Server) auf Schwachstellen – CVSS-bewertet, priorisiert, mit konkreten Handlungsempfehlungen.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">📊</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="10"/></svg></span>
                     <div class="feature-text">
                         <h3>Monatlicher Report + Quartalsgespräch</h3>
                         <p>Jeden Monat ein strukturierter Sicherheitsbericht mit Risikobewertung. Dazu ein 30-minütiger Call pro Quartal mit einem festen Ansprechpartner.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">🎓</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
                     <div class="feature-text">
                         <h3>2× Awareness-Schulungen (bis 25 MA)</h3>
                         <p>Zweimal jährlich interaktive Schulungen: Phishing, Social Engineering, sicherer Arbeitsalltag – praxisnah und branchenspezifisch anpassbar.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">🎣</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.8"/><path d="M12 5.8V13"/><path d="M12 13a4.5 4.5 0 0 0 9 0v-1.8"/><polyline points="18.9 12.6 21 10.5 21 14.1"/></svg></span>
                     <div class="feature-text">
                         <h3>Phishing-Simulation</h3>
                         <p>Einmal jährlich simulieren wir einen echten Phishing-Angriff auf euer Team – kontrolliert, lehrreich, mit anschließender Auswertung und Empfehlungen.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">📋</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
                     <div class="feature-text">
                         <h3>Compliance-Dokumentation</h3>
                         <p>Alle Reports sind direkt nutzbar als Nachweis für DSGVO, NIS2 und Kundenanforderungen. Strukturierte Risikobewertung mit priorisierten Maßnahmen.</p>

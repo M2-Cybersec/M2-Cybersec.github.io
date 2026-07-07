@@ -14,6 +14,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -133,7 +134,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#contact">Kontakt</a></li>

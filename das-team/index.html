@@ -21,6 +21,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -203,7 +204,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../blog/index.html">Blog</a></li>
@@ -244,9 +250,9 @@
 
                 <div class="contact-info">
                     <p><strong>Kontakt:</strong></p>
-                    <p>📧 E-Mail: <a href="mailto:scheer@m2cybersec.de">scheer@m2cybersec.de</a></p>
-                    <p>📱 Telefon: <a href="tel:+491778063600">+49 177 806 3600</a></p>
-                    <p>🔑 PGP-Key: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/2F8B8D191844E2123D655FFEBEE019A3FE170D35">Download</a></p>
+                    <p><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg> E-Mail: <a href="mailto:scheer@m2cybersec.de">scheer@m2cybersec.de</a></p>
+                    <p><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Telefon: <a href="tel:+491778063600">+49 177 806 3600</a></p>
+                    <p><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg> PGP-Key: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/2F8B8D191844E2123D655FFEBEE019A3FE170D35">Download</a></p>
                 </div>
             </div>
         </article>

@@ -15,6 +15,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -176,7 +177,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../das-team/index.html">Team</a></li>
@@ -198,8 +204,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Marlon Scheer</span>
-                        <span>📅 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
                     </div>
                     <h2>Kritische AD-Lücke CVE-2026-33826: Sofortiger Patch-Bedarf für alle Windows Server</h2>
                     <p>Eine kritische RPC-Schwachstelle in Windows Active Directory (CVSS 8.0) ermöglicht Domänen-Kompromittierung ohne Benutzerinteraktion. Microsoft hat Notfall-Patches für alle Server-Versionen veröffentlicht – Administratoren müssen sofort handeln.</p>
@@ -210,8 +216,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Marlon Scheer</span>
-                        <span>📅 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
                     </div>
                     <h2>EU-Altersverifikations-App in 2 Minuten geknackt: Ein Lehrstück für sichere App-Entwicklung</h2>
                     <p>Die offizielle EU-Altersverifikations-App wurde mit erschreckend simplen Methoden in unter 2 Minuten kompromittiert. Eine Analyse der elementaren Sicherheitsfehler – und was Entwickler und Unternehmen daraus lernen können.</p>
@@ -222,8 +228,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Marlon Scheer</span>
-                        <span>📅 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
                     </div>
                     <h2>Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde</h2>
                     <p>ShinyHunters kompromittierte Vercel über ein KI-Tool mit zu weitreichenden OAuth-Berechtigungen. Was das für Ihr Unternehmen bedeutet – und wie Sie blinde Flecken bei Third-Party-App-Berechtigungen schließen.</p>
@@ -234,8 +240,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Max Brinkmann</span>
-                        <span>📅 26. Juni 2025</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 26. Juni 2025</span>
                     </div>
                     <h2>Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?</h2>
                     <p>In einer zunehmend digitalisierten Geschäftswelt stellt sich für viele Unternehmen die Frage: Wie viel des IT-Budgets sollte in die Cybersicherheit fließen? Erfahren Sie die Empfehlungen des BSI und warum 10-20% des IT-Budgets der richtige Richtwert sind.</p>
@@ -246,8 +252,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Marlon Scheer</span>
-                        <span>📅 5. November 2024</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 5. November 2024</span>
                     </div>
                     <h2>Was ist ein Cybersecurity-Audit und warum ist sie wichtig?</h2>
                     <p>Cybersecurity-Audits sind umfassende Überprüfungen, die Ihre IT-Sicherheit bewerten und Schwachstellen aufdecken. Erfahren Sie, warum regelmäßige Audits entscheidend für Ihre Unternehmenssicherheit sind und was dabei geprüft wird.</p>
@@ -258,8 +264,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Marlon Scheer</span>
-                        <span>📅 31. Oktober 2024</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 31. Oktober 2024</span>
                     </div>
                     <h2>Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir Ihnen helfen können</h2>
                     <p>Mit der NIS2-Richtlinie steht Europa ein weiterer Schritt hin zu einer sichereren digitalen Infrastruktur bevor. Erfahren Sie, was die Richtlinie bedeutet, wer betroffen ist und wie M2 Cybersec Sie bei der Umsetzung unterstützt.</p>
@@ -271,8 +277,8 @@
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Max Brinkmann</span>
-                        <span>📅 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
                     </div>
                     <h2>Ransomware in 2026: Warum „Wir sind zu klein“ der teuerste Satz im Unternehmen ist</h2>
 <p>Viele Geschäftsführer sagen immer noch: „Uns trifft das nicht, wir sind zu klein.“  
@@ -287,8 +293,8 @@ Im Gegenteil: <strong>Kleine und mittlere Unternehmen (KMU) sind heute das bevor
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Max Brinkmann</span>
-                        <span>📅 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
                     </div>
                     <h2>IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen (ohne Bullshit)</h2>
         <p>In vielen Unternehmen ist IT-Sicherheit ein Thema, das man gerne auf später verschiebt. Nicht aus Ignoranz, sondern weil der Alltag dominiert: Kunden, Projekte, Liefertermine, Personal. Irgendwann heißt es dann: „Wir sind eigentlich ganz gut aufgestellt.“ Genau diesen Satz höre ich ständig – und finde trotzdem innerhalb kürzester Zeit Schwachstellen, die bei einem Angriff sofort kritisch werden. Das ist kein Vorwurf, sondern der Normalzustand in vielen KMU.</p>
@@ -300,8 +306,8 @@ Im Gegenteil: <strong>Kleine und mittlere Unternehmen (KMU) sind heute das bevor
             <article class="blog-card">
                 <div class="blog-card-content">
                     <div class="blog-meta">
-                        <span>👤 Max Brinkmann</span>
-                        <span>📅 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
                     </div>
                     <h2>MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365</h2>
         <p>Microsoft 365 ist für viele Firmen heute gleichbedeutend mit „IT“.

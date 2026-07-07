@@ -21,6 +21,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -149,7 +150,9 @@
         }
 
         .module-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
+            color: var(--primary-cyan);
+            line-height: 1;
             margin-bottom: 1.5rem;
             display: block;
         }
@@ -207,7 +210,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#contact">Kontakt</a></li>
@@ -231,21 +239,21 @@
 
             <div class="training-modules">
                 <article class="module-card">
-                    <span class="module-icon">🎣</span>
+                    <span class="module-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.8"/><path d="M12 5.8V13"/><path d="M12 13a4.5 4.5 0 0 0 9 0v-1.8"/><polyline points="18.9 12.6 21 10.5 21 14.1"/></svg></span>
                     <h3>Phishing-Prävention</h3>
                     <p>Umfassende Schulung zur Phishing-prävention für den sicheren Umgang mit E-Mails. Teilnehmende lernen, wie sie betrügerische E-Mails, gefälschte Webseiten und Social-Engineering-Tricks zuverlässig erkennen.</p>
                     <p>Durch realitätsnahe Beispiele und interaktive Übungen entwickeln Mitarbeitende ein geschärftes Bewusstsein für aktuelle Cyberbedrohungen und können Risiken im Arbeitsalltag selbstständig einschätzen.</p>
                 </article>
 
                 <article class="module-card">
-                    <span class="module-icon">🔐</span>
+                    <span class="module-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
                     <h3>Ransomware-Schutz</h3>
                     <p>Erfahren Sie Schritt für Schritt, wie Sie Ransomware-Angriffe wirksam verhindern, Infektionswege frühzeitig erkennen und dadurch teure Datenverluste sowie Betriebsunterbrechungen vermeiden.</p>
                     <p>Durch praxisnahe Szenarien werden Mitarbeitende befähigt, verdächtiges Verhalten sofort zu identifizieren und im Ernstfall richtig zu reagieren, bevor Schaden entsteht.</p>
                 </article>
 
                 <article class="module-card">
-                    <span class="module-icon">📊</span>
+                    <span class="module-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="10"/></svg></span>
                     <h3>Cyber-Risikomanagement</h3>
                     <p>Wir vermitteln praxisbewährte Strategien, um Cyberrisiken frühzeitig zu identifizieren, realistisch zu bewerten und effektiv zu steuern.</p>
                     <p>Mitarbeitende lernen, wie sie im täglichen Umgang mit Daten, Systemen und Geräten verantwortungsvoll handeln und potenzielle Schwachstellen sofort erkennen.</p>
@@ -256,19 +264,19 @@
                 <h2 class="section-title">Warum Awareness+ Training?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <h4>🎯 Praxisnah</h4>
+                        <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> Praxisnah</h4>
                         <p>Realistische Szenarien und interaktive Übungen basierend auf echten Bedrohungen</p>
                     </div>
                     <div class="benefit-item">
-                        <h4>📈 Messbar</h4>
+                        <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> Messbar</h4>
                         <p>Nachweisbare Verbesserung des Sicherheitsbewusstseins Ihrer Mitarbeitenden</p>
                     </div>
                     <div class="benefit-item">
-                        <h4>🔄 Nachhaltig</h4>
+                        <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg> Nachhaltig</h4>
                         <p>Langfristige Stärkung Ihrer Security-Kultur statt einmaliger Schulung</p>
                     </div>
                     <div class="benefit-item">
-                        <h4>✅ Compliance</h4>
+                        <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Compliance</h4>
                         <p>Erfüllung wichtiger Anforderungen moderner Cybersecurity- und Compliance-Standards</p>
                     </div>
                 </div>
@@ -279,7 +287,7 @@
                 <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 500; color: var(--primary-cyan); margin: 0.8rem 0;">490 €/Session</div>
                 <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">Bis 25 Mitarbeiter &middot; 90 Minuten &middot; Branchenspezifisch anpassbar &middot; Teilnahmezertifikate</p>
                 <p style="font-size: 0.95rem; color: var(--secondary-light-gray); margin-bottom: 2rem;">Einmalig buchbar oder als Add-on zu jedem Abo-Paket – fragen Sie nach dem kombinierten Angebot.</p>
-                <a href="../index.html#contact" class="cta-button">Jetzt Schulung anfragen</a>
+                <a href="../index.html#contact" class="btn btn-primary">Jetzt Schulung anfragen</a>
             </div>
         </section>
     </main>

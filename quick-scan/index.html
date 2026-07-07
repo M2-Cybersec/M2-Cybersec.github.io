@@ -41,6 +41,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -103,21 +104,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 1.1rem 2.4rem;
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: transform var(--transition-base), box-shadow var(--transition-base);
-            border: 2px solid var(--primary-cyan);
-        }
-
-        .hero-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-cyan); }
 
         /* Sections */
         .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
@@ -187,7 +173,7 @@
             box-shadow: var(--shadow-md);
         }
 
-        .check-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+        .check-icon { font-size: 2.4rem; color: var(--primary-cyan); line-height: 1; margin-bottom: 1rem; display: block; }
         .check-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
         .check-card p { color: var(--secondary-light-gray); font-size: 0.95rem; line-height: 1.6; }
 
@@ -317,7 +303,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#contact">Kontakt</a></li>
@@ -330,7 +321,7 @@
                 <span class="scan-badge">KOSTENLOS &middot; UNVERBINDLICH &middot; OHNE AKTIVEN ANGRIFF</span>
                 <h1>Der kostenlose <span>Quick-Scan</span></h1>
                 <p>In rund 15 Minuten zeigen wir Ihnen, was ein Angreifer heute schon über Ihr Unternehmen sehen kann – ganz ohne dass wir irgendetwas aktiv testen oder angreifen. Sie erhalten die wichtigsten Findings als kompakten PDF-Report.</p>
-                <a href="https://cal.eu/marlonscheer/quickscan" class="hero-cta">Jetzt Quick-Scan buchen →</a>
+                <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-primary">Jetzt Quick-Scan buchen →</a>
             </div>
         </section>
 
@@ -377,22 +368,22 @@
 
             <div class="check-grid">
                 <div class="check-card">
-                    <span class="check-icon">🌐</span>
+                    <span class="check-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                     <h3>Externe Angriffsfläche</h3>
                     <p>Wir analysieren Ihre Domain und die nach außen sichtbaren Dienste – also alles, was ein Angreifer ohne Insiderwissen finden kann.</p>
                 </div>
                 <div class="check-card">
-                    <span class="check-icon">📧</span>
+                    <span class="check-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg></span>
                     <h3>E-Mail-Sicherheit</h3>
                     <p>Prüfung von SPF, DKIM und DMARC. Diese Einträge entscheiden, wie leicht sich Ihre Domain für Phishing und Spoofing missbrauchen lässt.</p>
                 </div>
                 <div class="check-card">
-                    <span class="check-icon">🔎</span>
+                    <span class="check-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                     <h3>Exponierte Dienste &amp; Daten</h3>
                     <p>Wir suchen nach offen erreichbaren Systemen, veralteter Software und öffentlich auffindbaren Informationen über Ihr Unternehmen.</p>
                 </div>
                 <div class="check-card">
-                    <span class="check-icon">📄</span>
+                    <span class="check-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
                     <h3>Priorisierte Findings als Report</h3>
                     <p>Sie erhalten ein kompaktes PDF mit den wichtigsten Erkenntnissen – nach Priorität sortiert und mit konkreten, verständlichen Handlungsempfehlungen.</p>
                 </div>
@@ -458,8 +449,8 @@
                 <h3>Bereit für Ihren kostenlosen Quick-Scan?</h3>
                 <p>Buchen Sie jetzt Ihren Termin. In 15 Minuten wissen Sie mehr über Ihre Sicherheitslage als die meisten Unternehmen Ihrer Branche.</p>
                 <div class="cta-buttons">
-                    <a href="https://cal.eu/marlonscheer/quickscan" class="cta-button">Jetzt Quick-Scan buchen →</a>
-                    <a href="../starter-paket/index.html" class="cta-button secondary">Startup Shield ansehen →</a>
+                    <a href="https://cal.eu/marlonscheer/quickscan" class="btn btn-primary">Jetzt Quick-Scan buchen →</a>
+                    <a href="../starter-paket/index.html" class="btn btn-secondary">Startup Shield ansehen →</a>
                 </div>
             </div>
         </section>

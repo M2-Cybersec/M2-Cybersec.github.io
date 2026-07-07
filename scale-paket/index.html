@@ -20,6 +20,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -168,8 +169,9 @@
 
         .feature-item:last-child { border-bottom: none; }
 
-        .feature-emoji {
+        .feature-icon {
             font-size: 1.5rem;
+            color: var(--primary-cyan);
             line-height: 1;
             flex-shrink: 0;
             width: 2.4rem;
@@ -263,7 +265,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#contact">Kontakt</a></li>
@@ -310,42 +317,42 @@
             <h2 class="section-heading">Was ist enthalten</h2>
             <div class="feature-list">
                 <div class="feature-item">
-                    <span class="feature-emoji">🏢</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
                     <div class="feature-text">
                         <h3>4× jährliche Security-Checks (5+ Systeme)</h3>
                         <p>Viermal im Jahr prüfen wir 5 oder mehr kritische Systeme – Web-Apps, APIs, Server und Infrastruktur. CVSS-bewertet, vollständig dokumentiert.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">💻</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
                     <div class="feature-text">
                         <h3>Code Review &amp; Architektur-Check</h3>
                         <p>Tiefer als ein klassischer Pentest: Quellcode, Konfigurationen und Architektur werden auf Schwachstellen und sicherheitskritische Designentscheidungen analysiert.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">📈</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
                     <div class="feature-text">
                         <h3>Monatlicher CVSS-Report + dedizierter Ansprechpartner</h3>
                         <p>Alle Findings CVSS-bewertet, priorisiert und mit konkreten Handlungsempfehlungen. Immer dieselbe Person als Ansprechpartner – kein Ticketsystem, kein Callcenter.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">🎓</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
                     <div class="feature-text">
                         <h3>3× Awareness-Schulungen + Phishing-Simulationen</h3>
                         <p>Dreimal jährlich interaktive Schulungen – kombiniert mit kontrollierten Phishing-Simulationen zur messbaren Steigerung des Sicherheitsbewusstseins.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">🚨</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
                     <div class="feature-text">
                         <h3>Maßgeschneiderter Notfallplan</h3>
                         <p>Individuell auf euer Unternehmen zugeschnitten: Klare Schritte, Eskalationswege und Verantwortlichkeiten für den Ernstfall – damit euer Team sofort handeln kann.</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-emoji">🔄</span>
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></span>
                     <div class="feature-text">
                         <h3>Re-Tests &amp; SLA-Reaktionszeiten</h3>
                         <p>Alle behobenen Findings werden nachgeprüft – Re-Tests sind inklusive. Dazu definierte SLA-Reaktionszeiten für kritische Findings: garantierte Rückmeldung.</p>

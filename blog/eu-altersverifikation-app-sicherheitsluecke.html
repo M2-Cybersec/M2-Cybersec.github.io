@@ -98,6 +98,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -240,7 +241,12 @@
             <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../../index.html#home">Home</a></li>
             <li><a href="../../index.html#services">Services</a></li>
             <li><a href="../index.html">Blog</a></li>
@@ -252,11 +258,11 @@
         <div class="hero-grid"></div>
         <div class="hero-overlay"></div>
         <div class="article-header-content">
-            <div class="category-badge">⚠️ App-Sicherheit</div>
+            <div class="category-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> App-Sicherheit</div>
             <div class="article-meta">
-                <span>👤 Marlon Scheer</span>
-                <span>📅 April 2026</span>
-                <span>🏷️ Mobile Security · Digitale Identität · EU</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> April 2026</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Mobile Security · Digitale Identität · EU</span>
             </div>
             <h1>EU-Altersverifikations-App in unter 2 Minuten geknackt – Sicherheit made by EU?</h1>
             <p class="article-excerpt">Die EU hat eine offizielle App zur Altersverifikation entwickelt. Ein Sicherheitsforscher hat sie ohne Spezialwissen und Spezialwerkzeug in unter zwei Minuten ausgehebelt. Was das über digitale Identitätssysteme und App-Sicherheit aussagt.</p>
@@ -276,21 +282,21 @@
 
         <div class="vuln-grid">
             <div class="vuln-card">
-                <div class="vuln-title">🔴 Schwachstelle 1: PIN im Klartext</div>
+                <div class="vuln-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Schwachstelle 1: PIN im Klartext</div>
                 <div class="vuln-desc">Der Nutzer-PIN wird in einer unverschlüsselten Konfigurationsdatei auf dem Gerät gespeichert. Wer die Datei löscht und einen neuen PIN eingibt, erhält Zugriff auf ein fremdes Profil – inklusive der dort hinterlegten Identitätsdaten.</div>
             </div>
             <div class="vuln-card">
-                <div class="vuln-title">🔴 Schwachstelle 2: Brute-Force-Schutz als Zähler</div>
+                <div class="vuln-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Schwachstelle 2: Brute-Force-Schutz als Zähler</div>
                 <div class="vuln-desc">Der Schutz gegen zu viele Passworteingaben ist ebenfalls in der Konfigurationsdatei als einfacher numerischer Wert gespeichert. Zurücksetzen auf 0 – Problem gelöst. Unbegrenzte Versuche möglich.</div>
             </div>
             <div class="vuln-card">
-                <div class="vuln-title">🔴 Schwachstelle 3: Biometrie per Schalter</div>
+                <div class="vuln-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Schwachstelle 3: Biometrie per Schalter</div>
                 <div class="vuln-desc">Fingerabdruck und Face-ID sind lediglich durch einen booleschen Wert in der Konfiguration aktiviert. Auf "false" setzen – die biometrische Sicherheitsschicht ist deaktiviert, kein Biometrie-Check mehr notwendig.</div>
             </div>
         </div>
 
         <div class="fail-box">
-            <h4>🔴 Das Ergebnis dieser Schwachstellen in Kombination</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Das Ergebnis dieser Schwachstellen in Kombination</h4>
             <p>Eine App, die beweisen soll, wer jemand ist und wie alt er ist, kann mit wenigen Handgriffen in eine Konfigurationsdatei dazu gebracht werden, eine vollständig fremde Identität zu bestätigen. Jemand mit einem fremden Profil auf dem Gerät kann den Brute-Force-Schutz deaktivieren, die Biometrie abschalten, einen beliebigen PIN setzen – und gibt sich dann als jemand anderen aus. Das ist kein Bug. Das ist ein Designversagen auf fundamentaler Ebene.</p>
         </div>
 
@@ -319,7 +325,7 @@
         </ul>
 
         <div class="warning-box">
-            <h4>⚠️ Digitale Identität ist kein Spielzeug</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Digitale Identität ist kein Spielzeug</h4>
             <p>Wenn Bürgerinnen und Bürger dazu gebracht werden, persönliche Identitätsdaten in einer App zu hinterlegen, entsteht eine Verantwortung für die Sicherheit dieser Daten. Eine App, die diese Verantwortung nicht erfüllt, schafft kein Vertrauen – sie untergräbt es. Und einmal verloren, ist dieses Vertrauen schwer zurückzugewinnen.</p>
         </div>
 
@@ -328,22 +334,22 @@
         <p>Die gute Nachricht: Alle drei Schwachstellen wären mit etablierten Sicherheitspraktiken vermeidbar gewesen. Sie sind keine neuartigen Angriffsvektoren, sondern bekannte Probleme mit bekannten Lösungen.</p>
 
         <div class="fix-card">
-            <div class="fix-title">✅ Richtige PIN-Speicherung: Secure Enclave und Keychain</div>
+            <div class="fix-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Richtige PIN-Speicherung: Secure Enclave und Keychain</div>
             <div class="fix-desc">PINs und andere Credentials dürfen niemals im Klartext in Konfigurationsdateien gespeichert werden. iOS bietet die Keychain, Android den KeyStore – beides Hardware-gesicherte Speicher, die speziell für kryptografische Schlüssel und sensible Daten konzipiert sind. Der Zugriff ist an die Geräteauthentifizierung gebunden.</div>
         </div>
 
         <div class="fix-card">
-            <div class="fix-title">✅ Serverseitiger Brute-Force-Schutz</div>
+            <div class="fix-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Serverseitiger Brute-Force-Schutz</div>
             <div class="fix-desc">Jeder Schutz, der clientseitig implementiert und damit in einer veränderbaren Datei gespeichert wird, ist wirkungslos. Brute-Force-Limits müssen serverseitig enforced werden – der Server entscheidet, ob ein weiterer Versuch erlaubt wird, nicht die App selbst.</div>
         </div>
 
         <div class="fix-card">
-            <div class="fix-title">✅ Kryptografische Biometrie-Integration</div>
+            <div class="fix-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Kryptografische Biometrie-Integration</div>
             <div class="fix-desc">Biometrische Authentifizierung muss kryptografisch mit dem Authentifizierungsfluss verknüpft sein. Ein einfacher Schalter, der bestimmt "Biometrie an/aus", ist keine Sicherheitsmaßnahme. Stattdessen sollte die Biometrie ein privates Schlüsselmaterial entsperren, das für den Authentifizierungsprozess zwingend benötigt wird.</div>
         </div>
 
         <div class="fix-card">
-            <div class="fix-title">✅ Verpflichtende unabhängige Sicherheitsaudits</div>
+            <div class="fix-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verpflichtende unabhängige Sicherheitsaudits</div>
             <div class="fix-desc">Für Apps, die Identitätsdaten verwalten, sollte ein unabhängiges Sicherheitsaudit durch externe Experten vor dem Launch obligatorisch sein. Penetrationstests, Code-Reviews und Threat-Modeling sind keine optionalen Extras – sie sind Grundvoraussetzung für den verantwortungsvollen Betrieb.</div>
         </div>
 
@@ -354,7 +360,7 @@
         <p>Es ist eine gewisse Ironie, dass eine offizielle EU-App offensichtlich hinter den Sicherheitsstandards zurückbleibt, die die EU selbst für den privaten Sektor fordert. Für Unternehmen in Deutschland und der EU, die unter NIS-2 fallen, wäre eine App mit diesen Schwachstellen ein klarer Compliance-Verstoß.</p>
 
         <div class="info-box">
-            <h4>💡 Was Unternehmen aus diesem Vorfall lernen können</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Was Unternehmen aus diesem Vorfall lernen können</h4>
             <p>Dieser Vorfall ist keine Ausnahme – er ist ein Spiegel einer weit verbreiteten Realität. In vielen Unternehmen existieren Apps und digitale Tools mit ähnlichen Schwachstellen: Credentials in Konfigurationsdateien, Sicherheitslogik auf der Client-Seite, unzureichende Verschlüsselung. Ein professioneller Sicherheitsaudit deckt solche Probleme auf – bevor ein Angreifer oder ein Sicherheitsforscher es tut.</p>
         </div>
 
@@ -375,7 +381,7 @@
         <div class="cta-box">
             <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Sicherheitsaudit für Ihre Apps und Systeme</h3>
             <p>Wissen Sie, welche Schwachstellen in Ihren digitalen Anwendungen stecken? Ein professionelles Sicherheitsaudit deckt Schwachstellen wie diese auf – bevor es andere tun. Von der Konfigurationsprüfung bis zum vollständigen Penetrationstest.</p>
-            <a href="../../index.html#contact" class="cta-button">Audit anfragen</a>
+            <a href="../../index.html#contact" class="btn btn-primary">Audit anfragen</a>
         </div>
     </main>
 

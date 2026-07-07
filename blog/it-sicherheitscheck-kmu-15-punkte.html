@@ -15,6 +15,7 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
     <style>
 
         body {
@@ -274,7 +275,12 @@
             <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
             <span>M2 Cybersec</span>
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="../../index.html#home">Home</a></li>
             <li><a href="../../index.html#services">Services</a></li>
             <li><a href="../index.html">Blog</a></li>
@@ -287,9 +293,9 @@
         
         <div class="article-header-content">
             <div class="article-meta">
-                <span>👤 Max Brinkmann</span>
-                <span>📅 6. Februar 2026</span>
-                <span>🏷️ Information</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Information</span>
             </div>
             <h1>IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen (ohne Bullshit)</h1>
         </div>
@@ -329,7 +335,7 @@ Empfohlenes Element</p>
         <p>Ein guter Sicherheitscheck ist kein 50-seitiger Bericht. Er ist eine klare, priorisierte Liste von Maßnahmen, die sich sofort umsetzen lassen, ohne den Betrieb lahmzulegen. Wer die Basics sauber im Griff hat, ist bereits sehr weit – deutlich weiter als viele glauben.</p>
 
         <div class="info-box">
-            <h4>💡 TL;DR</h4>
+            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> TL;DR</h4>
             <p>IT-Sicherheit ist kein Zustand, sondern ein System</p>
         </div>
 
@@ -343,7 +349,7 @@ Empfohlenes Element</p>
         <div class="cta-box">
             <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Du willst wissen, wo dein Unternehmen wirklich steht?</h3>
             <p>Wir prüfen deine IT strukturiert, praxisnah und ohne Buzzwords. Kein Verkaufsgespräch, kein Zertifikats-Zirkus – sondern klare Aussagen und konkrete Maßnahmen, die wirklich etwas bringen.</p>
-            <a href="../../index.html#contact" class="cta-button">IT-Sicherheitscheck für KMU anfragen</a>
+            <a href="../../index.html#contact" class="btn btn-primary">IT-Sicherheitscheck für KMU anfragen</a>
         </div>
     </main>
 
