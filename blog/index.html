@@ -114,10 +114,26 @@
             flex-direction: column;
         }
 
+        .blog-tag {
+            display: inline-flex;
+            align-self: flex-start;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary-cyan);
+            border: 1px solid rgba(0, 252, 246, 0.35);
+            border-radius: var(--radius-pill);
+            padding: 0.3rem 0.85rem;
+            margin-bottom: 1.1rem;
+        }
+
         .blog-meta {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.5rem;
+            margin-bottom: 1.2rem;
             font-size: 0.9rem;
             color: var(--text-muted);
         }
@@ -174,7 +190,7 @@
 <body>
     <nav class="navbar" role="navigation">
         <a href="../index.html" class="logo">
-            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -203,11 +219,13 @@
         <div class="blog-grid">
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">Sicherheitswarnung</span>
+                    <h2>Kritische AD-Lücke CVE-2026-33826: Sofortiger Patch-Bedarf für alle Windows Server</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 Min. Lesezeit</span>
                     </div>
-                    <h2>Kritische AD-Lücke CVE-2026-33826: Sofortiger Patch-Bedarf für alle Windows Server</h2>
                     <p>Eine kritische RPC-Schwachstelle in Windows Active Directory (CVSS 8.0) ermöglicht Domänen-Kompromittierung ohne Benutzerinteraktion. Microsoft hat Notfall-Patches für alle Server-Versionen veröffentlicht – Administratoren müssen sofort handeln.</p>
                     <a href="cve-2026-33826-windows-active-directory-patch.html" class="read-more">Weiterlesen</a>
                 </div>
@@ -215,11 +233,13 @@
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">App-Sicherheit</span>
+                    <h2>EU-Altersverifikations-App in 2 Minuten geknackt: Ein Lehrstück für sichere App-Entwicklung</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 Min. Lesezeit</span>
                     </div>
-                    <h2>EU-Altersverifikations-App in 2 Minuten geknackt: Ein Lehrstück für sichere App-Entwicklung</h2>
                     <p>Die offizielle EU-Altersverifikations-App wurde mit erschreckend simplen Methoden in unter 2 Minuten kompromittiert. Eine Analyse der elementaren Sicherheitsfehler – und was Entwickler und Unternehmen daraus lernen können.</p>
                     <a href="eu-altersverifikation-app-sicherheitsluecke.html" class="read-more">Weiterlesen</a>
                 </div>
@@ -227,11 +247,13 @@
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">Incident Analysis</span>
+                    <h2>Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 20. April 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 Min. Lesezeit</span>
                     </div>
-                    <h2>Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde</h2>
                     <p>ShinyHunters kompromittierte Vercel über ein KI-Tool mit zu weitreichenden OAuth-Berechtigungen. Was das für Ihr Unternehmen bedeutet – und wie Sie blinde Flecken bei Third-Party-App-Berechtigungen schließen.</p>
                     <a href="vercel-hack-ki-tool-sicherheit.html" class="read-more">Weiterlesen</a>
                 </div>
@@ -239,23 +261,27 @@
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">IT-Strategie</span>
+                    <h2>Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 26. Juni 2025</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 Min. Lesezeit</span>
                     </div>
-                    <h2>Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?</h2>
-                    <p>In einer zunehmend digitalisierten Geschäftswelt stellt sich für viele Unternehmen die Frage: Wie viel des IT-Budgets sollte in die Cybersicherheit fließen? Erfahren Sie die Empfehlungen des BSI und warum 10-20% des IT-Budgets der richtige Richtwert sind.</p>
+                    <p>Wie viel des IT-Budgets sollte in die Cybersicherheit fließen? Erfahren Sie die Empfehlungen des BSI und warum 10-20 % des IT-Budgets der richtige Richtwert sind.</p>
                     <a href="it-budget-cybersecurity.html" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">Security-Audit</span>
+                    <h2>Was ist ein Cybersecurity-Audit und warum ist sie wichtig?</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 5. November 2024</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 Min. Lesezeit</span>
                     </div>
-                    <h2>Was ist ein Cybersecurity-Audit und warum ist sie wichtig?</h2>
                     <p>Cybersecurity-Audits sind umfassende Überprüfungen, die Ihre IT-Sicherheit bewerten und Schwachstellen aufdecken. Erfahren Sie, warum regelmäßige Audits entscheidend für Ihre Unternehmenssicherheit sind und was dabei geprüft wird.</p>
                     <a href="cybersecurity-audit.html" class="read-more">Weiterlesen</a>
                 </div>
@@ -263,61 +289,59 @@
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">Compliance</span>
+                    <h2>Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir Ihnen helfen können</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 31. Oktober 2024</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
                     </div>
-                    <h2>Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir Ihnen helfen können</h2>
                     <p>Mit der NIS2-Richtlinie steht Europa ein weiterer Schritt hin zu einer sichereren digitalen Infrastruktur bevor. Erfahren Sie, was die Richtlinie bedeutet, wer betroffen ist und wie M2 Cybersec Sie bei der Umsetzung unterstützt.</p>
                     <a href="nis2-richtlinie.html" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
-
             <article class="blog-card">
                 <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
-                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
-                    </div>
+                    <span class="blog-tag">Ransomware</span>
                     <h2>Ransomware in 2026: Warum „Wir sind zu klein“ der teuerste Satz im Unternehmen ist</h2>
-<p>Viele Geschäftsführer sagen immer noch: „Uns trifft das nicht, wir sind zu klein.“  
-Und genau das ist der Grund, warum es sie trifft. <strong>Ransomware ist längst kein Thema mehr, das nur große Konzerne betrifft.</strong>  
-Im Gegenteil: <strong>Kleine und mittlere Unternehmen (KMU) sind heute das bevorzugte Ziel von Cyberangriffen</strong>, weil dort oft weniger IT-Sicherheit vorhanden ist, weniger Monitoring, weniger klare Abläufe – und im Ernstfall deutlich mehr Druck.</p>
-<a href="ransomware-2026.html" class="read-more">Weiterlesen</a>
-                </div>
-            </article>
-
-
-
-            <article class="blog-card">
-                <div class="blog-card-content">
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
                     </div>
+                    <p>Kleine und mittlere Unternehmen sind heute das bevorzugte Ziel von Ransomware – gerade weil dort Monitoring, klare Abläufe und IT-Sicherheit oft fehlen. Warum „Wir sind zu klein“ ein teurer Irrtum ist.</p>
+                    <a href="ransomware-2026.html" class="read-more">Weiterlesen</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-tag">KMU-Sicherheit</span>
                     <h2>IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen (ohne Bullshit)</h2>
-        <p>In vielen Unternehmen ist IT-Sicherheit ein Thema, das man gerne auf später verschiebt. Nicht aus Ignoranz, sondern weil der Alltag dominiert: Kunden, Projekte, Liefertermine, Personal. Irgendwann heißt es dann: „Wir sind eigentlich ganz gut aufgestellt.“ Genau diesen Satz höre ich ständig – und finde trotzdem innerhalb kürzester Zeit Schwachstellen, die bei einem Angriff sofort kritisch werden. Das ist kein Vorwurf, sondern der Normalzustand in vielen KMU.</p>
-
-<a href="it-sicherheitscheck-kmu-15-punkte.html" class="read-more">Weiterlesen</a>
+                    <div class="blog-meta">
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
+                    </div>
+                    <p>„Wir sind eigentlich ganz gut aufgestellt“ – diesen Satz hören wir ständig und finden trotzdem in kürzester Zeit kritische Schwachstellen. 15 Punkte, die zeigen, wo Angreifer zuerst ansetzen.</p>
+                    <a href="it-sicherheitscheck-kmu-15-punkte.html" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
             <article class="blog-card">
                 <div class="blog-card-content">
+                    <span class="blog-tag">Microsoft 365</span>
+                    <h2>MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365</h2>
                     <div class="blog-meta">
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6. Februar 2026</span>
+                        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 Min. Lesezeit</span>
                     </div>
-                    <h2>MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365</h2>
-        <p>Microsoft 365 ist für viele Firmen heute gleichbedeutend mit „IT“.
-            E-Mail, Teams, SharePoint und OneDrive bilden das digitale Rückgrat des Unternehmens.
-            Genau deshalb ist Microsoft 365 eines der Hauptziele für Angriffe.</p>
-
-<a href="mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken.html" class="read-more">Weiterlesen</a>
+                    <p>Microsoft 365 ist für viele Firmen das digitale Rückgrat – und genau deshalb Hauptziel für Angriffe. Warum MFA allein nicht reicht und welche sieben Lücken wir am häufigsten finden.</p>
+                    <a href="mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken.html" class="read-more">Weiterlesen</a>
                 </div>
             </article>
-
         </div>
     </main>
 

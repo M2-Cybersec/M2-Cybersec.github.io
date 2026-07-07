@@ -841,8 +841,9 @@
 
         /* References Strip */
         .references-strip {
-            padding: 2.2rem 0;
-            background: #ffffff;
+            padding: 3rem 0 2.6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             overflow: hidden;
         }
 
@@ -851,8 +852,8 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #999;
-            margin-bottom: 1.6rem;
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
         }
 
         .references-track-wrapper {
@@ -877,21 +878,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 4rem;
-            height: 130px;
-            border-right: 1px solid #e8e8e8;
+            padding: 0 3.5rem;
+            height: 90px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
             flex-shrink: 0;
             box-sizing: content-box;
         }
 
         .ref-logo img {
-            height: 100px;
+            height: 54px;
             width: auto;
-            max-width: 260px;
+            max-width: 220px;
             object-fit: contain;
             display: block;
+            opacity: 0.55;
+            transition: opacity var(--transition-base);
             user-select: none;
             -webkit-user-drag: none;
+        }
+
+        .ref-logo:hover img {
+            opacity: 0.9;
         }
 
         @keyframes references-scroll {
@@ -906,30 +913,26 @@
         }
 
         @media (max-width: 768px) {
-            .references-strip { padding: 1.8rem 0; }
+            .references-strip { padding: 2.2rem 0 1.8rem; }
             .ref-logo {
                 padding: 0 2.5rem;
-                height: 100px;
+                height: 72px;
             }
             .ref-logo img {
-                height: 76px;
-                max-width: 200px;
+                height: 42px;
+                max-width: 180px;
             }
-        
-        
         }
 
         @media (max-width: 420px) {
             .ref-logo {
                 padding: 0 2rem;
-                height: 84px;
+                height: 60px;
             }
             .ref-logo img {
-                height: 62px;
-                max-width: 160px;
+                height: 34px;
+                max-width: 150px;
             }
-        
-        
         }
 
         /* NRW-Förderung Banner */
@@ -1210,7 +1213,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="#home" class="logo">
-            <img src="assets/logo.png" alt="M2 Cybersec Logo" class="logo-image">
+            <img src="assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -1229,7 +1232,7 @@
 
     <main id="main-content">
         <section id="home" class="hero">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline poster="assets/hero_poster.jpg" class="hero-video">
                 <source src="assets/hero_vid.webm" type="video/webm">
                 <source src="assets/hero_vid.mp4" type="video/mp4">
             </video>
@@ -1250,7 +1253,6 @@
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Kostenlose Beratung</a>
                     <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
-                    <a href="#services" class="btn btn-secondary">Unsere Services</a>
                 </div>
             </div>
         </section>
@@ -1261,19 +1263,19 @@
             <div class="references-track-wrapper">
                 <div class="references-track">
                     <!-- Set 1 (sichtbar für Screenreader) -->
-                    <div class="ref-logo"><img src="assets/references/Akip-710x450.jpg" alt="AKIP"></div>
-                    <div class="ref-logo"><img src="assets/references/FF_DQ.avif" alt="Referenz"></div>
-                    <div class="ref-logo"><img src="assets/references/logo-01.avif" alt="Referenz"></div>
-                    <div class="ref-logo"><img src="assets/references/logo-dark.png" alt="Referenz"></div>
-                    <div class="ref-logo"><img src="assets/references/Logo_KaDo.png" alt="KaDo"></div>
-                    <div class="ref-logo"><img src="assets/references/logo.png" alt="Referenz"></div>
+                    <div class="ref-logo"><img src="assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
                     <!-- Set 2 -->
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Akip-710x450.jpg" alt=""></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/FF_DQ.avif" alt=""></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-01.avif" alt=""></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo-dark.png" alt=""></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/Logo_KaDo.png" alt=""></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/logo.png" alt=""></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
                 </div>
             </div>
         </section>
@@ -1288,6 +1290,61 @@
                 <a href="nrw-foerderung/index.html" class="btn btn-nrw">Förderung prüfen →</a>
             </div>
         </section>
+
+        <section id="services" class="section services">
+            <span class="eyebrow eyebrow-center">Security im Abo</span>
+            <h2 class="section-title">Unsere Service Pakete</h2>
+            <p class="section-subtitle">Maßgeschneiderte Sicherheitslösungen für jeden Bedarf – monatliche Abo-Modelle mit fixem Einstiegspreis</p>
+            <div class="services-grid">
+                <article class="service-card">
+                    <a href="starter-paket/index.html" style="text-decoration: none; color: inherit;">
+                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                        <h3>Startup Shield</h3>
+                        <span class="service-price">ab 149 €/Monat</span>
+                        <p>Jährlicher Security-Check, monatlicher Lagebericht und Awareness-Training für Startups &amp; Gründer.</p>
+                        <span class="service-nrw-tag">NRW-Förderung möglich</span>
+                        <span class="service-mehr">Mehr erfahren →</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="growth-paket/index.html" style="text-decoration: none; color: inherit;">
+                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+                        <h3>Growth Guard</h3>
+                        <span class="service-price">ab 349 €/Monat</span>
+                        <p>3× Security-Checks, Phishing-Simulation, Quartalsgespräche und Compliance-Dokumentation für wachsende Teams.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="scale-paket/index.html" style="text-decoration: none; color: inherit;">
+                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
+                        <h3>Scale Secure</h3>
+                        <span class="service-price">ab 749 €/Monat</span>
+                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und SLA für professionelle Teams.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="awareness-training-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
+                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
+                        <h3>Awareness+ Training</h3>
+                        <span class="service-price">490 €/Session</span>
+                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Social Engineering – einzeln oder als Abo-Add-on.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="sicherheit-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
+                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                        <h3>Sicherheit für KMU</h3>
+                        <span class="service-price">Auf Anfrage</span>
+                        <p>Risikoanalyse, Sicherheitskonzepte und Web-Pentests für KMU – individuell nach Bedarf.</p>
+                        <span class="service-mehr">Mehr erfahren →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
 
         <!-- Red Team Pricing -->
         <section id="pricing" class="pricing-section">
@@ -1361,60 +1418,6 @@
             </div>
             <div style="text-align:center; margin-top: 3rem; position: relative; z-index: 2;">
                 <a href="red-team-plus/index.html" class="btn btn-secondary">Mehr erfahren</a>
-            </div>
-        </section>
-
-        <section id="services" class="section services">
-            <span class="eyebrow eyebrow-center">Security im Abo</span>
-            <h2 class="section-title">Unsere Service Pakete</h2>
-            <p class="section-subtitle">Maßgeschneiderte Sicherheitslösungen für jeden Bedarf – monatliche Abo-Modelle mit fixem Einstiegspreis</p>
-            <div class="services-grid">
-                <article class="service-card">
-                    <a href="starter-paket/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
-                        <h3>Startup Shield</h3>
-                        <span class="service-price">ab 149 €/Monat</span>
-                        <p>Jährlicher Security-Check, monatlicher Lagebericht und Awareness-Training für Startups &amp; Gründer.</p>
-                        <span class="service-nrw-tag">NRW-Förderung möglich</span>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
-                <article class="service-card">
-                    <a href="growth-paket/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
-                        <h3>Growth Guard</h3>
-                        <span class="service-price">ab 349 €/Monat</span>
-                        <p>3× Security-Checks, Phishing-Simulation, Quartalsgespräche und Compliance-Dokumentation für wachsende Teams.</p>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
-                <article class="service-card">
-                    <a href="scale-paket/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
-                        <h3>Scale Secure</h3>
-                        <span class="service-price">ab 749 €/Monat</span>
-                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und SLA für professionelle Teams.</p>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
-                <article class="service-card">
-                    <a href="awareness-training-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
-                        <h3>Awareness+ Training</h3>
-                        <span class="service-price">490 €/Session</span>
-                        <p>Interaktive Mitarbeiterschulung zu Phishing, Ransomware und Social Engineering – einzeln oder als Abo-Add-on.</p>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
-                <article class="service-card">
-                    <a href="sicherheit-fuer-kmu/index.html" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                        <h3>Sicherheit für KMU</h3>
-                        <span class="service-price">Auf Anfrage</span>
-                        <p>Risikoanalyse, Sicherheitskonzepte und Web-Pentests für KMU – individuell nach Bedarf.</p>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
             </div>
         </section>
 
@@ -1567,14 +1570,13 @@
             <p class="section-subtitle">Alles, was Sie über Cybersecurity und unsere Services wissen müssen</p>
 
             <div class="faq-container">
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-                        <h3 itemprop="name">Was kostet ein Penetration Test für mein Unternehmen?</h3>
+                        <h3>Was kostet ein Penetration Test für mein Unternehmen?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-1" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-1">
+                        <div>
                             <p>Die Kosten für einen Penetration Test variieren je nach Umfang und Komplexität Ihrer
                                 IT-Infrastruktur. Unser Starter-Paket beginnt bereits bei attraktiven Konditionen für
                                 kleine Unternehmen und Startups. Für eine individuelle Preisauskunft kontaktieren Sie
@@ -1584,14 +1586,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-                        <h3 itemprop="name">Wie lange dauert ein typischer Security-Check?</h3>
+                        <h3>Wie lange dauert ein typischer Security-Check?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-2" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-2">
+                        <div>
                             <p>Die Dauer hängt vom gewählten Paket ab: Ein Starter-Paket Security-Check dauert in der
                                 Regel 3-5 Werktage, während umfangreichere Audits im Rahmen des Scale-Pakets oder
                                 Red Team Plus 2-4 Wochen in Anspruch nehmen können. Nach einer ersten Analyse können
@@ -1600,14 +1601,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-                        <h3 itemprop="name">Ist mein Unternehmen zu klein für professionelle Cybersecurity?</h3>
+                        <h3>Ist mein Unternehmen zu klein für professionelle Cybersecurity?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-3" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-3">
+                        <div>
                             <p>Definitiv nicht! Gerade kleine und mittelständische Unternehmen (KMU) sind häufig Ziel
                                 von Cyberangriffen, da ihre Sicherheitsmaßnahmen oft weniger ausgereift sind. Mit
                                 unserem speziellen "Sicherheit für KMU"-Paket bieten wir auch kleineren Unternehmen
@@ -1617,15 +1617,14 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-                        <h3 itemprop="name">Was ist der Unterschied zwischen Penetration Testing und Vulnerability
+                        <h3>Was ist der Unterschied zwischen Penetration Testing und Vulnerability
                             Scanning?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-4" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-4">
+                        <div>
                             <p>Vulnerability Scanning ist ein automatisierter Prozess, der bekannte Schwachstellen
                                 identifiziert. Penetration Testing geht deutlich weiter: Unsere Experten simulieren
                                 echte Angriffe, kombinieren verschiedene Schwachstellen und testen, ob ein Angreifer
@@ -1635,14 +1634,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-                        <h3 itemprop="name">Benötige ich eine ISO 27001 Zertifizierung?</h3>
+                        <h3>Benötige ich eine ISO 27001 Zertifizierung?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-5" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-5">
+                        <div>
                             <p>Die ISO 27001 Zertifizierung ist für viele Branchen und Geschäftsbeziehungen mittlerweile
                                 Standard. Sie demonstriert, dass Ihr Informationssicherheitsmanagement internationalen
                                 Standards entspricht. Besonders bei Ausschreibungen, im B2B-Bereich und bei der
@@ -1652,14 +1650,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-                        <h3 itemprop="name">Wie oft sollte ein Security-Audit durchgeführt werden?</h3>
+                        <h3>Wie oft sollte ein Security-Audit durchgeführt werden?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-6" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-6">
+                        <div>
                             <p>Wir empfehlen mindestens einmal jährlich einen umfassenden Security-Audit. Bei kritischen
                                 Systemen oder nach größeren Änderungen an der IT-Infrastruktur sollten zusätzliche Tests
                                 erfolgen. Unser Growth-Paket beinhaltet beispielsweise drei Security-Checks pro Jahr, um
@@ -1669,14 +1666,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
-                        <h3 itemprop="name">Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?</h3>
+                        <h3>Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-7" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-7">
+                        <div>
                             <p>Gefundene Schwachstellen dokumentieren wir detailliert in einem CVSS-bewerteten Report
                                 mit klaren Prioritäten. Sie erhalten konkrete Handlungsempfehlungen zur Behebung. Auf
                                 Wunsch unterstützen wir Sie auch bei der Implementierung der Sicherheitsmaßnahmen. Nach
@@ -1687,14 +1683,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-                        <h3 itemprop="name">Bieten Sie auch Schulungen für Mitarbeiter an?</h3>
+                        <h3>Bieten Sie auch Schulungen für Mitarbeiter an?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-8" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-8">
+                        <div>
                             <p>Ja, mit unserem "Awareness+ Training" bieten wir spezialisierte Schulungen für
                                 Mitarbeiter an. Die meisten Sicherheitsvorfälle entstehen durch menschliche Fehler – gut
                                 geschulte Mitarbeiter sind daher Ihre erste Verteidigungslinie. Unsere interaktiven
@@ -1705,14 +1700,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
-                        <h3 itemprop="name">Was ist Red Teaming und brauche ich das?</h3>
+                        <h3>Was ist Red Teaming und brauche ich das?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-9" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-9">
+                        <div>
                             <p>Red Teaming ist eine ganzheitliche Sicherheitsprüfung, bei der wir wie echte Angreifer
                                 vorgehen – inklusive Social Engineering, physischer Zugangsversuche und technischer
                                 Angriffe. Es geht über klassisches Penetration Testing hinaus. Red Teaming eignet sich
@@ -1724,14 +1718,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
-                        <h3 itemprop="name">Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?</h3>
+                        <h3>Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-10" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-10">
+                        <div>
                             <p>Vertraulichkeit hat bei uns höchste Priorität. Alle Projekte werden unter strikten
                                 NDA-Vereinbarungen durchgeführt. Ihre Daten werden verschlüsselt übertragen und
                                 gespeichert. Nur autorisierte Teammitglieder haben Zugriff auf projektrelevante
@@ -1742,14 +1735,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
-                        <h3 itemprop="name">Was ist der kostenlose Quick-Scan?</h3>
+                        <h3>Was ist der kostenlose Quick-Scan?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-11" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-11">
+                        <div>
                             <p>Unser Quick-Scan ist eine kostenlose, unverbindliche Analyse Ihrer externen
                                 IT-Angriffsfläche. In 15 Minuten zeigen wir Ihnen, was ein potenzieller Angreifer heute
                                 schon über Ihr Unternehmen sehen kann – ohne dass wir irgendetwas aktiv testen oder
@@ -1759,14 +1751,13 @@
                     </div>
                 </article>
 
-                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <article class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
-                        <h3 itemprop="name">Unterstützen Sie auch bei DSGVO-Compliance?</h3>
+                        <h3>Unterstützen Sie auch bei DSGVO-Compliance?</h3>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-12" itemscope itemprop="acceptedAnswer"
-                        itemtype="https://schema.org/Answer">
-                        <div itemprop="text">
+                    <div class="faq-answer" id="faq-12">
+                        <div>
                             <p>Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir
                                 unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen
                                 (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen
@@ -1785,13 +1776,13 @@
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <img src="assets/logo.png" alt="M2 Cybersec Logo"
+                <img src="assets/logo.png" alt="M2 Cybersec Logo" width="81" height="60" loading="lazy"
                     style="height: 60px; width: auto; margin-bottom: 1rem;">
                 <p>Ihr Partner für professionelle Cybersecurity-Lösungen und umfassende IT-Sicherheit.</p>
                 <a href="https://www.allianz-fuer-cybersicherheit.de"
                     title="Verweis zur Webpräsenz der Allianz für Cyber-Sicherheit"><img
                         src="assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
-                        alt="Webpräsenz der Allianz für CyberSicherheit" /></a>
+                        alt="Webpräsenz der Allianz für CyberSicherheit" width="282" height="109" loading="lazy" /></a>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
