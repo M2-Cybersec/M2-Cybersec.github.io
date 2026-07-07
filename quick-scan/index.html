@@ -38,6 +38,7 @@
     }
     </script>
 
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
     <style>
@@ -73,11 +74,12 @@
         .scan-badge {
             display: inline-block;
             padding: 0.5rem 1.5rem;
-            background: var(--cyan-dim);
-            border: 2px solid var(--primary-cyan);
-            border-radius: 50px;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.4);
+            border-radius: var(--radius-pill);
             color: var(--primary-cyan);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-weight: 500;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -86,7 +88,7 @@
         .hero-scan h1 {
             font-size: 3.2rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-white);
             line-height: 1.2;
         }
@@ -111,11 +113,11 @@
             border-radius: 50px;
             font-weight: 700;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
             border: 2px solid var(--primary-cyan);
         }
 
-        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 252, 246, 0.4); }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-cyan); }
 
         /* Sections */
         .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
@@ -128,16 +130,17 @@
         }
 
         .kenndaten-card {
-            background: var(--cyan-dim);
-            border: 2px solid rgba(0, 252, 246, 0.3);
-            border-radius: 20px;
+            background: rgba(0, 252, 246, 0.04);
+            border: 1px solid rgba(0, 252, 246, 0.25);
+            border-radius: var(--radius-md);
             padding: 2rem 1.5rem;
             text-align: center;
         }
 
         .kenndaten-value {
+            font-family: var(--font-display);
             font-size: 2.6rem;
-            font-weight: 800;
+            font-weight: 500;
             color: var(--primary-cyan);
             line-height: 1;
             margin-bottom: 0.5rem;
@@ -171,27 +174,28 @@
 
         .check-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: transform var(--transition-base), border-color var(--transition-base),
+                box-shadow var(--transition-base);
         }
 
         .check-card:hover {
-            border-color: var(--primary-cyan);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 252, 246, 0.15);
+            border-color: rgba(0, 252, 246, 0.45);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .check-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
-        .check-card h3 { font-size: 1.2rem; color: var(--primary-cyan); margin-bottom: 0.6rem; font-weight: 700; }
+        .check-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
         .check-card p { color: var(--secondary-light-gray); font-size: 0.95rem; line-height: 1.6; }
 
         /* Was wir NICHT tun */
         .reassure-box {
-            background: var(--cyan-dim);
-            border: 2px solid rgba(0, 252, 246, 0.3);
-            border-radius: 20px;
+            background: rgba(0, 252, 246, 0.04);
+            border: 1px solid rgba(0, 252, 246, 0.25);
+            border-radius: var(--radius-md);
             padding: 3rem;
             margin: 3rem 0;
         }
@@ -226,8 +230,8 @@
 
         .step-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.2);
-            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 2rem 1.5rem;
             text-align: center;
         }
@@ -238,7 +242,7 @@
             border-radius: 50%;
             background: var(--primary-cyan);
             color: var(--primary-dark);
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -252,8 +256,8 @@
         /* FAQ */
         .faq-block { margin-top: 2rem; }
         .faq-entry {
-            border: 2px solid rgba(0, 252, 246, 0.15);
-            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 1.5rem 2rem;
             margin-bottom: 1rem;
             background: rgba(255, 255, 255, 0.02);
@@ -263,9 +267,9 @@
 
         /* CTA */
         .cta-section {
-            background: var(--cyan-dim);
-            border: 2px solid rgba(0, 252, 246, 0.35);
-            border-radius: 20px;
+            background: rgba(0, 252, 246, 0.05);
+            border: 1px solid rgba(0, 252, 246, 0.5);
+            border-radius: var(--radius-md);
             padding: 3.5rem;
             text-align: center;
             margin: 3rem 0;
@@ -284,7 +288,7 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: gap var(--transition-base), color var(--transition-base);
         }
 
         .back-link:hover { gap: 0.8rem; }

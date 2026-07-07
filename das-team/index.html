@@ -18,6 +18,7 @@
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
     
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
     <style>
@@ -59,8 +60,6 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
         }
 
         .hero p {
@@ -82,7 +81,7 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 3rem;
-            transition: all 0.3s ease;
+            transition: gap var(--transition-base), color var(--transition-base);
         }
 
         .back-link:hover {
@@ -96,16 +95,16 @@
             margin-bottom: 5rem;
             padding: 3rem;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            border: 2px solid rgba(0, 252, 246, 0.15);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.09);
         }
 
         .member-image {
             width: 250px;
             height: 250px;
-            border-radius: 15px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            border: 2px solid var(--primary-cyan);
+            border: 1px solid rgba(0, 252, 246, 0.4);
             background: rgba(0, 252, 246, 0.05);
         }
 
@@ -117,7 +116,6 @@
 
         .member-info h2 {
             font-size: 2rem;
-            color: var(--primary-cyan);
             margin-bottom: 0.5rem;
         }
 
@@ -130,7 +128,6 @@
 
         .member-info h3 {
             font-size: 1.5rem;
-            color: var(--primary-cyan);
             margin: 2rem 0 1rem;
         }
 
@@ -143,7 +140,7 @@
         .contact-info {
             background: rgba(0, 252, 246, 0.05);
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             margin-top: 2rem;
         }
 
@@ -154,7 +151,7 @@
         .contact-info a {
             color: var(--primary-cyan);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color var(--transition-fast);
         }
 
         .contact-info a:hover {

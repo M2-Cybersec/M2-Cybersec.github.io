@@ -18,6 +18,7 @@
         <link rel="icon" type="image/x-icon" href="assets/logo.png">
 
     
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
     <style>
@@ -60,10 +61,11 @@
             display: inline-block;
             padding: 0.5rem 1.5rem;
             background: rgba(0, 252, 246, 0.1);
-            border: 2px solid var(--primary-cyan);
-            border-radius: 50px;
+            border: 1px solid rgba(0, 252, 246, 0.4);
+            border-radius: var(--radius-pill);
             color: var(--primary-cyan);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-weight: 500;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -72,7 +74,7 @@
         .hero-service h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-white);
             line-height: 1.2;
         }
@@ -116,7 +118,7 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: gap var(--transition-base), color var(--transition-base);
         }
 
         .back-link:hover {
@@ -132,16 +134,17 @@
 
         .module-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 252, 246, 0.15);
-            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 2.8rem;
-            transition: all 0.4s ease;
+            transition: transform var(--transition-base), border-color var(--transition-base),
+                box-shadow var(--transition-base), background var(--transition-base);
         }
 
         .module-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 20px 50px rgba(0, 252, 246, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(0, 252, 246, 0.45);
+            box-shadow: var(--shadow-md);
             background: rgba(0, 252, 246, 0.03);
         }
 
@@ -154,8 +157,6 @@
         .module-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
         }
 
         .module-card p {
@@ -175,11 +176,13 @@
             text-align: center;
             padding: 2rem;
             background: rgba(0, 252, 246, 0.02);
-            border-radius: 15px;
+            border-radius: var(--radius-md);
         }
 
         .benefit-item h4 {
-            color: var(--primary-cyan);
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -271,10 +274,10 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 20px; border: 2px solid var(--primary-cyan);">
-                <h2 style="color: var(--primary-cyan); margin-bottom: 0.5rem;">Awareness+ Training</h2>
-                <div style="font-size: 2.8rem; font-weight: 800; color: var(--primary-cyan); margin: 0.8rem 0;">490 €/Session</div>
-                <p style="font-size: 0.95rem; color: var(--secondary-gray); margin-bottom: 0.5rem;">Bis 25 Mitarbeiter &middot; 90 Minuten &middot; Branchenspezifisch anpassbar &middot; Teilnahmezertifikate</p>
+            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 16px; border: 1px solid rgba(0, 252, 246, 0.5);">
+                <h2 style="margin-bottom: 0.5rem;">Awareness+ Training</h2>
+                <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 500; color: var(--primary-cyan); margin: 0.8rem 0;">490 €/Session</div>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">Bis 25 Mitarbeiter &middot; 90 Minuten &middot; Branchenspezifisch anpassbar &middot; Teilnahmezertifikate</p>
                 <p style="font-size: 0.95rem; color: var(--secondary-light-gray); margin-bottom: 2rem;">Einmalig buchbar oder als Add-on zu jedem Abo-Paket – fragen Sie nach dem kombinierten Angebot.</p>
                 <a href="../index.html#contact" class="cta-button">Jetzt Schulung anfragen</a>
             </div>

@@ -17,6 +17,7 @@
     <link rel="canonical" href="https://m2cybersec.de/scale-paket/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
     <style>
@@ -53,9 +54,10 @@
             padding: 0.4rem 1.2rem;
             background: rgba(0, 252, 246, 0.08);
             border: 1px solid rgba(0, 252, 246, 0.4);
-            border-radius: 50px;
+            border-radius: var(--radius-pill);
             color: var(--primary-cyan);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-weight: 500;
             margin-bottom: 1.2rem;
             font-size: 0.8rem;
             letter-spacing: 1.5px;
@@ -64,13 +66,11 @@
 
         .hero h1 {
             font-size: 3.2rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-white);
             line-height: 1.15;
             margin-bottom: 0.6rem;
         }
-
-        .hero h1 span { color: var(--primary-cyan); }
 
         .hero-sub {
             font-size: 1.1rem;
@@ -80,15 +80,16 @@
         }
 
         .hero-price-row {
+            font-family: var(--font-display);
             font-size: 2.2rem;
-            font-weight: 800;
+            font-weight: 500;
             color: var(--primary-cyan);
             margin-bottom: 0.3rem;
         }
 
         .hero-price-meta {
             font-size: 0.88rem;
-            color: var(--secondary-gray);
+            color: var(--text-muted);
             margin-bottom: 2rem;
         }
 
@@ -127,8 +128,9 @@
         }
 
         .fact-value {
+            font-family: var(--font-display);
             font-size: 1.6rem;
-            font-weight: 800;
+            font-weight: 500;
             color: var(--primary-cyan);
             line-height: 1;
             margin-bottom: 0.3rem;
@@ -177,8 +179,6 @@
 
         .feature-text h3 {
             font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary-white);
             margin-bottom: 0.25rem;
         }
 
@@ -215,15 +215,15 @@
 
         .pricing-box {
             background: linear-gradient(135deg, rgba(0, 252, 246, 0.06) 0%, rgba(0, 252, 246, 0.02) 100%);
-            border: 2px solid var(--primary-cyan);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 252, 246, 0.5);
+            border-radius: var(--radius-md);
             padding: 2.5rem;
             text-align: center;
             margin-bottom: 2.5rem;
         }
 
-        .pricing-box h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary-white); margin-bottom: 0.4rem; }
-        .pricing-big { font-size: 3rem; font-weight: 800; color: var(--primary-cyan); margin: 0.5rem 0 0.3rem; line-height: 1; }
+        .pricing-box h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+        .pricing-big { font-family: var(--font-display); font-size: 3rem; font-weight: 500; color: var(--primary-cyan); margin: 0.5rem 0 0.3rem; line-height: 1; }
         .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
         .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 

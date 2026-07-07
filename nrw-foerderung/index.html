@@ -17,9 +17,15 @@
     <link rel="canonical" href="https://m2cybersec.de/nrw-foerderung/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
     <style>
+
+        :root {
+            --nrw-green: #00c060;
+            --nrw-green-dim: rgba(0, 192, 96, 0.06);
+        }
 
         body {
             background: var(--primary-dark);
@@ -53,10 +59,11 @@
             display: inline-block;
             padding: 0.5rem 1.5rem;
             background: var(--nrw-green-dim);
-            border: 2px solid var(--nrw-green);
-            border-radius: 50px;
+            border: 1px solid rgba(0, 192, 96, 0.4);
+            border-radius: var(--radius-pill);
             color: var(--nrw-green);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-weight: 500;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -65,7 +72,7 @@
         .hero-nrw h1 {
             font-size: 3.2rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-white);
             line-height: 1.2;
         }
@@ -93,15 +100,16 @@
 
         .kenndaten-card {
             background: var(--nrw-green-dim);
-            border: 2px solid rgba(0, 192, 96, 0.3);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 192, 96, 0.25);
+            border-radius: var(--radius-md);
             padding: 2rem 1.5rem;
             text-align: center;
         }
 
         .kenndaten-value {
+            font-family: var(--font-display);
             font-size: 2.8rem;
-            font-weight: 800;
+            font-weight: 500;
             color: var(--nrw-green);
             line-height: 1;
             margin-bottom: 0.5rem;
@@ -125,27 +133,28 @@
 
         .foerder-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 192, 96, 0.2);
-            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: transform var(--transition-base), border-color var(--transition-base),
+                box-shadow var(--transition-base);
         }
 
         .foerder-card:hover {
-            border-color: var(--nrw-green);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 192, 96, 0.15);
+            border-color: rgba(0, 192, 96, 0.45);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .foerder-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
-        .foerder-card h3 { font-size: 1.2rem; color: var(--nrw-green); margin-bottom: 0.6rem; font-weight: 700; }
+        .foerder-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
         .foerder-card p { color: var(--secondary-light-gray); font-size: 0.95rem; line-height: 1.6; }
 
         /* Berechtigung */
         .berechtigung-box {
             background: var(--nrw-green-dim);
-            border: 2px solid rgba(0, 192, 96, 0.3);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 192, 96, 0.25);
+            border-radius: var(--radius-md);
             padding: 3rem;
             margin: 3rem 0;
         }
@@ -181,8 +190,8 @@
 
         .step-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(0, 192, 96, 0.2);
-            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
             padding: 2rem 1.5rem;
             text-align: center;
             position: relative;
@@ -194,7 +203,7 @@
             border-radius: 50%;
             background: var(--nrw-green);
             color: var(--primary-dark);
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -222,8 +231,8 @@
         /* CTA */
         .cta-section {
             background: var(--nrw-green-dim);
-            border: 2px solid rgba(0, 192, 96, 0.35);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 192, 96, 0.5);
+            border-radius: var(--radius-md);
             padding: 3.5rem;
             text-align: center;
             margin: 3rem 0;
@@ -242,7 +251,7 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: gap var(--transition-base), color var(--transition-base);
         }
 
         .back-link:hover { gap: 0.8rem; }

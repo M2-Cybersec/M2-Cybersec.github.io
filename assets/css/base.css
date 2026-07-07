@@ -95,6 +95,37 @@ body {
     line-height: 1.6;
 }
 
+/* --- Typografie-Hierarchie -------------------------------------------------
+   Nekst für Display/Überschriften, Helvetica Now für Fließtext.
+   Cyan-Diät: Überschriften sind weiß; Cyan bleibt Interaktion + 1 Akzent
+   pro Sektion (z. B. das Eyebrow-Label). */
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--primary-white);
+    line-height: 1.15;
+}
+
+h1 { font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-weight: 700; letter-spacing: -0.005em; }
+h3 { font-weight: 600; }
+
+/* Eyebrow-Label über Sektionstiteln */
+.eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--primary-cyan);
+    margin-bottom: 0.9rem;
+}
+
+.eyebrow-center {
+    text-align: center;
+}
+
 /* --- Accessibility -------------------------------------------------------- */
 
 .skip-link {
@@ -145,13 +176,14 @@ body {
     align-items: center;
     z-index: 1000;
     border-bottom: 2px solid var(--primary-cyan);
-    box-shadow: 0 4px 20px rgba(0, 252, 246, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-cyan);
@@ -301,9 +333,11 @@ footer a:hover {
 }
 
 .footer-section h4 {
-    color: var(--primary-cyan);
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--primary-white);
     margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
 }
 
 .footer-section p,
