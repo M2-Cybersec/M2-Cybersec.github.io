@@ -113,6 +113,39 @@
 
         .back-link:hover { color: var(--primary-cyan); }
 
+        /* NRW Banner */
+        .nrw-banner {
+            background: rgba(0, 192, 96, 0.07);
+            border: 1px solid rgba(0, 192, 96, 0.3);
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .nrw-banner-text strong { color: #00c060; font-size: 0.95rem; display: block; margin-bottom: 0.15rem; }
+        .nrw-banner-text span { color: var(--secondary-light-gray); font-size: 0.85rem; }
+
+        .nrw-btn {
+            display: inline-block;
+            padding: 0.55rem 1.3rem;
+            background: rgba(0, 192, 96, 0.1);
+            color: #00c060;
+            border: 1px solid #00c060;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            white-space: nowrap;
+            transition: background var(--transition-base), color var(--transition-base);
+        }
+
+        .nrw-btn:hover { background: #00c060; color: var(--primary-dark); }
+
         .quick-facts {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -296,6 +329,14 @@
 
         <div class="page-body">
             <a href="../index.html#services" class="back-link">← Zurück zur Übersicht</a>
+
+            <div class="nrw-banner">
+                <div class="nrw-banner-text">
+                    <strong><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> NRW-Förderung möglich</strong>
+                    <span>In Kombination mit weiteren Maßnahmen (z. B. Awareness+ Training oder Mehrjahreslaufzeit) über MID-Digitale Sicherheit mit 50 % förderfähig.</span>
+                </div>
+                <a href="../nrw-foerderung/index.html" class="nrw-btn">Details zur Förderung →</a>
+            </div>
 
             <div class="quick-facts">
                 <div class="fact">
