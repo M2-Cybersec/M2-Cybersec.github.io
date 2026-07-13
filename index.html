@@ -254,7 +254,7 @@
       "name": "Scale Secure",
       "serviceType": "IT-Sicherheit im Abo für professionelle Teams",
       "url": "https://m2cybersec.de/scale-paket/",
-      "description": "Vollständige Security-Partnerschaft: 4 Security-Checks pro Jahr (5+ Systeme), Code Review und Architektur-Check, monatlicher CVSS-Report, dedizierter Ansprechpartner, 3 Awareness-Schulungen mit Phishing-Simulationen, Notfallplan, Re-Tests, SLA-Reaktionszeiten. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "description": "Vollständige Security-Partnerschaft: 4 Security-Checks pro Jahr (5+ Systeme), Code Review und Architektur-Check, monatlicher CVSS-Report, dedizierter Ansprechpartner, 3 Awareness-Schulungen für das gesamte Team mit Phishing-Simulationen, Notfallplan, Re-Tests, SLA-Reaktionszeit von 24 Stunden bei kritischen Findings. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
       "provider": { "@id": "https://m2cybersec.de/#organization" },
       "areaServed": { "@type": "Country", "name": "Deutschland" },
       "offers": {
@@ -467,6 +467,76 @@
             gap: 2rem;
             margin-top: 3rem;
             padding-top: 1rem;
+        }
+
+        /* Vergleichstabelle */
+        .cmp-wrap {
+            max-width: 1000px;
+            margin: 5rem auto 0;
+        }
+
+        .cmp-title { text-align: center; margin-bottom: 0.6rem; }
+
+        .cmp-intro {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cmp-scroll {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cmp-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            font-size: 0.92rem;
+        }
+
+        .cmp-table th,
+        .cmp-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .cmp-table thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+        }
+
+        .cmp-table thead th span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--primary-cyan);
+        }
+
+        .cmp-table tbody th {
+            font-weight: 600;
+            color: var(--primary-white);
+            white-space: nowrap;
+        }
+
+        .cmp-table tbody td { color: var(--secondary-light-gray); }
+
+        .cmp-table tbody tr:last-child th,
+        .cmp-table tbody tr:last-child td { border-bottom: none; }
+
+        .cmp-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .service-card {
@@ -1410,7 +1480,7 @@
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
                         <h3>Scale Secure</h3>
                         <span class="service-price">749 €/Monat</span>
-                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und SLA für professionelle Teams.</p>
+                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und 24-h-SLA für professionelle Teams.</p>
                         <span class="service-nrw-tag">NRW-Förderung möglich</span>
                         <span class="service-mehr">Mehr erfahren →</span>
                     </a>
@@ -1433,6 +1503,74 @@
                         <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
+            </div>
+
+            <div class="cmp-wrap">
+                <h3 class="cmp-title">Die drei Abos im direkten Vergleich</h3>
+                <p class="cmp-intro">Alle Angaben entsprechen den Paketseiten. Jedes Abo läuft 12 Monate, ist monatlich zahlbar und kostet keine Einrichtungsgebühr.</p>
+                <div class="cmp-scroll">
+                    <table class="cmp-table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Startup Shield<br><span>149 €/Monat</span></th>
+                                <th>Growth Guard<br><span>349 €/Monat</span></th>
+                                <th>Scale Secure<br><span>749 €/Monat</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Security-Checks pro Jahr</th>
+                                <td>1×</td>
+                                <td>3×</td>
+                                <td>4×</td>
+                            </tr>
+                            <tr>
+                                <th>Systeme je Check</th>
+                                <td>1 Domain + 1 Web-App/API</td>
+                                <td>2–3 kritische Systeme</td>
+                                <td>5+ kritische Systeme</td>
+                            </tr>
+                            <tr>
+                                <th>Awareness-Training</th>
+                                <td>1× jährlich (bis 10 MA)</td>
+                                <td>2× jährlich (bis 25 MA)</td>
+                                <td>3× jährlich (gesamtes Team)</td>
+                            </tr>
+                            <tr>
+                                <th>Phishing-Simulation</th>
+                                <td>–</td>
+                                <td>1× jährlich</td>
+                                <td>Zu jeder Schulung</td>
+                            </tr>
+                            <tr>
+                                <th>Reporting</th>
+                                <td>Monatlicher Lagebericht, 5-seitiger Startup-Report</td>
+                                <td>Monatlicher Report, Quartalsgespräch, Compliance-Dokumentation</td>
+                                <td>Monatlicher CVSS-Report, dedizierter Ansprechpartner</td>
+                            </tr>
+                            <tr>
+                                <th>Zusätzlich</th>
+                                <td>Optionaler 30-Min-Ergebniscall</td>
+                                <td>Fester Ansprechpartner</td>
+                                <td>Code Review, Architektur-Check, Notfallplan, Re-Tests, 24-h-SLA</td>
+                            </tr>
+                            <tr>
+                                <th>NRW-Förderung</th>
+                                <td>Nicht förderfähig</td>
+                                <td>Förderfähig in Kombination mit weiteren Maßnahmen</td>
+                                <td>Förderfähig</td>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td><a href="/starter-paket/">Details →</a></td>
+                                <td><a href="/growth-paket/">Details →</a></td>
+                                <td><a href="/scale-paket/">Details →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="cmp-note">Förderangaben vorbehaltlich Bewilligung – maßgeblich sind die Konditionen der NRW.BANK. <a href="/nrw-foerderung/">Details zur Förderung →</a></p>
             </div>
         </section>
 
