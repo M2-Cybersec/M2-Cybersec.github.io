@@ -191,6 +191,22 @@
         "@type": "Answer",
         "text": "Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Betrifft NIS2 mein Unternehmen – auch als Zulieferer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Möglicherweise ja – und zwar auf zwei Wegen. Direkt betroffen sind Unternehmen ab 50 Mitarbeitenden oder 10 Mio. € Jahresumsatz in den von der Richtlinie erfassten Sektoren. Indirekt trifft es deutlich mehr Unternehmen: NIS2 verpflichtet betroffene Organisationen, die Sicherheit ihrer Lieferkette zu steuern. In der Praxis geben große Kunden diese Anforderungen an ihre Zulieferer weiter – über Verträge, Fragebögen und Nachweispflichten. Wir prüfen Ihre technischen Maßnahmen und dokumentieren sie so, dass Sie gegenüber Kunden und Auditoren belegen können, was Sie tun: Growth Guard liefert regelmäßige Security-Checks und eine Compliance-taugliche Dokumentation, Scale Secure zusätzlich Code Reviews und einen Notfallplan. Hinweis: Wir leisten technische Sicherheitsberatung, keine Rechtsberatung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen Stand – typischerweise Multi-Faktor-Authentifizierung, ein funktionierendes Patch-Management, Backups, Mitarbeiterschulungen und dokumentierte Schwachstellen-Prüfungen. Genau diese Nachweise entstehen bei uns als Nebenprodukt: CVSS-bewertete Reports aus den Security-Checks, dokumentierte Awareness-Schulungen mit Teilnahmezertifikaten und eine nachvollziehbare Historie behobener Findings. Welche Anforderungen Ihr konkreter Vertrag stellt, entnehmen Sie bitte Ihren Versicherungsunterlagen – wir bewerten keine Policen, sondern liefern die technische Substanz dahinter."
+      }
     }
   ]
 }
@@ -472,6 +488,14 @@
             padding-top: 1rem;
         }
 
+        .services-individual {
+            max-width: 720px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--secondary-light-gray);
+        }
+
         /* Vergleichstabelle */
         .cmp-wrap {
             max-width: 1000px;
@@ -540,6 +564,13 @@
             margin-top: 1.2rem;
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        /* Red-Team-Sektion hat dekorative Layer im Hintergrund */
+        .pricing-section .cmp-wrap {
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
         }
 
         .service-card {
@@ -1497,15 +1528,6 @@
                         <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
-                <article class="service-card">
-                    <a href="/sicherheit-fuer-kmu/" style="text-decoration: none; color: inherit;">
-                        <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                        <h3>Sicherheit für KMU</h3>
-                        <span class="service-price">Auf Anfrage</span>
-                        <p>Risikoanalyse, Sicherheitskonzepte und Web-Pentests für KMU – individuell nach Bedarf.</p>
-                        <span class="service-mehr">Mehr erfahren →</span>
-                    </a>
-                </article>
             </div>
 
             <div class="cmp-wrap">
@@ -1575,6 +1597,9 @@
                 </div>
                 <p class="cmp-note">Förderangaben vorbehaltlich Bewilligung – maßgeblich sind die Konditionen der NRW.BANK. <a href="/nrw-foerderung/">Details zur Förderung →</a></p>
             </div>
+            <p class="services-individual">Sie brauchen etwas Individuelles? Wir übernehmen auch Risikoanalysen, Sicherheitskonzepte und einzelne Web-Pentests –
+                <a href="/sicherheit-fuer-kmu/">individuelle Sicherheitsberatung für KMU →</a>
+            </p>
         </section>
 
 
@@ -1591,8 +1616,8 @@
                 <article class="pricing-card">
                     <h3 class="pricing-name">Red Team <span class="tier-lite">Lite</span></h3>
                     <div class="pricing-price">
-                        <div class="pricing-price-label">Auf Anfrage</div>
-                        <div class="pricing-price-sub">Individuelles Angebot</div>
+                        <div class="pricing-price-label">ab 3.500 €</div>
+                        <div class="pricing-price-sub">Individuelles Angebot, einmalig · netto zzgl. USt.</div>
                     </div>
                     <p class="pricing-desc">Technischer Einstieg in professionelles Red Teaming. Ideal für Unternehmen, die erstmals eine realistische Angriffssimulation durchführen lassen wollen.</p>
                     <a href="#contact" class="btn btn-ghost pricing-cta">Jetzt anfragen</a>
@@ -1650,6 +1675,62 @@
                 </article>
 
             </div>
+            <div class="cmp-wrap">
+                <h3 class="cmp-title">Security-Check oder Red Team – was brauche ich?</h3>
+                <p class="cmp-intro">Beides prüft Ihre Sicherheit, aber mit sehr unterschiedlichem Anspruch. Die Kurzfassung ohne Fachsprache:</p>
+                <div class="cmp-scroll">
+                    <table class="cmp-table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Security-Check<br><span>(im Abo enthalten)</span></th>
+                                <th>Red Team Lite</th>
+                                <th>Red Team Plus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Die Frage dahinter</th>
+                                <td>Wo sind meine Schwachstellen?</td>
+                                <td>Kommt ein Angreifer durch meine Technik?</td>
+                                <td>Kommt ein Angreifer irgendwie rein – Technik, Mensch, Gebäude?</td>
+                            </tr>
+                            <tr>
+                                <th>Vorgehen</th>
+                                <td>Systematische Prüfung bekannter Schwachstellen, priorisiert</td>
+                                <td>Simulierter Angriff auf ein technisches Ziel</td>
+                                <td>Realistische Angriffssimulation inkl. Social Engineering und Phishing</td>
+                            </tr>
+                            <tr>
+                                <th>Umfang</th>
+                                <td>1–5 Systeme, je nach Paket</td>
+                                <td>1 Ziel, in die Tiefe</td>
+                                <td>Technik + Mitarbeitende, mehrere Wege</td>
+                            </tr>
+                            <tr>
+                                <th>Dauer</th>
+                                <td>Report in 5 Werktagen</td>
+                                <td>1–2 Wochen</td>
+                                <td>2–4 Wochen</td>
+                            </tr>
+                            <tr>
+                                <th>Preis</th>
+                                <td>Im Abo enthalten (149–749 €/Monat)</td>
+                                <td>Einmalig ab 3.500 €</td>
+                                <td>Individuelles Angebot</td>
+                            </tr>
+                            <tr>
+                                <th>Richtig für Sie, wenn…</th>
+                                <td>…Sie Sicherheit laufend im Griff behalten wollen.</td>
+                                <td>…Sie einmal wirklich wissen wollen, ob Ihre Technik hält.</td>
+                                <td>…Sie geprüft werden (Kunden, Investoren, Audit) oder maximale Sicherheit brauchen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="cmp-note">Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
+            </div>
+
             <div style="text-align:center; margin-top: 3rem; position: relative; z-index: 2;">
                 <a href="/red-team-plus/" class="btn btn-secondary">Mehr erfahren</a>
             </div>
@@ -1685,6 +1766,7 @@
                         Management-Ebene</p>
                 </article>
             </div>
+
         </section>
 
         <section id="quick-scan" class="section quick-scan">
@@ -2004,6 +2086,53 @@
                                 (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen
                                 durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt
                                 angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-13">
+                        <h3>Betrifft NIS2 mein Unternehmen – auch als Zulieferer?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-13">
+                        <div>
+                            <p>Möglicherweise ja – und zwar auf zwei Wegen. Direkt betroffen sind Unternehmen ab
+                                50 Mitarbeitenden oder 10 Mio. € Jahresumsatz in den von der Richtlinie erfassten
+                                Sektoren. Indirekt trifft es deutlich mehr Unternehmen: NIS2 verpflichtet betroffene
+                                Organisationen, die Sicherheit ihrer Lieferkette zu steuern. In der Praxis geben große
+                                Kunden diese Anforderungen an ihre Zulieferer weiter – über Verträge, Fragebögen und
+                                Nachweispflichten. Viele kleine Unternehmen merken das zuerst, wenn ein Kunde
+                                plötzlich einen Sicherheitsnachweis verlangt.</p>
+                            <p>Wir prüfen Ihre technischen Maßnahmen und dokumentieren sie so, dass Sie gegenüber
+                                Kunden und Auditoren belegen können, was Sie tun:
+                                <a href="/growth-paket/">Growth Guard</a> liefert regelmäßige Security-Checks und
+                                eine Compliance-taugliche Dokumentation, <a href="/scale-paket/">Scale Secure</a>
+                                zusätzlich Code Reviews und einen Notfallplan. Hinweis: Wir leisten technische
+                                Sicherheitsberatung, keine Rechtsberatung – ob und wie NIS2 auf Ihr Unternehmen
+                                anzuwenden ist, klären Sie bitte rechtlich verbindlich ab.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-14">
+                        <h3>Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-14">
+                        <div>
+                            <p>Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen
+                                Stand – typischerweise Multi-Faktor-Authentifizierung, ein funktionierendes
+                                Patch-Management, Backups, Mitarbeiterschulungen und dokumentierte
+                                Schwachstellen-Prüfungen. Fehlen diese Nachweise, wird es teurer oder im Schadenfall
+                                unangenehm: Versicherer prüfen dann, ob die zugesicherten Maßnahmen tatsächlich
+                                bestanden.</p>
+                            <p>Genau diese Nachweise entstehen bei uns als Nebenprodukt: CVSS-bewertete Reports aus
+                                den Security-Checks, dokumentierte Awareness-Schulungen mit Teilnahmezertifikaten und
+                                eine nachvollziehbare Historie behobener Findings. Welche Anforderungen Ihr konkreter
+                                Vertrag stellt, entnehmen Sie bitte Ihren Versicherungsunterlagen – wir bewerten keine
+                                Policen, sondern liefern die technische Substanz dahinter.</p>
                         </div>
                     </div>
                 </article>
