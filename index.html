@@ -26,6 +26,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://m2cybersec.de/#organization",
       "name": "M2 Cybersec UG (haftungsbeschränkt)",
       "description": "Professionelle Cybersecurity-Lösungen und IT-Sicherheitsberatung",
       "url": "https://m2cybersec.de",
@@ -189,6 +190,87 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen."
+      }
+    }
+  ]
+}
+</script>
+
+    <!-- Schema.org Service/Offer Markup der Abo-Pakete (Festpreise) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Startup Shield",
+      "serviceType": "IT-Sicherheit im Abo für Startups",
+      "url": "https://m2cybersec.de/starter-paket/",
+      "description": "Security-Abo für Startups und Gründer: jährlicher externer Security-Check (1 Domain + 1 Web-App/API), monatlicher Lagebericht, Awareness-Training für bis zu 10 Mitarbeitende, 5-seitiger Startup-Report. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/starter-paket/",
+        "priceCurrency": "EUR",
+        "price": "149",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "149",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Growth Guard",
+      "serviceType": "IT-Sicherheit im Abo für wachsende Teams und KMU",
+      "url": "https://m2cybersec.de/growth-paket/",
+      "description": "Security-Abo für wachsende Teams: 3 Security-Checks pro Jahr, monatlicher Report mit Quartalsgespräch, 2 Awareness-Schulungen (bis 25 Mitarbeitende), jährliche Phishing-Simulation, Compliance-Dokumentation. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/growth-paket/",
+        "priceCurrency": "EUR",
+        "price": "349",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "349",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Scale Secure",
+      "serviceType": "IT-Sicherheit im Abo für professionelle Teams",
+      "url": "https://m2cybersec.de/scale-paket/",
+      "description": "Vollständige Security-Partnerschaft: 4 Security-Checks pro Jahr (5+ Systeme), Code Review und Architektur-Check, monatlicher CVSS-Report, dedizierter Ansprechpartner, 3 Awareness-Schulungen mit Phishing-Simulationen, Notfallplan, Re-Tests, SLA-Reaktionszeiten. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/scale-paket/",
+        "priceCurrency": "EUR",
+        "price": "749",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "749",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
       }
     }
   ]
