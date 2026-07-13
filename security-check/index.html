@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Security-Check kompakt von M2 Cybersec – einmaliger externer Sicherheitscheck Ihrer Domain für 690 € Festpreis. Priorisierter Report in 5 Werktagen, inkl. 30-Minuten-Ergebnisbesprechung.">
+    <meta name="keywords" content="Security-Check, einmaliger Sicherheitscheck, Pentest Festpreis, externe Angriffsfläche, Schwachstellenanalyse KMU, 690 Euro">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Security-Check kompakt – einmalig 690 € | M2 Cybersec">
+    <meta property="og:description" content="Einmaliger externer Security-Check zum Festpreis von 690 €. Eine Domain, priorisierter Report, 30-Minuten-Besprechung – ohne Abo, ohne Bindung.">
+    <meta property="og:url" content="https://m2cybersec.de/security-check/">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+
+    <title>Security-Check kompakt – einmaliger Sicherheitscheck · 690 € | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2cybersec.de/security-check/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
+    <style>
+
+        body {
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 252, 246, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-inner { position: relative; z-index: 1; max-width: 780px; }
+
+        .package-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.4);
+            border-radius: var(--radius-pill);
+            color: var(--primary-cyan);
+            font-family: var(--font-display);
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.6rem;
+            font-style: italic;
+        }
+
+        .hero-price-row {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--primary-cyan);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-price-meta {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .page-body { max-width: 900px; margin: 0 auto; padding: 3rem 5% 5rem; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--secondary-light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover { color: var(--primary-cyan); }
+
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(0, 252, 246, 0.12);
+            border: 1px solid rgba(0, 252, 246, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .fact {
+            background: rgba(0, 252, 246, 0.03);
+            padding: 1.4rem 1.2rem;
+            text-align: center;
+        }
+
+        .fact-value {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-label {
+            font-size: 0.78rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.3;
+        }
+
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(0, 252, 246, 0.12);
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:last-child { border-bottom: none; }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--primary-cyan);
+            line-height: 1;
+            flex-shrink: 0;
+            width: 2.4rem;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.6;
+        }
+
+        .ideal-list {
+            list-style: none;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ideal-list li {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--secondary-light-gray);
+            padding: 0.4rem 0;
+        }
+
+        .ideal-list li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(0, 252, 246, 0.06) 0%, rgba(0, 252, 246, 0.02) 100%);
+            border: 1px solid rgba(0, 252, 246, 0.5);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-box h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+        .pricing-big { font-family: var(--font-display); font-size: 3rem; font-weight: 500; color: var(--primary-cyan); margin: 0.5rem 0 0.3rem; line-height: 1; }
+        .pricing-meta { font-size: 0.85rem; color: var(--secondary-light-gray); margin-bottom: 1.8rem; }
+        .pricing-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .package-nav {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .package-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .package-nav a:hover { opacity: 0.75; }
+        .package-nav .prev { color: var(--secondary-light-gray); }
+        .package-nav .next { color: var(--primary-cyan); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-price-row { font-size: 1.8rem; }
+            .quick-facts { grid-template-columns: repeat(2, 1fr); }
+            .hero-ctas { flex-direction: column; align-items: center; }
+        
+        
+        }
+        /* Abgrenzungs-Box */
+        .scope-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 1.8rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .scope-label {
+            color: var(--primary-cyan);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .scope-box h3 { margin-bottom: 1rem; }
+
+        .scope-box p {
+            color: var(--secondary-light-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .scope-box p:last-child { margin-bottom: 0; }
+
+        .ideal-list strong { color: var(--primary-white); }
+
+        @media (max-width: 768px) {
+            .scope-box { padding: 1.4rem; }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <a href="/" class="logo">
+            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <span>M2 Cybersec</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <span class="package-badge">Einmalig &amp; ohne Bindung</span>
+                <h1><span>Security-Check kompakt</span></h1>
+                <p class="hero-sub">„Ein klarer Blick auf Ihre Angriffsfläche – zum Festpreis, ohne Abo."</p>
+                <div class="hero-price-row">690 € einmalig</div>
+                <p class="hero-price-meta">Festpreis · keine Folgekosten · Ergebnis in 5 Werktagen</p>
+                <div class="hero-ctas">
+                    <a href="/#contact" class="btn btn-primary">Security-Check buchen →</a>
+                    <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-body">
+            <a href="/#services" class="back-link">← Zurück zur Übersicht</a>
+
+            <div class="quick-facts">
+                <div class="fact">
+                    <div class="fact-value">690 €</div>
+                    <div class="fact-label">einmalig<br>(kein Abo)</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">1</div>
+                    <div class="fact-label">Domain<br>im Scope</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">~5</div>
+                    <div class="fact-label">Seiten<br>Report (PDF)</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-value">5 Tage</div>
+                    <div class="fact-label">bis zum<br>Ergebnis</div>
+                </div>
+            </div>
+
+            <h2 class="section-heading">Was ist enthalten</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                    <div class="feature-text">
+                        <h3>Externer Check einer Domain</h3>
+                        <p>Wir prüfen Ihre Domain von außen – so, wie ein Angreifer sie sieht: offene Dienste, veraltete Komponenten, Fehlkonfigurationen, E-Mail-Sicherheit (SPF, DKIM, DMARC) und exponierte Informationen.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg></span>
+                    <div class="feature-text">
+                        <h3>Toolgestützt und manuell verifiziert</h3>
+                        <p>Automatisierte Scans allein produzieren Fehlalarme. Jedes Finding wird von uns manuell geprüft, bevor es in den Report kommt – Sie bekommen keine Rohdaten, sondern belastbare Ergebnisse.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span>
+                    <div class="feature-text">
+                        <h3>Priorisierter Report (PDF, ca. 5 Seiten)</h3>
+                        <p>Jedes Finding mit Risikoeinstufung, verständlicher Erklärung und konkreter Handlungsempfehlung. Kein Fachjargon, keine 80-seitigen Tool-Exporte – ein Dokument, das Sie Ihrem Team direkt geben können.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                    <div class="feature-text">
+                        <h3>30-Minuten-Ergebnisbesprechung</h3>
+                        <p>Wir gehen den Report gemeinsam durch, erklären die Findings ohne Fachsprache und beantworten Ihre Fragen. Sie wissen danach genau, was zuerst zu tun ist.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scope-box">
+                <span class="scope-label">Was der Security-Check nicht ist</span>
+                <h3>Eine Momentaufnahme – kein vollständiger Pentest</h3>
+                <p>Damit Sie wissen, was Sie bekommen: Der Security-Check kompakt prüft <strong>eine Domain von außen</strong>, zu einem festen Zeitpunkt. Er ersetzt keinen vollständigen Penetrationstest mit Zugang zu internen Systemen, keine Code- oder Architektur-Analyse und keine laufende Überwachung. Angriffsflächen verändern sich mit jedem Deployment – ein Check von heute sagt nichts über Ihren Stand in sechs Monaten.</p>
+                <p>Wenn Sie fortlaufenden Schutz brauchen, ist ein Abo der bessere Weg: <a href="/starter-paket/">Startup Shield</a> (149 €/Monat) enthält einen jährlichen Pentest plus monatlichen Lagebericht, <a href="/growth-paket/">Growth Guard</a> (349 €/Monat) drei Security-Checks im Jahr. Wer tiefer prüfen will, findet in unseren <a href="/red-team-plus/">Red-Team-Audits</a> die realistische Angriffssimulation.</p>
+            </div>
+
+            <h2 class="section-heading">Ihr Weg zur Sicherheit</h2>
+            <ul class="ideal-list">
+                <li><strong>Quick-Scan (kostenlos)</strong> – 15 Minuten, erster Blick auf die Angriffsfläche</li>
+                <li><strong>Security-Check kompakt (690 €)</strong> – geprüfter, priorisierter Report mit Besprechung</li>
+                <li><strong>Abo (149–749 €/Monat)</strong> – laufender Schutz statt Momentaufnahme</li>
+            </ul>
+
+            <h2 class="section-heading">Ideal für</h2>
+            <ul class="ideal-list">
+                <li>Unternehmen, die Klarheit über ihre Angriffsfläche wollen, ohne sich zu binden</li>
+                <li>Teams, die einen einmaligen Sicherheitsnachweis für Kunden oder Partner brauchen</li>
+                <li>Gründer:innen, denen der kostenlose Quick-Scan zu oberflächlich ist</li>
+                <li>Alle, die vor einem Abo erst einmal sehen wollen, wie wir arbeiten</li>
+            </ul>
+
+            <div class="pricing-box">
+                <h3>Security-Check kompakt</h3>
+                <div class="pricing-big">690 € einmalig</div>
+                <p class="pricing-meta">Festpreis · keine Folgekosten · Ergebnis in 5 Werktagen</p>
+                <div class="pricing-btns">
+                    <a href="/#contact" class="btn btn-primary">Security-Check buchen →</a>
+                    <a href="/quick-scan/" class="btn btn-secondary">Erst Quick-Scan testen</a>
+                </div>
+            </div>
+
+            <div class="package-nav">
+                <a href="/quick-scan/" class="prev">← Kostenloser Quick-Scan</a>
+                <a href="/starter-paket/" class="next">Laufender Schutz? Startup Shield – 149 €/Monat →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+        <p class="footer-legal">
+            <a href="/rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="/rechtliches/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>
