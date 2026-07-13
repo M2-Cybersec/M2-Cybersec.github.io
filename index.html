@@ -18,7 +18,7 @@
     <meta property="og:title" content="M2 Cybersec - Professionelle Cybersecurity-Lösungen">
     <meta property="og:description"
         content="Schützen Sie Ihr Unternehmen mit modernsten Cybersecurity-Lösungen. Penetration Testing, Security Consulting und mehr.">
-    <meta property="og:url" content="https://m2cybersec.de">
+    <meta property="og:url" content="https://m2cybersec.de/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
     <!-- Schema.org Markup -->
@@ -26,6 +26,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://m2cybersec.de/#organization",
       "name": "M2 Cybersec UG (haftungsbeschränkt)",
       "description": "Professionelle Cybersecurity-Lösungen und IT-Sicherheitsberatung",
       "url": "https://m2cybersec.de",
@@ -43,7 +44,7 @@
 
     <title>M2 Cybersec - Cybersecurity-Lösungen & IT-Sicherheit | Penetration Testing</title>
 
-    <link rel="canonical" href="https://m2cybersec.de">
+    <link rel="canonical" href="https://m2cybersec.de/">
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
 
 
@@ -205,6 +206,87 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen Stand – typischerweise Multi-Faktor-Authentifizierung, ein funktionierendes Patch-Management, Backups, Mitarbeiterschulungen und dokumentierte Schwachstellen-Prüfungen. Genau diese Nachweise entstehen bei uns als Nebenprodukt: CVSS-bewertete Reports aus den Security-Checks, dokumentierte Awareness-Schulungen mit Teilnahmezertifikaten und eine nachvollziehbare Historie behobener Findings. Welche Anforderungen Ihr konkreter Vertrag stellt, entnehmen Sie bitte Ihren Versicherungsunterlagen – wir bewerten keine Policen, sondern liefern die technische Substanz dahinter."
+      }
+    }
+  ]
+}
+</script>
+
+    <!-- Schema.org Service/Offer Markup der Abo-Pakete (Festpreise) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Startup Shield",
+      "serviceType": "IT-Sicherheit im Abo für Startups",
+      "url": "https://m2cybersec.de/starter-paket/",
+      "description": "Security-Abo für Startups und Gründer: jährlicher externer Security-Check (1 Domain + 1 Web-App/API), monatlicher Lagebericht, Awareness-Training für bis zu 10 Mitarbeitende, 5-seitiger Startup-Report. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/starter-paket/",
+        "priceCurrency": "EUR",
+        "price": "149",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "149",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Growth Guard",
+      "serviceType": "IT-Sicherheit im Abo für wachsende Teams und KMU",
+      "url": "https://m2cybersec.de/growth-paket/",
+      "description": "Security-Abo für wachsende Teams: 3 Security-Checks pro Jahr, monatlicher Report mit Quartalsgespräch, 2 Awareness-Schulungen (bis 25 Mitarbeitende), jährliche Phishing-Simulation, Compliance-Dokumentation. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/growth-paket/",
+        "priceCurrency": "EUR",
+        "price": "349",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "349",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Scale Secure",
+      "serviceType": "IT-Sicherheit im Abo für professionelle Teams",
+      "url": "https://m2cybersec.de/scale-paket/",
+      "description": "Vollständige Security-Partnerschaft: 4 Security-Checks pro Jahr (5+ Systeme), Code Review und Architektur-Check, monatlicher CVSS-Report, dedizierter Ansprechpartner, 3 Awareness-Schulungen für das gesamte Team mit Phishing-Simulationen, Notfallplan, Re-Tests, SLA-Reaktionszeit von 24 Stunden bei kritischen Findings. 12-Monats-Laufzeit, monatlich zahlbar, keine Einrichtungsgebühr.",
+      "provider": { "@id": "https://m2cybersec.de/#organization" },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://m2cybersec.de/scale-paket/",
+        "priceCurrency": "EUR",
+        "price": "749",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "749",
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "billingDuration": 12,
+          "billingIncrement": 1
+        }
       }
     }
   ]
@@ -408,7 +490,81 @@
             margin: 2.5rem auto 0;
             text-align: center;
             font-size: 0.95rem;
+        /* Vergleichstabelle */
+        .cmp-wrap {
+            max-width: 1000px;
+            margin: 5rem auto 0;
+        }
+
+        .cmp-title { text-align: center; margin-bottom: 0.6rem; }
+
+        .cmp-intro {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cmp-scroll {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cmp-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            font-size: 0.92rem;
+        }
+
+        .cmp-table th,
+        .cmp-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .cmp-table thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+        }
+
+        .cmp-table thead th span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--primary-cyan);
+        }
+
+        .cmp-table tbody th {
+            font-weight: 600;
+            color: var(--primary-white);
+            white-space: nowrap;
+        }
+
+        .cmp-table tbody td { color: var(--secondary-light-gray); }
+
+        .cmp-table tbody tr:last-child th,
+        .cmp-table tbody tr:last-child td { border-bottom: none; }
+
+        .cmp-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        /* Red-Team-Sektion hat dekorative Layer im Hintergrund */
+        .pricing-section .cmp-wrap {
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
         }
 
         .service-card {
@@ -1212,79 +1368,6 @@
             margin-top: 0.05em;
         }
 
-        /* Abgrenzung Security-Check / Red Team */
-        .rt-compare-wrap {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 5rem auto 0;
-            padding: 0 5%;
-        }
-
-        .rt-compare-title { text-align: center; margin-bottom: 0.6rem; }
-
-        .rt-compare-intro {
-            text-align: center;
-            color: var(--secondary-light-gray);
-            margin-bottom: 2rem;
-        }
-
-        .rt-compare-scroll {
-            overflow-x: auto;
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .rt-compare {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 680px;
-            font-size: 0.92rem;
-        }
-
-        .rt-compare th,
-        .rt-compare td {
-            padding: 1rem 1.2rem;
-            text-align: left;
-            vertical-align: top;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-        }
-
-        .rt-compare thead th {
-            font-family: var(--font-display);
-            font-weight: 600;
-            color: var(--primary-white);
-            background: rgba(255, 255, 255, 0.03);
-            white-space: nowrap;
-        }
-
-        .rt-compare thead th span {
-            display: block;
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
-        .rt-compare tbody th {
-            font-weight: 600;
-            color: var(--primary-white);
-            white-space: nowrap;
-        }
-
-        .rt-compare tbody td { color: var(--secondary-light-gray); }
-
-        .rt-compare tbody tr:last-child th,
-        .rt-compare tbody tr:last-child td { border-bottom: none; }
-
-        .rt-compare-note {
-            text-align: center;
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
         @media (max-width: 900px) {
             .pricing-grid {
                 grid-template-columns: 1fr;
@@ -1434,7 +1517,7 @@
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
                         <h3>Scale Secure</h3>
                         <span class="service-price">749 €/Monat</span>
-                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und SLA für professionelle Teams.</p>
+                        <p>4× Security-Checks, Code Review, CVSS-Report, Notfallplan und 24-h-SLA für professionelle Teams.</p>
                         <span class="service-nrw-tag">NRW-Förderung möglich</span>
                         <span class="service-mehr">Mehr erfahren →</span>
                     </a>
@@ -1448,6 +1531,74 @@
                         <span class="service-mehr">Mehr erfahren →</span>
                     </a>
                 </article>
+            </div>
+
+            <div class="cmp-wrap">
+                <h3 class="cmp-title">Die drei Abos im direkten Vergleich</h3>
+                <p class="cmp-intro">Alle Angaben entsprechen den Paketseiten. Jedes Abo läuft 12 Monate, ist monatlich zahlbar und kostet keine Einrichtungsgebühr.</p>
+                <div class="cmp-scroll">
+                    <table class="cmp-table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Startup Shield<br><span>149 €/Monat</span></th>
+                                <th>Growth Guard<br><span>349 €/Monat</span></th>
+                                <th>Scale Secure<br><span>749 €/Monat</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Security-Checks pro Jahr</th>
+                                <td>1×</td>
+                                <td>3×</td>
+                                <td>4×</td>
+                            </tr>
+                            <tr>
+                                <th>Systeme je Check</th>
+                                <td>1 Domain + 1 Web-App/API</td>
+                                <td>2–3 kritische Systeme</td>
+                                <td>5+ kritische Systeme</td>
+                            </tr>
+                            <tr>
+                                <th>Awareness-Training</th>
+                                <td>1× jährlich (bis 10 MA)</td>
+                                <td>2× jährlich (bis 25 MA)</td>
+                                <td>3× jährlich (gesamtes Team)</td>
+                            </tr>
+                            <tr>
+                                <th>Phishing-Simulation</th>
+                                <td>–</td>
+                                <td>1× jährlich</td>
+                                <td>Zu jeder Schulung</td>
+                            </tr>
+                            <tr>
+                                <th>Reporting</th>
+                                <td>Monatlicher Lagebericht, 5-seitiger Startup-Report</td>
+                                <td>Monatlicher Report, Quartalsgespräch, Compliance-Dokumentation</td>
+                                <td>Monatlicher CVSS-Report, dedizierter Ansprechpartner</td>
+                            </tr>
+                            <tr>
+                                <th>Zusätzlich</th>
+                                <td>Optionaler 30-Min-Ergebniscall</td>
+                                <td>Fester Ansprechpartner</td>
+                                <td>Code Review, Architektur-Check, Notfallplan, Re-Tests, 24-h-SLA</td>
+                            </tr>
+                            <tr>
+                                <th>NRW-Förderung</th>
+                                <td>Nicht förderfähig</td>
+                                <td>Förderfähig in Kombination mit weiteren Maßnahmen</td>
+                                <td>Förderfähig</td>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td><a href="/starter-paket/">Details →</a></td>
+                                <td><a href="/growth-paket/">Details →</a></td>
+                                <td><a href="/scale-paket/">Details →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="cmp-note">Förderangaben vorbehaltlich Bewilligung – maßgeblich sind die Konditionen der NRW.BANK. <a href="/nrw-foerderung/">Details zur Förderung →</a></p>
             </div>
             <p class="services-individual">Sie brauchen etwas Individuelles? Wir übernehmen auch Risikoanalysen, Sicherheitskonzepte und einzelne Web-Pentests –
                 <a href="/sicherheit-fuer-kmu/">individuelle Sicherheitsberatung für KMU →</a>
@@ -1527,11 +1678,11 @@
                 </article>
 
             </div>
-            <div class="rt-compare-wrap">
-                <h3 class="rt-compare-title">Security-Check oder Red Team – was brauche ich?</h3>
-                <p class="rt-compare-intro">Beides prüft Ihre Sicherheit, aber mit sehr unterschiedlichem Anspruch. Die Kurzfassung ohne Fachsprache:</p>
-                <div class="rt-compare-scroll">
-                    <table class="rt-compare">
+            <div class="cmp-wrap">
+                <h3 class="cmp-title">Security-Check oder Red Team – was brauche ich?</h3>
+                <p class="cmp-intro">Beides prüft Ihre Sicherheit, aber mit sehr unterschiedlichem Anspruch. Die Kurzfassung ohne Fachsprache:</p>
+                <div class="cmp-scroll">
+                    <table class="cmp-table">
                         <thead>
                             <tr>
                                 <th>&nbsp;</th>
@@ -1580,7 +1731,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="rt-compare-note">Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
+                <p class="cmp-note">Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
             </div>
 
             <div style="text-align:center; margin-top: 3rem; position: relative; z-index: 2;">

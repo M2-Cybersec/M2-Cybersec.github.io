@@ -351,14 +351,14 @@
 
     <!-- Rechtliches -->
     <url>
-        <loc>https://m2cybersec.de/impressum/</loc>
+        <loc>https://m2cybersec.de/rechtliches/impressum.html</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://m2cybersec.de/datenschutz/</loc>
+        <loc>https://m2cybersec.de/rechtliches/datenschutz.html</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
