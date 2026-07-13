@@ -190,6 +190,22 @@
         "@type": "Answer",
         "text": "Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir unterstützen Sie bei der Implementierung technischer und organisatorischer Maßnahmen (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Betrifft NIS2 mein Unternehmen – auch als Zulieferer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Möglicherweise ja – und zwar auf zwei Wegen. Direkt betroffen sind Unternehmen ab 50 Mitarbeitenden oder 10 Mio. € Jahresumsatz in den von der Richtlinie erfassten Sektoren. Indirekt trifft es deutlich mehr Unternehmen: NIS2 verpflichtet betroffene Organisationen, die Sicherheit ihrer Lieferkette zu steuern. In der Praxis geben große Kunden diese Anforderungen an ihre Zulieferer weiter – über Verträge, Fragebögen und Nachweispflichten. Wir prüfen Ihre technischen Maßnahmen und dokumentieren sie so, dass Sie gegenüber Kunden und Auditoren belegen können, was Sie tun: Growth Guard liefert regelmäßige Security-Checks und eine Compliance-taugliche Dokumentation, Scale Secure zusätzlich Code Reviews und einen Notfallplan. Hinweis: Wir leisten technische Sicherheitsberatung, keine Rechtsberatung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen Stand – typischerweise Multi-Faktor-Authentifizierung, ein funktionierendes Patch-Management, Backups, Mitarbeiterschulungen und dokumentierte Schwachstellen-Prüfungen. Genau diese Nachweise entstehen bei uns als Nebenprodukt: CVSS-bewertete Reports aus den Security-Checks, dokumentierte Awareness-Schulungen mit Teilnahmezertifikaten und eine nachvollziehbare Historie behobener Findings. Welche Anforderungen Ihr konkreter Vertrag stellt, entnehmen Sie bitte Ihren Versicherungsunterlagen – wir bewerten keine Policen, sondern liefern die technische Substanz dahinter."
+      }
     }
   ]
 }
@@ -385,6 +401,42 @@
             gap: 2rem;
             margin-top: 3rem;
             padding-top: 1rem;
+        }
+
+        /* Vertrauensanker */
+        .trust-anchors {
+            max-width: 1000px;
+            margin: 5rem auto 0;
+        }
+
+        .trust-title { text-align: center; margin-bottom: 2rem; }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .trust-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.4rem;
+            text-align: center;
+        }
+
+        .trust-icon {
+            color: var(--primary-cyan);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .trust-item h4 { margin-bottom: 0.5rem; }
+
+        .trust-item p {
+            font-size: 0.88rem;
+            color: var(--secondary-light-gray);
+            margin: 0;
         }
 
         .services-individual {
@@ -1602,6 +1654,46 @@
                         Management-Ebene</p>
                 </article>
             </div>
+
+            <!--
+                T-14 [FREIGABE F5] – Vertrauensanker.
+                ACHTUNG: Bewusst KEINE erfundenen Zertifikate/Logos. Jede Karte unten ist ein
+                Platzhalter und muss von der GF mit belastbaren Angaben gefüllt werden, bevor
+                dieser Branch gemerged wird. Nicht befüllbare Karten bitte ersatzlos löschen –
+                eine leere Vertrauenssektion schadet mehr als keine.
+            -->
+            <div class="trust-anchors">
+                <h3 class="trust-title">Worauf Sie sich verlassen können</h3>
+                <div class="trust-grid">
+                    <article class="trust-item">
+                        <div class="trust-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+                        <h4>Zertifizierungen</h4>
+                        <!-- TODO GF: Konkrete Zertifikate eintragen (z. B. OSCP, CEH, BSI-Qualifikation).
+                             Ohne belastbaren Nachweis diese Karte löschen. -->
+                        <p><!-- TODO GF: Zertifikat einfügen --></p>
+                    </article>
+                    <article class="trust-item">
+                        <div class="trust-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg></div>
+                        <h4>Berufshaftpflicht</h4>
+                        <!-- TODO GF: Versicherer und Deckungssumme eintragen (z. B. "Berufshaftpflicht
+                             mit X Mio. € Deckungssumme für Vermögensschäden"). -->
+                        <p><!-- TODO GF: Versicherungsnachweis einfügen --></p>
+                    </article>
+                    <article class="trust-item">
+                        <div class="trust-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h4>Allianz für Cyber-Sicherheit</h4>
+                        <p>Teilnehmer der Allianz für Cyber-Sicherheit des BSI –
+                            <a href="https://www.allianz-fuer-cybersicherheit.de" target="_blank" rel="noopener">mehr erfahren</a>.
+                        </p>
+                    </article>
+                    <article class="trust-item">
+                        <div class="trust-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div>
+                        <h4>Vertraulichkeit</h4>
+                        <!-- TODO GF: Bestätigen – NDA vor jedem Engagement, Löschfristen für Testdaten? -->
+                        <p><!-- TODO GF: Aussage zu NDA/Datenumgang einfügen --></p>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section id="quick-scan" class="section quick-scan">
@@ -1921,6 +2013,53 @@
                                 (TOM), erstellen Verarbeitungsverzeichnisse, führen Datenschutz-Folgenabschätzungen
                                 durch und helfen bei der Dokumentation Ihrer Compliance-Maßnahmen. Die DSGVO verlangt
                                 angemessene Sicherheitsmaßnahmen – wir zeigen Ihnen, wie Sie diese erfüllen.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-13">
+                        <h3>Betrifft NIS2 mein Unternehmen – auch als Zulieferer?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-13">
+                        <div>
+                            <p>Möglicherweise ja – und zwar auf zwei Wegen. Direkt betroffen sind Unternehmen ab
+                                50 Mitarbeitenden oder 10 Mio. € Jahresumsatz in den von der Richtlinie erfassten
+                                Sektoren. Indirekt trifft es deutlich mehr Unternehmen: NIS2 verpflichtet betroffene
+                                Organisationen, die Sicherheit ihrer Lieferkette zu steuern. In der Praxis geben große
+                                Kunden diese Anforderungen an ihre Zulieferer weiter – über Verträge, Fragebögen und
+                                Nachweispflichten. Viele kleine Unternehmen merken das zuerst, wenn ein Kunde
+                                plötzlich einen Sicherheitsnachweis verlangt.</p>
+                            <p>Wir prüfen Ihre technischen Maßnahmen und dokumentieren sie so, dass Sie gegenüber
+                                Kunden und Auditoren belegen können, was Sie tun:
+                                <a href="/growth-paket/">Growth Guard</a> liefert regelmäßige Security-Checks und
+                                eine Compliance-taugliche Dokumentation, <a href="/scale-paket/">Scale Secure</a>
+                                zusätzlich Code Reviews und einen Notfallplan. Hinweis: Wir leisten technische
+                                Sicherheitsberatung, keine Rechtsberatung – ob und wie NIS2 auf Ihr Unternehmen
+                                anzuwenden ist, klären Sie bitte rechtlich verbindlich ab.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-14">
+                        <h3>Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?</h3>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-14">
+                        <div>
+                            <p>Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen
+                                Stand – typischerweise Multi-Faktor-Authentifizierung, ein funktionierendes
+                                Patch-Management, Backups, Mitarbeiterschulungen und dokumentierte
+                                Schwachstellen-Prüfungen. Fehlen diese Nachweise, wird es teurer oder im Schadenfall
+                                unangenehm: Versicherer prüfen dann, ob die zugesicherten Maßnahmen tatsächlich
+                                bestanden.</p>
+                            <p>Genau diese Nachweise entstehen bei uns als Nebenprodukt: CVSS-bewertete Reports aus
+                                den Security-Checks, dokumentierte Awareness-Schulungen mit Teilnahmezertifikaten und
+                                eine nachvollziehbare Historie behobener Findings. Welche Anforderungen Ihr konkreter
+                                Vertrag stellt, entnehmen Sie bitte Ihren Versicherungsunterlagen – wir bewerten keine
+                                Policen, sondern liefern die technische Substanz dahinter.</p>
                         </div>
                     </div>
                 </article>
