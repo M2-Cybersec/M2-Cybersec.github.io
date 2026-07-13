@@ -1188,6 +1188,79 @@
             margin-top: 0.05em;
         }
 
+        /* Abgrenzung Security-Check / Red Team */
+        .rt-compare-wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 5rem auto 0;
+            padding: 0 5%;
+        }
+
+        .rt-compare-title { text-align: center; margin-bottom: 0.6rem; }
+
+        .rt-compare-intro {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .rt-compare-scroll {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .rt-compare {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            font-size: 0.92rem;
+        }
+
+        .rt-compare th,
+        .rt-compare td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .rt-compare thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+        }
+
+        .rt-compare thead th span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .rt-compare tbody th {
+            font-weight: 600;
+            color: var(--primary-white);
+            white-space: nowrap;
+        }
+
+        .rt-compare tbody td { color: var(--secondary-light-gray); }
+
+        .rt-compare tbody tr:last-child th,
+        .rt-compare tbody tr:last-child td { border-bottom: none; }
+
+        .rt-compare-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
         @media (max-width: 900px) {
             .pricing-grid {
                 grid-template-columns: 1fr;
@@ -1377,8 +1450,8 @@
                 <article class="pricing-card">
                     <h3 class="pricing-name">Red Team <span class="tier-lite">Lite</span></h3>
                     <div class="pricing-price">
-                        <div class="pricing-price-label">Auf Anfrage</div>
-                        <div class="pricing-price-sub">Individuelles Angebot</div>
+                        <div class="pricing-price-label">ab 3.500 €</div>
+                        <div class="pricing-price-sub">Individuelles Angebot, einmalig</div>
                     </div>
                     <p class="pricing-desc">Technischer Einstieg in professionelles Red Teaming. Ideal für Unternehmen, die erstmals eine realistische Angriffssimulation durchführen lassen wollen.</p>
                     <a href="#contact" class="btn btn-ghost pricing-cta">Jetzt anfragen</a>
@@ -1436,6 +1509,62 @@
                 </article>
 
             </div>
+            <div class="rt-compare-wrap">
+                <h3 class="rt-compare-title">Security-Check oder Red Team – was brauche ich?</h3>
+                <p class="rt-compare-intro">Beides prüft Ihre Sicherheit, aber mit sehr unterschiedlichem Anspruch. Die Kurzfassung ohne Fachsprache:</p>
+                <div class="rt-compare-scroll">
+                    <table class="rt-compare">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Security-Check<br><span>(im Abo enthalten)</span></th>
+                                <th>Red Team Lite</th>
+                                <th>Red Team Plus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Die Frage dahinter</th>
+                                <td>Wo sind meine Schwachstellen?</td>
+                                <td>Kommt ein Angreifer durch meine Technik?</td>
+                                <td>Kommt ein Angreifer irgendwie rein – Technik, Mensch, Gebäude?</td>
+                            </tr>
+                            <tr>
+                                <th>Vorgehen</th>
+                                <td>Systematische Prüfung bekannter Schwachstellen, priorisiert</td>
+                                <td>Simulierter Angriff auf ein technisches Ziel</td>
+                                <td>Realistische Angriffssimulation inkl. Social Engineering und Phishing</td>
+                            </tr>
+                            <tr>
+                                <th>Umfang</th>
+                                <td>1–5 Systeme, je nach Paket</td>
+                                <td>1 Ziel, in die Tiefe</td>
+                                <td>Technik + Mitarbeitende, mehrere Wege</td>
+                            </tr>
+                            <tr>
+                                <th>Dauer</th>
+                                <td>Report in 5 Werktagen</td>
+                                <td>1–2 Wochen</td>
+                                <td>2–4 Wochen</td>
+                            </tr>
+                            <tr>
+                                <th>Preis</th>
+                                <td>Im Abo ab 149 €/Monat</td>
+                                <td>Einmalig ab 3.500 €</td>
+                                <td>Individuelles Angebot</td>
+                            </tr>
+                            <tr>
+                                <th>Richtig für Sie, wenn…</th>
+                                <td>…Sie Sicherheit laufend im Griff behalten wollen.</td>
+                                <td>…Sie einmal wirklich wissen wollen, ob Ihre Technik hält.</td>
+                                <td>…Sie geprüft werden (Kunden, Investoren, Audit) oder maximale Sicherheit brauchen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="rt-compare-note">Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
+            </div>
+
             <div style="text-align:center; margin-top: 3rem; position: relative; z-index: 2;">
                 <a href="/red-team-plus/" class="btn btn-secondary">Mehr erfahren</a>
             </div>
