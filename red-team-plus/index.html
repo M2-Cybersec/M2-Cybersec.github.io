@@ -6,7 +6,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Red Team Plus – Ganzheitliches 360°-Sicherheitsaudit: Technische Prüfung, Social Engineering und physische Sicherheitsanalyse für Unternehmen in Deutschland. Unser Flaggschiff-Produkt.">
-    <meta name="keywords" content="Red Team, Red Teaming, 360 Grad Sicherheitsaudit, Penetrationstest, Social Engineering, Physische Sicherheit, Security Assessment, NIS2, ISO 27001, CVSS">
+    <meta name="keywords" content="Red Team, Red Teaming, Angriffssimulation, Pentest, Penetrationstest, Pentest vs Red Teaming, Social Engineering, Physische Sicherheit, Security Assessment, NIS2, ISO 27001, CVSS">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
@@ -326,6 +326,73 @@
         .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
         /* Divider */
+        .cmp-wrap {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .cmp-intro {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cmp-scroll {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cmp-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            font-size: 0.92rem;
+        }
+
+        .cmp-table th,
+        .cmp-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .cmp-table thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+        }
+
+        .cmp-table thead th span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--primary-cyan);
+        }
+
+        .cmp-table tbody th {
+            font-weight: 600;
+            color: var(--primary-white);
+            white-space: nowrap;
+        }
+
+        .cmp-table tbody td { color: var(--secondary-light-gray); }
+
+        .cmp-table tbody tr:last-child th,
+        .cmp-table tbody tr:last-child td { border-bottom: none; }
+
+        .cmp-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
         .section-divider {
             border: none;
             border-top: 1px solid rgba(0, 252, 246, 0.1);
@@ -399,7 +466,7 @@
         <div class="hero-text">
             <div class="hero-badge">Red Team Plus &nbsp;·&nbsp; Unser Flaggschiff</div>
             <h1>Angriff ist die <span>beste Verteidigung.</span></h1>
-            <p class="hero-desc">Klassische Pentests prüfen Systeme – Red Team Plus prüft Ihr Unternehmen. Technisch, menschlich, physisch. Wir denken und handeln wie echte Angreifer, damit Sie wissen, wo Sie wirklich stehen.</p>
+            <p class="hero-desc">Red Teaming ist kein technischer Pentest. Wir vereinbaren mit Ihnen ein Ziel und prüfen, ob ein Angreifer es erreicht – auf dem Weg des geringsten Widerstands. Technik, Mensch, Prozess: Der Weg ist offen, das Ziel ist der Scope.</p>
             <div class="hero-cta-group">
                 <a href="https://cal.eu/marlonscheer" class="btn btn-primary">Jetzt kostenlos anfragen</a>
                 <a href="#methodology" class="btn btn-secondary">Wie es funktioniert</a>
@@ -482,7 +549,7 @@
         <div class="nrw-banner">
             <div class="nrw-banner-text">
                 <strong><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> NRW-Förderung möglich</strong>
-                <span>Penetrationstests und Angriffssimulationen (Red Team Plus &amp; Pro) sind über MID-Digitale Sicherheit (NRW.BANK) mit 50 % förderfähig.</span>
+                <span>Angriffssimulationen (Red Team Plus &amp; Pro) und Pentests sind über MID-Digitale Sicherheit (NRW.BANK) mit 50 % förderfähig.</span>
             </div>
             <a href="/nrw-foerderung/" class="nrw-btn">Details zur Förderung →</a>
         </div>
@@ -498,7 +565,7 @@
                 <p>Wir prüfen Ihre Systeme, Netzwerke und Anwendungen mit denselben Werkzeugen, die echte Angreifer nutzen.</p>
                 <ul class="pillar-items">
                     <li>Externer Perimeter-Scan &amp; Reconnaissance</li>
-                    <li>Web-Application Penetration Testing</li>
+                    <li>Angriffe auf Web-Anwendungen &amp; APIs</li>
                     <li>Netzwerk- &amp; Infrastrukturanalyse</li>
                     <li>Credential &amp; Password Auditing</li>
                     <li>Cloud-Konfigurationsprüfung (optional)</li>
@@ -533,11 +600,62 @@
 
     <hr class="section-divider">
 
+    <!-- Pentest vs. Red Teaming -->
+    <section class="section" id="pentest-vs-red-teaming">
+        <span class="section-label">Klartext</span>
+        <h2 class="section-title">Pentest oder Red Teaming?</h2>
+        <p class="section-subtitle">Zwei Leistungen, die oft verwechselt werden – dabei beantworten sie völlig verschiedene Fragen. Ein Pentest fragt: <em>Hält dieses System?</em> Red Teaming fragt: <em>Kommt jemand an mein Kronjuwel – egal wie?</em> Der Pentest ist bei uns kein eigenes Produkt, sondern die Vertiefung nach einem <a href="/#services">Security-Check</a>. Red Teaming buchen Sie eigenständig.</p>
+        <div class="cmp-wrap">
+            <p class="cmp-intro">Die Kurzfassung ohne Fachsprache:</p>
+            <div class="cmp-scroll">
+                <table class="cmp-table">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Pentest<br><span>Zusatz nach einem Security-Check</span></th>
+                            <th>Red Teaming<br><span>Lite / Plus / Pro</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Die Frage dahinter</th>
+                            <td>Hält dieses System?</td>
+                            <td>Kommt jemand an mein Kronjuwel – egal wie?</td>
+                        </tr>
+                        <tr>
+                            <th>Scope</th>
+                            <td>Ein definiertes Ziel: diese Web-App, diese API, dieses Netz. Die Testtiefe wird vorher festgelegt und zugesichert.</td>
+                            <td>Der Scope ist das Ziel, nicht die Zahl der Systeme. Wir vereinbaren, was geschützt sein soll – der Weg dorthin bleibt offen.</td>
+                        </tr>
+                        <tr>
+                            <th>Vorgehen</th>
+                            <td>Manuell getrieben und systematisch: authentifizierte Tests, Business-Logik, Rechteeskalation, Verkettung von Findings. Wir gehen ein System durch, nicht daran vorbei.</td>
+                            <td><em>Path of least resistance.</em> Wir nehmen den Weg, den ein echter Angreifer nehmen würde – Technik, Mensch oder Prozess, je nachdem, wo am wenigsten im Weg steht. Ein sauber gehärtetes System umgehen wir, statt es zu knacken.</td>
+                        </tr>
+                        <tr>
+                            <th>Ergebnis</th>
+                            <td>Ein Tiefenbefund zu diesem System: eine belastbare Liste dessen, was drin steckt – auch die Fehler, die kein Scanner findet.</td>
+                            <td>Der Angriffspfad: wie weit jemand gekommen ist, worüber, und an welcher Stelle es hätte auffallen müssen. Keine vollständige Schwachstellenliste – der erreichte oder verfehlte Zielzustand.</td>
+                        </tr>
+                        <tr>
+                            <th>Wann sinnvoll</th>
+                            <td>Ein Security-Check hat gezeigt, dass sich ein bestimmtes System genauer lohnt – oder ein Kunde verlangt ausdrücklich einen Pentest-Nachweis für genau dieses System.</td>
+                            <td>Ihre Sicherheitsmaßnahmen stehen bereits, und Sie wollen wissen, ob sie in ihrer Gesamtheit tragen – inklusive der Frage, ob Ihr Team einen laufenden Angriff überhaupt bemerkt.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="cmp-note">Der übliche Weg: erst der laufende <a href="/#services">Security-Check</a> im Abo, bei Bedarf ein Pentest zur Vertiefung – und Red Teaming dann, wenn die Frage nicht mehr einzelnen Systemen gilt, sondern dem ganzen Haus. Nicht sicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> klärt das in 15 Minuten.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
     <!-- Comparison -->
     <section class="section">
-        <span class="section-label">Vergleich</span>
-        <h2 class="section-title">Red Team Plus vs. Klassischer Pentest</h2>
-        <p class="section-subtitle">Was unterscheidet Red Team Plus vom klassischen Penetrationstest – und warum macht das für Ihr Unternehmen einen entscheidenden Unterschied?</p>
+        <span class="section-label">Im Detail</span>
+        <h2 class="section-title">Leistungsumfang im Vergleich</h2>
+        <p class="section-subtitle">Dieselbe Gegenüberstellung noch einmal auf Leistungsebene – was ein Pentest abdeckt und was Red Team Plus zusätzlich mitbringt.</p>
         <div class="comparison-grid">
             <div class="comparison-col">
                 <h3>Klassischer Penetrationstest</h3>
@@ -598,7 +716,7 @@
                 <div class="process-num">3</div>
                 <div class="process-body">
                     <h4>Aktive Angriffsphase</h4>
-                    <p>Technische Penetrationstests, Social-Engineering-Versuche und physische Tests laufen koordiniert. Wir dokumentieren jeden Schritt, jede Schwachstelle, jeden erfolgreichen Angriffspfad mit Beweisen – Screenshots, Logs und Videos.</p>
+                    <p>Technische Angriffe, Social-Engineering-Versuche und physische Tests laufen koordiniert. Wir dokumentieren jeden Schritt, jede Schwachstelle, jeden erfolgreichen Angriffspfad mit Beweisen – Screenshots, Logs und Videos.</p>
                     <span class="duration">ca. 5–15 Tage (je nach Scope)</span>
                 </div>
             </div>
@@ -701,7 +819,7 @@
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                 <div>
                     <h4>Kritische Daten oder Prozesse zu schützen sind</h4>
-                    <p>Kundendaten, Geschäftsgeheimnisse, Produktionssysteme – bei hohem Schadenspotenzial braucht es mehr als einen Standard-Pentest.</p>
+                    <p>Kundendaten, Geschäftsgeheimnisse, Produktionssysteme – bei hohem Schadenspotenzial reicht es nicht zu wissen, ob ein einzelnes System hält.</p>
                 </div>
             </div>
             <div class="target-item">
