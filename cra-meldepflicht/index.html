@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CRA-Meldepflicht nach Artikel 14: aktiv ausgenutzte Schwachstellen binnen 24 Stunden melden. Der CRA-Meldefähigkeits-Sprint macht Hersteller vernetzter Produkte in 10 Arbeitstagen meldefähig – Festpreis 12.500 € netto.">
+    <meta name="keywords" content="CRA Meldepflicht, Cyber Resilience Act Artikel 14, 24 Stunden Meldung, ENISA CSIRT Meldung, Hersteller vernetzter Produkte, Maschinenbau CRA, SBOM, Produktcompliance">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CRA-Meldepflicht: Können Sie in 24 Stunden melden? | M2 Cybersec">
+    <meta property="og:description" content="Artikel 14 Cyber Resilience Act verlangt die Frühwarnung binnen 24 Stunden – auch für Produkte, die seit Jahren im Feld sind. In 10 Arbeitstagen zur nachweisbaren Meldefähigkeit.">
+    <meta property="og:url" content="https://m2cybersec.de/cra-meldepflicht/">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+
+    <title>CRA-Meldepflicht nach Artikel 14 – in 10 Tagen meldefähig | M2 Cybersec UG</title>
+    <link rel="canonical" href="https://m2cybersec.de/cra-meldepflicht/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "CRA-Meldefähigkeits-Sprint",
+        "serviceType": "Beratung zur Meldefähigkeit nach Artikel 14 Cyber Resilience Act",
+        "provider": {
+            "@type": "Organization",
+            "name": "M2 Cybersec UG (haftungsbeschränkt)",
+            "url": "https://m2cybersec.de/"
+        },
+        "areaServed": ["DE", "AT", "CH"],
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Hersteller vernetzter Produkte mit 50–1.000 Mitarbeitenden"
+        },
+        "description": "In 10 Arbeitstagen zur nachweisbaren Meldefähigkeit nach Artikel 14 Cyber Resilience Act: Rollen- und Betroffenheitsbestimmung, Produktinventar, Komponentenerfassung, Meldekanal, Entscheidungsbaum, Melde-Vorlagen, Rufbereitschaftsplan, Live-Übung mit Stoppuhr und Managementbericht.",
+        "offers": {
+            "@type": "Offer",
+            "price": "12500",
+            "priceCurrency": "EUR",
+            "description": "Festpreis netto zzgl. USt., 10 Arbeitstage, davon 2 Tage vor Ort"
+        }
+    }
+    </script>
+
+    <style>
+        /* ---- Layout-Raster ------------------------------------------------ */
+        .wrap { max-width: 1000px; margin: 0 auto; }
+        .wrap-narrow { max-width: 780px; margin: 0 auto; }
+
+        .sec { padding: 5.5rem 5%; }
+        [id] { scroll-margin-top: 6rem; }
+        .sec-alt {
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .sec h2 { font-size: 2.1rem; margin-bottom: 0.9rem; }
+        .sec-lead {
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            max-width: 64ch;
+            margin-bottom: 3rem;
+        }
+        .sec-lead:last-child { margin-bottom: 0; }
+
+        /* ---- Hero ---------------------------------------------------------- */
+        .hero-cra {
+            padding: 9.5rem 5% 5.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+            position: relative;
+        }
+        .hero-cra::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 40%, rgba(0, 252, 246, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 840px; margin: 0 auto; }
+        .hero-cra h1 {
+            font-size: clamp(2rem, 5vw, 3.3rem);
+            margin-bottom: 0.7rem;
+        }
+        .hero-claim {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.15rem, 2.6vw, 1.7rem);
+            color: var(--secondary-light-gray);
+            margin-bottom: 1.8rem;
+        }
+        .hero-cra p {
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            max-width: 60ch;
+            margin: 0 auto 2.4rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary-light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-base), gap var(--transition-base);
+        }
+        .back-link:hover { color: var(--primary-cyan); gap: 0.8rem; }
+        .back-row { max-width: 1000px; margin: 0 auto; padding: 2rem 5% 0; }
+
+        /* ---- Fristenkette: maßstabsgetreue Achse (Signatur der Seite) ------- */
+        .frist-rail {
+            position: relative;
+            height: 92px;
+            margin: 0 3.5rem 2.2rem;
+        }
+        .frist-axis {
+            position: absolute;
+            left: 0; right: 0; bottom: 12px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.16);
+        }
+        .frist-origin {
+            position: absolute;
+            left: 0; bottom: 5px;
+            width: 1px; height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .frist-mark {
+            position: absolute;
+            bottom: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(-50%);
+        }
+        .frist-mark-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            white-space: nowrap;
+            margin-bottom: 0.4rem;
+        }
+        .frist-mark-stem {
+            width: 1px;
+            height: 26px;
+            background: rgba(255, 255, 255, 0.22);
+        }
+        .frist-mark-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--primary-cyan);
+            margin-top: 0.3rem;
+        }
+        .p-24 { left: 7.14%; }
+        .p-72 { left: 21.43%; }
+        .p-14 { left: 100%; }
+
+        .frist-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 3.5rem 2.8rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .frist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+            list-style: none;
+        }
+        .frist-item {
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.6rem 1.5rem;
+        }
+        .frist-item .frist-when {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 1.75rem;
+            line-height: 1.1;
+            margin-bottom: 0.15rem;
+        }
+        .frist-item h3 { font-size: 1.05rem; margin-bottom: 0.7rem; }
+        .frist-who {
+            font-size: 0.78rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.9rem;
+        }
+        .frist-item p { color: var(--secondary-light-gray); font-size: 0.95rem; }
+
+        .frist-note {
+            margin-top: 2.6rem;
+            border-left: 2px solid rgba(0, 252, 246, 0.45);
+            padding: 0.3rem 0 0.3rem 1.4rem;
+        }
+        .frist-note h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .frist-note p { color: var(--secondary-light-gray); max-width: 62ch; }
+
+        /* ---- Was daran hängt ----------------------------------------------- */
+        .hang {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hang-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+        .hang p { color: var(--secondary-light-gray); font-size: 0.95rem; }
+
+        /* ---- Selbsttest ----------------------------------------------------- */
+        .test-set { border: 0; padding: 0; margin: 0; }
+        .test-set legend {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+        .test-item {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            padding: 1.05rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .test-item input {
+            width: 20px; height: 20px;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+            accent-color: var(--primary-cyan);
+            cursor: pointer;
+        }
+        .test-item label {
+            color: var(--secondary-light-gray);
+            cursor: pointer;
+            line-height: 1.55;
+        }
+        .test-result {
+            margin-top: 1.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem 1.6rem;
+        }
+        .test-result strong {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+        .test-result p { color: var(--secondary-light-gray); font-size: 0.97rem; }
+        .test-privacy { font-size: 0.85rem; color: var(--text-muted); margin-top: 1.1rem; }
+
+        /* ---- Zahlen + Alternativen ------------------------------------------ */
+        .zahlen {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 1.1rem;
+        }
+        .zahl-v {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 2.6rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .zahl-t { color: var(--secondary-light-gray); font-size: 0.95rem; }
+        .quelle { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 3.5rem; }
+
+        .alt-list { margin: 0; }
+        .alt-row {
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            gap: 1.8rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .alt-row:last-of-type { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .alt-row dt {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.02rem;
+        }
+        .alt-row dd { margin: 0; color: var(--secondary-light-gray); font-size: 0.98rem; }
+        .alt-close {
+            margin-top: 2.4rem;
+            font-size: 1.08rem;
+            max-width: 60ch;
+        }
+
+        /* ---- Angebot: Preisblock + Lieferbestandteile ------------------------ */
+        .preis {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2rem 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+        .preis-facts { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+        .preis-v {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 2.1rem;
+            line-height: 1.1;
+        }
+        .preis-l {
+            font-size: 0.83rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .liefer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            list-style: none;
+        }
+        .liefer {
+            display: flex;
+            gap: 0.85rem;
+            align-items: flex-start;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.15rem 1.25rem;
+        }
+        .liefer .icon { color: var(--primary-cyan); font-size: 1.1rem; margin-top: 0.15rem; }
+        .liefer h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .liefer p { color: var(--secondary-light-gray); font-size: 0.92rem; }
+        .liefer--key {
+            grid-column: 1 / -1;
+            border-color: rgba(0, 252, 246, 0.45);
+            background: rgba(0, 252, 246, 0.05);
+            padding: 1.6rem 1.5rem;
+        }
+        .liefer--key h4 { font-size: 1.15rem; }
+        .liefer--key p { font-size: 0.97rem; }
+        .liefer-tag {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary-cyan);
+            margin-bottom: 0.45rem;
+        }
+
+        /* ---- Ablauf-Timeline ------------------------------------------------ */
+        .tl { position: relative; padding-left: 2.4rem; list-style: none; }
+        .tl::before {
+            content: '';
+            position: absolute;
+            left: 4px; top: 0.7rem; bottom: 1.6rem;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+        .tl-item { position: relative; padding-bottom: 1.9rem; }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem; top: 0.5rem;
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+        .tl-item--vorort::before {
+            background: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+        }
+        .tl-day {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .tl-item--vorort .tl-day { color: var(--primary-cyan); }
+        .tl-item h3 { font-size: 1.05rem; margin: 0.25rem 0 0.3rem; }
+        .tl-item p { color: var(--secondary-light-gray); font-size: 0.95rem; }
+        .tl-legend { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+        /* ---- Kontraintuitive Rollen-Fälle ------------------------------------ */
+        .faelle { margin-top: 2.6rem; }
+        .fall {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1.4rem;
+            padding: 1.3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .fall:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .fall-wenn { color: var(--secondary-light-gray); font-size: 0.98rem; }
+        .fall-pfeil { color: var(--primary-cyan); font-size: 1.1rem; }
+        .fall-dann {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .dihk {
+            margin-top: 2.6rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.18);
+            padding: 0.3rem 0 0.3rem 1.4rem;
+            color: var(--secondary-light-gray);
+            max-width: 62ch;
+        }
+        .dihk cite { font-style: normal; display: block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
+
+        /* ---- Monitoring (dezenter Ausblick) ---------------------------------- */
+        .ausblick {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.8rem;
+        }
+        .ausblick h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+        .ausblick p { color: var(--secondary-light-gray); font-size: 0.95rem; max-width: 58ch; }
+        .ausblick .ausblick-preis {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 1.4rem;
+            white-space: nowrap;
+        }
+
+        /* ---- Wer das macht ---------------------------------------------------- */
+        .wer p { color: var(--secondary-light-gray); max-width: 64ch; margin-bottom: 1rem; }
+        .wer-link { color: var(--primary-cyan); text-decoration: none; font-weight: 500; }
+        .wer-link:hover { text-decoration: underline; }
+        .wer .wer-trust {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin-top: 1.4rem;
+            font-size: 0.92rem;
+            color: var(--secondary-light-gray);
+        }
+        .wer-trust .icon { color: var(--primary-cyan); font-size: 1.1rem; }
+
+        /* ---- FAQ (statisches Muster der Unterseiten) -------------------------- */
+        .faq-entry {
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .faq-entry h3 { font-size: 1.12rem; margin-bottom: 0.6rem; }
+        .faq-entry p { color: var(--secondary-light-gray); font-size: 0.97rem; line-height: 1.7; }
+        .faq-entry p + p { margin-top: 0.7rem; }
+
+        /* ---- Abschluss-CTA ---------------------------------------------------- */
+        .cta-section {
+            background: rgba(0, 252, 246, 0.05);
+            border: 1px solid rgba(0, 252, 246, 0.5);
+            border-radius: var(--radius-md);
+            padding: 3.5rem;
+            text-align: center;
+        }
+        .cta-section h2 { font-size: 1.9rem; margin-bottom: 0.8rem; }
+        .cta-section p { color: var(--secondary-light-gray); margin-bottom: 2rem; font-size: 1.02rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ---- Responsive -------------------------------------------------------- */
+        @media (max-width: 900px) {
+            .frist-grid { grid-template-columns: 1fr; }
+            .hang { grid-template-columns: 1fr; gap: 1.6rem; }
+            .zahlen { grid-template-columns: 1fr; gap: 1.4rem; }
+            .liefer-grid { grid-template-columns: 1fr; }
+            .alt-row { grid-template-columns: 1fr; gap: 0.4rem; }
+        }
+
+        @media (max-width: 768px) {
+            .sec { padding: 4rem 5%; }
+            .hero-cra { padding: 7.5rem 5% 4rem; }
+            .sec h2 { font-size: 1.65rem; }
+
+            /* Achse weicht der vertikalen Kette – die Abstände bleiben maßstäblich */
+            .frist-rail, .frist-scale { display: none; }
+            .frist-grid { gap: 0; }
+            .frist-item + .frist-item { position: relative; }
+            .frist-item + .frist-item::before {
+                content: '';
+                display: block;
+                width: 1px;
+                margin: 0 auto;
+                background: rgba(0, 252, 246, 0.35);
+                position: absolute;
+                left: 50%;
+                bottom: 100%;
+            }
+            .frist-item:nth-child(2)::before { height: 22px; }
+            .frist-item:nth-child(3)::before { height: 120px; }
+            .frist-item:nth-child(2) { margin-top: 22px; }
+            .frist-item:nth-child(3) { margin-top: 120px; }
+
+            .preis { padding: 1.6rem; gap: 1.5rem; }
+            .preis-facts { gap: 1.6rem; }
+            .fall { grid-template-columns: 1fr; gap: 0.5rem; }
+            .fall-pfeil { transform: rotate(90deg); display: inline-block; }
+            .cta-section { padding: 2.5rem 1.5rem; }
+            .cta-section h2 { font-size: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .zahl-v { font-size: 2.2rem; }
+            .preis-v { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+    <nav class="navbar" role="navigation">
+        <a href="/" class="logo">
+            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <span>M2 Cybersec</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+
+        <!-- ================= Hero: die Leitfrage ================= -->
+        <section class="hero-cra">
+            <div class="hero-inner">
+                <span class="eyebrow eyebrow-center">Artikel 14 Cyber Resilience Act</span>
+                <h1>Können Sie innerhalb von 24&nbsp;Stunden melden?</h1>
+                <span class="hero-claim">Beweisen Sie es.</span>
+                <p>
+                    Ab dem 11. September 2026 müssen Hersteller vernetzter Produkte aktiv ausgenutzte
+                    Schwachstellen binnen 24 Stunden an die EU-Agentur ENISA und das zuständige nationale
+                    CSIRT (Computer Security Incident Response Team) melden. Auch für Produkte, die seit
+                    Jahren im Feld sind.
+                </p>
+                <div class="hero-ctas">
+                    <a href="https://cal.eu/marlonscheer/cra" class="btn btn-primary">20 Minuten sprechen</a>
+                    <a href="#betroffenheit" class="btn btn-secondary">Sind wir überhaupt betroffen?</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-row">
+            <a href="/" class="back-link">← Zurück zur Startseite</a>
+        </div>
+
+        <!-- ================= Der Stichtag: die Fristenkette ================= -->
+        <section class="sec" aria-labelledby="stichtag-h">
+            <div class="wrap">
+                <span class="eyebrow">Der Stichtag</span>
+                <h2 id="stichtag-h">Die Uhr läuft ab dem Moment, in dem Sie davon erfahren</h2>
+                <p class="sec-lead">
+                    Artikel 14 CRA kennt drei Fristen. Sie beginnen nicht mit Ihrer Analyse und nicht mit
+                    dem Patch, sondern mit der Kenntnisnahme einer aktiv ausgenutzten Schwachstelle oder
+                    eines schwerwiegenden Sicherheitsvorfalls. Der Maßstab unten ist echt: Was Ihnen wie
+                    zwei Wochen Zeit vorkommt, sind in Wahrheit 24 Stunden und ein Rest.
+                </p>
+
+                <div class="frist-rail" aria-hidden="true">
+                    <span class="frist-axis"></span>
+                    <span class="frist-origin"></span>
+                    <span class="frist-mark p-24">
+                        <span class="frist-mark-label">24 h</span>
+                        <span class="frist-mark-stem"></span>
+                        <span class="frist-mark-dot"></span>
+                    </span>
+                    <span class="frist-mark p-72">
+                        <span class="frist-mark-label">72 h</span>
+                        <span class="frist-mark-stem"></span>
+                        <span class="frist-mark-dot"></span>
+                    </span>
+                    <span class="frist-mark p-14">
+                        <span class="frist-mark-label">14 Tage</span>
+                        <span class="frist-mark-stem"></span>
+                        <span class="frist-mark-dot"></span>
+                    </span>
+                </div>
+                <p class="frist-scale" aria-hidden="true">
+                    <span>t = 0 · Kenntnisnahme</span>
+                    <span>Achse maßstabsgetreu</span>
+                </p>
+
+                <ol class="frist-grid">
+                    <li class="frist-item">
+                        <p class="frist-when">24 Stunden</p>
+                        <h3>Frühwarnung</h3>
+                        <span class="frist-who">an ENISA und das nationale CSIRT</span>
+                        <p>
+                            Eine erste Meldung, dass etwas vorliegt. Sie müssen zu diesem Zeitpunkt weder
+                            die Ursache kennen noch eine Lösung haben – aber Sie müssen entschieden haben,
+                            dass gemeldet wird.
+                        </p>
+                    </li>
+                    <li class="frist-item">
+                        <p class="frist-when">72 Stunden</p>
+                        <h3>Vorfallsmeldung</h3>
+                        <span class="frist-who">Nachlieferung zur Frühwarnung</span>
+                        <p>
+                            Die inhaltliche Meldung: Was ist betroffen, wie wirkt es sich aus, welche
+                            Gegenmaßnahmen laufen. Hierfür brauchen Sie die Zuordnung von Schwachstelle
+                            zu Produkt und Versionsstand.
+                        </p>
+                    </li>
+                    <li class="frist-item">
+                        <p class="frist-when">14 Tage</p>
+                        <h3>Abschlussbericht</h3>
+                        <span class="frist-who">nach Behebung bzw. Abschluss</span>
+                        <p>
+                            Der dokumentierte Abschluss inklusive der ergriffenen Maßnahmen. Der einzige
+                            Punkt der Kette, an dem Sie tatsächlich Zeit zum Arbeiten haben.
+                        </p>
+                    </li>
+                </ol>
+
+                <div class="frist-note">
+                    <h3>Das gilt auch für Ihre Bestandsprodukte</h3>
+                    <p>
+                        Der CRA fragt nicht, wann ein Produkt entwickelt wurde, sondern ob es heute noch
+                        auf den Markt gebracht wird. Eine Anlage aus dem Jahr 2018, die Sie weiterhin
+                        verkaufen, fällt ab dem ersten Tag unter die Meldepflicht – mit einer
+                        Softwarestückliste, die es nie gab, und einer Buildumgebung, die es nicht mehr gibt.
+                    </p>
+                </div>
+
+                <div class="hang">
+                    <div>
+                        <span class="hang-label">Sanktionsrahmen</span>
+                        <p>
+                            Verstöße gegen die Meldepflichten können mit bis zu 15 Mio. € oder 2,5 % des
+                            weltweiten Jahresumsatzes geahndet werden – je nachdem, welcher Betrag höher ist.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="hang-label">Dezember 2027</span>
+                        <p>
+                            Dann gilt der CRA vollständig, einschließlich der CE-Kennzeichnung. Ab diesem
+                            Punkt geht es nicht mehr um Bußgelder, sondern um den Marktzugang.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="hang-label">Druck aus der Lieferkette</span>
+                        <p>
+                            Große Kunden verlangen schon heute eine SBOM (Software Bill of Materials – die
+                            Stückliste der Softwarekomponenten eines Produkts) und einen benannten
+                            PSIRT-Kontakt (Product Security Incident Response Team). Die neue
+                            EU-Produkthaftungsrichtlinie erhöht das Haftungsrisiko für vernetzte Maschinen
+                            zusätzlich.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Selbsttest ================= -->
+        <section class="sec sec-alt" aria-labelledby="selbsttest-h">
+            <div class="wrap-narrow">
+                <span class="eyebrow">Selbsttest</span>
+                <h2 id="selbsttest-h">Trifft das auf Ihr Unternehmen zu?</h2>
+                <p class="sec-lead">
+                    Sechs Aussagen. Setzen Sie den Haken nur dort, wo Sie das heute belegen könnten –
+                    nicht dort, wo es im Prinzip geregelt sein müsste.
+                </p>
+
+                <form id="selbsttest">
+                    <fieldset class="test-set">
+                        <legend>Was bei uns steht</legend>
+
+                        <div class="test-item">
+                            <input type="checkbox" id="t1">
+                            <label for="t1">
+                                Bei uns ist namentlich benannt, wer entscheidet, ob eine Schwachstelle in
+                                einem unserer Produkte meldepflichtig ist – inklusive Vertretung.
+                            </label>
+                        </div>
+                        <div class="test-item">
+                            <input type="checkbox" id="t2">
+                            <label for="t2">
+                                Wenn heute Abend ein Kunde meldet, dass eine unserer Maschinen angegriffen
+                                wurde, ist der Ablauf für die nächsten 24 Stunden schriftlich festgelegt.
+                            </label>
+                        </div>
+                        <div class="test-item">
+                            <input type="checkbox" id="t3">
+                            <label for="t3">
+                                Wir können innerhalb eines Arbeitstages sagen, welche unserer Produkte eine
+                                bestimmte Softwarekomponente enthalten – auch bei Geräten, die seit Jahren
+                                im Feld sind.
+                            </label>
+                        </div>
+                        <div class="test-item">
+                            <input type="checkbox" id="t4">
+                            <label for="t4">
+                                Wir haben einen öffentlich erreichbaren Meldekanal für Schwachstellen, etwa
+                                eine security@-Adresse oder eine security.txt auf unserer Website.
+                            </label>
+                        </div>
+                        <div class="test-item">
+                            <input type="checkbox" id="t5">
+                            <label for="t5">
+                                Für den CRA gibt es bei uns eine verantwortliche Person, einen Termin und
+                                ein Budget – nicht nur eine Zuständigkeit auf dem Papier.
+                            </label>
+                        </div>
+                        <div class="test-item">
+                            <input type="checkbox" id="t6">
+                            <label for="t6">
+                                Die Sicherheitsnachweise, die unsere größten Kunden gerade anfordern
+                                (SBOM, Ansprechpartner für Schwachstellen), können wir liefern.
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <div class="test-result" id="test-result" role="status" aria-live="polite">
+                    <strong>Noch nichts ausgewählt</strong>
+                    <p>Setzen Sie die Haken, die zutreffen. Das Ergebnis erscheint hier.</p>
+                </div>
+                <p class="test-privacy">
+                    Der Selbsttest läuft ausschließlich in Ihrem Browser. Es werden keine Angaben
+                    übertragen, gespeichert oder ausgewertet – und Sie müssen für das Ergebnis nichts
+                    eingeben.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= Warum das heute niemand im Griff hat ================= -->
+        <section class="sec" aria-labelledby="warum-h">
+            <div class="wrap">
+                <span class="eyebrow">Der Stand der Dinge</span>
+                <h2 id="warum-h">Warum das heute kaum jemand im Griff hat</h2>
+                <p class="sec-lead">
+                    Es liegt selten am Willen. Es liegt daran, dass die vorhandenen Angebote das Problem
+                    an einer anderen Stelle anfassen, als es im Ernstfall auftritt.
+                </p>
+
+                <div class="zahlen">
+                    <div>
+                        <p class="zahl-v">45 %</p>
+                        <p class="zahl-t">
+                            von 200 befragten deutschen Industrieunternehmen sind mit den
+                            CRA-Anforderungen „kaum oder gar nicht“ vertraut.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="zahl-v">60 %</p>
+                        <p class="zahl-t">
+                            kennen die Folgephasen und die Fristen des CRA nicht.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="zahl-v">ca. 18 %</p>
+                        <p class="zahl-t">
+                            der Zulieferer liefern die Informationen, die für CRA-Konformität
+                            nötig sind.
+                        </p>
+                    </div>
+                </div>
+                <p class="quelle">Quelle: ONEKEY IoT &amp; OT Cybersecurity Report 2026, veröffentlicht am 26. August 2026.</p>
+
+                <dl class="alt-list">
+                    <div class="alt-row">
+                        <dt>Erkennungsplattformen</dt>
+                        <dd>
+                            Lösen die Erkennung: Sie finden bekannte Schwachstellen in Ihren Komponenten.
+                            Sie beantworten nicht, wer entscheidet und was danach passiert – und sie setzen
+                            voraus, dass jemand im Haus SBOM und CSAF (Common Security Advisory Framework,
+                            das maschinenlesbare Format für Sicherheitshinweise) sicher liest. Dazu
+                            fünfstellige Jahreslizenzen.
+                        </dd>
+                    </div>
+                    <div class="alt-row">
+                        <dt>Rechtsgutachten</dt>
+                        <dd>
+                            Juristisch sauber und operativ trotzdem unbrauchbar. Ein Gutachten sagt Ihnen,
+                            welche Pflichten gelten. Es sagt nicht, wer am Samstagvormittag wen anruft.
+                        </dd>
+                    </div>
+                    <div class="alt-row">
+                        <dt>Große Beratungshäuser</dt>
+                        <dd>
+                            Für einen Maschinenbauer mit 150 Mitarbeitenden zu teuer und zu langsam. Bis
+                            Scoping, Angebot und Freigabe durch sind, ist das Quartal vorbei.
+                        </dd>
+                    </div>
+                    <div class="alt-row">
+                        <dt>Excel und manuelle Suche</dt>
+                        <dd>
+                            Die häufigste Lösung: eine Liste und die Suche nach CVE-Einträgen von Hand
+                            (Common Vulnerabilities and Exposures – die einheitliche Kennung einer bekannten
+                            Schwachstelle). Das funktioniert, solange niemand auf die Uhr sieht. Auf 24
+                            Stunden skaliert es nicht, und nachweisbar ist es auch nicht.
+                        </dd>
+                    </div>
+                </dl>
+
+                <p class="alt-close">
+                    Die Lücke liegt zwischen „gar nichts“ und einer Enterprise-Plattform. Wir schließen
+                    sie mit Arbeit statt mit Lizenzen: Der Prozess bleibt bei Ihnen im Haus, nicht in
+                    einem Werkzeug, das Sie jährlich verlängern müssen.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= Das Angebot: der Sprint ================= -->
+        <section class="sec sec-alt" aria-labelledby="sprint-h">
+            <div class="wrap">
+                <span class="eyebrow">Das Angebot</span>
+                <h2 id="sprint-h">Der CRA-Meldefähigkeits-Sprint</h2>
+                <p class="sec-lead">
+                    Nach zehn Arbeitstagen kann Ihr Unternehmen eine Meldung nach Artikel 14 binnen
+                    24 Stunden nachweisbar absetzen – dokumentiert und einmal unter Zeitdruck geprobt.
+                    Nicht „im Prinzip vorbereitet“, sondern mit einer Uhr, die gelaufen ist.
+                </p>
+
+                <div class="preis">
+                    <div class="preis-facts">
+                        <div>
+                            <p class="preis-v">12.500 €</p>
+                            <p class="preis-l">Festpreis netto zzgl. USt.</p>
+                        </div>
+                        <div>
+                            <p class="preis-v">10 Tage</p>
+                            <p class="preis-l">Arbeitstage, davon 2 vor Ort</p>
+                        </div>
+                        <div>
+                            <p class="preis-v">50–1.000</p>
+                            <p class="preis-l">Mitarbeitende, DE / AT / CH</p>
+                        </div>
+                    </div>
+                    <a href="https://cal.eu/marlonscheer/cra" class="btn btn-primary">20 Minuten sprechen</a>
+                </div>
+
+                <h3 style="font-size:1.2rem;margin-bottom:1.2rem;">Was Sie danach im Haus haben</h3>
+                <ul class="liefer-grid">
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Rollen- und Betroffenheitsbestimmung</h4>
+                            <p>Je Produktlinie geklärt: Hersteller, Importeur oder Händler – und was daraus folgt.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Produktinventar</h4>
+                            <p>Alle betroffenen Produkte mit Verantwortlichen und Versionsständen an einer Stelle.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Komponenten-Grunderfassung</h4>
+                            <p>Als SBOM, wo sie sich erzeugen lässt – als strukturierte Liste, wo nicht.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Meldekanal nach außen</h4>
+                            <p>security@-Adresse, security.txt und ein Text für Ihre Policy zur koordinierten Schwachstellenoffenlegung (CVD).</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Entscheidungsbaum</h4>
+                            <p>„Aktiv ausgenutzt? Schwerwiegend? Meldepflichtig?“ – so aufbereitet, dass die Antwort auch nachts trägt.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Ausgefüllte Melde-Vorlagen</h4>
+                            <p>Für alle drei Fristen: 24 Stunden, 72 Stunden, Abschlussbericht.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Eskalations- und Rufbereitschaftsplan</h4>
+                            <p>Inklusive Wochenende, Feiertag und Urlaubsvertretung – die Fristen kennen keine Betriebsferien.</p>
+                        </div>
+                    </li>
+                    <li class="liefer">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div>
+                            <h4>Managementbericht</h4>
+                            <p>Für die Geschäftsführung: Stand, verbleibende Risiken, nächste Schritte – auf wenigen Seiten.</p>
+                        </div>
+                    </li>
+                    <li class="liefer liefer--key">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg>
+                        <div>
+                            <span class="liefer-tag">Der Unterschied</span>
+                            <h4>Live-Übung: eine simulierte Meldung mit Stoppuhr</h4>
+                            <p>
+                                Am vorletzten Tag melden wir einen erfundenen Vorfall – mit Ihren Leuten,
+                                Ihren Vorlagen und laufender Uhr. Danach ist Meldefähigkeit für Sie keine
+                                Annahme mehr: Sie wissen, wie lange Sie gebraucht haben und woran es
+                                gehakt hat. Genau das ist der Unterschied zwischen einem Ordner und einer
+                                Fähigkeit.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= Ablauf ================= -->
+        <section class="sec" aria-labelledby="ablauf-h">
+            <div class="wrap-narrow">
+                <span class="eyebrow">Ablauf</span>
+                <h2 id="ablauf-h">Zehn Arbeitstage, zwei davon bei Ihnen</h2>
+                <p class="sec-lead">
+                    Die Tage liegen nicht am Stück – wir stimmen sie auf Ihre Entwicklungs- und
+                    Urlaubsplanung ab. Fest ist die Reihenfolge, nicht der Kalender.
+                </p>
+
+                <ol class="tl">
+                    <li class="tl-item tl-item--vorort">
+                        <span class="tl-day">Tag 1 · vor Ort</span>
+                        <h3>Auftakt und Rollenklärung</h3>
+                        <p>
+                            Gespräche mit Entwicklung, Qualitätsmanagement, Vertrieb und Service. Wir
+                            bestimmen je Produktlinie Ihre Rolle und Betroffenheit und beginnen das
+                            Produktinventar.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 2–3 · remote</span>
+                        <h3>Produktinventar</h3>
+                        <p>
+                            Alle betroffenen Produkte mit Verantwortlichen und Versionsständen. Offene
+                            Punkte klären wir kurz per Telefon, nicht per Fragebogenrunde.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 4–5 · remote</span>
+                        <h3>Komponenten-Grunderfassung</h3>
+                        <p>
+                            SBOM dort, wo Ihre Build- oder Beschaffungskette sie hergibt. Strukturierte
+                            Liste dort, wo das nicht mehr möglich ist – der Regelfall bei älteren Geräten.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 6 · remote</span>
+                        <h3>Meldekanal</h3>
+                        <p>
+                            security@-Adresse, security.txt und der Text Ihrer CVD-Policy. Damit sind Sie
+                            für Sicherheitsforscher und Kunden überhaupt erst erreichbar.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 7 · remote</span>
+                        <h3>Entscheidungsbaum und Melde-Vorlagen</h3>
+                        <p>
+                            Die Kriterien „aktiv ausgenutzt“ und „schwerwiegend“ auf Ihre Produkte
+                            heruntergebrochen, dazu die Vorlagen für 24 Stunden, 72 Stunden und Abschluss.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 8 · remote</span>
+                        <h3>Eskalation und Rufbereitschaft</h3>
+                        <p>
+                            Wer wird wann erreicht, wer entscheidet in Vertretung, was passiert am
+                            Wochenende und an Feiertagen.
+                        </p>
+                    </li>
+                    <li class="tl-item tl-item--vorort">
+                        <span class="tl-day">Tag 9 · vor Ort</span>
+                        <h3>Live-Übung mit Stoppuhr</h3>
+                        <p>
+                            Wir spielen einen Vorfall durch – mit Ihren Leuten und Ihren Unterlagen. Im
+                            Anschluss die Nachbesprechung: Wo stand die Kette, wo fehlte eine Information,
+                            wer war nicht erreichbar.
+                        </p>
+                    </li>
+                    <li class="tl-item">
+                        <span class="tl-day">Tag 10 · remote</span>
+                        <h3>Managementbericht und Übergabe</h3>
+                        <p>
+                            Der Bericht für die Geschäftsführung mit dem Ergebnis der Übung und den
+                            verbleibenden Punkten. Danach arbeiten Sie ohne uns weiter.
+                        </p>
+                    </li>
+                </ol>
+                <p class="tl-legend">Cyan markierte Tage finden bei Ihnen im Haus statt.</p>
+            </div>
+        </section>
+
+        <!-- ================= Einstieg: Betroffenheits-Check ================= -->
+        <section class="sec sec-alt" id="betroffenheit" aria-labelledby="check-h">
+            <div class="wrap">
+                <span class="eyebrow">Der Einstieg</span>
+                <h2 id="check-h">Erst die Rolle klären, dann den Rest</h2>
+                <p class="sec-lead">
+                    Bevor Sie über Prozesse und Vorlagen nachdenken, muss eine Frage beantwortet sein:
+                    In welcher Rolle bringen Sie welches Produkt auf den Markt? Davon hängt ab, welche
+                    Pflichten Sie überhaupt treffen – und ob der Sprint für Sie der richtige Schritt ist.
+                </p>
+
+                <div class="preis">
+                    <div class="preis-facts">
+                        <div>
+                            <p class="preis-v">3.900 €</p>
+                            <p class="preis-l">Festpreis netto zzgl. USt.</p>
+                        </div>
+                        <div>
+                            <p class="preis-v">3 Tage</p>
+                            <p class="preis-l">CRA-Betroffenheits-Check</p>
+                        </div>
+                        <div>
+                            <p class="preis-v">100 %</p>
+                            <p class="preis-l">anrechenbar auf den Sprint</p>
+                        </div>
+                    </div>
+                    <a href="https://cal.eu/marlonscheer/cra" class="btn btn-secondary">Check besprechen</a>
+                </div>
+
+                <p class="sec-lead" style="margin-bottom:0;">
+                    Ergebnis ist ein Dokument zu Rolle und Betroffenheit je Produktlinie, das Ihre
+                    Geschäftsführung unterschreiben kann – eine technisch-organisatorische Einordnung,
+                    keine rechtliche Bewertung. Entscheiden Sie sich danach für den Sprint, wird der
+                    volle Betrag angerechnet.
+                </p>
+
+                <h3 style="margin-top:3.5rem;font-size:1.3rem;">Vier Fälle, die regelmäßig überraschen</h3>
+                <div class="faelle">
+                    <div class="fall">
+                        <p class="fall-wenn">Sie vertreiben fremde Hardware unter Ihrer eigenen Marke.</p>
+                        <span class="fall-pfeil" aria-hidden="true">→</span>
+                        <p class="fall-dann">Dann sind Sie Hersteller.</p>
+                    </div>
+                    <div class="fall">
+                        <p class="fall-wenn">Sie verändern ein zugekauftes Produkt wesentlich.</p>
+                        <span class="fall-pfeil" aria-hidden="true">→</span>
+                        <p class="fall-dann">Dann werden Sie zum Hersteller.</p>
+                    </div>
+                    <div class="fall">
+                        <p class="fall-wenn">Sie importieren Maschinen aus Asien und geben sie an eine Schwestergesellschaft weiter.</p>
+                        <span class="fall-pfeil" aria-hidden="true">→</span>
+                        <p class="fall-dann">Dann können Sie Importeur sein.</p>
+                    </div>
+                    <div class="fall">
+                        <p class="fall-wenn">Sie liefern reines SaaS – oder On-Premise-Software und kommerziell verwertete Open Source.</p>
+                        <span class="fall-pfeil" aria-hidden="true">→</span>
+                        <p class="fall-dann">SaaS ist weitgehend ausgenommen. Das andere nicht.</p>
+                    </div>
+                </div>
+
+                <div class="dihk">
+                    <p>
+                        Auch die DIHK empfiehlt kleinen und mittleren Unternehmen ausdrücklich, zuerst
+                        Rolle und Betroffenheit zu klären, bevor sie in Maßnahmen investieren.
+                    </p>
+                    <cite>Fremdargument, nicht unsere Aussage: Deutscher Industrie- und Handelskammertag (DIHK)</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Danach: Monitoring ================= -->
+        <section class="sec" aria-labelledby="danach-h">
+            <div class="wrap">
+                <span class="eyebrow">Danach</span>
+                <h2 id="danach-h">Wenn Sie die Beobachtung abgeben wollen</h2>
+                <p class="sec-lead">
+                    Der Sprint macht Sie meldefähig. Was bleibt, ist die laufende Frage, ob in Ihren
+                    Komponenten neue Schwachstellen auftauchen. Das können Sie selbst übernehmen – oder
+                    an uns geben.
+                </p>
+                <div class="ausblick">
+                    <div>
+                        <h3>Komponenten-Monitoring</h3>
+                        <p>
+                            Wir beobachten die im Sprint erfassten Komponenten auf neue Schwachstellen und
+                            melden Ihnen, was Ihre Produkte betrifft. Ein Angebot, keine Voraussetzung –
+                            die Unterlagen aus dem Sprint gehören Ihnen so oder so.
+                        </p>
+                    </div>
+                    <p class="ausblick-preis">ab 890 € / Monat</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Wer das macht ================= -->
+        <section class="sec sec-alt wer" aria-labelledby="wer-h">
+            <div class="wrap-narrow">
+                <span class="eyebrow">Wer das macht</span>
+                <h2 id="wer-h">Marlon Scheer, M2 Cybersec UG</h2>
+                <p>
+                    Die M2 Cybersec UG wurde 2024 in Köln gegründet und arbeitet für kleine und
+                    mittelständische Unternehmen: Security-Checks, Angriffssimulationen und
+                    Sicherheitskonzepte. Ich selbst studiere Cyber Security and Privacy an der Hochschule
+                    Bonn-Rhein-Sieg und komme aus der Softwareentwicklung – was in diesem Projekt zählt,
+                    weil Komponentenlisten, Versionsstände und Buildketten die halbe Arbeit ausmachen.
+                </p>
+                <p>
+                    Beim CRA bin ich für die technisch-organisatorische Seite zuständig: Inventar,
+                    Prozess, Zuständigkeiten, Vorlagen und die Übung. Für die rechtliche Bewertung Ihres
+                    Einzelfalls sind Anwältinnen und Anwälte zuständig – wo diese Grenze verläuft, sage
+                    ich Ihnen im Projekt deutlich.
+                </p>
+                <p><a href="/das-team/" class="wer-link">Mehr über mich und die M2 Cybersec →</a></p>
+                <p class="wer-trust">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.8 12.9 7 22 12 19 17 22 15.2 12.9"/></svg>
+                    Mitglied der Allianz für Cyber-Sicherheit (BSI)
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="sec" aria-labelledby="faq-h">
+            <div class="wrap-narrow">
+                <span class="eyebrow">Häufige Fragen</span>
+                <h2 id="faq-h">Was Hersteller uns zuerst fragen</h2>
+                <p class="sec-lead">Kurz beantwortet – ausführlich gern im Gespräch.</p>
+
+                <div class="faq-entry">
+                    <h3>Sind wir wirklich betroffen?</h3>
+                    <p>
+                        Das hängt an zwei Dingen: ob Ihr Produkt digitale Elemente enthält und direkt oder
+                        indirekt mit einem Netz oder einem anderen Gerät verbunden ist – und in welcher
+                        Rolle Sie es auf den Markt bringen. Hersteller, Importeur und Händler haben
+                        unterschiedliche Pflichten, und die Zuordnung ist seltener eindeutig, als sie
+                        aussieht. Genau diese Klärung je Produktlinie ist der Inhalt des
+                        Betroffenheits-Checks.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Wir haben keine SBOM. Geht das trotzdem?</h3>
+                    <p>
+                        Ja. Der Sprint setzt keine vorhandene SBOM voraus – wenn Sie eine hätten, wären Sie
+                        nicht die Zielgruppe. Wir erfassen Komponenten als SBOM dort, wo sich das aus Ihrer
+                        Build- oder Beschaffungskette erzeugen lässt, und sonst als strukturierte Liste.
+                        Für die Meldefähigkeit zählt, dass Sie eine Komponente einem Produkt und einem
+                        Versionsstand zuordnen können. Nicht das Dateiformat.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Was ist mit Produkten von 2015, deren Buildumgebung es nicht mehr gibt?</h3>
+                    <p>
+                        Das ist der Normalfall, nicht die Ausnahme. Wo sich keine SBOM mehr erzeugen lässt,
+                        arbeiten wir mit dem, was dokumentiert ist: Stücklisten, Beschaffungsunterlagen,
+                        Firmware-Stände und Angaben Ihrer Lieferanten. Das Ergebnis ist gröber als bei
+                        einem aktuellen Produkt. Es beantwortet aber die Frage, die im Ernstfall gestellt
+                        wird: Ist dieses Produkt betroffen, ja oder nein?
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Läuft das remote oder bei uns im Haus?</h3>
+                    <p>
+                        Beides. Von den zehn Arbeitstagen sind zwei vor Ort: der Auftakt mit der
+                        Rollenklärung und der Tag der Live-Übung. Beide funktionieren aus unserer Sicht
+                        nicht per Videokonferenz – im ersten Fall, weil die entscheidenden Informationen im
+                        Flurgespräch fallen, im zweiten, weil eine Übung nur zählt, wenn sie unter echten
+                        Bedingungen läuft. Die übrigen acht Tage sind remote.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Wer trägt am Ende die Verantwortung für die Meldeentscheidung?</h3>
+                    <p>
+                        Sie. Die Pflichten aus dem CRA treffen den Hersteller, und daran ändert kein
+                        Dienstleister etwas. Wir liefern die Grundlage, damit diese Entscheidung schnell,
+                        nachvollziehbar und von einer benannten Person getroffen werden kann – die
+                        Entscheidung selbst bleibt bei Ihnen.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Ist das eine Rechtsberatung?</h3>
+                    <p>
+                        Nein. Wir erbringen technische und organisatorische Unterstützung: Inventar,
+                        Prozesse, Zuständigkeiten, Vorlagen und die Übung. Eine rechtliche Bewertung Ihres
+                        Einzelfalls und verbindliche Auskünfte zur Auslegung des CRA gehören nicht dazu;
+                        dafür sind Rechtsanwältinnen und Rechtsanwälte zuständig. Wo diese Grenze im
+                        Projekt erreicht wird, sagen wir es Ihnen.
+                    </p>
+                    <p>
+                        Wir geben außerdem keine Zusagen zu Bußgeldfreiheit oder zum Verhalten von
+                        Behörden ab. Was wir zusagen, ist ein geprobter Ablauf und die Unterlagen dazu.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Was passiert nach den zehn Tagen?</h3>
+                    <p>
+                        Sie haben die Unterlagen und den geprobten Ablauf im Haus und arbeiten damit ohne
+                        uns weiter. Dauerhaft anfallen wird die Beobachtung neuer Schwachstellen in Ihren
+                        Komponenten – dafür gibt es das Komponenten-Monitoring ab 890 € netto im Monat.
+                        Ein Angebot, keine Voraussetzung.
+                    </p>
+                </div>
+
+                <div class="faq-entry">
+                    <h3>Wie läuft das mit NDA und Vertraulichkeit?</h3>
+                    <p>
+                        Über ein eigenes Dokument, nicht über eine Klausel im Angebot. Die
+                        Vertraulichkeitsvereinbarung füllen wir vor Auftragsbeginn aus – bevor wir die
+                        ersten Produktunterlagen zu sehen bekommen. Sie ist auf eine hohe
+                        Geheimhaltungsstufe ausgelegt. Wenn Ihr Haus ein eigenes NDA verwendet,
+                        unterschreiben wir ebenso Ihres.
+                    </p>
+                    <p>
+                        Das hat einen konkreten Grund: In diesem Projekt laufen genau die Informationen
+                        zusammen, die ein Angreifer bräuchte – welches Produkt welche Komponente in
+                        welchem Versionsstand enthält und wo Sie noch nicht nachziehen konnten. Diese
+                        Unterlagen sind so lange schützenswert, wie die Geräte im Feld stehen.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Abschluss-CTA ================= -->
+        <section class="sec" aria-labelledby="abschluss-h">
+            <div class="wrap">
+                <div class="cta-section">
+                    <h2 id="abschluss-h">Können Sie innerhalb von 24 Stunden melden?</h2>
+                    <p>
+                        Zwanzig Minuten reichen, um das zu klären. Wenn die Antwort „ja“ ist, sagen wir
+                        Ihnen das – und Sie haben zwanzig Minuten investiert statt 12.500 €.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://cal.eu/marlonscheer/cra" class="btn btn-primary">20 Minuten sprechen</a>
+                        <a href="mailto:info@m2cybersec.de?subject=CRA-Meldef%C3%A4higkeit" class="btn btn-secondary">Per E-Mail anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+        <p class="footer-legal">
+            <a href="/rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="/rechtliches/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+
+    <script>
+        // Selbsttest: rein clientseitig, keine Datenerhebung, keine Übertragung.
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('selbsttest');
+            var out = document.getElementById('test-result');
+            if (!form || !out) return;
+
+            var boxes = form.querySelectorAll('input[type="checkbox"]');
+            var total = boxes.length;
+
+            var stufen = [
+                {
+                    max: 0,
+                    titel: 'Sechs von sechs',
+                    text: 'Dann sind Sie weiter als die meisten Hersteller, und der Sprint bringt Ihnen wenig. Die lohnende Frage ist eine andere: Halten Ihre Nachweise einer Übung mit Stoppuhr stand?'
+                },
+                {
+                    max: 2,
+                    titel: 'Die Grundlagen stehen',
+                    text: 'Ihre Lücken sind benennbar, und das ist der angenehme Fall. Oft reicht hier der Betroffenheits-Check als Standortbestimmung, bevor Sie über den Sprint entscheiden.'
+                },
+                {
+                    max: 4,
+                    titel: 'Der Normalfall',
+                    text: 'So sieht es in den meisten Häusern aus: Einzelnes ist geregelt, die Kette von der Meldung bis zur Entscheidung nicht. Genau dort setzt der Sprint an.'
+                },
+                {
+                    max: 6,
+                    titel: 'Meldefähigkeit ist heute nicht gegeben',
+                    text: 'Das ist kein Vorwurf – bis vor Kurzem gab es dafür keinen Anlass. Der erste Schritt ist die Klärung von Rolle und Betroffenheit, nicht die Anschaffung eines Werkzeugs.'
+                }
+            ];
+
+            function aktualisieren() {
+                var gesetzt = 0;
+                boxes.forEach(function (b) { if (b.checked) gesetzt++; });
+                var offen = total - gesetzt;
+
+                var stufe = stufen[stufen.length - 1];
+                for (var i = 0; i < stufen.length; i++) {
+                    if (offen <= stufen[i].max) { stufe = stufen[i]; break; }
+                }
+
+                out.innerHTML = '';
+                var t = document.createElement('strong');
+                t.textContent = gesetzt + ' von ' + total + ' · ' + stufe.titel;
+                var p = document.createElement('p');
+                p.textContent = stufe.text;
+                out.appendChild(t);
+                out.appendChild(p);
+            }
+
+            boxes.forEach(function (b) { b.addEventListener('change', aktualisieren); });
+        });
+    </script>
+</body>
+
+</html>
