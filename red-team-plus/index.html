@@ -79,6 +79,31 @@
         }
         .hero-svg { width: 100%; max-width: 420px; height: auto; }
 
+        /* Als CSS-Animation statt SMIL – nur so greift prefers-reduced-motion. */
+        .scan-sweep {
+            transform-origin: 200px 200px;
+            animation: scan-rotate 4s linear infinite;
+        }
+
+        .scan-blip { animation: scan-pulse 2.1s ease-in-out infinite; }
+        .scan-blip-ring { animation-name: scan-pulse-ring; }
+        .scan-blip-slow { animation-duration: 3.3s; }
+        .scan-blip-far { animation-duration: 1.8s; }
+
+        @keyframes scan-rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes scan-pulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.2; }
+        }
+
+        @keyframes scan-pulse-ring {
+            0%, 100% { opacity: 0.35; }
+            50%      { opacity: 0; }
+        }
+
         /* Stats bar */
         .stats-bar {
             background: rgba(0, 252, 246, 0.03);
@@ -132,7 +157,7 @@
         .nrw-banner {
             background: rgba(0, 192, 96, 0.07);
             border: 1px solid rgba(0, 192, 96, 0.3);
-            border-radius: 14px;
+            border-radius: var(--radius-md);
             padding: 1.2rem 1.6rem;
             margin-bottom: 3rem;
             display: flex;
@@ -149,7 +174,7 @@
             background: rgba(0, 192, 96, 0.1);
             color: #00c060;
             border: 1px solid #00c060;
-            border-radius: 50px;
+            border-radius: var(--radius-pill);
             text-decoration: none;
             font-weight: 700;
             font-size: 0.82rem;
@@ -220,7 +245,6 @@
             font-size: 1.4rem;
             margin-bottom: 1.5rem;
         }
-        .comparison-col.featured h3 { color: var(--primary-cyan); }
         .comparison-list { list-style: none; }
         .comparison-list li {
             padding: 0.7rem 0;
@@ -245,13 +269,13 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.6rem; font-weight: 700; flex-shrink: 0;
         }
-        .process-body h4 { font-family: var(--font-display); font-weight: 600; color: var(--primary-white); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .process-body h3 { font-family: var(--font-display); font-weight: 600; color: var(--primary-white); font-size: 1.2rem; margin-bottom: 0.5rem; }
         .process-body p { color: var(--secondary-light-gray); line-height: 1.7; }
         .duration {
             display: inline-block; margin-top: 0.6rem;
             font-size: 0.78rem; color: var(--primary-cyan);
             background: rgba(0, 252, 246, 0.1);
-            padding: 0.2rem 0.8rem; border-radius: 50px;
+            padding: 0.2rem 0.8rem; border-radius: var(--radius-pill);
         }
 
         /* Deliverables */
@@ -270,7 +294,7 @@
             background: rgba(0, 252, 246, 0.04);
         }
         .deliverable-icon { font-size: 2.2rem; color: var(--primary-cyan); line-height: 1; margin-bottom: 1rem; display: block; }
-        .deliverable h4 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.5rem; }
+        .deliverable h3 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.5rem; }
         .deliverable p { color: var(--secondary-light-gray); font-size: 0.88rem; line-height: 1.6; }
 
         /* Target audience */
@@ -288,7 +312,7 @@
         }
         .target-item:hover { border-color: rgba(0, 252, 246, 0.3); }
         .target-icon { font-size: 1.8rem; color: var(--primary-cyan); line-height: 1; flex-shrink: 0; }
-        .target-item h4 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.3rem; }
+        .target-item h3 { color: var(--primary-white); font-size: 1rem; margin-bottom: 0.3rem; }
         .target-item p { color: var(--secondary-light-gray); font-size: 0.88rem; line-height: 1.5; }
 
         /* Trust bar */
@@ -339,6 +363,7 @@
 
         .cmp-scroll {
             overflow-x: auto;
+            overscroll-behavior-x: contain;
             border: 1px solid rgba(255, 255, 255, 0.09);
             border-radius: var(--radius-md);
             background: rgba(255, 255, 255, 0.02);
@@ -403,7 +428,6 @@
         @media (max-width: 1024px) {
             .pillars-grid { grid-template-columns: 1fr; }
             .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
-        
         }
 
         @media (max-width: 768px) {
@@ -426,24 +450,23 @@
             .trust-inner { gap: 1.5rem; }
             .final-cta { padding: 4rem 5%; }
             .final-cta h2 { font-size: 1.9rem; }
-        
-        
         }
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.9rem; }
             .stats-inner { grid-template-columns: 1fr 1fr; gap: 1rem; }
             .stat-number { font-size: 1.8rem; }
-        
-        
         }
     </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+
 <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
     <a href="/" class="logo">
-        <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+        <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
         <span>M2 Cybersec</span>
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -459,7 +482,7 @@
     </ul>
 </nav>
 
-<main>
+<main id="main-content">
 
     <!-- Hero -->
     <section class="hero">
@@ -493,28 +516,14 @@
                 <line x1="70"  y1="70"  x2="330" y2="330" stroke="#00fcf6" stroke-width="0.5" opacity="0.1"/>
                 <line x1="330" y1="70"  x2="70"  y2="330" stroke="#00fcf6" stroke-width="0.5" opacity="0.1"/>
                 <g mask="url(#heroMask)">
-                    <path d="M200,200 L200,15 A185,185 0 0,1 370,268 Z" fill="rgba(0,252,246,0.07)">
-                        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="4s" repeatCount="indefinite"/>
-                    </path>
-                    <line x1="200" y1="200" x2="200" y2="15" stroke="#00fcf6" stroke-width="2" opacity="0.9">
-                        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="4s" repeatCount="indefinite"/>
-                    </line>
+                    <path class="scan-sweep" d="M200,200 L200,15 A185,185 0 0,1 370,268 Z" fill="rgba(0,252,246,0.07)"/>
+                    <line class="scan-sweep" x1="200" y1="200" x2="200" y2="15" stroke="#00fcf6" stroke-width="2" opacity="0.9"/>
                 </g>
-                <circle cx="290" cy="118" r="5" fill="#00fcf6">
-                    <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="290" cy="118" r="12" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.35">
-                    <animate attributeName="opacity" values="0.35;0;0.35" dur="2.1s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="128" cy="282" r="4" fill="#00fcf6">
-                    <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3.3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="128" cy="282" r="10" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.3">
-                    <animate attributeName="opacity" values="0.3;0;0.3" dur="3.3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="312" cy="265" r="3" fill="#00fcf6">
-                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
-                </circle>
+                <circle class="scan-blip" cx="290" cy="118" r="5" fill="#00fcf6"/>
+                <circle class="scan-blip scan-blip-ring" cx="290" cy="118" r="12" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.35"/>
+                <circle class="scan-blip scan-blip-slow" cx="128" cy="282" r="4" fill="#00fcf6"/>
+                <circle class="scan-blip scan-blip-ring scan-blip-slow" cx="128" cy="282" r="10" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.3"/>
+                <circle class="scan-blip scan-blip-ring scan-blip-far" cx="312" cy="265" r="3" fill="#00fcf6"/>
                 <circle cx="200" cy="200" r="6" fill="#00fcf6"/>
                 <circle cx="200" cy="200" r="13" fill="none" stroke="#00fcf6" stroke-width="1.5" opacity="0.5"/>
             </svg>
@@ -607,38 +616,38 @@
         <p class="section-subtitle">Zwei Leistungen, die oft verwechselt werden – dabei beantworten sie völlig verschiedene Fragen. Ein Pentest fragt: <em>Hält dieses System?</em> Red Teaming fragt: <em>Kommt jemand an mein Kronjuwel – egal wie?</em> Der Pentest ist bei uns kein eigenes Produkt, sondern die Vertiefung nach einem <a href="/#services">Security-Check</a>. Red Teaming buchen Sie eigenständig.</p>
         <div class="cmp-wrap">
             <p class="cmp-intro">Die Kurzfassung ohne Fachsprache:</p>
-            <div class="cmp-scroll">
+            <div class="cmp-scroll" role="region" aria-label="Pentest und Red Teaming im Vergleich" tabindex="0">
                 <table class="cmp-table">
                     <thead>
                         <tr>
-                            <th>&nbsp;</th>
-                            <th>Pentest<br><span>Zusatz nach einem Security-Check</span></th>
-                            <th>Red Teaming<br><span>Lite / Plus / Pro</span></th>
+                            <td></td>
+                            <th scope="col">Pentest<br><span>Zusatz nach einem Security-Check</span></th>
+                            <th scope="col">Red Teaming<br><span>Lite / Plus / Pro</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>Die Frage dahinter</th>
+                            <th scope="row">Die Frage dahinter</th>
                             <td>Hält dieses System?</td>
                             <td>Kommt jemand an mein Kronjuwel – egal wie?</td>
                         </tr>
                         <tr>
-                            <th>Scope</th>
+                            <th scope="row">Scope</th>
                             <td>Ein definiertes Ziel: diese Web-App, diese API, dieses Netz. Die Testtiefe wird vorher festgelegt und zugesichert.</td>
                             <td>Der Scope ist das Ziel, nicht die Zahl der Systeme. Wir vereinbaren, was geschützt sein soll – der Weg dorthin bleibt offen.</td>
                         </tr>
                         <tr>
-                            <th>Vorgehen</th>
+                            <th scope="row">Vorgehen</th>
                             <td>Manuell getrieben und systematisch: authentifizierte Tests, Business-Logik, Rechteeskalation, Verkettung von Findings. Wir gehen ein System durch, nicht daran vorbei.</td>
                             <td><em>Path of least resistance.</em> Wir nehmen den Weg, den ein echter Angreifer nehmen würde – Technik, Mensch oder Prozess, je nachdem, wo am wenigsten im Weg steht. Ein sauber gehärtetes System umgehen wir, statt es zu knacken.</td>
                         </tr>
                         <tr>
-                            <th>Ergebnis</th>
+                            <th scope="row">Ergebnis</th>
                             <td>Ein Tiefenbefund zu diesem System: eine belastbare Liste dessen, was drin steckt – auch die Fehler, die kein Scanner findet.</td>
                             <td>Der Angriffspfad: wie weit jemand gekommen ist, worüber, und an welcher Stelle es hätte auffallen müssen. Keine vollständige Schwachstellenliste – der erreichte oder verfehlte Zielzustand.</td>
                         </tr>
                         <tr>
-                            <th>Wann sinnvoll</th>
+                            <th scope="row">Wann sinnvoll</th>
                             <td>Ein Security-Check hat gezeigt, dass sich ein bestimmtes System genauer lohnt – oder ein Kunde verlangt ausdrücklich einen Pentest-Nachweis für genau dieses System.</td>
                             <td>Ihre Sicherheitsmaßnahmen stehen bereits, und Sie wollen wissen, ob sie in ihrer Gesamtheit tragen – inklusive der Frage, ob Ihr Team einen laufenden Angriff überhaupt bemerkt.</td>
                         </tr>
@@ -699,7 +708,7 @@
             <div class="process-item">
                 <div class="process-num">1</div>
                 <div class="process-body">
-                    <h4>Kick-off &amp; Scope-Definition</h4>
+                    <h3>Kick-off &amp; Scope-Definition</h3>
                     <p>In einem gemeinsamen Gespräch definieren wir Ziele, Testbereiche und Ausschlüsse. Wir klären rechtliche Rahmenbedingungen und unterzeichnen den NDA. Der Scope wird schriftlich festgehalten – kein Test ohne klare Autorisierung.</p>
                     <span class="duration">ca. 1–2 Tage</span>
                 </div>
@@ -707,7 +716,7 @@
             <div class="process-item">
                 <div class="process-num">2</div>
                 <div class="process-body">
-                    <h4>Reconnaissance &amp; Open-Source Intelligence</h4>
+                    <h3>Reconnaissance &amp; Open-Source Intelligence</h3>
                     <p>Wir sammeln alle öffentlich verfügbaren Informationen über Ihr Unternehmen – genau wie ein echter Angreifer. DNS-Einträge, Subdomains, Mitarbeiterdaten, Technologie-Stack, mögliche Einstiegspunkte über Social Media und Jobbörsen.</p>
                     <span class="duration">ca. 2–3 Tage</span>
                 </div>
@@ -715,7 +724,7 @@
             <div class="process-item">
                 <div class="process-num">3</div>
                 <div class="process-body">
-                    <h4>Aktive Angriffsphase</h4>
+                    <h3>Aktive Angriffsphase</h3>
                     <p>Technische Angriffe, Social-Engineering-Versuche und physische Tests laufen koordiniert. Wir dokumentieren jeden Schritt, jede Schwachstelle, jeden erfolgreichen Angriffspfad mit Beweisen – Screenshots, Logs und Videos.</p>
                     <span class="duration">ca. 5–15 Tage (je nach Scope)</span>
                 </div>
@@ -723,7 +732,7 @@
             <div class="process-item">
                 <div class="process-num">4</div>
                 <div class="process-body">
-                    <h4>Analyse &amp; Report-Erstellung</h4>
+                    <h3>Analyse &amp; Report-Erstellung</h3>
                     <p>Alle Findings werden nach CVSS 3.1 bewertet und priorisiert. Der Report enthält einen Executive Summary für die Geschäftsleitung und einen technischen Deep-Dive mit konkreten Remediation-Schritten für Ihr IT-Team.</p>
                     <span class="duration">ca. 3–5 Tage</span>
                 </div>
@@ -731,7 +740,7 @@
             <div class="process-item">
                 <div class="process-num">5</div>
                 <div class="process-body">
-                    <h4>Präsentation &amp; Maßnahmenplanung</h4>
+                    <h3>Präsentation &amp; Maßnahmenplanung</h3>
                     <p>Wir präsentieren die Ergebnisse persönlich – auf Wunsch getrennt für IT-Team und Geschäftsleitung. Gemeinsam priorisieren wir Maßnahmen. Optional: Re-Test nach Umsetzung der kritischen Findings.</p>
                     <span class="duration">ca. 1 Tag</span>
                 </div>
@@ -749,32 +758,32 @@
         <div class="deliverables-grid">
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
-                <h4>Executive Summary</h4>
+                <h3>Executive Summary</h3>
                 <p>Management-taugliche Zusammenfassung der Sicherheitslage ohne technisches Kauderwelsch – für fundierte Entscheidungen auf Geschäftsleitungsebene.</p>
             </div>
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
-                <h4>Technischer Detailreport</h4>
+                <h3>Technischer Detailreport</h3>
                 <p>Vollständige Dokumentation aller Findings mit CVSS-Bewertung, Proof-of-Concept und Remediation-Leitfaden für Ihr IT-Team.</p>
             </div>
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="15" height="14" rx="2"/><polygon points="23 7 16 12 23 17 23 7"/></svg></span>
-                <h4>Beweissicherung</h4>
+                <h3>Beweissicherung</h3>
                 <p>Screenshots, Logs und Videos aller kritischen Angriffspfade – transparent nachvollziehbar und revisionssicher dokumentiert.</p>
             </div>
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
-                <h4>Attack Path Mapping</h4>
+                <h3>Attack Path Mapping</h3>
                 <p>Visuelle Darstellung der gefundenen Angriffsketten – von der ersten Schwachstelle bis zum möglichen Ziel, für technische und nicht-technische Leser.</p>
             </div>
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
-                <h4>Priorisierter Maßnahmenplan</h4>
+                <h3>Priorisierter Maßnahmenplan</h3>
                 <p>Klare Handlungsempfehlungen mit Prioritäten und Aufwandsschätzungen – damit Sie wissen, was sofort zu tun ist und was warten kann.</p>
             </div>
             <div class="deliverable">
                 <span class="deliverable-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></span>
-                <h4>Re-Test (optional)</h4>
+                <h3>Re-Test (optional)</h3>
                 <p>Nach Umsetzung der Maßnahmen prüfen wir auf Wunsch erneut, ob die kritischen Schwachstellen erfolgreich geschlossen wurden.</p>
             </div>
         </div>
@@ -790,42 +799,42 @@
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
                 <div>
-                    <h4>Sie einen externen IT-Dienstleister haben</h4>
+                    <h3>Sie einen externen IT-Dienstleister haben</h3>
                     <p>…und wissen wollen, ob er wirklich gute Arbeit leistet – unabhängig und objektiv bewertet von außen.</p>
                 </div>
             </div>
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/></svg></div>
                 <div>
-                    <h4>Compliance-Anforderungen bestehen</h4>
+                    <h3>Compliance-Anforderungen bestehen</h3>
                     <p>ISO 27001, NIS2, KRITIS oder branchenspezifische Vorschriften verlangen regelmäßige, nachweisbare Sicherheitsprüfungen.</p>
                 </div>
             </div>
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
                 <div>
-                    <h4>Sie wissen wollen, wie ein echter Angriff aussieht</h4>
+                    <h3>Sie wissen wollen, wie ein echter Angriff aussieht</h3>
                     <p>Nicht in der Theorie – sondern mit realen Methoden, bevor ein echter Angreifer die Antwort für Sie findet.</p>
                 </div>
             </div>
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
                 <div>
-                    <h4>Ihre Sicherheitsmaßnahmen auf dem Prüfstand stehen sollen</h4>
+                    <h3>Ihre Sicherheitsmaßnahmen auf dem Prüfstand stehen sollen</h3>
                     <p>Sie haben bereits in Security investiert – jetzt wollen Sie wissen, ob sich dieser Aufwand tatsächlich gelohnt hat.</p>
                 </div>
             </div>
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                 <div>
-                    <h4>Kritische Daten oder Prozesse zu schützen sind</h4>
+                    <h3>Kritische Daten oder Prozesse zu schützen sind</h3>
                     <p>Kundendaten, Geschäftsgeheimnisse, Produktionssysteme – bei hohem Schadenspotenzial reicht es nicht zu wissen, ob ein einzelnes System hält.</p>
                 </div>
             </div>
             <div class="target-item">
                 <div class="target-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
                 <div>
-                    <h4>Sie Ihre Sicherheitsinvestition rechtfertigen müssen</h4>
+                    <h3>Sie Ihre Sicherheitsinvestition rechtfertigen müssen</h3>
                     <p>Geschäftsleitung oder Aufsichtsrat fordern Belege für den Status der IT-Sicherheit – unser Report liefert genau das.</p>
                 </div>
             </div>

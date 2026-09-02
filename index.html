@@ -7,19 +7,1220 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="M2 Cybersec - Professionelle Cybersecurity-Lösungen, Penetration Testing, Security Consulting und IT-Sicherheitsberatung für Unternehmen in Deutschland.">
+        content="Security-Checks im Abo ab 149 €/Monat, zielorientiertes Red Teaming und Awareness-Trainings – mit CVSS-bewertetem Report als Nachweis. Kostenloser Quick-Scan.">
     <meta name="keywords"
-        content="Cybersecurity, IT-Sicherheit, Penetration Testing, Security Consulting, Incident Response, DSGVO Compliance, ISO 27001">
+        content="Security-Check, Red Teaming, IT-Sicherheit KMU, Cybersecurity Abo, NIS2, Awareness Training, Quick-Scan, CVSS-Report, Köln">
     <meta name="author" content="M2 Cybersec">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="M2 Cybersec - Professionelle Cybersecurity-Lösungen">
+    <meta property="og:title" content="M2 Cybersec – IT-Sicherheit im Abo für KMU und Startups">
     <meta property="og:description"
-        content="Schützen Sie Ihr Unternehmen mit modernsten Cybersecurity-Lösungen. Penetration Testing, Security Consulting und mehr.">
+        content="Security-Checks im Abo ab 149 €/Monat, zielorientiertes Red Teaming und Awareness-Trainings – mit CVSS-bewertetem Report als Nachweis.">
     <meta property="og:url" content="https://m2cybersec.de/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+
+    <title>M2 Cybersec – IT-Sicherheit im Abo, Security-Checks &amp; Red Teaming für KMU</title>
+
+    <link rel="canonical" href="https://m2cybersec.de/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="/assets/js/nav.js" defer></script>
+    <style>
+
+        body {
+            background: linear-gradient(200deg, var(--primary-dark) 0%, #00181e 100%);
+
+            color: var(--primary-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10rem 5% 5rem;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.25) contrast(1.1) saturate(0.85);
+        }
+
+        /* Am dunkelsten dort, wo der Text steht – oben und unten bleibt
+           etwas Textur stehen. */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.55) 0%,
+                rgba(0, 0, 0, 0.72) 45%,
+                rgba(0, 0, 0, 0.58) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(0, 252, 246, 0.07) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(0, 252, 246, 0.08);
+            border: 1px solid rgba(0, 252, 246, 0.35);
+            color: var(--primary-cyan);
+            padding: 0.5rem 1.3rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 2.2rem;
+            text-decoration: none;
+            transition: background var(--transition-base), border-color var(--transition-base);
+            animation: fadeInUp 0.6s ease-out;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-badge:hover {
+            background: rgba(0, 252, 246, 0.15);
+            border-color: rgba(0, 252, 246, 0.6);
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            margin-bottom: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            line-height: 1.15;
+            animation: fadeInUp 0.8s ease-out 0.15s backwards;
+        }
+
+        .hero-word-container {
+            display: block;
+            position: relative;
+            height: 1.22em;
+            overflow: hidden;
+        }
+
+        .hero-word {
+            position: absolute;
+            left: 0;
+            right: 0;
+            color: var(--primary-cyan);
+            text-shadow: 0 0 30px rgba(0, 252, 246, 0.25);
+            opacity: 0;
+            transform: translateY(110%);
+            animation: heroWordCycle 9s ease-in-out infinite;
+        }
+
+        .hero-word:nth-child(1) { animation-delay: 0s; }
+        .hero-word:nth-child(2) { animation-delay: 3s; }
+        .hero-word:nth-child(3) { animation-delay: 6s; }
+
+        @keyframes heroWordCycle {
+            0%   { opacity: 0; transform: translateY(110%); }
+            7%   { opacity: 1; transform: translateY(0); }
+            28%  { opacity: 1; transform: translateY(0); }
+            35%  { opacity: 0; transform: translateY(-110%); }
+            100% { opacity: 0; transform: translateY(-110%); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ohne Animation muss das erste Wort sichtbar sein */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-word:first-child {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-light-gray);
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.75;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--primary-white);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        /* Vier Pakete, eine Reihe. Bei 320px Mindestbreite kippte die vierte
+           Kachel in eine zweite Zeile; darum feste Spalten mit Zwischenstufe. */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 1rem;
+        }
+
+        .services-individual {
+            max-width: 720px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--secondary-light-gray);
+        }
+
+        /* Vergleichstabelle */
+        .cmp-wrap {
+            max-width: 1000px;
+            margin: 5rem auto 0;
+        }
+
+        .cmp-title { text-align: center; margin-bottom: 0.6rem; }
+
+        .cmp-intro {
+            text-align: center;
+            color: var(--secondary-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cmp-scroll {
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cmp-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            font-size: 0.92rem;
+        }
+
+        .cmp-table th,
+        .cmp-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .cmp-table thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+        }
+
+        .cmp-table thead th span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--primary-cyan);
+        }
+
+        .cmp-table tbody th {
+            font-weight: 600;
+            color: var(--primary-white);
+            white-space: nowrap;
+        }
+
+        .cmp-table tbody td { color: var(--secondary-light-gray); }
+
+        .cmp-table tbody tr:last-child th,
+        .cmp-table tbody tr:last-child td { border-bottom: none; }
+
+        .cmp-sub {
+            display: block;
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            white-space: normal;
+        }
+
+        .pricing-more {
+            position: relative;
+            z-index: 2;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .cmp-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Red-Team-Sektion hat dekorative Layer im Hintergrund */
+        .pricing-section .cmp-wrap {
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 1.8rem 1.6rem;
+            transition: transform var(--transition-base), border-color var(--transition-base),
+                box-shadow var(--transition-base), background var(--transition-base);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .service-card-link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Der Link deckt die ganze Karte ab – sonst zeigt der Rahmen einen
+           Zeiger auf eine Fläche, die nicht klickt. */
+        .service-card-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 252, 246, 0.45);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .service-card.featured {
+            border-color: rgba(0, 252, 246, 0.5);
+            background: rgba(0, 252, 246, 0.03);
+            padding-top: 3.5rem;
+        }
+
+        .service-card.featured:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Quick-Scan Section */
+        .quick-scan {
+            background: rgba(0, 252, 246, 0.03);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 252, 246, 0.18);
+        }
+
+        .quick-scan-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .quick-scan-features {
+            list-style: none;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .quick-scan-features li {
+            color: var(--secondary-light-gray);
+            padding: 0.6rem 0;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quick-scan-features li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .quick-scan-next {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .quick-scan-visual {
+            background: rgba(0, 252, 246, 0.04);
+            border: 1px solid rgba(0, 252, 246, 0.2);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .scan-radar {
+            width: 160px;
+            height: 160px;
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Als CSS-Animation statt SMIL – nur so greift prefers-reduced-motion. */
+        .scan-sweep {
+            transform-origin: 100px 100px;
+            animation: scan-rotate 3s linear infinite;
+        }
+
+        .scan-blip { animation: scan-pulse 2.1s ease-in-out infinite; }
+        .scan-blip-ring { animation-name: scan-pulse-ring; }
+        .scan-blip-slow { animation-duration: 3.4s; }
+        .scan-blip-far { animation-name: scan-pulse-ring; animation-duration: 1.9s; }
+
+        @keyframes scan-rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes scan-pulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.2; }
+        }
+
+        @keyframes scan-pulse-ring {
+            0%, 100% { opacity: 0.4; }
+            50%      { opacity: 0; }
+        }
+
+        .quick-scan-visual p {
+            color: var(--secondary-light-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .quick-scan-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .service-icon {
+            font-size: 2.4rem;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .service-card p {
+            color: var(--secondary-light-gray);
+            line-height: 1.65;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .service-mehr {
+            display: inline-block;
+            margin-top: 1.2rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.2px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-md);
+            transition: transform var(--transition-base), background var(--transition-base),
+                border-color var(--transition-base), box-shadow var(--transition-base);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(0, 252, 246, 0.45);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2.6rem;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: var(--primary-white);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: var(--secondary-light-gray);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process {
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--secondary-light-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-top: 2.5rem;
+            font-size: 1.15rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-light-cyan);
+            text-decoration: underline;
+        }
+
+        .contact-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Eine Zwischenstufe für alle Vierer-Raster: vier Kacheln tragen sich
+           bis ~1200px, darunter zwei – nie eine einzelne in zweiter Zeile. */
+        @media (max-width: 1200px) {
+            .services-grid,
+            .features-grid,
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .section {
+                padding: 4rem 5%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .services-grid,
+            .features-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section {
+                padding: 3rem 4%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+
+        .faq {
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color var(--transition-base);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 252, 246, 0.4);
+        }
+
+        .faq-heading {
+            margin: 0;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--primary-white);
+            text-align: left;
+            padding: 1.8rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            transition: background var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        .faq-question span:first-child {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-white);
+            line-height: 1.15;
+            flex: 1;
+            transition: color var(--transition-fast);
+        }
+
+        .faq-question:hover span:first-child {
+            color: var(--primary-cyan);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary-cyan);
+            transition: transform var(--transition-base);
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            visibility: hidden;
+            transition: grid-template-rows 0.3s ease, padding 0.3s ease, visibility 0s linear 0.3s;
+        }
+
+        .faq-answer > div {
+            overflow: hidden;
+        }
+
+        .faq-item.active .faq-answer {
+            grid-template-rows: 1fr;
+            padding: 0 2rem 2rem 2rem;
+            visibility: visible;
+            transition: grid-template-rows 0.3s ease, padding 0.3s ease, visibility 0s;
+        }
+
+        .faq-answer p {
+            color: var(--secondary-light-gray);
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .faq-question[aria-expanded="true"] {
+            background: rgba(0, 252, 246, 0.03);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1.3rem 1.3rem;
+            }
+
+            .faq-question span:first-child {
+                font-size: 1.05rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1.3rem 1.5rem 1.3rem;
+            }
+
+            .faq-answer p {
+                font-size: 0.98rem;
+            }
+        }
+
+        /* Accessibility */
+        .faq-question:focus {
+            outline: 2px solid var(--primary-cyan);
+            outline-offset: 2px;
+        }
+
+        .faq-question:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* References Strip */
+        .references-strip {
+            padding: 3rem 0 2.6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            overflow: hidden;
+        }
+
+        .references-label {
+            text-align: center;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
+        }
+
+        .references-track-wrapper {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+
+        .references-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: references-scroll 60s linear infinite;
+            will-change: transform;
+        }
+
+        .references-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ref-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3.5rem;
+            height: 90px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+            box-sizing: content-box;
+        }
+
+        .ref-logo img {
+            height: 54px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            display: block;
+            opacity: 0.75;
+            transition: opacity var(--transition-base);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .ref-logo:hover img {
+            opacity: 1;
+        }
+
+        /* Der eine amtliche Beleg steht still, während die Kundenlogos laufen.
+           Das Zeichen behält seine Originalfarben und sitzt deshalb auf einem
+           hellen Feld – alles andere wäre eine Veränderung der Wortbildmarke. */
+        .credential {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.1rem;
+            margin: 2.4rem auto 0;
+            padding: 0 5%;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .credential strong {
+            color: var(--secondary-light-gray);
+            font-weight: 600;
+        }
+
+        .credential-mark {
+            display: inline-block;
+            padding: 0.55rem 0.9rem;
+            background: var(--primary-white);
+            border-radius: var(--radius-sm);
+            line-height: 0;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .credential-mark img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+
+        .credential-mark:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        @keyframes references-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .references-track { animation: none; }
+        }
+
+        @media (max-width: 768px) {
+            .references-strip { padding: 2.2rem 0 1.8rem; }
+            .credential { margin-top: 1.8rem; font-size: 0.85rem; gap: 0.9rem; }
+            .credential-mark img { height: 32px; }
+            .ref-logo {
+                padding: 0 2.5rem;
+                height: 72px;
+            }
+            .ref-logo img {
+                height: 42px;
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .ref-logo {
+                padding: 0 2rem;
+                height: 60px;
+            }
+            .ref-logo img {
+                height: 34px;
+                max-width: 150px;
+            }
+        }
+
+        /* NRW-Förderung Banner */
+        .nrw-banner {
+            background: linear-gradient(135deg, rgba(0, 100, 60, 0.12) 0%, rgba(0, 252, 246, 0.04) 100%);
+            border-top: 2px solid rgba(0, 180, 100, 0.35);
+            border-bottom: 2px solid rgba(0, 180, 100, 0.35);
+            padding: 2.5rem 5%;
+            text-align: center;
+        }
+
+        .nrw-banner-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nrw-banner-text h2 {
+            color: var(--funding-green);
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .nrw-banner-text p {
+            color: var(--secondary-light-gray);
+            font-size: 1rem;
+            max-width: 600px;
+        }
+
+        /* Grüne NRW-Variante des .btn-Systems */
+        .btn-nrw {
+            padding: 0.85rem 2rem;
+            background: rgba(0, 192, 96, 0.12);
+            color: var(--funding-green);
+            border-color: var(--funding-green);
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .btn-nrw:hover {
+            background: var(--funding-green);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .service-nrw-tag {
+            display: inline-block;
+            background: rgba(0, 192, 96, 0.12);
+            border: 1px solid rgba(0, 192, 96, 0.45);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem 0.75rem;
+            color: var(--funding-green);
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .nrw-banner-inner { flex-direction: column; gap: 1.2rem; }
+            .nrw-banner-text p { font-size: 0.9rem; }
+        }
+
+        /* Pricing Section */
+        /* Eigene Kammer: tieferer Grund und je eine Haarlinie oben und unten –
+           dasselbe Fassungsmittel wie bei der Referenzleiste. Kein Dekor-Raster,
+           der Grund soll die Karten nach vorn lassen. */
+        .pricing-section {
+            padding: 7rem 5%;
+            position: relative;
+            overflow: hidden;
+            background: #080808;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            max-width: 100%;
+        }
+
+        .pricing-section .eyebrow,
+        .pricing-section .section-title,
+        .pricing-section .section-subtitle {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-glow-top {
+            position: absolute;
+            top: -180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 252, 246, 0.1) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: linear-gradient(160deg, #1c1c1c 0%, #111111 55%, #1c1c1c 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        /* Ohne JS bleibt die Sektion sichtbar – der Reveal ist Zugabe. */
+        html:not(.js) .pricing-card,
+        html:not(.js) .pricing-card.featured {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+        .pricing-card:nth-child(2) { transition-delay: 0.25s; }
+        .pricing-card:nth-child(3) { transition-delay: 0.4s; }
+
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(0, 252, 246, 0.5);
+            background: linear-gradient(160deg, #0f2222 0%, #091818 55%, #0f2222 100%);
+            transform: translateY(35px) scale(1.04);
+        }
+
+        .pricing-card.featured.visible {
+            transform: translateY(0) scale(1.04);
+        }
+
+        .pricing-card:not(.featured):hover {
+            border-color: rgba(0, 252, 246, 0.45);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .pricing-card.featured:hover {
+            border-color: rgba(0, 252, 246, 0.7);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px) scale(1.04);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-cyan);
+            color: var(--primary-dark);
+            padding: 0.3rem 1.4rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* Die Stufe ist der Unterschied, nicht die Marke: „Red Team" tritt
+           zurück, der Tier-Name trägt das Gewicht. Abstufung über Gewicht
+           statt über zusätzliche Palettenfarben. */
+        .pricing-name {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--secondary-light-gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-name span {
+            font-weight: 700;
+            color: var(--primary-white);
+        }
+
+        .pricing-price { margin: 1.4rem 0 1rem; }
+
+        .pricing-price-label {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--primary-white);
+        }
+
+        .pricing-price-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.93rem;
+            color: var(--secondary-light-gray);
+            line-height: 1.65;
+        }
+
+        /* Layout-Modifier für .btn in Pricing-Karten */
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 0.95rem;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+            margin: 0.5rem 0 1.2rem;
+        }
+
+        .pricing-features { list-style: none; }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            color: var(--secondary-light-gray);
+            padding: 0.35rem 0;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+            .pricing-card.featured,
+            .pricing-card.featured.visible,
+            .pricing-card.featured:hover {
+                transform: none;
+            }
+            .pricing-card.featured.visible { transform: translateY(0); }
+            .pricing-card.featured:hover   { transform: translateY(-3px); }
+        }
+
+        .service-price {
+            display: block;
+            color: var(--primary-white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            opacity: 0.7;
+        }
+
+    </style>
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -40,54 +1241,6 @@
         "addressCountry": "DE"
       }
     }
-    </script>
-
-    <title>M2 Cybersec - Cybersecurity-Lösungen & IT-Sicherheit | Penetration Testing</title>
-
-    <link rel="canonical" href="https://m2cybersec.de/">
-    <link rel="icon" type="image/x-icon" href="assets/logo.png">
-
-
-    <!-- JavaScript für FAQ Accordion Funktionalität -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', function () {
-                    // Toggle current item
-                    const isActive = item.classList.contains('active');
-
-                    // Optional: Close all other items (uncomment for accordion behavior)
-                    // faqItems.forEach(otherItem => {
-                    //     if (otherItem !== item) {
-                    //         otherItem.classList.remove('active');
-                    //         otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    //     }
-                    // });
-
-                    // Toggle current item
-                    if (isActive) {
-                        item.classList.remove('active');
-                        question.setAttribute('aria-expanded', 'false');
-                    } else {
-                        item.classList.add('active');
-                        question.setAttribute('aria-expanded', 'true');
-                    }
-                });
-
-                // Keyboard accessibility
-                question.addEventListener('keydown', function (e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        question.click();
-                    }
-                });
-            });
-        });
     </script>
 
     <!-- Schema.org FAQPage Markup für SEO -->
@@ -296,1110 +1449,6 @@
 }
 </script>
 
-    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <script src="/assets/js/nav.js" defer></script>
-    <style>
-
-        body {
-            background: linear-gradient(200deg, var(--primary-dark) 0%, #00181e 100%);
-
-            color: var(--primary-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10rem 5% 5rem;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .hero-video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            filter: brightness(0.32) contrast(1.15);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(0, 252, 246, 0.07) 0%, transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(0, 252, 246, 0.08);
-            border: 1px solid rgba(0, 252, 246, 0.35);
-            color: var(--primary-cyan);
-            padding: 0.5rem 1.3rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            margin-bottom: 2.2rem;
-            text-decoration: none;
-            transition: background var(--transition-base), border-color var(--transition-base);
-            animation: fadeInUp 0.6s ease-out;
-            backdrop-filter: blur(4px);
-        }
-
-        .hero-badge:hover {
-            background: rgba(0, 252, 246, 0.15);
-            border-color: rgba(0, 252, 246, 0.6);
-        }
-
-        .hero h1 {
-            font-size: 4.2rem;
-            margin-bottom: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-white);
-            line-height: 1.15;
-            animation: fadeInUp 0.8s ease-out 0.15s backwards;
-        }
-
-        .hero-word-container {
-            display: block;
-            position: relative;
-            height: 1.22em;
-            overflow: hidden;
-        }
-
-        .hero-word {
-            position: absolute;
-            left: 0;
-            right: 0;
-            color: var(--primary-cyan);
-            text-shadow: 0 0 30px rgba(0, 252, 246, 0.25);
-            opacity: 0;
-            transform: translateY(110%);
-            animation: heroWordCycle 9s ease-in-out infinite;
-        }
-
-        .hero-word:nth-child(1) { animation-delay: 0s; }
-        .hero-word:nth-child(2) { animation-delay: 3s; }
-        .hero-word:nth-child(3) { animation-delay: 6s; }
-
-        @keyframes heroWordCycle {
-            0%   { opacity: 0; transform: translateY(110%); }
-            7%   { opacity: 1; transform: translateY(0); }
-            28%  { opacity: 1; transform: translateY(0); }
-            35%  { opacity: 0; transform: translateY(-110%); }
-            100% { opacity: 0; transform: translateY(-110%); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Ohne Animation muss das erste Wort sichtbar sein */
-        @media (prefers-reduced-motion: reduce) {
-            .hero-word:first-child {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            color: var(--secondary-light-gray);
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.75;
-            animation: fadeInUp 0.8s ease-out 0.3s backwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.5s backwards;
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: var(--primary-white);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--secondary-light-gray);
-            font-size: 1.15rem;
-            margin-bottom: 4rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Services Section */
-        .services {
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            padding-top: 1rem;
-        }
-
-        .services-individual {
-            max-width: 720px;
-            margin: 2.5rem auto 0;
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--secondary-light-gray);
-        }
-
-        /* Vergleichstabelle */
-        .cmp-wrap {
-            max-width: 1000px;
-            margin: 5rem auto 0;
-        }
-
-        .cmp-title { text-align: center; margin-bottom: 0.6rem; }
-
-        .cmp-intro {
-            text-align: center;
-            color: var(--secondary-light-gray);
-            margin-bottom: 2rem;
-        }
-
-        .cmp-scroll {
-            overflow-x: auto;
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .cmp-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 720px;
-            font-size: 0.92rem;
-        }
-
-        .cmp-table th,
-        .cmp-table td {
-            padding: 1rem 1.2rem;
-            text-align: left;
-            vertical-align: top;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-        }
-
-        .cmp-table thead th {
-            font-family: var(--font-display);
-            font-weight: 600;
-            color: var(--primary-white);
-            background: rgba(255, 255, 255, 0.03);
-            white-space: nowrap;
-        }
-
-        .cmp-table thead th span {
-            display: block;
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: 0.82rem;
-            color: var(--primary-cyan);
-        }
-
-        .cmp-table tbody th {
-            font-weight: 600;
-            color: var(--primary-white);
-            white-space: nowrap;
-        }
-
-        .cmp-table tbody td { color: var(--secondary-light-gray); }
-
-        .cmp-table tbody tr:last-child th,
-        .cmp-table tbody tr:last-child td { border-bottom: none; }
-
-        .cmp-note {
-            text-align: center;
-            margin-top: 1.2rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Red-Team-Sektion hat dekorative Layer im Hintergrund */
-        .pricing-section .cmp-wrap {
-            position: relative;
-            z-index: 2;
-            padding: 0 5%;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: var(--radius-md);
-            padding: 1.8rem 2rem;
-            transition: transform var(--transition-base), border-color var(--transition-base),
-                box-shadow var(--transition-base), background var(--transition-base);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .service-card a {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0, 252, 246, 0.45);
-            box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .service-card.featured {
-            border-color: rgba(0, 252, 246, 0.5);
-            background: rgba(0, 252, 246, 0.03);
-            padding-top: 3.5rem;
-        }
-
-        .service-card.featured:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .service-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            padding: 0.3rem 1.4rem;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            z-index: 2;
-        }
-
-        /* Quick-Scan Section */
-        .quick-scan {
-            background: rgba(0, 252, 246, 0.03);
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(0, 252, 246, 0.18);
-        }
-
-        .quick-scan-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .quick-scan-features {
-            list-style: none;
-            margin: 1.5rem 0 2.5rem;
-        }
-
-        .quick-scan-features li {
-            color: var(--secondary-light-gray);
-            padding: 0.6rem 0;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .quick-scan-features li::before {
-            content: '✓';
-            color: var(--primary-cyan);
-            font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .quick-scan-next {
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .quick-scan-visual {
-            background: rgba(0, 252, 246, 0.04);
-            border: 1px solid rgba(0, 252, 246, 0.2);
-            border-radius: 15px;
-            padding: 2.5rem;
-            text-align: center;
-        }
-
-        .quick-scan-visual .scan-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .quick-scan-visual p {
-            color: var(--secondary-light-gray);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        @media (max-width: 768px) {
-            .quick-scan-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        
-        
-        }
-
-        .service-icon {
-            font-size: 2.4rem;
-            color: var(--primary-cyan);
-            line-height: 1;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .service-card p {
-            color: var(--secondary-light-gray);
-            line-height: 1.65;
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        .service-mehr {
-            display: inline-block;
-            margin-top: 1.2rem;
-            color: var(--primary-cyan);
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.2px;
-            transition: letter-spacing 0.2s ease;
-        }
-
-        .service-card:hover .service-mehr {
-            letter-spacing: 0.6px;
-        }
-
-        /* Features Section */
-        .features {
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--radius-md);
-            transition: background var(--transition-base), border-color var(--transition-base);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-        }
-
-        .feature-item:hover {
-            background: rgba(0, 252, 246, 0.04);
-            border-color: rgba(0, 252, 246, 0.35);
-        }
-
-        .feature-icon {
-            font-size: 2.6rem;
-            color: var(--primary-cyan);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h4 {
-            color: var(--primary-white);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .feature-item p {
-            color: var(--secondary-light-gray);
-            line-height: 1.6;
-        }
-
-        /* Process Section */
-        .process {
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            padding: 2rem;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .process-step h4 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            color: var(--primary-white);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .process-step p {
-            color: var(--secondary-light-gray);
-        }
-
-        /* Contact Section */
-        .contact {
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            margin-top: 2.5rem;
-            font-size: 1.15rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info a {
-            color: var(--primary-cyan);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            font-weight: 600;
-        }
-
-        .contact-info a:hover {
-            color: var(--secondary-light-cyan);
-            text-decoration: underline;
-        }
-
-        .contact-buttons {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-
-            .hero p {
-                font-size: 1.05rem;
-            }
-
-            .section {
-                padding: 4rem 5%;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .services-grid,
-            .features-grid,
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        
-        }
-
-        @media (max-width: 420px) {
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-
-            .section {
-                padding: 3rem 4%;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-        
-        
-        }
-
-
-        .faq {
-            border-top: 1px solid rgba(255, 255, 255, 0.09);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: var(--radius-md);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: border-color var(--transition-base);
-        }
-
-        .faq-item:hover {
-            border-color: rgba(0, 252, 246, 0.4);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: var(--primary-white);
-            text-align: left;
-            padding: 1.8rem 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            transition: background var(--transition-base);
-        }
-
-        .faq-question:hover {
-            background: rgba(0, 252, 246, 0.03);
-        }
-
-        .faq-question h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-white);
-            margin: 0;
-            flex: 1;
-            transition: color var(--transition-fast);
-        }
-
-        .faq-question:hover h3 {
-            color: var(--primary-cyan);
-        }
-
-        .faq-icon {
-            font-size: 1.8rem;
-            color: var(--primary-cyan);
-            font-weight: 300;
-            transition: transform var(--transition-base);
-            flex-shrink: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 1000px;
-            padding: 0 2rem 2rem 2rem;
-        }
-
-        .faq-answer p {
-            color: var(--secondary-light-gray);
-            line-height: 1.8;
-            margin: 0;
-            font-size: 1.05rem;
-        }
-
-        .faq-question[aria-expanded="true"] {
-            background: rgba(0, 252, 246, 0.03);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .faq-question {
-                padding: 1.3rem 1.3rem;
-            }
-
-            .faq-question h3 {
-                font-size: 1.05rem;
-            }
-
-            .faq-item.active .faq-answer {
-                padding: 0 1.3rem 1.5rem 1.3rem;
-            }
-
-            .faq-answer p {
-                font-size: 0.98rem;
-            }
-        
-        }
-
-        /* Accessibility */
-        .faq-question:focus {
-            outline: 2px solid var(--primary-cyan);
-            outline-offset: 2px;
-        }
-
-        .faq-question:focus:not(:focus-visible) {
-            outline: none;
-        }
-
-        /* References Strip */
-        .references-strip {
-            padding: 3rem 0 2.6rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            overflow: hidden;
-        }
-
-        .references-label {
-            text-align: center;
-            font-size: 0.72rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 1.8rem;
-        }
-
-        .references-track-wrapper {
-            overflow: hidden;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-        }
-
-        .references-track {
-            display: flex;
-            align-items: center;
-            width: max-content;
-            animation: references-scroll 60s linear infinite;
-            will-change: transform;
-        }
-
-        .references-track:hover {
-            animation-play-state: paused;
-        }
-
-        .ref-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 3.5rem;
-            height: 90px;
-            border-right: 1px solid rgba(255, 255, 255, 0.08);
-            flex-shrink: 0;
-            box-sizing: content-box;
-        }
-
-        .ref-logo img {
-            height: 54px;
-            width: auto;
-            max-width: 220px;
-            object-fit: contain;
-            display: block;
-            opacity: 0.75;
-            transition: opacity var(--transition-base);
-            user-select: none;
-            -webkit-user-drag: none;
-        }
-
-        .ref-logo:hover img {
-            opacity: 1;
-        }
-
-        @keyframes references-scroll {
-            from { transform: translateX(0); }
-            to   { transform: translateX(-50%); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .references-track { animation: none; }
-        
-        
-        }
-
-        @media (max-width: 768px) {
-            .references-strip { padding: 2.2rem 0 1.8rem; }
-            .ref-logo {
-                padding: 0 2.5rem;
-                height: 72px;
-            }
-            .ref-logo img {
-                height: 42px;
-                max-width: 180px;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .ref-logo {
-                padding: 0 2rem;
-                height: 60px;
-            }
-            .ref-logo img {
-                height: 34px;
-                max-width: 150px;
-            }
-        }
-
-        /* NRW-Förderung Banner */
-        .nrw-banner {
-            background: linear-gradient(135deg, rgba(0, 100, 60, 0.12) 0%, rgba(0, 252, 246, 0.04) 100%);
-            border-top: 2px solid rgba(0, 180, 100, 0.35);
-            border-bottom: 2px solid rgba(0, 180, 100, 0.35);
-            padding: 2.5rem 5%;
-            text-align: center;
-        }
-
-        .nrw-banner-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nrw-banner-text h3 {
-            color: #00c060;
-            font-size: 1.4rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .nrw-banner-text p {
-            color: var(--secondary-light-gray);
-            font-size: 1rem;
-            max-width: 600px;
-        }
-
-        /* Grüne NRW-Variante des .btn-Systems */
-        .btn-nrw {
-            padding: 0.85rem 2rem;
-            background: rgba(0, 192, 96, 0.12);
-            color: #00c060;
-            border-color: #00c060;
-            font-size: 0.95rem;
-            white-space: nowrap;
-        }
-
-        .btn-nrw:hover {
-            background: #00c060;
-            color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .service-nrw-tag {
-            display: inline-block;
-            background: rgba(0, 192, 96, 0.12);
-            border: 1px solid rgba(0, 192, 96, 0.45);
-            border-radius: 50px;
-            padding: 0.2rem 0.75rem;
-            color: #00c060;
-            font-size: 0.72rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            letter-spacing: 0.3px;
-        }
-
-        @media (max-width: 768px) {
-            .nrw-banner-inner { flex-direction: column; gap: 1.2rem; }
-            .nrw-banner-text p { font-size: 0.9rem; }
-        
-        
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 7rem 5%;
-            position: relative;
-            overflow: hidden;
-            background: #080808;
-            max-width: 100%;
-        }
-
-        .pricing-section .eyebrow,
-        .pricing-section .section-title,
-        .pricing-section .section-subtitle {
-            position: relative;
-            z-index: 2;
-        }
-
-        .pricing-grid-bg {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
-            background-size: 70px 80px;
-            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
-            mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
-            pointer-events: none;
-        }
-
-        .pricing-glow-top {
-            position: absolute;
-            top: -180px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(0, 252, 246, 0.1) 0%, transparent 65%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1080px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            align-items: center;
-        }
-
-        .pricing-card {
-            background: linear-gradient(160deg, #1c1c1c 0%, #111111 55%, #1c1c1c 100%);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 18px;
-            padding: 2.5rem;
-            position: relative;
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-        }
-
-        .pricing-card:nth-child(1) { transition-delay: 0.1s; }
-        .pricing-card:nth-child(2) { transition-delay: 0.25s; }
-        .pricing-card:nth-child(3) { transition-delay: 0.4s; }
-
-        .pricing-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pricing-card.featured {
-            border-color: rgba(0, 252, 246, 0.35);
-            background: linear-gradient(160deg, #0f2222 0%, #091818 55%, #0f2222 100%);
-            box-shadow: 0 0 40px rgba(0, 252, 246, 0.08);
-            transform: translateY(35px) scale(1.04);
-        }
-
-        .pricing-card.featured.visible {
-            transform: translateY(0) scale(1.04);
-        }
-
-        .pricing-card:not(.featured):hover {
-            border-color: rgba(0, 252, 246, 0.25);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-        }
-
-        .pricing-card.featured:hover {
-            box-shadow: 0 0 40px rgba(0, 252, 246, 0.14), 0 16px 44px rgba(0, 0, 0, 0.5);
-            transform: translateY(-4px) scale(1.04);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-cyan);
-            color: var(--primary-dark);
-            padding: 0.3rem 1.4rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .pricing-name {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--primary-white);
-            margin-bottom: 0.3rem;
-        }
-
-        .pricing-name span { color: var(--primary-cyan); }
-
-        .pricing-name span.tier-lite {
-            color: #b0b0b0;
-        }
-
-        .pricing-name span.tier-pro {
-            color: #dfc06a;
-        }
-
-        .pricing-price { margin: 1.4rem 0 1rem; }
-
-        .pricing-price-label {
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: var(--primary-white);
-        }
-
-        .pricing-price-sub {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .pricing-desc {
-            font-size: 0.93rem;
-            color: var(--secondary-light-gray);
-            line-height: 1.65;
-        }
-
-        /* Layout-Modifier für .btn in Pricing-Karten */
-        .pricing-cta {
-            display: block;
-            width: 100%;
-            padding: 0.95rem;
-            margin: 1.5rem 0;
-        }
-
-        .pricing-divider {
-            height: 1px;
-            background: rgba(255,255,255,0.07);
-            margin: 0.5rem 0 1.2rem;
-        }
-
-        .pricing-features { list-style: none; }
-
-        .pricing-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.65rem;
-            font-size: 0.9rem;
-            color: var(--secondary-light-gray);
-            padding: 0.35rem 0;
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--primary-cyan);
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 0.05em;
-        }
-
-        @media (max-width: 900px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 480px;
-            }
-            .pricing-card.featured,
-            .pricing-card.featured.visible,
-            .pricing-card.featured:hover {
-                transform: none;
-            }
-            .pricing-card.featured.visible { transform: translateY(0); }
-            .pricing-card.featured:hover   { transform: translateY(-6px); }
-        
-        
-        }
-
-        .service-price {
-            display: block;
-            color: var(--primary-white);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            opacity: 0.7;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -1407,7 +1456,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="#home" class="logo">
-            <img src="assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -1426,9 +1475,10 @@
 
     <main id="main-content">
         <section id="home" class="hero">
-            <video autoplay muted loop playsinline poster="assets/hero_poster.jpg" class="hero-video">
-                <source src="assets/hero_vid.webm" type="video/webm">
-                <source src="assets/hero_vid.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline poster="/assets/hero_poster.jpg" class="hero-video"
+                aria-hidden="true" tabindex="-1">
+                <source src="/assets/hero_vid.webm" type="video/webm">
+                <source src="/assets/hero_vid.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay" aria-hidden="true"></div>
             <div class="hero-content">
@@ -1443,7 +1493,7 @@
                         <span class="hero-word" aria-hidden="true">Compliant.</span>
                     </span>
                 </h1>
-                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec ist Ihr Partner für umfassende IT-Sicherheit.</p>
+                <p>Wir vereinbaren ein Ziel und prüfen, ob ein Angreifer es erreicht – auf dem Weg des geringsten Widerstands. Was danach in Ihrer Hand liegt: ein datierter, CVSS-bewerteter Report für Kunden, Auditoren und Cyberversicherer.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Kostenlose Beratung</a>
                     <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
@@ -1457,41 +1507,82 @@
             <div class="references-track-wrapper">
                 <div class="references-track">
                     <!-- Set 1 (sichtbar für Screenreader) -->
-                    <div class="ref-logo"><img src="assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
                     <!-- Set 2 -->
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
                 </div>
             </div>
+
+            <p class="credential">
+                <a class="credential-mark" href="https://www.allianz-fuer-cybersicherheit.de" target="_blank" rel="noopener">
+                    <img src="/assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
+                        alt="Teilnehmer der Allianz für Cyber-Sicherheit" width="282" height="109" loading="lazy">
+                </a>
+                <span>Teilnehmer der <strong>Allianz für Cyber-Sicherheit</strong> des BSI</span>
+            </p>
+        </section>
+
+        <section id="features" class="section">
+            <span class="eyebrow eyebrow-center">Ihre Vorteile</span>
+            <h2 class="section-title">Warum M2 Cybersec?</h2>
+            <p class="section-subtitle">Vier Dinge, die Sie nach dem ersten Report selbst nachprüfen können.</p>
+            <div class="features-grid">
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+                    <h3>Praxisnahe Lösungen</h3>
+                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre
+                        individuellen Anforderungen</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></div>
+                    <h3>Ganzheitlicher Ansatz</h3>
+                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur
+                        Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    <h3>Schnelle Reaktionszeit</h3>
+                    <p>Schnelle Rückmeldung auf Ihre Anfragen – weil Sicherheitsfragen keine langen Wartezeiten
+                        verdienen</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <h3>Transparente Kommunikation</h3>
+                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
+                        Management-Ebene</p>
+                </article>
+            </div>
+
         </section>
 
         <!-- NRW-Förderung Banner -->
         <section class="nrw-banner" aria-label="NRW-Förderung">
             <div class="nrw-banner-inner">
                 <div class="nrw-banner-text">
-                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Bis zu 50 % NRW-Förderung für Ihre Cybersecurity</h3>
+                    <h2><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Bis zu 50 % NRW-Förderung für Ihre Cybersecurity</h2>
                     <p>KMU in Nordrhein-Westfalen können Security-Maßnahmen über das Landesprogramm MID-Digitale Sicherheit (NRW.BANK) mit bis zu 50 % bezuschussen lassen – gefördert wird ab 8.000 € Projektvolumen, maximal 15.000 € Zuschuss. Beispiel: Scale Secure kostet über 12 Monate 8.988 € netto und wird damit direkt gefördert; Growth Guard erreicht die Schwelle in Kombination, etwa mit 24-Monats-Laufzeit. Vorbehaltlich Bewilligung, maßgeblich sind die Konditionen der NRW.BANK.</p>
                 </div>
                 <a href="/nrw-foerderung/" class="btn btn-nrw">Förderung prüfen →</a>
             </div>
         </section>
 
-        <section id="services" class="section services">
+        <section id="services" class="section">
             <span class="eyebrow eyebrow-center">Security im Abo</span>
             <h2 class="section-title">Unsere Service Pakete</h2>
             <p class="section-subtitle">Maßgeschneiderte Sicherheitslösungen für jeden Bedarf – monatliche Abo-Modelle zum Festpreis, ohne Einrichtungsgebühr. Alle Preise netto zzgl. USt.</p>
             <div class="services-grid">
                 <article class="service-card">
-                    <a href="/starter-paket/" style="text-decoration: none; color: inherit;">
+                    <a class="service-card-link" href="/starter-paket/">
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
                         <h3>Startup Shield</h3>
                         <span class="service-price">149 €/Monat</span>
@@ -1500,7 +1591,7 @@
                     </a>
                 </article>
                 <article class="service-card">
-                    <a href="/growth-paket/" style="text-decoration: none; color: inherit;">
+                    <a class="service-card-link" href="/growth-paket/">
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
                         <h3>Growth Guard</h3>
                         <span class="service-price">349 €/Monat</span>
@@ -1510,7 +1601,7 @@
                     </a>
                 </article>
                 <article class="service-card">
-                    <a href="/scale-paket/" style="text-decoration: none; color: inherit;">
+                    <a class="service-card-link" href="/scale-paket/">
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>
                         <h3>Scale Secure</h3>
                         <span class="service-price">749 €/Monat</span>
@@ -1520,7 +1611,7 @@
                     </a>
                 </article>
                 <article class="service-card">
-                    <a href="/awareness-training-fuer-kmu/" style="text-decoration: none; color: inherit;">
+                    <a class="service-card-link" href="/awareness-training-fuer-kmu/">
                         <span class="service-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
                         <h3>Awareness+ Training</h3>
                         <span class="service-price">490 €/Session</span>
@@ -1533,61 +1624,61 @@
             <div class="cmp-wrap">
                 <h3 class="cmp-title">Die drei Abos im direkten Vergleich</h3>
                 <p class="cmp-intro">Alle Angaben entsprechen den Paketseiten. Jedes Abo läuft 12 Monate, ist monatlich zahlbar und kostet keine Einrichtungsgebühr. Alle Preise netto zzgl. gesetzlicher USt.</p>
-                <div class="cmp-scroll">
+                <div class="cmp-scroll" role="region" aria-label="Vergleich der drei Abo-Pakete" tabindex="0">
                     <table class="cmp-table">
                         <thead>
                             <tr>
-                                <th>&nbsp;</th>
-                                <th>Startup Shield<br><span>149 €/Monat</span></th>
-                                <th>Growth Guard<br><span>349 €/Monat</span></th>
-                                <th>Scale Secure<br><span>749 €/Monat</span></th>
+                                <td></td>
+                                <th scope="col">Startup Shield<br><span>149 €/Monat</span></th>
+                                <th scope="col">Growth Guard<br><span>349 €/Monat</span></th>
+                                <th scope="col">Scale Secure<br><span>749 €/Monat</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Security-Checks pro Jahr<br><span style="font-weight:400;font-size:0.82rem;color:var(--text-muted);white-space:normal;">automatisierte Breitenprüfung, manuell verifiziert</span></th>
+                                <th scope="row">Security-Checks pro Jahr<br><span class="cmp-sub">automatisierte Breitenprüfung, manuell verifiziert</span></th>
                                 <td>1×</td>
                                 <td>3×</td>
                                 <td>4×</td>
                             </tr>
                             <tr>
-                                <th>Systeme je Check</th>
+                                <th scope="row">Systeme je Check</th>
                                 <td>1 Domain + 1 Web-App/API</td>
                                 <td>2–3 kritische Systeme</td>
                                 <td>5+ kritische Systeme</td>
                             </tr>
                             <tr>
-                                <th>Awareness-Training</th>
+                                <th scope="row">Awareness-Training</th>
                                 <td>– (als Add-on buchbar)</td>
                                 <td>1× jährlich (bis 10 Mitarbeitende)</td>
                                 <td>3× jährlich (gesamtes Team)</td>
                             </tr>
                             <tr>
-                                <th>Phishing-Simulation</th>
+                                <th scope="row">Phishing-Simulation</th>
                                 <td>–</td>
                                 <td>1× jährlich</td>
                                 <td>Zu jeder Schulung</td>
                             </tr>
                             <tr>
-                                <th>Reporting</th>
+                                <th scope="row">Reporting</th>
                                 <td>Monatlicher Lagebericht, 5-seitiger Startup-Report</td>
                                 <td>Monatlicher Report, Quartalsgespräch, Compliance-Dokumentation</td>
                                 <td>Monatlicher CVSS-Report, dedizierter Ansprechpartner</td>
                             </tr>
                             <tr>
-                                <th>Zusätzlich</th>
+                                <th scope="row">Zusätzlich</th>
                                 <td>Optionaler 30-Min-Ergebniscall</td>
                                 <td>Fester Ansprechpartner</td>
                                 <td>Code Review, Architektur-Check, Notfallplan, Re-Tests, 24-h-SLA</td>
                             </tr>
                             <tr>
-                                <th>NRW-Förderung</th>
+                                <th scope="row">NRW-Förderung</th>
                                 <td>Nicht förderfähig (unter 8.000 €)</td>
                                 <td>Erst ab 8.000 € Projektvolumen, z. B. bei 24-Monats-Laufzeit</td>
                                 <td>Förderfähig (8.988 €/Jahr)</td>
                             </tr>
                             <tr>
-                                <th>&nbsp;</th>
+                                <td></td>
                                 <td><a href="/starter-paket/">Details →</a></td>
                                 <td><a href="/growth-paket/">Details →</a></td>
                                 <td><a href="/scale-paket/">Details →</a></td>
@@ -1605,7 +1696,6 @@
 
         <!-- Red Team Pricing -->
         <section id="pricing" class="pricing-section">
-            <div class="pricing-grid-bg" aria-hidden="true"></div>
             <div class="pricing-glow-top" aria-hidden="true"></div>
             <span class="eyebrow eyebrow-center">Angriffssimulation</span>
             <h2 class="section-title">Red Team Services</h2>
@@ -1614,7 +1704,7 @@
 
                 <!-- Red Team Lite -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span class="tier-lite">Lite</span></h3>
+                    <h3 class="pricing-name">Red Team <span>Lite</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">ab 3.500 €</div>
                         <div class="pricing-price-sub">Individuelles Angebot, einmalig · netto zzgl. USt.</div>
@@ -1657,7 +1747,7 @@
 
                 <!-- Red Team Pro -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span class="tier-pro">Pro</span></h3>
+                    <h3 class="pricing-name">Red Team <span>Pro</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">Auf Anfrage</div>
                         <div class="pricing-price-sub">Individuelles Angebot</div>
@@ -1681,55 +1771,55 @@
             <div class="cmp-wrap">
                 <h3 class="cmp-title">Security-Check oder Red Team – was brauche ich?</h3>
                 <p class="cmp-intro">Zwei verschiedene Fragen, zwei verschiedene Antworten. Die Kurzfassung ohne Fachsprache:</p>
-                <div class="cmp-scroll">
+                <div class="cmp-scroll" role="region" aria-label="Security-Check und Red Team im Vergleich" tabindex="0">
                     <table class="cmp-table">
                         <thead>
                             <tr>
-                                <th>&nbsp;</th>
-                                <th>Security-Check<br><span>(im Abo enthalten)</span></th>
-                                <th>Red Team Lite</th>
-                                <th>Red Team Plus</th>
+                                <td></td>
+                                <th scope="col">Security-Check<br><span>(im Abo enthalten)</span></th>
+                                <th scope="col">Red Team Lite</th>
+                                <th scope="col">Red Team Plus</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Die Frage dahinter</th>
+                                <th scope="row">Die Frage dahinter</th>
                                 <td>Wo stehe ich – regelmäßig und belegbar?</td>
                                 <td>Kommt jemand an mein Kronjuwel – über die Technik?</td>
                                 <td>Kommt jemand an mein Kronjuwel – egal wie?</td>
                             </tr>
                             <tr>
-                                <th>Vorgehen</th>
+                                <th scope="row">Vorgehen</th>
                                 <td>Automatisierte Breitenprüfung, manuell verifiziert und priorisiert</td>
                                 <td>Zielorientierte Angriffssimulation, Weg des geringsten Widerstands – technische Vektoren</td>
                                 <td>Wie Lite, zusätzlich Social Engineering und Phishing als offene Wege</td>
                             </tr>
                             <tr>
-                                <th>Scope</th>
+                                <th scope="row">Scope</th>
                                 <td>Ihre Systeme in der Breite, je nach Paket</td>
                                 <td>Der Scope ist das Ziel, nicht die Zahl der Systeme</td>
                                 <td>Der Scope ist das Ziel, nicht die Zahl der Systeme</td>
                             </tr>
                             <tr>
-                                <th>Ergebnis</th>
+                                <th scope="row">Ergebnis</th>
                                 <td>CVSS-bewerteter Report mit Datum – als Nachweis verwendbar</td>
                                 <td>Der Angriffspfad: wie weit jemand kam und woran es lag</td>
                                 <td>Der Angriffspfad über alle Ebenen, mit Executive Summary</td>
                             </tr>
                             <tr>
-                                <th>Dauer</th>
+                                <th scope="row">Dauer</th>
                                 <td>Report in 5 Werktagen</td>
                                 <td>1–2 Wochen</td>
                                 <td>2–4 Wochen</td>
                             </tr>
                             <tr>
-                                <th>Preis</th>
+                                <th scope="row">Preis</th>
                                 <td>Im Abo enthalten (149–749 €/Monat)</td>
                                 <td>Einmalig ab 3.500 €</td>
                                 <td>Individuelles Angebot</td>
                             </tr>
                             <tr>
-                                <th>Richtig für Sie, wenn…</th>
+                                <th scope="row">Richtig für Sie, wenn…</th>
                                 <td>…Sie laufend belegen müssen, dass Sie etwas tun – gegenüber Kunden, Auditoren, Versicherern.</td>
                                 <td>…Sie wissen wollen, ob jemand über die Technik an Ihr wichtigstes Asset kommt.</td>
                                 <td>…Ihre Sicherheitsmaßnahmen bereits stehen und in ihrer Gesamtheit tragen müssen.</td>
@@ -1740,43 +1830,11 @@
                 <p class="cmp-note">Zeigt ein Security-Check, dass ein einzelnes System genauer angesehen werden muss, vertiefen wir gezielt mit einem <a href="/red-team-plus/#pentest-vs-red-teaming">Pentest</a> – buchbar im Anschluss an einen Check, nicht als Einstiegsprodukt. Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
             </div>
 
-            <div style="text-align:center; margin-top: 3rem; position: relative; z-index: 2;">
+            <div class="pricing-more">
                 <a href="/red-team-plus/" class="btn btn-secondary">Mehr erfahren</a>
             </div>
         </section>
 
-        <section id="features" class="section features">
-            <span class="eyebrow eyebrow-center">Ihre Vorteile</span>
-            <h2 class="section-title">Warum M2 Cybersec?</h2>
-            <p class="section-subtitle">Vertrauen Sie auf Expertise, Zertifizierung und nachweisbare Ergebnisse</p>
-            <div class="features-grid">
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
-                    <h4>Praxisnahe Lösungen</h4>
-                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre
-                        individuellen Anforderungen</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></div>
-                    <h4>Ganzheitlicher Ansatz</h4>
-                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur
-                        Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                    <h4>Schnelle Reaktionszeit</h4>
-                    <p>Schnelle Rückmeldung auf Ihre Anfragen – weil Sicherheitsfragen keine langen Wartezeiten
-                        verdienen</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-                    <h4>Transparente Kommunikation</h4>
-                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
-                        Management-Ebene</p>
-                </article>
-            </div>
-
-        </section>
 
         <section id="quick-scan" class="section quick-scan">
             <span class="eyebrow eyebrow-center">In 15 Minuten</span>
@@ -1794,7 +1852,7 @@
                     <p class="quick-scan-next">Der nächste Schritt danach: <a href="/starter-paket/">Startup Shield</a> für 149 €/Monat – aus der Momentaufnahme wird laufender Schutz.</p>
                 </div>
                 <div class="quick-scan-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:160px;height:160px;display:block;margin:0 auto 1.5rem;">
+                    <svg class="scan-radar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <defs>
                             <radialGradient id="scanGlow" cx="50%" cy="50%" r="50%">
                                 <stop offset="0%" stop-color="#00fcf6" stop-opacity="0.12"/>
@@ -1811,25 +1869,13 @@
                         <line x1="100" y1="8" x2="100" y2="192" stroke="#00fcf6" stroke-width="0.6" opacity="0.15"/>
                         <line x1="8" y1="100" x2="192" y2="100" stroke="#00fcf6" stroke-width="0.6" opacity="0.15"/>
                         <g mask="url(#scanMask)">
-                            <path d="M100,100 L100,8 A92,92 0 0,1 181,146 Z" fill="rgba(0,252,246,0.08)">
-                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="3s" repeatCount="indefinite"/>
-                            </path>
-                            <line x1="100" y1="100" x2="100" y2="8" stroke="#00fcf6" stroke-width="2" opacity="0.85">
-                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="3s" repeatCount="indefinite"/>
-                            </line>
+                            <path class="scan-sweep" d="M100,100 L100,8 A92,92 0 0,1 181,146 Z" fill="rgba(0,252,246,0.08)"/>
+                            <line class="scan-sweep" x1="100" y1="100" x2="100" y2="8" stroke="#00fcf6" stroke-width="2" opacity="0.85"/>
                         </g>
-                        <circle cx="148" cy="58" r="4" fill="#00fcf6">
-                            <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="148" cy="58" r="9" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.4">
-                            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.1s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="64" cy="138" r="3" fill="#00fcf6">
-                            <animate attributeName="opacity" values="0.7;0.1;0.7" dur="3.4s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="155" cy="130" r="2" fill="#00fcf6" opacity="0.6">
-                            <animate attributeName="opacity" values="0.6;0;0.6" dur="1.9s" repeatCount="indefinite"/>
-                        </circle>
+                        <circle class="scan-blip" cx="148" cy="58" r="4" fill="#00fcf6"/>
+                        <circle class="scan-blip scan-blip-ring" cx="148" cy="58" r="9" fill="none" stroke="#00fcf6" stroke-width="1" opacity="0.4"/>
+                        <circle class="scan-blip scan-blip-slow" cx="64" cy="138" r="3" fill="#00fcf6"/>
+                        <circle class="scan-blip scan-blip-far" cx="155" cy="130" r="2" fill="#00fcf6" opacity="0.6"/>
                         <circle cx="100" cy="100" r="5" fill="#00fcf6"/>
                         <circle cx="100" cy="100" r="11" fill="none" stroke="#00fcf6" stroke-width="1.5" opacity="0.5"/>
                     </svg>
@@ -1841,28 +1887,27 @@
         <section id="process" class="section process">
             <span class="eyebrow eyebrow-center">So arbeiten wir</span>
             <h2 class="section-title">Unser Vorgehen</h2>
-            <p class="section-subtitle">In vier Schritten zu maximaler IT-Sicherheit</p>
+            <p class="section-subtitle">Vom kostenlosen Quick-Scan bis zu dem Nachweis, den Sie vorlegen können.</p>
             <div class="process-steps">
                 <article class="process-step">
                     <div class="step-number">1</div>
-                    <h4>Analyse & Beratung</h4>
-                    <p>Wir analysieren Ihre aktuelle Sicherheitslage und beraten Sie zu optimalen Lösungsansätzen</p>
+                    <h3>Quick-Scan</h3>
+                    <p>15 Minuten, rein passiv, kostenlos: Wir zeigen Ihnen, was ein Angreifer heute schon über Ihr Unternehmen sehen kann.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">2</div>
-                    <h4>Konzeption</h4>
-                    <p>Entwicklung einer maßgeschneiderten Sicherheitsstrategie basierend auf Ihren individuellen
-                        Anforderungen</p>
+                    <h3>Ziel &amp; Scope</h3>
+                    <p>Wir legen gemeinsam fest, was geprüft wird – beim Red Teaming, welches Ziel ein Angreifer erreichen müsste. Schriftlich, vor dem ersten Test.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">3</div>
-                    <h4>Implementierung</h4>
-                    <p>Umsetzung der Sicherheitsmaßnahmen mit minimaler Beeinträchtigung Ihres laufenden Betriebs</p>
+                    <h3>Prüfung</h3>
+                    <p>Security-Check in der Breite oder zielorientierte Angriffssimulation in der Tiefe – je nachdem, welche Frage Sie beantwortet haben wollen.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">4</div>
-                    <h4>Monitoring & Support</h4>
-                    <p>Kontinuierliche Überwachung und fortlaufende Optimierung Ihrer IT-Sicherheit</p>
+                    <h3>Report &amp; Nachverfolgung</h3>
+                    <p>CVSS-bewertet, priorisiert und ohne Kauderwelsch – mit konkreten Handlungsempfehlungen und Nachprüfung der geschlossenen Lücken.</p>
                 </article>
             </div>
         </section>
@@ -1897,10 +1942,12 @@
 
             <div class="faq-container">
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-                        <h3>Was kostet ein Security-Check – und was ist ein Pentest?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                            <span>Was kostet ein Security-Check – und was ist ein Pentest?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-1">
                         <div>
                             <p>Der <strong>Security-Check</strong> ist in jedem Abo-Paket enthalten: eine
@@ -1924,10 +1971,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-                        <h3>Wie lange dauert ein typischer Security-Check?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                            <span>Wie lange dauert ein typischer Security-Check?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-2">
                         <div>
                             <p>Bei den Security-Checks unserer Abo-Pakete erhalten Sie den Report innerhalb von
@@ -1940,10 +1989,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-                        <h3>Ist mein Unternehmen zu klein für professionelle Cybersecurity?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                            <span>Ist mein Unternehmen zu klein für professionelle Cybersecurity?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-3">
                         <div>
                             <p>Definitiv nicht! Gerade kleine und mittelständische Unternehmen (KMU) sind häufig Ziel
@@ -1957,10 +2008,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-                        <h3>Was ist der Unterschied zwischen Security-Check und Pentest?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                            <span>Was ist der Unterschied zwischen Security-Check und Pentest?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-4">
                         <div>
                             <p>Der <strong>Security-Check</strong> geht in die Breite: eine automatisierte Prüfung
@@ -1981,10 +2034,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-                        <h3>Benötige ich eine ISO 27001 Zertifizierung?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                            <span>Benötige ich eine ISO 27001 Zertifizierung?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-5">
                         <div>
                             <p>Die ISO 27001 Zertifizierung ist für viele Branchen und Geschäftsbeziehungen mittlerweile
@@ -1997,10 +2052,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-                        <h3>Wie oft sollte ein Security-Audit durchgeführt werden?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                            <span>Wie oft sollte ein Security-Audit durchgeführt werden?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-6">
                         <div>
                             <p>Wir empfehlen mindestens einmal jährlich einen umfassenden Security-Audit. Bei kritischen
@@ -2013,10 +2070,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
-                        <h3>Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+                            <span>Was passiert, wenn bei dem Test Sicherheitslücken gefunden werden?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-7">
                         <div>
                             <p>Gefundene Schwachstellen dokumentieren wir detailliert in einem CVSS-bewerteten Report
@@ -2030,10 +2089,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-                        <h3>Bieten Sie auch Schulungen für Mitarbeiter an?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+                            <span>Bieten Sie auch Schulungen für Mitarbeiter an?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-8">
                         <div>
                             <p>Ja, mit unserem "Awareness+ Training" bieten wir spezialisierte Schulungen für
@@ -2047,10 +2108,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
-                        <h3>Was ist Red Teaming und brauche ich das?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
+                            <span>Was ist Red Teaming und brauche ich das?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-9">
                         <div>
                             <p>Red Teaming ist <strong>kein technischer Pentest</strong>. Es ist eine zielorientierte
@@ -2061,16 +2124,18 @@
                                 ein bestimmtes System hält. Red Teaming lohnt sich, wenn Ihre Sicherheitsmaßnahmen
                                 bereits stehen und Sie wissen wollen, ob sie in ihrer Gesamtheit tragen. Den
                                 Unterschied erklären wir ausführlich bei <a href="/red-team-plus/#pentest-vs-red-teaming"
-                                style="color: var(--primary-cyan); text-decoration: none; font-weight: 600;">Pentest vs. Red Teaming</a>.</p>
+                               >Pentest vs. Red Teaming</a>.</p>
                         </div>
                     </div>
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
-                        <h3>Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
+                            <span>Wie gewährleisten Sie die Vertraulichkeit bei der Zusammenarbeit?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-10">
                         <div>
                             <p>Vertraulichkeit hat bei uns höchste Priorität. Alle Projekte werden unter strikten
@@ -2084,26 +2149,30 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
-                        <h3>Was ist der kostenlose Quick-Scan?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
+                            <span>Was ist der kostenlose Quick-Scan?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-11">
                         <div>
                             <p>Unser Quick-Scan ist eine kostenlose, unverbindliche Analyse Ihrer externen
                                 IT-Angriffsfläche. In 15 Minuten zeigen wir Ihnen, was ein potenzieller Angreifer heute
                                 schon über Ihr Unternehmen sehen kann – ohne dass wir irgendetwas aktiv testen oder
                                 angreifen. Sie erhalten anschließend ein kompaktes PDF mit den wichtigsten,
-                                nach Priorität sortierten Findings und konkreten Handlungsempfehlungen. <a href="/quick-scan/" style="color: var(--primary-cyan);">Mehr über den Quick-Scan erfahren →</a></p>
+                                nach Priorität sortierten Findings und konkreten Handlungsempfehlungen. <a href="/quick-scan/">Mehr über den Quick-Scan erfahren →</a></p>
                         </div>
                     </div>
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
-                        <h3>Unterstützen Sie auch bei DSGVO-Compliance?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
+                            <span>Unterstützen Sie auch bei DSGVO-Compliance?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-12">
                         <div>
                             <p>Ja, DSGVO-Compliance ist ein wichtiger Bestandteil unserer Security-Beratung. Wir
@@ -2116,10 +2185,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-13">
-                        <h3>Betrifft NIS2 mein Unternehmen – auch als Zulieferer?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-13">
+                            <span>Betrifft NIS2 mein Unternehmen – auch als Zulieferer?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-13">
                         <div>
                             <p>Möglicherweise ja – und zwar auf zwei Wegen. Direkt betroffen sind Unternehmen ab
@@ -2141,10 +2212,12 @@
                 </article>
 
                 <article class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-14">
-                        <h3>Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?</h3>
-                        <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
+                    <h3 class="faq-heading">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-14">
+                            <span>Hilft mir M2 Cybersec bei den Anforderungen meiner Cyberversicherung?</span>
+                            <span class="faq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                    </h3>
                     <div class="faq-answer" id="faq-14">
                         <div>
                             <p>Ja. Cyberversicherer verlangen vor Abschluss zunehmend Nachweise über den technischen
@@ -2171,13 +2244,13 @@
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <img src="assets/logo.png" alt="M2 Cybersec Logo" width="81" height="60" loading="lazy"
-                    style="height: 60px; width: auto; margin-bottom: 1rem;">
+                <img src="/assets/logo.png" alt="M2 Cybersec Logo" width="81" height="60" loading="lazy"
+                    class="footer-logo">
                 <p>Ihr Partner für professionelle Cybersecurity-Lösungen und umfassende IT-Sicherheit.</p>
-                <a href="https://www.allianz-fuer-cybersicherheit.de"
+                <a class="credential-mark" href="https://www.allianz-fuer-cybersicherheit.de"
                     title="Verweis zur Webpräsenz der Allianz für Cyber-Sicherheit"><img
-                        src="assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
-                        alt="Webpräsenz der Allianz für CyberSicherheit" width="282" height="109" loading="lazy" /></a>
+                        src="/assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
+                        alt="Teilnehmer der Allianz für Cyber-Sicherheit" width="282" height="109" loading="lazy"></a>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
@@ -2200,45 +2273,45 @@
 
             <div class="footer-section">
                 <h4>Rechtliches</h4>
-                <a href="rechtliches/impressum.html">Impressum</a>
-                <a href="rechtliches/datenschutz.html">Datenschutz</a>
+                <a href="/rechtliches/impressum.html">Impressum</a>
+                <a href="/rechtliches/datenschutz.html">Datenschutz</a>
             </div>
 
 
             <div class="footer-section">
                 <h4>Cybersecurity für die Städte</h4>
-                <a href="cybersecurity/koeln/">Köln</a>
-                <a href="cybersecurity/duesseldorf/">Düsseldorf</a>
-                <a href="cybersecurity/dortmund/">Dortmund</a>
-                <a href="cybersecurity/bonn/">Bonn</a>
-                <a href="cybersecurity/essen/">Essen</a>
-                <a href="cybersecurity/bochum/">Bochum</a>
-                <a href="cybersecurity/wuppertal/">Wuppertal</a>
-                <a href="cybersecurity/aachen/">Aachen</a>
-                <a href="cybersecurity/krefeld/">Krefeld</a>
-                <a href="cybersecurity/duisburg/">Duisburg</a>
+                <a href="/cybersecurity/koeln/">Köln</a>
+                <a href="/cybersecurity/duesseldorf/">Düsseldorf</a>
+                <a href="/cybersecurity/dortmund/">Dortmund</a>
+                <a href="/cybersecurity/bonn/">Bonn</a>
+                <a href="/cybersecurity/essen/">Essen</a>
+                <a href="/cybersecurity/bochum/">Bochum</a>
+                <a href="/cybersecurity/wuppertal/">Wuppertal</a>
+                <a href="/cybersecurity/aachen/">Aachen</a>
+                <a href="/cybersecurity/krefeld/">Krefeld</a>
+                <a href="/cybersecurity/duisburg/">Duisburg</a>
             </div>
 
 
 
             <div class="footer-section">
                 <h4>Cybersecurity für die Bundesländer</h4>
-                <a href="cybersecurity/baden-wuerttemberg/">Baden-Württemberg</a>
-                <a href="cybersecurity/bayern/">Bayern</a>
-                <a href="cybersecurity/berlin/">Berlin</a>
-                <a href="cybersecurity/brandenburg/">Brandenburg</a>
-                <a href="cybersecurity/bremen/">Bremen</a>
-                <a href="cybersecurity/hamburg/">Hamburg</a>
-                <a href="cybersecurity/hessen/">Hessen</a>
-                <a href="cybersecurity/mecklenburg-vorpommern/">Mecklenburg-Vorpommern</a>
-                <a href="cybersecurity/niedersachsen/">Niedersachsen</a>
-                <a href="cybersecurity/nordrhein-westfalen/">Nordrhein-Westfalen</a>
-                <a href="cybersecurity/rheinland-pfalz/">Rheinland-Pfalz</a>
-                <a href="cybersecurity/saarland/">Saarland</a>
-                <a href="cybersecurity/sachsen/">Sachsen</a>
-                <a href="cybersecurity/sachsen-anhalt/">Sachsen-anhalt</a>
-                <a href="cybersecurity/schleswig-holstein/">Schleswig-Holstein</a>
-                <a href="cybersecurity/thueringen/">Thüringen</a>
+                <a href="/cybersecurity/baden-wuerttemberg/">Baden-Württemberg</a>
+                <a href="/cybersecurity/bayern/">Bayern</a>
+                <a href="/cybersecurity/berlin/">Berlin</a>
+                <a href="/cybersecurity/brandenburg/">Brandenburg</a>
+                <a href="/cybersecurity/bremen/">Bremen</a>
+                <a href="/cybersecurity/hamburg/">Hamburg</a>
+                <a href="/cybersecurity/hessen/">Hessen</a>
+                <a href="/cybersecurity/mecklenburg-vorpommern/">Mecklenburg-Vorpommern</a>
+                <a href="/cybersecurity/niedersachsen/">Niedersachsen</a>
+                <a href="/cybersecurity/nordrhein-westfalen/">Nordrhein-Westfalen</a>
+                <a href="/cybersecurity/rheinland-pfalz/">Rheinland-Pfalz</a>
+                <a href="/cybersecurity/saarland/">Saarland</a>
+                <a href="/cybersecurity/sachsen/">Sachsen</a>
+                <a href="/cybersecurity/sachsen-anhalt/">Sachsen-Anhalt</a>
+                <a href="/cybersecurity/schleswig-holstein/">Schleswig-Holstein</a>
+                <a href="/cybersecurity/thueringen/">Thüringen</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -2246,20 +2319,59 @@
         </div>
     </footer>
 
+    <!-- JavaScript für FAQ Accordion Funktionalität -->
     <script>
-        // Pricing cards: scroll-triggered reveal
-        const pricingObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    pricingObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
 
-        document.querySelectorAll('.pricing-card').forEach(card => {
-            pricingObserver.observe(card);
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                // <button> liefert Enter/Space von Haus aus – kein eigenes Key-Handling nötig.
+                question.addEventListener('click', function () {
+                    const isActive = item.classList.toggle('active');
+                    question.setAttribute('aria-expanded', String(isActive));
+                });
+            });
         });
+    </script>
+
+    <script>
+        // Pricing cards: scroll-triggered reveal (ohne IntersectionObserver sofort sichtbar)
+        (function () {
+            const cards = document.querySelectorAll('.pricing-card');
+            if (!('IntersectionObserver' in window)) {
+                cards.forEach(card => card.classList.add('visible'));
+                return;
+            }
+            const pricingObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        pricingObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            cards.forEach(card => pricingObserver.observe(card));
+        })();
+
+        // Hero-Video steht still, wenn der Nutzer weniger Bewegung möchte
+        (function () {
+            const video = document.querySelector('.hero-video');
+            if (!video) return;
+            const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const apply = () => {
+                if (calm.matches) {
+                    video.removeAttribute('autoplay');
+                    video.pause();
+                } else if (video.paused) {
+                    video.play().catch(() => {});
+                }
+            };
+            apply();
+            calm.addEventListener('change', apply);
+        })();
     </script>
 </body>
 
