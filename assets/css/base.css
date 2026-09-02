@@ -51,6 +51,7 @@
     --secondary-light-cyan: #5cfff3;
     --secondary-light-gray: #CECECE;
     --funding-green: #00c060;           /* nur NRW-Förderkontext – kein zweiter Akzent */
+    --funding-green-light: #4dffa6;     /* Hover-Partner des Fördergrüns, wie --secondary-light-cyan beim Cyan */
 
     /* Korrigierte Grautöne (WCAG-konform auf #191819) */
     --text-muted: #9a9a9a;              /* Metatexte, Labels – ersetzt #515151 als Textfarbe */
@@ -72,6 +73,7 @@
     /* Bewegung */
     --transition-fast: 150ms ease;
     --transition-base: 220ms ease;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* Ankommen: schnell heran, weich abgesetzt */
 
     /* Abstände (Sektionen) */
     --section-pad: 6rem 5%;
@@ -321,6 +323,15 @@ h3 { font-weight: 600; }
     color: var(--primary-cyan);
 }
 
+/* Aktueller Abschnitt einer Anker-Navigation (Startseite, per Scroll-Spy) */
+.nav-links a[aria-current] {
+    color: var(--primary-cyan);
+}
+
+.nav-links a[aria-current]::after {
+    transform: scaleX(1);
+}
+
 /* Hamburger-Toggle (nur mobil sichtbar, JS in /assets/js/nav.js) */
 .nav-toggle {
     display: none;
@@ -370,7 +381,8 @@ h3 { font-weight: 600; }
     text-align: center;
     cursor: pointer;
     transition: transform var(--transition-base), box-shadow var(--transition-base),
-        background var(--transition-base), color var(--transition-base);
+        background var(--transition-fast), color var(--transition-fast),
+        border-color var(--transition-fast);
     border: 2px solid var(--primary-cyan);
 }
 
@@ -379,7 +391,8 @@ h3 { font-weight: 600; }
     color: var(--primary-dark);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus-visible {
     transform: translateY(-3px);
     box-shadow: var(--shadow-cyan);
 }
@@ -389,7 +402,8 @@ h3 { font-weight: 600; }
     color: var(--primary-cyan);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
     background: var(--primary-cyan);
     color: var(--primary-dark);
     transform: translateY(-3px);
@@ -402,7 +416,8 @@ h3 { font-weight: 600; }
     border-color: rgba(255, 255, 255, 0.25);
 }
 
-.btn-ghost:hover {
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
     color: var(--primary-white);
     border-color: var(--primary-white);
 }
