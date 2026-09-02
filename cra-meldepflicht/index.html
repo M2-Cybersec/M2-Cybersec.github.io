@@ -57,7 +57,6 @@
         .wrap-narrow { max-width: 780px; margin: 0 auto; }
 
         .sec { padding: 5.5rem 5%; }
-        [id] { scroll-margin-top: 6rem; }
         .sec-alt {
             background: rgba(255, 255, 255, 0.015);
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -71,6 +70,17 @@
             margin-bottom: 3rem;
         }
         .sec-lead:last-child { margin-bottom: 0; }
+        .sec-lead-tight { margin-bottom: 0; }
+
+        .sec-sub {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .sec-sub-spaced {
+            font-size: 1.3rem;
+            margin-top: 3.5rem;
+        }
 
         /* ---- Hero ---------------------------------------------------------- */
         .hero-cra {
@@ -561,9 +571,9 @@
 </head>
 
 <body>
-    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-    <nav class="navbar" role="navigation">
+    <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo">
             <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
@@ -580,7 +590,7 @@
         </ul>
     </nav>
 
-    <main id="main">
+    <main id="main-content">
 
         <!-- ================= Hero: die Leitfrage ================= -->
         <section class="hero-cra">
@@ -891,7 +901,7 @@
                     <a href="https://cal.eu/marlonscheer/cra" class="btn btn-primary">20 Minuten sprechen</a>
                 </div>
 
-                <h3 style="font-size:1.2rem;margin-bottom:1.2rem;">Was Sie danach im Haus haben</h3>
+                <h3 class="sec-sub">Was Sie danach im Haus haben</h3>
                 <ul class="liefer-grid">
                     <li class="liefer">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1078,14 +1088,14 @@
                     <a href="https://cal.eu/marlonscheer/cra" class="btn btn-secondary">Check besprechen</a>
                 </div>
 
-                <p class="sec-lead" style="margin-bottom:0;">
+                <p class="sec-lead sec-lead-tight">
                     Ergebnis ist ein Dokument zu Rolle und Betroffenheit je Produktlinie, das Ihre
                     Geschäftsführung unterschreiben kann – eine technisch-organisatorische Einordnung,
                     keine rechtliche Bewertung. Entscheiden Sie sich danach für den Sprint, wird der
                     volle Betrag angerechnet.
                 </p>
 
-                <h3 style="margin-top:3.5rem;font-size:1.3rem;">Vier Fälle, die regelmäßig überraschen</h3>
+                <h3 class="sec-sub sec-sub-spaced">Vier Fälle, die regelmäßig überraschen</h3>
                 <div class="faelle">
                     <div class="fall">
                         <p class="fall-wenn">Sie vertreiben fremde Hardware unter Ihrer eigenen Marke.</p>

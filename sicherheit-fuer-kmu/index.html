@@ -8,7 +8,7 @@
     <meta name="description" content="IT-Sicherheit für KMU - Professioneller Schutz gegen Cyberangriffe, Ransomware und Datenverlust. Risikoanalyse, Penetrationstests und Sicherheitskonzepte.">
     <meta name="keywords" content="IT-Sicherheit KMU, Cybersecurity, Ransomware-Schutz, Penetrationstest, Sicherheitsaudit, DSGVO">
     <meta name="robots" content="index, follow">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="IT-Sicherheit für KMU - Professioneller Schutz | M2 Cybersec">
     <meta property="og:description" content="Schützen Sie Ihr KMU vor Cyberangriffen mit professionellen Sicherheitslösungen.">
@@ -19,7 +19,7 @@
     <link rel="canonical" href="https://m2cybersec.de/sicherheit-fuer-kmu/">
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
-    
+
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
@@ -142,7 +142,7 @@
             border-radius: var(--radius-sm);
         }
 
-        .risk-item h4 {
+        .risk-item h3 {
             font-family: var(--font-display);
             font-weight: 600;
             color: var(--primary-white);
@@ -218,15 +218,16 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
-        
-        
         }
+        .section-block { margin: 4rem 0; }
     </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation">
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo">
-            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -241,7 +242,7 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section class="hero-service">
             <div class="hero-content">
                 <span class="service-badge">FÜR KMU</span>
@@ -252,33 +253,33 @@
 
         <section class="section">
             <a href="/#services" class="back-link">← Zurück zur Übersicht</a>
-            
+
             <h2 class="section-title">Warum IT-Sicherheit gerade für KMU entscheidend ist</h2>
             <p class="section-subtitle">Cyberkriminelle zielen zunehmend auf KMU, da diese oft weniger geschützt sind als Großunternehmen. Ein einziger erfolgreicher Angriff kann jedoch schwerwiegende Folgen haben.</p>
 
             <div class="risks-grid">
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Ransomware & Erpressung</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Ransomware & Erpressung</h3>
                     <p>Verschlüsselung wichtiger Daten mit Lösegeldforderung</p>
                 </div>
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> Datenexfiltration</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> Datenexfiltration</h3>
                     <p>Diebstahl vertraulicher Unternehmens- und Kundendaten</p>
                 </div>
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Unsichere Webanwendungen</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Unsichere Webanwendungen</h3>
                     <p>Angriffe über Sicherheitslücken in Online-Systemen</p>
                 </div>
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Fehlkonfigurationen</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Fehlkonfigurationen</h3>
                     <p>Schwachstellen durch falsch eingestellte IT-Systeme</p>
                 </div>
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.8"/><path d="M12 5.8V13"/><path d="M12 13a4.5 4.5 0 0 0 9 0v-1.8"/><polyline points="18.9 12.6 21 10.5 21 14.1"/></svg> Social Engineering</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.8"/><path d="M12 5.8V13"/><path d="M12 13a4.5 4.5 0 0 0 9 0v-1.8"/><polyline points="18.9 12.6 21 10.5 21 14.1"/></svg> Social Engineering</h3>
                     <p>Manipulation von Mitarbeitern zur Preisgabe sensibler Informationen</p>
                 </div>
                 <div class="risk-item">
-                    <h4><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg> Phishing-Angriffe</h4>
+                    <h3><svg class="icon icon-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg> Phishing-Angriffe</h3>
                     <p>Betrügerische E-Mails zur Kompromittierung von Zugangsdaten</p>
                 </div>
             </div>
@@ -312,7 +313,7 @@
                 </article>
             </div>
 
-            <div style="margin: 4rem 0;">
+            <div class="section-block">
                 <h2 class="section-title">Vorteile für Ihr Unternehmen</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
@@ -338,12 +339,14 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin: 4rem 0; padding: 3rem; background: rgba(0, 252, 246, 0.05); border-radius: 20px;">
-                <h2 style="margin-bottom: 1rem;">Jetzt IT-Sicherheit verbessern</h2>
-                <p style="font-size: 1.15rem; margin-bottom: 2rem; color: var(--secondary-light-gray);">Sie möchten Ihr Unternehmen vor Cyberangriffen schützen oder aktuelle Risiken prüfen lassen?<br>Wir unterstützen Sie schnell, zuverlässig und kompetent.</p>
-                <a href="/#contact" class="btn btn-primary">Jetzt unverbindlich anfragen</a>
-                <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; margin-bottom: 0;">Lieber erst prüfen? Der Quick-Scan zeigt Ihnen in 15 Minuten kostenlos die externe Angriffsfläche Ihres Unternehmens.</p>
+            <div class="cta-box">
+                <h2>Jetzt IT-Sicherheit verbessern</h2>
+                <p class="cta-box-lead">Sie möchten Ihr Unternehmen vor Cyberangriffen schützen oder aktuelle Risiken prüfen lassen?<br>Wir unterstützen Sie schnell, zuverlässig und kompetent.</p>
+                <div class="btn-row">
+                    <a href="/#contact" class="btn btn-primary">Jetzt unverbindlich anfragen</a>
+                    <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
+                </div>
+                <p class="cta-box-note">Lieber erst prüfen? Der Quick-Scan zeigt Ihnen in 15 Minuten kostenlos die externe Angriffsfläche Ihres Unternehmens.</p>
             </div>
         </section>
     </main>
