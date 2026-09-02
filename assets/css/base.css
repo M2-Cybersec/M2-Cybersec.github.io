@@ -50,6 +50,7 @@
     --secondary-gray: #515151;          /* nur für Flächen/Borders – nicht für Text auf dunklem Grund */
     --secondary-light-cyan: #5cfff3;
     --secondary-light-gray: #CECECE;
+    --funding-green: #00c060;           /* nur NRW-Förderkontext – kein zweiter Akzent */
 
     /* Korrigierte Grautöne (WCAG-konform auf #191819) */
     --text-muted: #9a9a9a;              /* Metatexte, Labels – ersetzt #515151 als Textfarbe */
@@ -86,6 +87,37 @@
 
 html {
     scroll-behavior: smooth;
+    /* Themen der Browser-Oberflächen, die sonst Systemdefaults tragen */
+    scrollbar-color: var(--secondary-gray) var(--primary-dark);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-gray);
+    border: 3px solid var(--primary-dark);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b6b6b;
+}
+
+::selection {
+    background: var(--primary-cyan);
+    color: var(--primary-dark);
+}
+
+/* Ankerziele dürfen nicht unter der fixen Navbar landen */
+[id] {
+    scroll-margin-top: 6rem;
 }
 
 body {
@@ -93,6 +125,17 @@ body {
     background: var(--primary-dark);
     color: var(--primary-white);
     line-height: 1.6;
+    caret-color: var(--primary-cyan);
+}
+
+a {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+}
+
+/* Zahlenkolonnen laufen in gleicher Breite */
+table {
+    font-variant-numeric: tabular-nums;
 }
 
 /* --- Typografie-Hierarchie -------------------------------------------------
@@ -342,6 +385,58 @@ h3 { font-weight: 600; }
     border-color: var(--primary-white);
 }
 
+/* Button-Reihe: mehrere .btn nebeneinander mit sauberem Abstand und Umbruch */
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* --- CTA-Box ---------------------------------------------------------------
+   Abschluss-Kasten am Seitenende (Awareness+, Sicherheit für KMU).
+   Folgt der Kartenlogik: cyan getönte Fläche, Haarlinie, --radius-md. */
+
+.cta-box {
+    text-align: center;
+    margin: 4rem 0 0;
+    padding: 3rem 2rem;
+    background: rgba(0, 252, 246, 0.05);
+    border: 1px solid rgba(0, 252, 246, 0.5);
+    border-radius: var(--radius-md);
+}
+
+.cta-box h2 {
+    margin-bottom: 1rem;
+}
+
+.cta-box .cta-box-price {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--primary-cyan);
+    margin: 0.8rem 0;
+}
+
+.cta-box .cta-box-lead {
+    font-size: 1.15rem;
+    color: var(--secondary-light-gray);
+    margin-bottom: 2rem;
+}
+
+.cta-box .cta-box-meta {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.cta-box .cta-box-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+}
+
 /* --- Footer ----------------------------------------------------------------
    Standard: schlanker, zentrierter Footer mit Impressum/Datenschutz.
    Homepage nutzt zusätzlich .footer-content (Spalten-Grid). */
@@ -382,6 +477,12 @@ footer a:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
     text-align: left;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
 }
 
 .footer-section h4 {
