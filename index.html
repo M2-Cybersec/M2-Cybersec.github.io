@@ -7,21 +7,21 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="M2 Cybersec - Professionelle Cybersecurity-Lösungen, Penetration Testing, Security Consulting und IT-Sicherheitsberatung für Unternehmen in Deutschland.">
+        content="Security-Checks im Abo ab 149 €/Monat, zielorientiertes Red Teaming und Awareness-Trainings – mit CVSS-bewertetem Report als Nachweis. Kostenloser Quick-Scan.">
     <meta name="keywords"
-        content="Cybersecurity, IT-Sicherheit, Penetration Testing, Security Consulting, Incident Response, DSGVO Compliance, ISO 27001">
+        content="Security-Check, Red Teaming, IT-Sicherheit KMU, Cybersecurity Abo, NIS2, Awareness Training, Quick-Scan, CVSS-Report, Köln">
     <meta name="author" content="M2 Cybersec">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="M2 Cybersec - Professionelle Cybersecurity-Lösungen">
+    <meta property="og:title" content="M2 Cybersec – IT-Sicherheit im Abo für KMU und Startups">
     <meta property="og:description"
-        content="Schützen Sie Ihr Unternehmen mit modernsten Cybersecurity-Lösungen. Penetration Testing, Security Consulting und mehr.">
+        content="Security-Checks im Abo ab 149 €/Monat, zielorientiertes Red Teaming und Awareness-Trainings – mit CVSS-bewertetem Report als Nachweis.">
     <meta property="og:url" content="https://m2cybersec.de/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
-    <title>M2 Cybersec - Cybersecurity-Lösungen & IT-Sicherheit | Penetration Testing</title>
+    <title>M2 Cybersec – IT-Sicherheit im Abo, Security-Checks &amp; Red Teaming für KMU</title>
 
     <link rel="canonical" href="https://m2cybersec.de/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
@@ -62,13 +62,18 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            filter: brightness(0.32) contrast(1.15);
+            filter: brightness(0.25) contrast(1.1) saturate(0.85);
         }
 
+        /* Am dunkelsten dort, wo der Text steht – oben und unten bleibt
+           etwas Textur stehen. */
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.55) 0%,
+                rgba(0, 0, 0, 0.72) 45%,
+                rgba(0, 0, 0, 0.58) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -863,6 +868,46 @@
             opacity: 1;
         }
 
+        /* Der eine amtliche Beleg steht still, während die Kundenlogos laufen.
+           Das Zeichen behält seine Originalfarben und sitzt deshalb auf einem
+           hellen Feld – alles andere wäre eine Veränderung der Wortbildmarke. */
+        .credential {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.1rem;
+            margin: 2.4rem auto 0;
+            padding: 0 5%;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .credential strong {
+            color: var(--secondary-light-gray);
+            font-weight: 600;
+        }
+
+        .credential-mark {
+            display: inline-block;
+            padding: 0.55rem 0.9rem;
+            background: var(--primary-white);
+            border-radius: var(--radius-sm);
+            line-height: 0;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .credential-mark img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+
+        .credential-mark:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
         @keyframes references-scroll {
             from { transform: translateX(0); }
             to   { transform: translateX(-50%); }
@@ -874,6 +919,8 @@
 
         @media (max-width: 768px) {
             .references-strip { padding: 2.2rem 0 1.8rem; }
+            .credential { margin-top: 1.8rem; font-size: 0.85rem; gap: 0.9rem; }
+            .credential-mark img { height: 32px; }
             .ref-logo {
                 padding: 0 2.5rem;
                 height: 72px;
@@ -961,11 +1008,16 @@
         }
 
         /* Pricing Section */
+        /* Eigene Kammer: tieferer Grund und je eine Haarlinie oben und unten –
+           dasselbe Fassungsmittel wie bei der Referenzleiste. Kein Dekor-Raster,
+           der Grund soll die Karten nach vorn lassen. */
         .pricing-section {
             padding: 7rem 5%;
             position: relative;
             overflow: hidden;
             background: #080808;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             max-width: 100%;
         }
 
@@ -974,18 +1026,6 @@
         .pricing-section .section-subtitle {
             position: relative;
             z-index: 2;
-        }
-
-        .pricing-grid-bg {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
-            background-size: 70px 80px;
-            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
-            mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
-            pointer-events: none;
         }
 
         .pricing-glow-top {
@@ -1008,7 +1048,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
-            align-items: center;
+            align-items: stretch;
         }
 
         .pricing-card {
@@ -1075,21 +1115,19 @@
             white-space: nowrap;
         }
 
+        /* Die Stufe ist der Unterschied, nicht die Marke: „Red Team" tritt
+           zurück, der Tier-Name trägt das Gewicht. Abstufung über Gewicht
+           statt über zusätzliche Palettenfarben. */
         .pricing-name {
             font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--primary-white);
+            font-weight: 500;
+            color: var(--secondary-light-gray);
             margin-bottom: 0.3rem;
         }
 
-        .pricing-name span { color: var(--primary-cyan); }
-
-        .pricing-name span.tier-lite {
-            color: #b0b0b0;
-        }
-
-        .pricing-name span.tier-pro {
-            color: #dfc06a;
+        .pricing-name span {
+            font-weight: 700;
+            color: var(--primary-white);
         }
 
         .pricing-price { margin: 1.4rem 0 1rem; }
@@ -1443,7 +1481,7 @@
                         <span class="hero-word" aria-hidden="true">Compliant.</span>
                     </span>
                 </h1>
-                <p>Schützen Sie Ihre digitalen Assets mit modernster Technologie und langjähriger Expertise. M2 Cybersec ist Ihr Partner für umfassende IT-Sicherheit.</p>
+                <p>Wir vereinbaren ein Ziel und prüfen, ob ein Angreifer es erreicht – auf dem Weg des geringsten Widerstands. Was danach in Ihrer Hand liegt: ein datierter, CVSS-bewerteter Report für Kunden, Auditoren und Cyberversicherer.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Kostenlose Beratung</a>
                     <a href="/quick-scan/" class="btn btn-secondary">Kostenloser Quick-Scan</a>
@@ -1457,21 +1495,62 @@
             <div class="references-track-wrapper">
                 <div class="references-track">
                     <!-- Set 1 (sichtbar für Screenreader) -->
-                    <div class="ref-logo"><img src="assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo"><img src="/assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
                     <!-- Set 2 -->
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
+                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
                 </div>
             </div>
+
+            <p class="credential">
+                <a class="credential-mark" href="https://www.allianz-fuer-cybersicherheit.de" target="_blank" rel="noopener">
+                    <img src="/assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
+                        alt="Teilnehmer der Allianz für Cyber-Sicherheit" width="282" height="109" loading="lazy">
+                </a>
+                <span>Teilnehmer der <strong>Allianz für Cyber-Sicherheit</strong> des BSI</span>
+            </p>
+        </section>
+
+        <section id="features" class="section">
+            <span class="eyebrow eyebrow-center">Ihre Vorteile</span>
+            <h2 class="section-title">Warum M2 Cybersec?</h2>
+            <p class="section-subtitle">Vier Dinge, die Sie nach dem ersten Report selbst nachprüfen können.</p>
+            <div class="features-grid">
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+                    <h3>Praxisnahe Lösungen</h3>
+                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre
+                        individuellen Anforderungen</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></div>
+                    <h3>Ganzheitlicher Ansatz</h3>
+                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur
+                        Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    <h3>Schnelle Reaktionszeit</h3>
+                    <p>Schnelle Rückmeldung auf Ihre Anfragen – weil Sicherheitsfragen keine langen Wartezeiten
+                        verdienen</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <h3>Transparente Kommunikation</h3>
+                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
+                        Management-Ebene</p>
+                </article>
+            </div>
+
         </section>
 
         <!-- NRW-Förderung Banner -->
@@ -1605,7 +1684,6 @@
 
         <!-- Red Team Pricing -->
         <section id="pricing" class="pricing-section">
-            <div class="pricing-grid-bg" aria-hidden="true"></div>
             <div class="pricing-glow-top" aria-hidden="true"></div>
             <span class="eyebrow eyebrow-center">Angriffssimulation</span>
             <h2 class="section-title">Red Team Services</h2>
@@ -1614,7 +1692,7 @@
 
                 <!-- Red Team Lite -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span class="tier-lite">Lite</span></h3>
+                    <h3 class="pricing-name">Red Team <span>Lite</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">ab 3.500 €</div>
                         <div class="pricing-price-sub">Individuelles Angebot, einmalig · netto zzgl. USt.</div>
@@ -1657,7 +1735,7 @@
 
                 <!-- Red Team Pro -->
                 <article class="pricing-card">
-                    <h3 class="pricing-name">Red Team <span class="tier-pro">Pro</span></h3>
+                    <h3 class="pricing-name">Red Team <span>Pro</span></h3>
                     <div class="pricing-price">
                         <div class="pricing-price-label">Auf Anfrage</div>
                         <div class="pricing-price-sub">Individuelles Angebot</div>
@@ -1745,38 +1823,6 @@
             </div>
         </section>
 
-        <section id="features" class="section">
-            <span class="eyebrow eyebrow-center">Ihre Vorteile</span>
-            <h2 class="section-title">Warum M2 Cybersec?</h2>
-            <p class="section-subtitle">Vertrauen Sie auf Expertise, Zertifizierung und nachweisbare Ergebnisse</p>
-            <div class="features-grid">
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
-                    <h3>Praxisnahe Lösungen</h3>
-                    <p>Sofort umsetzbare Handlungsempfehlungen und maßgeschneiderte Sicherheitskonzepte für Ihre
-                        individuellen Anforderungen</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></div>
-                    <h3>Ganzheitlicher Ansatz</h3>
-                    <p>Von der technischen Analyse über organisatorische Prozesse bis hin zur
-                        Mitarbeitersensibilisierung – Security aus allen Perspektiven</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                    <h3>Schnelle Reaktionszeit</h3>
-                    <p>Schnelle Rückmeldung auf Ihre Anfragen – weil Sicherheitsfragen keine langen Wartezeiten
-                        verdienen</p>
-                </article>
-                <article class="feature-item">
-                    <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-                    <h3>Transparente Kommunikation</h3>
-                    <p>Klare, verständliche Reports ohne technisches Kauderwelsch – für fundierte Entscheidungen auf
-                        Management-Ebene</p>
-                </article>
-            </div>
-
-        </section>
 
         <section id="quick-scan" class="section quick-scan">
             <span class="eyebrow eyebrow-center">In 15 Minuten</span>
@@ -1829,28 +1875,27 @@
         <section id="process" class="section process">
             <span class="eyebrow eyebrow-center">So arbeiten wir</span>
             <h2 class="section-title">Unser Vorgehen</h2>
-            <p class="section-subtitle">In vier Schritten zu maximaler IT-Sicherheit</p>
+            <p class="section-subtitle">Vom kostenlosen Quick-Scan bis zu dem Nachweis, den Sie vorlegen können.</p>
             <div class="process-steps">
                 <article class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Analyse &amp; Beratung</h3>
-                    <p>Wir analysieren Ihre aktuelle Sicherheitslage und beraten Sie zu optimalen Lösungsansätzen</p>
+                    <h3>Quick-Scan</h3>
+                    <p>15 Minuten, rein passiv, kostenlos: Wir zeigen Ihnen, was ein Angreifer heute schon über Ihr Unternehmen sehen kann.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Konzeption</h3>
-                    <p>Entwicklung einer maßgeschneiderten Sicherheitsstrategie basierend auf Ihren individuellen
-                        Anforderungen</p>
+                    <h3>Ziel &amp; Scope</h3>
+                    <p>Wir legen gemeinsam fest, was geprüft wird – beim Red Teaming, welches Ziel ein Angreifer erreichen müsste. Schriftlich, vor dem ersten Test.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Implementierung</h3>
-                    <p>Umsetzung der Sicherheitsmaßnahmen mit minimaler Beeinträchtigung Ihres laufenden Betriebs</p>
+                    <h3>Prüfung</h3>
+                    <p>Security-Check in der Breite oder zielorientierte Angriffssimulation in der Tiefe – je nachdem, welche Frage Sie beantwortet haben wollen.</p>
                 </article>
                 <article class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Monitoring &amp; Support</h3>
-                    <p>Kontinuierliche Überwachung und fortlaufende Optimierung Ihrer IT-Sicherheit</p>
+                    <h3>Report &amp; Nachverfolgung</h3>
+                    <p>CVSS-bewertet, priorisiert und ohne Kauderwelsch – mit konkreten Handlungsempfehlungen und Nachprüfung der geschlossenen Lücken.</p>
                 </article>
             </div>
         </section>
@@ -2190,10 +2235,10 @@
                 <img src="/assets/logo.png" alt="M2 Cybersec Logo" width="81" height="60" loading="lazy"
                     class="footer-logo">
                 <p>Ihr Partner für professionelle Cybersecurity-Lösungen und umfassende IT-Sicherheit.</p>
-                <a href="https://www.allianz-fuer-cybersicherheit.de"
+                <a class="credential-mark" href="https://www.allianz-fuer-cybersicherheit.de"
                     title="Verweis zur Webpräsenz der Allianz für Cyber-Sicherheit"><img
                         src="/assets/Logo_Allianz_fuer_Cyber-Sicherheit_Teilnehmer.jpg"
-                        alt="Webpräsenz der Allianz für CyberSicherheit" width="282" height="109" loading="lazy" /></a>
+                        alt="Teilnehmer der Allianz für Cyber-Sicherheit" width="282" height="109" loading="lazy"></a>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
