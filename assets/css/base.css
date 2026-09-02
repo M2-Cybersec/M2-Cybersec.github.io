@@ -426,6 +426,11 @@ h3 { font-weight: 600; }
     margin-bottom: 1rem;
 }
 
+/* Folgt direkt ein Preis, rückt er näher an die Überschrift */
+.cta-box h2:has(+ .cta-box-price) {
+    margin-bottom: 0.5rem;
+}
+
 .cta-box .cta-box-price {
     font-family: var(--font-display);
     font-weight: 500;
