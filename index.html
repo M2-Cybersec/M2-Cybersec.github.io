@@ -29,8 +29,11 @@
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/testimonials.css">
     <script>document.documentElement.classList.add('js');</script>
     <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/testimonials.js" defer></script>
+    <script src="/assets/js/references.js" defer></script>
     <style>
 
         body {
@@ -974,13 +977,9 @@
             display: flex;
             align-items: center;
             width: max-content;
+            /* Dauer setzt references.js anhand der Logo-Anzahl neu. */
             animation: references-scroll 60s linear infinite;
             will-change: transform;
-        }
-
-        .references-track:hover,
-        .references-track.is-paused {
-            animation-play-state: paused;
         }
 
         .ref-logo {
@@ -1628,23 +1627,12 @@
 
         <!-- Referenzen-Leiste -->
         <section class="references-strip" aria-label="Unsere Referenzen">
-            <p class="references-label">Vertrauen von Unternehmen in ganz Deutschland</p>
-            <div class="references-track-wrapper">
-                <div class="references-track">
-                    <!-- Set 1 (sichtbar für Screenreader) -->
-                    <div class="ref-logo"><img src="/assets/references/akip-mono.png" alt="akip köln" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="/assets/references/dq-drives-mono.png" alt="DQ Drives" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="/assets/references/brinktec-mono.png" alt="Brinktec" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="/assets/references/recosic-mono.png" alt="RECOSiC" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="/assets/references/kado-mono.png" alt="KaDo Haustechnik" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo"><img src="/assets/references/he-solutions-mono.png" alt="HE Solutions" width="260" height="200" loading="lazy"></div>
-                    <!-- Set 2 -->
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/akip-mono.png" alt="" width="628" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/dq-drives-mono.png" alt="" width="250" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/brinktec-mono.png" alt="" width="688" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/recosic-mono.png" alt="" width="141" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/kado-mono.png" alt="" width="245" height="200" loading="lazy"></div>
-                    <div class="ref-logo" aria-hidden="true"><img src="/assets/references/he-solutions-mono.png" alt="" width="260" height="200" loading="lazy"></div>
+            <!-- Logos kommen aus /assets/js/references.js (Liste M2_REFERENCES_DATA).
+                 Ohne Einträge (oder ohne JS) bleibt die Logo-Leiste ausgeblendet. -->
+            <div class="references-logos" hidden>
+                <p class="references-label">Vertrauen von Unternehmen in ganz Deutschland</p>
+                <div class="references-track-wrapper">
+                    <div class="references-track" data-references></div>
                 </div>
             </div>
 
@@ -1688,6 +1676,14 @@
                 </article>
             </div>
 
+        </section>
+
+        <!-- Kundenstimmen – Inhalte kommen aus /assets/js/testimonials.js.
+             Ohne Einträge (oder ohne JS) bleibt die Sektion ausgeblendet. -->
+        <section id="stimmen" class="section" hidden>
+            <span class="eyebrow eyebrow-center">Kundenstimmen</span>
+            <h2 class="section-title">Was Kunden über uns sagen</h2>
+            <div class="testimonials" data-testimonials></div>
         </section>
 
         <!-- NRW-Förderung Banner -->
@@ -2510,8 +2506,9 @@
             }
 
             // --- Dauerschleifen anhalten, wenn sie niemand sieht ------------
+            // Die Referenzen-Leiste steht bewusst nicht in dieser Liste: Sie soll
+            // ohne Unterbrechung durchlaufen (siehe assets/js/references.js).
             const loops = [
-                document.querySelector('.references-track'),
                 document.querySelector('.scan-radar')
             ].filter(Boolean);
 
@@ -2535,6 +2532,7 @@
             const zones = [
                 ['home', '#home'],
                 ['features', '#home'],
+                ['stimmen', '#home'],
                 ['services', '#services'],
                 ['pricing', '#services'],
                 ['quick-scan', '#services'],
@@ -2558,6 +2556,8 @@
                     const line = (navbar ? navbar.offsetHeight : 0) + 24;
                     let active = marks[0];
                     marks.forEach(mark => {
+                        // Ausgeblendete Abschnitte (z. B. Stimmen ohne Einträge) zählen nicht.
+                        if (mark.section.hidden) return;
                         if (mark.section.getBoundingClientRect().top <= line) active = mark;
                     });
                     // Am Seitenende gewinnt der letzte Abschnitt, auch wenn er kurz ist.

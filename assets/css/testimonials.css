@@ -1,0 +1,306 @@
+/* ==========================================================================
+   M2 Cybersec – testimonials.css
+   Kundenstimmen-Karussell. Gehört zusammen mit /assets/js/testimonials.js.
+   Nur auf Seiten einbinden, die das Karussell auch zeigen.
+   ========================================================================== */
+
+.testimonials {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tm-stage {
+    display: grid;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+/* --- Bild-Stapel ---------------------------------------------------------- */
+
+.tm-visuals {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+}
+
+.tm-visual {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-md);
+    /* Deckende Fläche plus Kartentönung: Die Kacheln überlappen sich,
+       durchscheinende Stapel würden matschig wirken. */
+    background-color: var(--primary-dark);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03));
+    transition: transform 600ms var(--ease-out), opacity 600ms var(--ease-out);
+}
+
+.tm-visual[data-pos="center"] {
+    z-index: 3;
+    opacity: 1;
+    transform: none;
+    box-shadow: var(--shadow-md);
+}
+
+.tm-visual[data-pos="left"] {
+    z-index: 2;
+    opacity: 0.7;
+    transform: translate(-26%, -9%) scale(0.85) rotateY(15deg);
+}
+
+.tm-visual[data-pos="right"] {
+    z-index: 2;
+    opacity: 0.7;
+    transform: translate(26%, -9%) scale(0.85) rotateY(-15deg);
+}
+
+.tm-visual[data-pos="hidden"] {
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Logos werden eingepasst, Porträts füllen die Kachel. */
+.tm-visual img {
+    display: block;
+    max-width: 64%;
+    max-height: 44%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.tm-visual[data-fit="portrait"] img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Fällt ein Bild aus, trägt die Kachel die Initialen. */
+.tm-monogram {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* --- Zitat --------------------------------------------------------------- */
+
+.tm-body {
+    /* Alle Stimmen liegen in derselben Rasterzelle: Die Höhe richtet sich
+       nach der längsten, dadurch springt beim Wechsel kein Layout. */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.tm-slide {
+    grid-area: 1 / 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.tm-slide.is-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tm-quote {
+    position: relative;
+    margin: 0 0 1.6rem;
+    padding-top: 2.2rem;
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: var(--secondary-light-gray);
+}
+
+.tm-quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.6rem;
+    left: -0.1rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.14);
+}
+
+.tm-word {
+    display: inline-block;
+}
+
+.tm-slide.is-in .tm-word {
+    animation: tm-word-in 220ms ease-in-out both;
+    animation-delay: calc(var(--tm-i) * 25ms);
+}
+
+@keyframes tm-word-in {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.tm-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-white);
+    margin-bottom: 0.15rem;
+}
+
+.tm-role {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- Steuerung ----------------------------------------------------------- */
+
+.tm-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2.4rem;
+}
+
+.tm-arrow {
+    flex-shrink: 0;
+    width: 2.7rem;
+    height: 2.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--secondary-light-gray);
+    cursor: pointer;
+    transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+}
+
+.tm-arrow:hover {
+    background: var(--primary-cyan);
+    border-color: var(--primary-cyan);
+    color: var(--primary-dark);
+}
+
+.tm-arrow .icon {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.tm-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.tm-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.22);
+    cursor: pointer;
+    transition: background-color var(--transition-base), width var(--transition-base);
+}
+
+.tm-dot:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.tm-dot[aria-current="true"] {
+    width: 22px;
+    background: var(--primary-cyan);
+}
+
+/* --- Varianten ----------------------------------------------------------- */
+
+/* Ohne Bilder steht das Zitat allein und mittig. */
+.testimonials.is-textonly {
+    max-width: 760px;
+    text-align: center;
+}
+
+.testimonials.is-textonly .tm-quote {
+    padding-top: 2.6rem;
+}
+
+.testimonials.is-textonly .tm-quote::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonials.is-textonly .tm-controls {
+    justify-content: center;
+}
+
+.testimonials.is-textonly .tm-dots {
+    margin-left: 0;
+}
+
+/* Eine einzelne Stimme braucht keine Steuerung. */
+.testimonials.is-single .tm-controls {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .tm-stage {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    }
+
+    .testimonials.is-textonly .tm-stage {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tm-stage {
+        gap: 2.4rem;
+    }
+
+    .tm-visuals {
+        max-width: 240px;
+    }
+
+    .tm-quote {
+        font-size: 1.02rem;
+    }
+
+    .tm-controls {
+        margin-top: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tm-visual {
+        transition: none;
+    }
+
+    .tm-slide.is-in .tm-word {
+        animation: none;
+    }
+}
