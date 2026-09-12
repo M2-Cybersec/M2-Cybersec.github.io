@@ -1,3 +1,11 @@
 templates/
 CLAUDE.md
 prompts/
+
+# Impeccable-Artefakte – bleiben lokal, gehen nicht mit auf GitHub Pages
+PRODUCT.md
+DESIGN.md
+.impeccable/
+
+# Claude-Code-Sitzungsdateien – bleiben lokal
+.claude/
