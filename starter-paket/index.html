@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Startup Shield von M2 Cybersec – Ihr erster Security-Partner für 149 €/Monat netto. Jährlicher Security-Check mit CVSS-Report, monatlicher Lagebericht und Startup-Report für Startups und Gründer.">
+    <meta name="description" content="Startup Shield: Security-Abo für Startups und Gründer, 149 €/Monat netto. Jährlicher Security-Check mit CVSS-Report, monatlicher Lagebericht und Startup-Report.">
     <meta name="keywords" content="Startup Shield, IT-Sicherheit Startups, Security-Check, Cybersecurity für Gründer, Startup Security Abo, 149 Euro Monat">
     <meta name="robots" content="index, follow">
 
@@ -15,9 +15,74 @@
     <meta property="og:url" content="https://m2cybersec.de/starter-paket/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
-    <title>Startup Shield – Security-Abo für Startups · 149 €/Monat | M2 Cybersec UG</title>
+    <title>Startup Shield – Security-Abo für Startups · 149 €/Monat | M2 Cybersec</title>
     <link rel="canonical" href="https://m2cybersec.de/starter-paket/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://m2cybersec.de/starter-paket/#service",
+                "name": "Startup Shield",
+                "serviceType": "IT-Sicherheit im Abo für Startups",
+                "url": "https://m2cybersec.de/starter-paket/",
+                "description": "Startup Shield: Security-Abo für Startups und Gründer, 149 €/Monat netto. Jährlicher Security-Check mit CVSS-Report, monatlicher Lagebericht und Startup-Report.",
+                "provider": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Deutschland"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://m2cybersec.de/starter-paket/",
+                    "price": "149",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "149",
+                        "priceCurrency": "EUR",
+                        "unitCode": "MON",
+                        "billingDuration": 12,
+                        "billingIncrement": 1,
+                        "valueAddedTaxIncluded": false
+                    }
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Startup Shield",
+                        "item": "https://m2cybersec.de/starter-paket/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -393,7 +458,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -512,7 +577,7 @@
             <h2 class="section-heading">Optional dazubuchbar</h2>
             <ul class="ideal-list">
                 <li><a href="/awareness-training-fuer-kmu/">Awareness+ Training</a> – 90-minütige Schulung für euer Team zu Phishing, Ransomware und Social Engineering. 490 € netto pro Session, nicht im Abo enthalten.</li>
-                <li><a href="/red-team-plus/#pentest-vs-red-teaming">Pentest</a> – die Vertiefung nach eurem Security-Check: manuell getriebene Prüfung eines einzelnen Ziels mit definierter Testtiefe. Der Check prüft in die Breite und zeigt, wo sich die Tiefe überhaupt lohnt. Aufwand nach Ziel und Testtiefe.</li>
+                <li><a href="/penetrationstest-kmu/">Pentest</a> – die Vertiefung nach eurem Security-Check: manuell getriebene Prüfung eines einzelnen Ziels mit definierter Testtiefe. Der Check prüft in die Breite und zeigt, wo sich die Tiefe überhaupt lohnt. Aufwand nach Ziel und Testtiefe.</li>
             </ul>
 
             <h2 class="section-heading">Ideal für</h2>

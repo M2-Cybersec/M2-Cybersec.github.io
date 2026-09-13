@@ -5,22 +5,20 @@ Allow: /
 Disallow: /prompts/
 Disallow: /templates/
 
-# Sitemaps
-Sitemap: https://m2cybersec.de/sitemap.xml
-
-# LLMs and AI crawlers
+# KI-Crawler und KI-Suche ausdrücklich erlaubt
 User-agent: GPTBot
-Allow: /
+User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
-Allow: /
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
 User-agent: CCBot
 Allow: /
-User-agent: anthropic-ai
-Allow: /
-User-agent: Claude-Web
-Allow: /
-User-agent: Google-Extended
-Allow: /
+Disallow: /prompts/
+Disallow: /templates/
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
+# Sitemaps
+Sitemap: https://m2cybersec.de/sitemap.xml

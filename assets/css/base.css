@@ -149,6 +149,17 @@ main a:not([class]):hover {
     text-decoration: underline;
 }
 
+/* Autorenlink in der Artikel-Metazeile (steht teils außerhalb von <main>) */
+.article-meta a[rel="author"] {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 252, 246, 0.45);
+}
+
+.article-meta a[rel="author"]:hover {
+    color: var(--primary-cyan);
+}
+
 /* Zahlenkolonnen laufen in gleicher Breite */
 table {
     font-variant-numeric: tabular-nums;
@@ -338,9 +349,9 @@ h3 { font-weight: 600; }
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    width: 44px;
-    height: 44px;
-    padding: 10px;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
     background: none;
     border: none;
     cursor: pointer;

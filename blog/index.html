@@ -14,6 +14,103 @@
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
     
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog – Cybersecurity Insights | M2 Cybersec">
+    <meta property="og:description" content="M2 Cybersec Blog - Aktuelle Artikel zu Cybersecurity, IT-Sicherheit, NIS2-Richtlinie, Security Audits und Best Practices.">
+    <meta property="og:url" content="https://m2cybersec.de/blog/">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Blog",
+                "@id": "https://m2cybersec.de/blog/",
+                "url": "https://m2cybersec.de/blog/",
+                "name": "M2 Cybersec Blog",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "blogPost": [
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/cybersecurity-audit#article",
+                        "url": "https://m2cybersec.de/blog/cybersecurity-audit"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/nis2-richtlinie#article",
+                        "url": "https://m2cybersec.de/blog/nis2-richtlinie"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/it-budget-cybersecurity#article",
+                        "url": "https://m2cybersec.de/blog/it-budget-cybersecurity"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte#article",
+                        "url": "https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken#article",
+                        "url": "https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/ransomware-2026#article",
+                        "url": "https://m2cybersec.de/blog/ransomware-2026"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit#article",
+                        "url": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/eu-altersverifikation-app-sicherheitsluecke#article",
+                        "url": "https://m2cybersec.de/blog/eu-altersverifikation-app-sicherheitsluecke"
+                    },
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://m2cybersec.de/blog/cve-2026-33826-windows-active-directory-patch#article",
+                        "url": "https://m2cybersec.de/blog/cve-2026-33826-windows-active-directory-patch"
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://m2cybersec.de/blog/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
@@ -192,7 +289,7 @@
 <body>
     <nav class="navbar" role="navigation">
         <a href="/" class="logo">
-            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -229,7 +326,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 Min. Lesezeit</span>
                     </div>
                     <p>Eine kritische RPC-Schwachstelle in Windows Active Directory (CVSS 8.0) ermöglicht Domänen-Kompromittierung ohne Benutzerinteraktion. Microsoft hat Notfall-Patches für alle Server-Versionen veröffentlicht – Administratoren müssen sofort handeln.</p>
-                    <a href="cve-2026-33826-windows-active-directory-patch.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/cve-2026-33826-windows-active-directory-patch" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -243,7 +340,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 Min. Lesezeit</span>
                     </div>
                     <p>Die offizielle EU-Altersverifikations-App wurde mit erschreckend simplen Methoden in unter 2 Minuten kompromittiert. Eine Analyse der elementaren Sicherheitsfehler – und was Entwickler und Unternehmen daraus lernen können.</p>
-                    <a href="eu-altersverifikation-app-sicherheitsluecke.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/eu-altersverifikation-app-sicherheitsluecke" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -257,7 +354,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 Min. Lesezeit</span>
                     </div>
                     <p>ShinyHunters kompromittierte Vercel über ein KI-Tool mit zu weitreichenden OAuth-Berechtigungen. Was das für Ihr Unternehmen bedeutet – und wie Sie blinde Flecken bei Third-Party-App-Berechtigungen schließen.</p>
-                    <a href="vercel-hack-ki-tool-sicherheit.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/vercel-hack-ki-tool-sicherheit" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -271,7 +368,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 Min. Lesezeit</span>
                     </div>
                     <p>Wie viel des IT-Budgets sollte in die Cybersicherheit fließen? Erfahren Sie die Empfehlungen des BSI und warum 10-20 % des IT-Budgets der richtige Richtwert sind.</p>
-                    <a href="it-budget-cybersecurity.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/it-budget-cybersecurity" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -285,7 +382,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 Min. Lesezeit</span>
                     </div>
                     <p>Cybersecurity-Audits sind umfassende Überprüfungen, die Ihre IT-Sicherheit bewerten und Schwachstellen aufdecken. Erfahren Sie, warum regelmäßige Audits entscheidend für Ihre Unternehmenssicherheit sind und was dabei geprüft wird.</p>
-                    <a href="cybersecurity-audit.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/cybersecurity-audit" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -299,7 +396,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
                     </div>
                     <p>Mit der NIS2-Richtlinie steht Europa ein weiterer Schritt hin zu einer sichereren digitalen Infrastruktur bevor. Erfahren Sie, was die Richtlinie bedeutet, wer betroffen ist und wie M2 Cybersec Sie bei der Umsetzung unterstützt.</p>
-                    <a href="nis2-richtlinie.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/nis2-richtlinie" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -313,7 +410,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
                     </div>
                     <p>Kleine und mittlere Unternehmen sind heute das bevorzugte Ziel von Ransomware – gerade weil dort Monitoring, klare Abläufe und IT-Sicherheit oft fehlen. Warum „Wir sind zu klein“ ein teurer Irrtum ist.</p>
-                    <a href="ransomware-2026.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/ransomware-2026" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -327,7 +424,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 Min. Lesezeit</span>
                     </div>
                     <p>„Wir sind eigentlich ganz gut aufgestellt“ – diesen Satz hören wir ständig und finden trotzdem in kürzester Zeit kritische Schwachstellen. 15 Punkte, die zeigen, wo Angreifer zuerst ansetzen.</p>
-                    <a href="it-sicherheitscheck-kmu-15-punkte.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/it-sicherheitscheck-kmu-15-punkte" class="read-more">Weiterlesen</a>
                 </div>
             </article>
 
@@ -341,7 +438,7 @@
                         <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 Min. Lesezeit</span>
                     </div>
                     <p>Microsoft 365 ist für viele Firmen das digitale Rückgrat – und genau deshalb Hauptziel für Angriffe. Warum MFA allein nicht reicht und welche sieben Lücken wir am häufigsten finden.</p>
-                    <a href="mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken.html" class="read-more">Weiterlesen</a>
+                    <a href="/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken" class="read-more">Weiterlesen</a>
                 </div>
             </article>
         </div>

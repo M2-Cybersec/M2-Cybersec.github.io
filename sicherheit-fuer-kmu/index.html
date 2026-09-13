@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IT-Sicherheit für KMU - Professioneller Schutz gegen Cyberangriffe, Ransomware und Datenverlust. Risikoanalyse, Penetrationstests und Sicherheitskonzepte.">
+    <meta name="description" content="IT-Sicherheit für KMU: 10-Punkte-Checkliste, DIN SPEC 27076 und CyberRisikoCheck erklärt, NRW-Förderung und Security-Checks ab 149 €/Monat.">
     <meta name="keywords" content="IT-Sicherheit KMU, Cybersecurity, Ransomware-Schutz, Penetrationstest, Sicherheitsaudit, DSGVO">
     <meta name="robots" content="index, follow">
 
@@ -15,10 +15,59 @@
     <meta property="og:url" content="https://m2cybersec.de/sicherheit-fuer-kmu/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
-    <title>IT-Sicherheit für KMU - Professioneller Schutz gegen Cyberbedrohungen | M2 Cybersec</title>
+    <title>IT-Sicherheit für KMU: Checkliste und DIN SPEC 27076 | M2 Cybersec</title>
     <link rel="canonical" href="https://m2cybersec.de/sicherheit-fuer-kmu/">
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://m2cybersec.de/sicherheit-fuer-kmu/#service",
+                "name": "IT-Sicherheit für KMU",
+                "serviceType": "IT-Sicherheitsberatung für kleine und mittlere Unternehmen",
+                "url": "https://m2cybersec.de/sicherheit-fuer-kmu/",
+                "description": "IT-Sicherheit für KMU: 10-Punkte-Checkliste, DIN SPEC 27076 und CyberRisikoCheck erklärt, NRW-Förderung und Security-Checks ab 149 €/Monat.",
+                "provider": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Deutschland"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "IT-Sicherheit für KMU",
+                        "item": "https://m2cybersec.de/sicherheit-fuer-kmu/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,7 +200,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -183,6 +232,8 @@
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .service-card p {
@@ -220,6 +271,69 @@
             }
         }
         .section-block { margin: 4rem 0; }
+
+        .hero-service .btn-row,
+        .guide .btn-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .guide .btn-row { justify-content: flex-start; margin-top: 1.5rem; }
+
+        .guide .section-title {
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .guide p {
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 75ch;
+            margin-bottom: 1.2rem;
+        }
+
+        .guide p strong,
+        .check-list strong { color: var(--primary-white); }
+
+        .guide a:not(.btn) { color: var(--primary-cyan); }
+
+        .check-list {
+            list-style: none;
+            counter-reset: check;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+            gap: 0 2.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .check-list li {
+            counter-increment: check;
+            position: relative;
+            padding: 1rem 0 1rem 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            color: var(--secondary-light-gray);
+            line-height: 1.7;
+        }
+
+        .check-list li::before {
+            content: counter(check);
+            position: absolute;
+            left: 0;
+            top: 1.05rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 252, 246, 0.45);
+            color: var(--primary-cyan);
+            font-family: var(--font-display);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -227,7 +341,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -248,11 +362,40 @@
                 <span class="service-badge">FÜR KMU</span>
                 <h1>IT-Sicherheit für <span>kleine und mittlere Unternehmen</span></h1>
                 <p>Ihr Schutzschild gegen moderne Cyberbedrohungen. Wir unterstützen Sie dabei, Sicherheitsrisiken frühzeitig zu erkennen, Angriffe zu verhindern und Ihr Unternehmen nachhaltig zu schützen.</p>
+                <div class="btn-row">
+                    <a href="/quick-scan/" class="btn btn-primary">Kostenlosen Quick-Scan buchen</a>
+                    <a href="#checkliste" class="btn btn-secondary">Zur Checkliste</a>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <a href="/#services" class="back-link">← Zurück zur Übersicht</a>
+
+            <div class="section-block guide" id="checkliste">
+                <h2 class="section-title">IT-Sicherheit im KMU: Wo fange ich an?</h2>
+                <p>Die meisten erfolgreichen Angriffe auf kleine und mittlere Unternehmen nutzen keine ausgefeilten Techniken, sondern fehlende Grundlagen: ein Passwort ohne zweiten Faktor, ein Server ohne Updates, ein Backup, das mitverschlüsselt wird. Wer diese zehn Punkte sauber umsetzt, schließt die häufigsten Einfallstore. Sie orientieren sich an den Basisempfehlungen des BSI für kleine Unternehmen.</p>
+                <ol class="check-list">
+                    <li><strong>Multi-Faktor-Authentifizierung</strong> für E-Mail, Microsoft 365 oder Google Workspace, VPN und alle Admin-Zugänge. Gestohlene Passwörter sind der häufigste Einstieg.</li>
+                    <li><strong>Updates zeitnah einspielen</strong>, besonders auf allem, was aus dem Internet erreichbar ist: Firewall, VPN, Webserver, Mailserver.</li>
+                    <li><strong>Backups, die ein Angreifer nicht erreicht:</strong> mindestens eine Kopie offline oder unveränderbar und regelmäßig getestet, ob die Wiederherstellung wirklich klappt.</li>
+                    <li><strong>Admin-Rechte trennen:</strong> Niemand arbeitet im Alltag mit einem Administratorkonto. Admin-Konten bekommen eigene, besonders geschützte Zugänge.</li>
+                    <li><strong>E-Mail-Domain absichern</strong> mit SPF, DKIM und DMARC, damit Ihre Domain nicht für Phishing im Namen Ihres Unternehmens missbraucht werden kann.</li>
+                    <li><strong>Wissen, was es gibt:</strong> eine aktuelle Liste von Geräten, Cloud-Diensten, Domains und extern erreichbaren Systemen. Was Sie nicht kennen, können Sie nicht schützen.</li>
+                    <li><strong>Fernzugänge prüfen:</strong> kein offener Remote-Desktop ins Internet, VPN nur mit zweitem Faktor, alte Zugänge ehemaliger Mitarbeitender und Dienstleister schließen.</li>
+                    <li><strong>Mitarbeitende schulen:</strong> Phishing-Mails erkennen, verdächtige Anrufe hinterfragen und wissen, wem man einen Fehler sofort meldet, ohne Angst vor Ärger.</li>
+                    <li><strong>Einen Notfallplan auf Papier haben:</strong> wer entscheidet, wer den IT-Dienstleister und die Versicherung anruft und wie der Betrieb ohne IT weiterläuft.</li>
+                    <li><strong>Regelmäßig von außen prüfen lassen:</strong> Die Liste oben wirkt nur, wenn jemand kontrolliert, ob sie tatsächlich umgesetzt ist, und zwar nicht einmalig, sondern im festen Rhythmus.</li>
+                </ol>
+                <p>Punkt zehn ist der, an dem die meisten KMU scheitern. Genau dafür gibt es unseren Security-Check im Abo: Mit <a href="/starter-paket/">Startup Shield</a> für 149 € im Monat wird Ihre externe Angriffsfläche jedes Jahr geprüft, mit CVSS-bewertetem Report als Nachweis. <a href="/growth-paket/">Growth Guard</a> und <a href="/scale-paket/">Scale Secure</a> prüfen häufiger und schulen Ihr Team mit.</p>
+            </div>
+
+            <div class="section-block guide">
+                <h2 class="section-title">DIN SPEC 27076 und CyberRisikoCheck</h2>
+                <p>Für Unternehmen mit weniger als 50 Mitarbeitenden gibt es einen eigenen, bundesweit einheitlichen Standard: die <strong>DIN SPEC 27076</strong>, entwickelt unter Leitung des BSI zusammen mit dem Mittelstandsverband BVMW. Auf ihr basiert der <strong>CyberRisikoCheck</strong>. In einem ein- bis zweistündigen Interview mit einem IT-Dienstleister werden 27 Anforderungen aus sechs Themenbereichen abgefragt. Das Ergebnis ist ein Bericht mit Punktzahl und einer nach Dringlichkeit sortierten Empfehlung für jede nicht erfüllte Anforderung.</p>
+                <p>Wichtig für die Einordnung: Der CyberRisikoCheck ist ein Selbstauskunfts-Interview und ausdrücklich <strong>keine Zertifizierung</strong>. Er zeigt, welche organisatorischen Grundlagen fehlen, prüft aber nicht technisch, ob Ihre Systeme tatsächlich angreifbar sind. Unser Security-Check setzt genau dort an: Er schaut von außen auf das, was ein Angreifer sieht. Beides ergänzt sich. Mehr zum Verfahren erklärt das <a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/KMU/CyberRisikoCheck/CyberRisikoCheck_node.html" rel="noopener">BSI auf seiner Seite zum CyberRisikoCheck</a>.</p>
+            </div>
+
 
             <h2 class="section-title">Warum IT-Sicherheit gerade für KMU entscheidend ist</h2>
             <p class="section-subtitle">Cyberkriminelle zielen zunehmend auf KMU, da diese oft weniger geschützt sind als Großunternehmen. Ein einziger erfolgreicher Angriff kann jedoch schwerwiegende Folgen haben.</p>
@@ -303,7 +446,7 @@
                 <article class="service-card">
                     <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                     <h3>Web-Penetrationstests</h3>
-                    <p>Wir prüfen Ihre Webanwendungen realitätsnah aus Sicht eines Angreifers. So decken wir kritische Sicherheitslücken auf und zeigen Ihnen, wie Sie Ihre Systeme nachhaltig absichern.</p>
+                    <p>Wir prüfen Ihre Webanwendungen realitätsnah aus Sicht eines Angreifers – als Vertiefung, wenn ein Security-Check zeigt, dass sich ein System genauer lohnt. Wie das abläuft und was die Kosten bestimmt, steht bei <a href="/penetrationstest-kmu/">Penetrationstest für KMU</a>.</p>
                 </article>
 
                 <article class="service-card">
@@ -337,6 +480,12 @@
                         <p>Senken Sie das Risiko finanzieller Schäden durch Cyberangriffe und sorgen Sie für wirtschaftliche Stabilität.</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="section-block guide">
+                <h2 class="section-title">Förderung für IT-Sicherheit in NRW</h2>
+                <p>KMU mit Sitz in Nordrhein-Westfalen können Sicherheitsmaßnahmen über das Landesprogramm <strong>MID-Digitale Sicherheit</strong> der NRW.BANK mit bis zu 50 % bezuschussen lassen. Gefördert werden unter anderem Analysen wie Penetrationstests, die Behebung von Schwachstellen und Notfallpläne, ab 8.000 € Projektvolumen und vergeben per Losverfahren. Wie die Anmeldung abläuft und welche unserer Leistungen passen, steht auf der Seite zur <a href="/nrw-foerderung/">NRW-Förderung</a>.</p>
+                <p>Wer hinter den Prüfungen steht, lesen Sie auf <a href="/das-team/">Das Team</a>. Für die technische Tiefe eines einzelnen Systems gibt es den <a href="/penetrationstest-kmu/">Penetrationstest für KMU</a>.</p>
             </div>
 
             <div class="cta-box">

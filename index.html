@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://m2cybersec.de/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
-    <title>M2 Cybersec – IT-Sicherheit im Abo, Security-Checks &amp; Red Teaming für KMU</title>
+    <title>M2 Cybersec – IT-Sicherheit im Abo &amp; Red Teaming für KMU</title>
 
     <link rel="canonical" href="https://m2cybersec.de/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
@@ -1349,21 +1349,90 @@
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://m2cybersec.de/#organization",
-      "name": "M2 Cybersec UG (haftungsbeschränkt)",
-      "description": "Professionelle Cybersecurity-Lösungen und IT-Sicherheitsberatung",
-      "url": "https://m2cybersec.de",
-      "email": "info@m2cybersec.de",
-      "telephone": "+4922194334961",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Amandusstraße 77",
-        "addressLocality": "Köln",
-        "postalCode": "50769",
-        "addressCountry": "DE"
-      }
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://m2cybersec.de/#organization",
+                "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                "alternateName": "M2 Cybersec",
+                "legalName": "M2 Cybersec UG (haftungsbeschränkt)",
+                "description": "IT-Sicherheit für KMU aus Köln: kostenloser Quick-Scan, Security-Checks im Abo, Penetrationstests, Red Teaming, Awareness-Trainings und CRA-Meldefähigkeit.",
+                "url": "https://m2cybersec.de/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://m2cybersec.de/assets/logo.png",
+                    "width": 1669,
+                    "height": 1235
+                },
+                "image": "https://m2cybersec.de/assets/logo.png",
+                "email": "info@m2cybersec.de",
+                "telephone": "+49 221 94334961",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Amandusstraße 77",
+                    "addressLocality": "Köln",
+                    "postalCode": "50769",
+                    "addressRegion": "Nordrhein-Westfalen",
+                    "addressCountry": "DE"
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Deutschland"
+                },
+                "foundingDate": "2024",
+                "founder": {
+                    "@id": "https://m2cybersec.de/das-team/#marlon-scheer"
+                },
+                "vatID": "DE449862969",
+                "sameAs": [
+                    "https://www.linkedin.com/company/m2-cybersec-ug",
+                    "https://github.com/M2-Cybersec",
+                    "https://www.northdata.de/M2+Cybersec+UG+(haftungsbeschr%C3%A4nkt),+K%C3%B6ln/Amtsgericht+K%C3%B6ln+HRB+121047"
+                ],
+                "knowsAbout": [
+                    "IT-Sicherheit",
+                    "Penetrationstest",
+                    "Red Teaming",
+                    "Security Awareness",
+                    "NIS2",
+                    "Cyber Resilience Act"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://m2cybersec.de/#website",
+                "url": "https://m2cybersec.de/",
+                "name": "M2 Cybersec",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://m2cybersec.de/#organization"
+                }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://m2cybersec.de/das-team/#marlon-scheer",
+                "name": "Marlon Scheer",
+                "url": "https://m2cybersec.de/das-team/",
+                "jobTitle": "CEO & Founder",
+                "sameAs": ["https://www.linkedin.com/in/marlon-scheer-62638132a"],
+                "worksFor": {
+                    "@id": "https://m2cybersec.de/#organization"
+                }
+            }
+        ]
     }
     </script>
 
@@ -1496,6 +1565,7 @@
   "@graph": [
     {
       "@type": "Service",
+      "@id": "https://m2cybersec.de/starter-paket/#service",
       "name": "Startup Shield",
       "serviceType": "IT-Sicherheit im Abo für Startups",
       "url": "https://m2cybersec.de/starter-paket/",
@@ -1521,6 +1591,7 @@
     },
     {
       "@type": "Service",
+      "@id": "https://m2cybersec.de/growth-paket/#service",
       "name": "Growth Guard",
       "serviceType": "IT-Sicherheit im Abo für wachsende Teams und KMU",
       "url": "https://m2cybersec.de/growth-paket/",
@@ -1546,6 +1617,7 @@
     },
     {
       "@type": "Service",
+      "@id": "https://m2cybersec.de/scale-paket/#service",
       "name": "Scale Secure",
       "serviceType": "IT-Sicherheit im Abo für professionelle Teams",
       "url": "https://m2cybersec.de/scale-paket/",
@@ -1580,7 +1652,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="#home" class="logo">
-            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -1809,7 +1881,7 @@
                 </div>
                 <p class="cmp-note">Förderangaben vorbehaltlich Bewilligung – maßgeblich sind die Konditionen der NRW.BANK. <a href="/nrw-foerderung/">Details zur Förderung →</a></p>
             </div>
-            <p class="services-individual">In den Abos ist der Security-Check enthalten – die regelmäßige Breitenprüfung mit dokumentiertem Nachweis. Zeigt ein Check, dass ein einzelnes System genauer angesehen werden muss, vertiefen wir gezielt mit einem <a href="/red-team-plus/#pentest-vs-red-teaming">Pentest</a> als Zusatzleistung. Auch Risikoanalysen und Sicherheitskonzepte übernehmen wir –
+            <p class="services-individual">In den Abos ist der Security-Check enthalten – die regelmäßige Breitenprüfung mit dokumentiertem Nachweis. Zeigt ein Check, dass ein einzelnes System genauer angesehen werden muss, vertiefen wir gezielt mit einem <a href="/penetrationstest-kmu/">Pentest</a> als Zusatzleistung. Auch Risikoanalysen und Sicherheitskonzepte übernehmen wir –
                 <a href="/sicherheit-fuer-kmu/">individuelle Sicherheitsberatung für KMU →</a>
             </p>
         </section>
@@ -1948,7 +2020,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="cmp-note">Zeigt ein Security-Check, dass ein einzelnes System genauer angesehen werden muss, vertiefen wir gezielt mit einem <a href="/red-team-plus/#pentest-vs-red-teaming">Pentest</a> – buchbar im Anschluss an einen Check, nicht als Einstiegsprodukt. Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
+                <p class="cmp-note">Zeigt ein Security-Check, dass ein einzelnes System genauer angesehen werden muss, vertiefen wir gezielt mit einem <a href="/penetrationstest-kmu/">Pentest</a> – buchbar im Anschluss an einen Check, nicht als Einstiegsprodukt. Unsicher, was passt? Der <a href="/quick-scan/">kostenlose Quick-Scan</a> beantwortet das in 15 Minuten – unverbindlich.</p>
             </div>
 
             <div class="pricing-more">
@@ -2041,8 +2113,9 @@
                 </p>
                 <div class="contact-info">
                     <p><strong>E-Mail:</strong><br><a href="mailto:info@m2cybersec.de">info@m2cybersec.de</a></p>
-                    <p><strong>Telefon:</strong><br><a href="tel:+4922194334961">+49 (0) 221 94334961</a></p>
+                    <p><strong>Telefon:</strong><br><a href="tel:+4922194334961">+49 221 94334961</a></p>
                     <p><strong>Geschäftszeiten:</strong><br>Montag - Freitag: 09:00 - 18:00 Uhr</p>
+                    <p><strong>Adresse:</strong><br>Amandusstraße 77, 50769 Köln</p>
                 </div>
                 <div class="contact-buttons">
                     <a href="mailto:info@m2cybersec.de" class="btn btn-primary">E-Mail senden</a>
@@ -2381,6 +2454,7 @@
                 <a href="/scale-paket/">Scale Secure</a>
                 <a href="/awareness-training-fuer-kmu/">Awareness+ Training</a>
                 <a href="/sicherheit-fuer-kmu/">Sicherheit für KMU</a>
+                <a href="/penetrationstest-kmu/">Penetrationstest für KMU</a>
                 <a href="/red-team-plus/">Red Team Plus</a>
                 <a href="/cra-meldepflicht/">CRA-Meldepflicht</a>
             </div>
@@ -2400,39 +2474,11 @@
 
 
             <div class="footer-section">
-                <h4>Cybersecurity für die Städte</h4>
-                <a href="/cybersecurity/koeln/">Köln</a>
-                <a href="/cybersecurity/duesseldorf/">Düsseldorf</a>
-                <a href="/cybersecurity/dortmund/">Dortmund</a>
-                <a href="/cybersecurity/bonn/">Bonn</a>
-                <a href="/cybersecurity/essen/">Essen</a>
-                <a href="/cybersecurity/bochum/">Bochum</a>
-                <a href="/cybersecurity/wuppertal/">Wuppertal</a>
-                <a href="/cybersecurity/aachen/">Aachen</a>
-                <a href="/cybersecurity/krefeld/">Krefeld</a>
-                <a href="/cybersecurity/duisburg/">Duisburg</a>
-            </div>
-
-
-
-            <div class="footer-section">
-                <h4>Cybersecurity für die Bundesländer</h4>
-                <a href="/cybersecurity/baden-wuerttemberg/">Baden-Württemberg</a>
-                <a href="/cybersecurity/bayern/">Bayern</a>
-                <a href="/cybersecurity/berlin/">Berlin</a>
-                <a href="/cybersecurity/brandenburg/">Brandenburg</a>
-                <a href="/cybersecurity/bremen/">Bremen</a>
-                <a href="/cybersecurity/hamburg/">Hamburg</a>
-                <a href="/cybersecurity/hessen/">Hessen</a>
-                <a href="/cybersecurity/mecklenburg-vorpommern/">Mecklenburg-Vorpommern</a>
-                <a href="/cybersecurity/niedersachsen/">Niedersachsen</a>
-                <a href="/cybersecurity/nordrhein-westfalen/">Nordrhein-Westfalen</a>
-                <a href="/cybersecurity/rheinland-pfalz/">Rheinland-Pfalz</a>
-                <a href="/cybersecurity/saarland/">Saarland</a>
-                <a href="/cybersecurity/sachsen/">Sachsen</a>
-                <a href="/cybersecurity/sachsen-anhalt/">Sachsen-Anhalt</a>
-                <a href="/cybersecurity/schleswig-holstein/">Schleswig-Holstein</a>
-                <a href="/cybersecurity/thueringen/">Thüringen</a>
+                <h4>Regionen</h4>
+                <a href="/cybersecurity/koeln/">Cybersecurity Köln</a>
+                <a href="/cybersecurity/bonn/">Cybersecurity Bonn</a>
+                <a href="/cybersecurity/duesseldorf/">Cybersecurity Düsseldorf</a>
+                <a href="/cybersecurity/nordrhein-westfalen/">Cybersecurity NRW</a>
             </div>
         </div>
         <div class="footer-bottom">

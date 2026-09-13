@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Penetrationstest für KMU: wann er sich lohnt, Black-, Grey- und White-Box-Tests, Ablauf, was die Kosten treibt und wie die NRW-Förderung bis zu 50 % übernimmt.">
+    <meta name="keywords" content="Penetrationstest KMU, Pentest KMU, Penetrationstest Kosten, Pentest Mittelstand, Black Box Grey Box White Box, Webanwendung Pentest">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Penetrationstest für KMU | M2 Cybersec">
+    <meta property="og:description" content="Wann sich ein Pentest für KMU lohnt, wie er abläuft und was die Kosten bestimmt.">
+    <meta property="og:url" content="https://m2cybersec.de/penetrationstest-kmu/">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+
+    <title>Penetrationstest für KMU: Ablauf, Testarten, Kosten | M2 Cybersec</title>
+    <link rel="canonical" href="https://m2cybersec.de/penetrationstest-kmu/">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://m2cybersec.de/penetrationstest-kmu/#service",
+                "name": "Penetrationstest für KMU",
+                "serviceType": "Penetrationstest",
+                "url": "https://m2cybersec.de/penetrationstest-kmu/",
+                "description": "Manuell getriebener Penetrationstest eines definierten Ziels (Webanwendung, API, externe Infrastruktur oder internes Netz) mit vorher festgelegter Testtiefe, CVSS-bewertetem Report und Re-Test. Aufwand nach Ziel und Testtiefe.",
+                "provider": { "@id": "https://m2cybersec.de/#organization" },
+                "areaServed": { "@type": "Country", "name": "Deutschland" },
+                "audience": { "@type": "BusinessAudience", "name": "Kleine und mittlere Unternehmen" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://m2cybersec.de/" },
+                    { "@type": "ListItem", "position": 2, "name": "Penetrationstest für KMU", "item": "https://m2cybersec.de/penetrationstest-kmu/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/nav.js" defer></script>
+    <style>
+        body {
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.7;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 9rem 5% 4.5rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0d0d0d 100%);
+        }
+
+        .hero-content { max-width: 860px; }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-light-gray);
+            margin: 0 auto 2.2rem;
+            max-width: 680px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 5% 4rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: gap var(--transition-base);
+        }
+
+        .back-link:hover { gap: 0.8rem; }
+
+        .block { margin-bottom: 4rem; }
+
+        .block h2 {
+            font-size: 2rem;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            color: var(--secondary-light-gray);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .content strong { color: var(--primary-white); }
+
+        .content a:not(.btn):not(.back-link):not(.offer-card) { color: var(--primary-cyan); }
+
+        .lead { max-width: 70ch; }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .offer-card {
+            display: block;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            color: inherit;
+            text-decoration: none;
+            transition: transform var(--transition-base), border-color var(--transition-base),
+                box-shadow var(--transition-base);
+        }
+
+        a.offer-card:hover,
+        a.offer-card:focus-visible {
+            transform: translateY(-3px);
+            border-color: rgba(0, 252, 246, 0.45);
+            box-shadow: var(--shadow-md);
+        }
+
+        .offer-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .offer-price {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 500;
+            color: var(--primary-white);
+            margin-bottom: 0.6rem;
+        }
+
+        .offer-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step;
+            margin-top: 1.5rem;
+        }
+
+        .steps li {
+            counter-increment: step;
+            position: relative;
+            padding: 0 0 1.5rem 3.2rem;
+            color: var(--secondary-light-gray);
+        }
+
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 252, 246, 0.45);
+            color: var(--primary-cyan);
+            font-family: var(--font-display);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fact-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .fact-list li {
+            color: var(--secondary-light-gray);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .fact-list li:last-child { border-bottom: none; }
+
+        .cta-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 252, 246, 0.45);
+            border-radius: var(--radius-md);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-box h2 { margin-bottom: 0.8rem; }
+
+        .cta-box p {
+            max-width: 60ch;
+            margin: 0 auto 1.8rem;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            margin: 1.5rem 0 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+        }
+
+        .cmp {
+            width: 100%;
+            min-width: 620px;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .cmp th,
+        .cmp td {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            color: var(--secondary-light-gray);
+        }
+
+        .cmp thead th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--primary-white);
+        }
+
+        .cmp tbody th {
+            color: var(--primary-white);
+            font-weight: 600;
+        }
+
+        .cmp tbody tr:last-child th,
+        .cmp tbody tr:last-child td { border-bottom: none; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 7.5rem 5% 3.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .block h2 { font-size: 1.6rem; }
+            .cta-box { padding: 2.2rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
+        <a href="/" class="logo">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <span>M2 Cybersec</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="eyebrow eyebrow-center">Für kleine und mittlere Unternehmen</span>
+            <h1>Penetrationstest für KMU</h1>
+            <p>Ein Pentest beantwortet eine konkrete Frage: Hält dieses System einem Angreifer stand? Wir zeigen, wann sich das für ein KMU lohnt, wie der Test abläuft und warum er bei uns auf einem Security-Check aufbaut.</p>
+            <div class="btn-row">
+                <a href="/#contact" class="btn btn-primary">Pentest anfragen</a>
+                <a href="/quick-scan/" class="btn btn-secondary">Erst kostenlos scannen</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="content">
+        <a href="/" class="back-link">← Zurück zur Startseite</a>
+
+        <section class="block" aria-labelledby="was">
+            <span class="eyebrow">Definition</span>
+            <h2 id="was">Was ist ein Penetrationstest?</h2>
+            <p class="lead">Ein Penetrationstest ist ein beauftragter, kontrollierter Angriff auf ein festgelegtes Ziel, zum Beispiel eine Webanwendung, eine API oder ein Netzwerk. Anders als ein automatischer Scan wird er von Menschen durchgeführt: Sie prüfen Anmeldung, Rechte und Geschäftslogik und verketten einzelne Schwächen so, wie es ein echter Angreifer tun würde.</p>
+            <p class="lead">Das Ergebnis ist ein Tiefenbefund zu genau diesem System. Er enthält auch die Fehler, die kein Scanner findet, etwa wenn ein normaler Nutzer durch Ändern einer Nummer in der Adresszeile die Rechnungen eines anderen Kunden sieht. Jedes Finding wird nach CVSS bewertet, nachvollziehbar beschrieben und mit einer konkreten Empfehlung zur Behebung versehen.</p>
+        </section>
+
+        <section class="block" aria-labelledby="wann">
+            <span class="eyebrow">Bedarf</span>
+            <h2 id="wann">Wann braucht ein KMU einen Pentest?</h2>
+            <p class="lead">Nicht jedes kleine Unternehmen braucht sofort einen Pentest. Wer seine externe Angriffsfläche noch nie geprüft hat, fängt besser in der Breite an, etwa mit unserer <a href="/sicherheit-fuer-kmu/">Checkliste zur IT-Sicherheit für KMU</a>. Ein Pentest lohnt sich, wenn eine dieser Situationen zutrifft:</p>
+            <ul class="fact-list">
+                <li><strong>Ein Kunde verlangt den Nachweis.</strong> Größere Auftraggeber, gerade im Umfeld von NIS2, fragen ihre Zulieferer zunehmend nach einem aktuellen Pentest-Bericht für die Systeme, über die Daten ausgetauscht werden.</li>
+                <li><strong>Sie betreiben eine eigene Webanwendung oder ein Kundenportal.</strong> Wo Kunden sich einloggen, Bestellungen aufgeben oder Dokumente hochladen, entstehen Lücken in der Geschäftslogik, die nur ein manueller Test aufdeckt.</li>
+                <li><strong>Ein Security-Check hat etwas gefunden.</strong> Zeigt die regelmäßige Breitenprüfung, dass ein einzelnes System auffällig ist, klärt der Pentest, wie tief das Problem wirklich reicht.</li>
+                <li><strong>Vor dem Go-live oder nach einem großen Umbau.</strong> Eine neue Anwendung, eine Migration in die Cloud oder eine neue Schnittstelle sind der günstigste Zeitpunkt, Fehler zu finden.</li>
+                <li><strong>Die Cyberversicherung fragt nach.</strong> Versicherer wollen zunehmend belegt sehen, dass Schwachstellen geprüft und behoben werden. Ein datierter Bericht mit Re-Test ist dafür ein belastbarer Nachweis.</li>
+            </ul>
+        </section>
+
+        <section class="block" aria-labelledby="abgrenzung">
+            <span class="eyebrow">Einordnung</span>
+            <h2 id="abgrenzung">Security-Check, Pentest oder Red Teaming?</h2>
+            <p class="lead">Die drei Begriffe werden oft durcheinandergeworfen. Sie beantworten aber unterschiedliche Fragen und bauen aufeinander auf:</p>
+            <div class="table-scroll" role="region" aria-label="Security-Check, Pentest und Red Teaming im Vergleich" tabindex="0">
+                <table class="cmp">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">Security-Check</th>
+                            <th scope="col">Pentest</th>
+                            <th scope="col">Red Teaming</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Frage</th>
+                            <td>Wo sind wir angreifbar?</td>
+                            <td>Hält dieses System?</td>
+                            <td>Kommt jemand an unser Kronjuwel, egal wie?</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vorgehen</th>
+                            <td>Automatisierte Breitenprüfung, manuell verifiziert und priorisiert</td>
+                            <td>Manuell, ein Ziel, festgelegte Testtiefe</td>
+                            <td>Zielorientiert über Technik, Mensch und Prozess</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rhythmus</th>
+                            <td>Regelmäßig, im Abo</td>
+                            <td>Anlassbezogen</td>
+                            <td>Wenn der Grundschutz steht</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Bei uns</th>
+                            <td><a href="/starter-paket/">ab 149 €/Monat</a></td>
+                            <td>nach Ziel und Testtiefe</td>
+                            <td><a href="/red-team-plus/">auf Anfrage</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Deshalb verkaufen wir den Pentest nicht als Einstiegsprodukt. Der Security-Check zeigt, wo sich die Tiefe lohnt, und der Pentest geht dann gezielt dorthin. So bezahlen Sie keine Testtage für Systeme, an denen es nichts zu finden gibt.</p>
+        </section>
+
+        <section class="block" aria-labelledby="testarten">
+            <span class="eyebrow">Testarten</span>
+            <h2 id="testarten">Black Box, Grey Box, White Box</h2>
+            <p class="lead">Wie viel wir vorab über das Ziel wissen, bestimmt, wie realistisch und wie gründlich der Test wird. Für KMU ist meistens Grey Box die wirtschaftlichste Wahl.</p>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <h3>Black Box</h3>
+                    <p>Wir starten ohne Vorwissen, wie ein Angreifer von außen. Das ist realistisch, verbraucht aber viel Testzeit mit Erkundung statt mit dem eigentlichen Prüfen.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Grey Box</h3>
+                    <p>Wir bekommen Testzugänge für die relevanten Rollen, etwa Kunde und Administrator. So prüfen wir, was ein eingeloggter Nutzer oder ein gestohlenes Konto anrichten kann.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>White Box</h3>
+                    <p>Zusätzlich sehen wir Dokumentation, Architektur oder Quellcode. Das findet die meisten Fehler pro Testtag und eignet sich für eigene Software.</p>
+                </div>
+            </div>
+            <p>Mögliche Ziele sind eine <strong>Webanwendung oder ein Kundenportal</strong>, eine <strong>API</strong>, die <strong>externe Infrastruktur</strong> mit allem, was aus dem Internet erreichbar ist, oder ein <strong>internes Netz</strong> mit der Frage, wie weit ein kompromittierter Arbeitsplatz-PC kommt.</p>
+        </section>
+
+        <section class="block" aria-labelledby="ablauf">
+            <span class="eyebrow">Ablauf</span>
+            <h2 id="ablauf">So läuft ein Pentest bei uns ab</h2>
+            <ol class="steps">
+                <li><strong>Scoping:</strong> Wir legen gemeinsam Ziel, Testart, Rollen, Testzeitraum und Ausschlüsse fest. Daraus ergibt sich ein verbindliches Angebot mit festem Umfang.</li>
+                <li><strong>Schriftliche Freigabe:</strong> Ohne unterschriebene Beauftragung und NDA testen wir nichts. Das schützt Sie und uns, denn ein unautorisierter Angriff auf fremde Systeme ist strafbar.</li>
+                <li><strong>Test:</strong> Wir prüfen das Ziel manuell und systematisch: Authentifizierung, Rechteeskalation, Geschäftslogik, Eingabevalidierung und die Verkettung einzelner Findings. Kritische Funde melden wir sofort, nicht erst im Bericht.</li>
+                <li><strong>Report und Besprechung:</strong> Sie erhalten einen Bericht mit Management-Zusammenfassung, CVSS-Bewertung und nachvollziehbaren Empfehlungen, die wir mit Ihrem Team oder Dienstleister durchgehen.</li>
+                <li><strong>Re-Test:</strong> Nach der Behebung prüfen wir die Findings erneut. Erst dann ist der Bericht ein Nachweis dafür, dass die Lücken geschlossen sind.</li>
+            </ol>
+        </section>
+
+        <section class="block" aria-labelledby="kosten">
+            <span class="eyebrow">Kosten</span>
+            <h2 id="kosten">Was kostet ein Penetrationstest?</h2>
+            <p class="lead">Der Preis eines Pentests hängt fast vollständig von der Zahl der Testtage ab, und die ergeben sich aus dem Ziel. Einen seriösen Pauschalpreis ohne Scoping gibt es deshalb nicht. Diese Faktoren bestimmen den Aufwand:</p>
+            <ul class="fact-list">
+                <li><strong>Größe des Ziels:</strong> Eine Anwendung mit zehn Masken ist schneller geprüft als ein Portal mit Rechteverwaltung, Zahlungsfunktion und Dateiupload.</li>
+                <li><strong>Zahl der Rollen:</strong> Jede Nutzerrolle, zum Beispiel Kunde, Mitarbeiter und Admin, muss auch gegeneinander getestet werden.</li>
+                <li><strong>Testart und Testtiefe:</strong> White Box findet mehr pro Tag, Black Box braucht mehr Zeit für die Erkundung.</li>
+                <li><strong>Re-Tests und Nachweise:</strong> Ob ein Re-Test und ein Bericht für Kunden oder Auditoren gebraucht werden.</li>
+            </ul>
+            <p>Den Einstieg machen wir bewusst günstig: Der <a href="/quick-scan/">Quick-Scan</a> ist kostenlos, der regelmäßige Security-Check kostet mit <a href="/starter-paket/">Startup Shield</a> 149 € im Monat. Den Pentest kalkulieren wir danach für genau das System, bei dem es sich lohnt.</p>
+            <p><strong>Förderung in NRW:</strong> Penetrationstests zählen im Landesprogramm MID-Digitale Sicherheit zur förderfähigen Analyse der IT-Sicherheit. KMU mit Sitz in Nordrhein-Westfalen können sich bis zu 50 % bezuschussen lassen, ab 8.000 € Projektvolumen und vergeben per Losverfahren. Details stehen auf der Seite zur <a href="/nrw-foerderung/">NRW-Förderung</a>.</p>
+        </section>
+
+        <section class="block" aria-labelledby="faq">
+            <span class="eyebrow">Fragen</span>
+            <h2 id="faq">Häufige Fragen zum Pentest</h2>
+            <ul class="fact-list">
+                <li><strong>Stört der Test den laufenden Betrieb?</strong><br>In der Regel nicht. Wir stimmen Testzeitraum und Ausschlüsse vorher ab, testen Produktivsysteme schonend und prüfen besonders riskante Funktionen auf Wunsch in einer Testumgebung.</li>
+                <li><strong>Wie lange dauert ein Pentest?</strong><br>Das hängt vom Ziel ab: Eine überschaubare Webanwendung ist in wenigen Testtagen geprüft, ein Portal mit vielen Rollen braucht länger. Einen verbindlichen Zeitplan mit Testzeitraum und Berichtstermin nennen wir Ihnen zusammen mit dem Angebot.</li>
+                <li><strong>Reicht nicht ein automatischer Schwachstellenscan?</strong><br>Ein Scan findet bekannte Lücken und veraltete Software. Er erkennt aber nicht, ob ein Nutzer fremde Daten sehen kann oder ob sich zwei harmlose Fehler zu einem Einbruch verketten lassen. Genau dafür gibt es den manuellen Test.</li>
+                <li><strong>Wer führt den Test durch?</strong><br>Das Team hinter M2 Cybersec stellen wir auf der Seite <a href="/das-team/">Das Team</a> vor. Wir sind Teilnehmer der Allianz für Cyber-Sicherheit des BSI.</li>
+            </ul>
+        </section>
+
+        <section class="cta-box" aria-labelledby="cta">
+            <h2 id="cta">Welches System sollte sich jemand genauer ansehen?</h2>
+            <p>Schreiben Sie uns, was geprüft werden soll. Wir melden uns mit Fragen zum Scope und einem festen Angebot. Oder starten Sie mit dem kostenlosen Quick-Scan.</p>
+            <div class="btn-row">
+                <a href="/#contact" class="btn btn-primary">Pentest anfragen</a>
+                <a href="/quick-scan/" class="btn btn-ghost">Quick-Scan buchen</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 M2 Cybersec UG (haftungsbeschränkt). Alle Rechte vorbehalten.</p>
+        <p class="footer-legal">
+            <a href="/rechtliches/impressum.html">Impressum</a> &middot;
+            <a href="/rechtliches/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

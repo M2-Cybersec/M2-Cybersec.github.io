@@ -4,9 +4,16 @@
 
 Gegründet 2024 von Marlon Scheer (CEO & Founder), Student der Hochschule Bonn-Rhein-Sieg im Studiengang "Cyber Security and Privacy". Mitglied der Allianz für Cyber-Sicherheit (BSI).
 
-Kontakt: info@m2cybersec.de | +49 (0) 221 94334961
+Kontakt: info@m2cybersec.de | +49 221 94334961
 Geschäftszeiten: Mo–Fr 09:00–18:00 Uhr
 Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quickscan
+Adresse: Amandusstraße 77, 50769 Köln | Handelsregister: Amtsgericht Köln, HRB 121047
+LinkedIn: https://www.linkedin.com/company/m2-cybersec-ug | GitHub: https://github.com/M2-Cybersec
+
+## Wichtige Seiten
+
+- [Startseite](https://m2cybersec.de/): Überblick über alle Leistungen, Paketpreise, Ablauf, Kundenstimmen und FAQ.
+- [Blog](https://m2cybersec.de/blog/): Fachartikel zu NIS2, Schwachstellen, Ransomware, Microsoft 365 und IT-Sicherheit für KMU.
 
 ## Services
 
@@ -15,7 +22,8 @@ Terminbuchung (inkl. kostenloser Quick-Scan): https://cal.eu/marlonscheer/quicks
 - [NRW-Förderung für Cybersecurity](https://m2cybersec.de/nrw-foerderung/): Informationsseite zur Förderung von Cybersecurity-Maßnahmen für KMU über das Landesprogramm MID-Digitale Sicherheit (NRW.BANK). 50 % Förderquote, max. 15.000 €, Mindestfördersumme 4.000 €, Vergabe per Losverfahren. Besonders geeignet für Growth Guard, Scale Secure sowie Red Team Plus und Pro. 4-Schritte-Prozess, Berechtigungsprüfung.
 - [Growth Guard](https://m2cybersec.de/growth-paket/): Für wachsende Teams und KMUs mit Compliance-Bedarf. 349 €/Monat (Jahresvertrag). 3× jährliche Security-Checks (je 2–3 kritische Systeme), monatlicher Report + Quartalsgespräch, 1× Awareness-Schulung pro Jahr (bis 10 Mitarbeitende), 1× Phishing-Simulation, Compliance-Dokumentation.
 - [Scale Secure](https://m2cybersec.de/scale-paket/): Für professionelle Teams mit komplexer Infrastruktur und ISO/NIS2-Bedarf. 749 €/Monat (Jahresvertrag). 4× Security-Checks (5+ Systeme), Code Review & Architektur-Check, monatlicher CVSS-Report + dedizierter Ansprechpartner, 3× Awareness-Schulungen (gesamtes Team, ohne Teilnehmerlimit) + Phishing-Simulationen, Notfallplan, Re-Tests, SLA: garantierte Rückmeldung binnen 24 h (werktags) bei kritischen Findings.
-- [Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/): Risikoanalyse, Sicherheitskonzepte, Web-Penetrationstests und Informationssicherheitsmanagement für kleine und mittelständische Unternehmen.
+- [IT-Sicherheit für KMU](https://m2cybersec.de/sicherheit-fuer-kmu/): Ratgeber und Leistungsseite: 10-Punkte-Checkliste nach BSI-Basisempfehlungen, DIN SPEC 27076 und CyberRisikoCheck erklärt, NRW-Förderung, Risikoanalyse, Sicherheitskonzepte und Web-Penetrationstests.
+- [Penetrationstest für KMU](https://m2cybersec.de/penetrationstest-kmu/): Wann sich ein Pentest für KMU lohnt, Abgrenzung zu Security-Check und Red Teaming, Black-/Grey-/White-Box, Ablauf (Scoping, schriftliche Freigabe, Test, Report, Re-Test) und Kostenfaktoren. Der Pentest ist bei M2 kein Einstiegsprodukt, sondern die Vertiefung nach einem Security-Check; Aufwand nach Ziel und Testtiefe. In NRW über MID-Digitale Sicherheit mit bis zu 50 % förderfähig.
 - [Awareness+ Training](https://m2cybersec.de/awareness-training-fuer-kmu/): Interaktive Mitarbeiterschulungen zu Phishing, Ransomware und Cyber-Risikomanagement. 490 €/Session (bis 25 Mitarbeiter, 90 Min., inkl. Teilnahmezertifikate). Auch als Add-on zu jedem Abo-Paket buchbar.
 - [Red Team Plus](https://m2cybersec.de/red-team-plus/) ⭐ FLAGGSCHIFF: Zielorientierte Angriffssimulation nach dem Prinzip "path of least resistance" – kein technischer Pentest. Wir vereinbaren ein Ziel und prüfen, ob ein Angreifer es erreicht; der Weg ist offen (technische Vektoren, Social Engineering, physischer Zugang). Inkl. CVSS-Report, Executive Summary und Re-Test-Option. Auf Anfrage (kein Abo).
 - [CRA-Meldepflicht (Artikel 14 Cyber Resilience Act)](https://m2cybersec.de/cra-meldepflicht/): Produktisiertes Beratungsangebot für Hersteller vernetzter Produkte (50–1.000 Mitarbeitende, DE/AT/CH) in Maschinen- und Anlagenbau, Elektrotechnik, Medizintechnik, Gebäudeautomation und Embedded-Software. Verkauft wird Meldefähigkeit, nicht "CRA-Compliance": Ab 11.09.2026 gelten die Meldepflichten aus Art. 14 CRA – Frühwarnung binnen 24 Stunden an ENISA und das nationale CSIRT, Vorfallsmeldung nach 72 Stunden, Abschlussbericht nach 14 Tagen; auch für Bestandsprodukte. CRA-Meldefähigkeits-Sprint: 10 Arbeitstage (2 davon vor Ort), 12.500 € netto Festpreis, 9 Lieferbestandteile inkl. Rollen-/Betroffenheitsbestimmung, Produktinventar, Komponentenerfassung (SBOM oder strukturierte Liste), Meldekanal (security@, security.txt, CVD-Policy), Entscheidungsbaum, Melde-Vorlagen, Rufbereitschaftsplan, Live-Übung mit Stoppuhr und Managementbericht. Einstieg: CRA-Betroffenheits-Check, 3 Tage, 3.900 € netto, voll anrechenbar. Optionales Folgeangebot: Komponenten-Monitoring ab 890 €/Monat. Technisch-organisatorische Unterstützung, keine Rechtsberatung; die Letztverantwortung für die Meldeentscheidung bleibt beim Hersteller. Terminbuchung: https://cal.eu/marlonscheer/cra
@@ -26,51 +34,28 @@ Kostenlose, unverbindliche Analyse der externen IT-Angriffsfläche eines Unterne
 
 ## Team
 
-- [Das Team](https://m2cybersec.de/das-team/index.html): Marlon Scheer – CEO & Founder. Studium Cyber Security and Privacy, H-BRS. Gründung M2 Cybersec UG 2024.
+- [Das Team](https://m2cybersec.de/das-team/): Marlon Scheer – CEO & Founder. Studium Cyber Security and Privacy, H-BRS. Gründung M2 Cybersec UG 2024.
 
 ## Blog
 
-- [Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?](https://m2cybersec.de/blog/it-budget-cybersecurity/)
-- [Was ist ein Cybersecurity-Audit und warum ist er wichtig?](https://m2cybersec.de/blog/cybersecurity-audit/)
-- [Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir helfen](https://m2cybersec.de/blog/nis2-richtlinie/)
-- [Ransomware in 2026: Warum „Wir sind zu klein" der teuerste Satz im Unternehmen ist](https://m2cybersec.de/blog/ransomware-2026/)
-- [IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen](https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte/)
-- [MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365](https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken/)
-- [Vercel gehackt: Wie ein KI-Tool zum Einfallstor wurde](https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit/)
-- [EU-Altersverifikations-App in 2 Minuten geknackt](https://m2cybersec.de/blog/eu-altersverifikation-app-sicherheitsluecke/)
-- [CVE-2026-33826: Kritische Windows AD-Lücke – Notfall-Patch jetzt](https://m2cybersec.de/blog/cve-2026-33826-windows-active-directory-patch/)
+- [Wie viel Prozent des IT-Budgets sollten Unternehmen für Cybersecurity einplanen?](https://m2cybersec.de/blog/it-budget-cybersecurity)
+- [Was ist ein Cybersecurity-Audit und warum ist er wichtig?](https://m2cybersec.de/blog/cybersecurity-audit)
+- [NIS2 in Deutschland: Was Unternehmen 2026 wissen müssen](https://m2cybersec.de/blog/nis2-richtlinie) (aktualisiert September 2026: NIS2UmsuCG seit 06.12.2025 in Kraft, BSI-Registrierung, Meldefristen 24 h/72 h/1 Monat, Bußgelder)
+- [Ransomware in 2026: Warum „Wir sind zu klein" der teuerste Satz im Unternehmen ist](https://m2cybersec.de/blog/ransomware-2026)
+- [IT-Sicherheitscheck für KMU: Diese 15 Punkte musst du wirklich prüfen](https://m2cybersec.de/blog/it-sicherheitscheck-kmu-15-punkte)
+- [MFA reicht nicht: Die 7 häufigsten Sicherheitslücken in Microsoft 365](https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken)
+- [Vercel gehackt: Wie ein KI-Tool zum Einfallstor wurde](https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit)
+- [EU-Altersverifikations-App in 2 Minuten geknackt](https://m2cybersec.de/blog/eu-altersverifikation-app-sicherheitsluecke)
+- [CVE-2026-33826: Kritische Windows AD-Lücke – Notfall-Patch jetzt](https://m2cybersec.de/blog/cve-2026-33826-windows-active-directory-patch)
 
-## Regionale Präsenz (Cybersecurity für Städte in NRW und weitere)
+## Regionen
 
-- [Köln](https://m2cybersec.de/cybersecurity/koeln/)
-- [Düsseldorf](https://m2cybersec.de/cybersecurity/duesseldorf/)
-- [Dortmund](https://m2cybersec.de/cybersecurity/dortmund/)
-- [Bonn](https://m2cybersec.de/cybersecurity/bonn/)
-- [Essen](https://m2cybersec.de/cybersecurity/essen/)
-- [Bochum](https://m2cybersec.de/cybersecurity/bochum/)
-- [Wuppertal](https://m2cybersec.de/cybersecurity/wuppertal/)
-- [Aachen](https://m2cybersec.de/cybersecurity/aachen/)
-- [Krefeld](https://m2cybersec.de/cybersecurity/krefeld/)
-- [Duisburg](https://m2cybersec.de/cybersecurity/duisburg/)
+M2 Cybersec sitzt in Köln und arbeitet deutschlandweit überwiegend remote; persönliche Termine vor allem im Rheinland.
 
-## Regionale Präsenz (Bundesländer)
-
-- [Baden-Württemberg](https://m2cybersec.de/cybersecurity/baden-wuerttemberg/)
-- [Bayern](https://m2cybersec.de/cybersecurity/bayern/)
-- [Berlin](https://m2cybersec.de/cybersecurity/berlin/)
-- [Brandenburg](https://m2cybersec.de/cybersecurity/brandenburg/)
-- [Bremen](https://m2cybersec.de/cybersecurity/bremen/)
-- [Hamburg](https://m2cybersec.de/cybersecurity/hamburg/)
-- [Hessen](https://m2cybersec.de/cybersecurity/hessen/)
-- [Mecklenburg-Vorpommern](https://m2cybersec.de/cybersecurity/mecklenburg-vorpommern/)
-- [Niedersachsen](https://m2cybersec.de/cybersecurity/niedersachsen/)
-- [Nordrhein-Westfalen](https://m2cybersec.de/cybersecurity/nordrhein-westfalen/)
-- [Rheinland-Pfalz](https://m2cybersec.de/cybersecurity/rheinland-pfalz/)
-- [Saarland](https://m2cybersec.de/cybersecurity/saarland/)
-- [Sachsen](https://m2cybersec.de/cybersecurity/sachsen/)
-- [Sachsen-Anhalt](https://m2cybersec.de/cybersecurity/sachsen-anhalt/)
-- [Schleswig-Holstein](https://m2cybersec.de/cybersecurity/schleswig-holstein/)
-- [Thüringen](https://m2cybersec.de/cybersecurity/thueringen/)
+- [Cybersecurity Köln](https://m2cybersec.de/cybersecurity/koeln/): Firmensitz, Vor-Ort-Termine, NRW-Förderung, ZAC NRW und LKA-Ansprechstelle.
+- [Cybersecurity Bonn](https://m2cybersec.de/cybersecurity/bonn/): BSI-Standort, DIGITAL.SICHER.NRW, Bezug zur Hochschule Bonn-Rhein-Sieg.
+- [Cybersecurity Düsseldorf](https://m2cybersec.de/cybersecurity/duesseldorf/): NRW.BANK und LKA NRW als lokale Anlaufstellen.
+- [Cybersecurity NRW](https://m2cybersec.de/cybersecurity/nordrhein-westfalen/): Landesangebote für Unternehmen in Nordrhein-Westfalen.
 
 ## Rechtliches
 

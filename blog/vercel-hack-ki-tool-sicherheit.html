@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vercel wurde von ShinyHunters gehackt – der Einstieg erfolgte über ein KI-Tool mit zu weitreichenden Berechtigungen. Was Unternehmen jetzt über OAuth-Sicherheit und App-Berechtigungen wissen müssen.">
+    <meta name="description" content="Der Vercel-Hack begann bei einem KI-Tool mit zu weitreichenden OAuth-Berechtigungen. Was Unternehmen jetzt über App-Berechtigungen wissen müssen.">
     <meta name="keywords" content="Vercel Hack, KI-Tool Sicherheit, ShinyHunters, OAuth Sicherheit, App-Berechtigungen, Google Workspace Sicherheit, API Key Diebstahl, Cybersecurity Deutschland, IT-Sicherheit Unternehmen, Third-Party App Risiko, Context.ai, Zero Trust, M2 Cybersec">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="M2 Cybersec">
+    <meta name="author" content="Marlon Scheer">
     <meta name="geo.region" content="DE">
     <meta name="geo.placename" content="Deutschland">
     <meta name="language" content="de">
@@ -17,7 +17,8 @@
     <meta property="og:title" content="Vercel gehackt: Wie ein KI-Tool das Einfallstor für Angreifer wurde | M2 Cybersec">
     <meta property="og:description" content="ShinyHunters kompromittierte Vercel über ein KI-Tool mit zu vielen Berechtigungen. Was das für Ihr Unternehmen bedeutet – und wie Sie blinde Flecken in Ihrer App-Sicherheit schließen.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit/">
+    <meta property="og:url" content="https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="M2 Cybersec Blog">
 
@@ -27,31 +28,6 @@
     <meta name="twitter:description" content="Wie ShinyHunters über ein KI-Tool mit zu vielen Rechten in Vercels internes Netzwerk eindrang – und was das für Ihr Unternehmen bedeutet.">
 
     <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde",
-      "description": "ShinyHunters kompromittierte Vercel über ein KI-Tool mit zu vielen OAuth-Berechtigungen. Analyse des Angriffs und Handlungsempfehlungen für Unternehmen.",
-      "author": {
-        "@type": "Organization",
-        "name": "M2 Cybersec",
-        "url": "https://m2cybersec.de"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "M2 Cybersec",
-        "url": "https://m2cybersec.de"
-      },
-      "datePublished": "2026-04-20",
-      "dateModified": "2026-04-20",
-      "mainEntityOfPage": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit/",
-      "keywords": ["Vercel Hack", "KI-Tool Sicherheit", "OAuth", "ShinyHunters", "App-Berechtigungen", "Cybersecurity"],
-      "inLanguage": "de-DE",
-      "articleSection": "Cybersecurity"
-    }
-    </script>
-
     <!-- FAQ Schema für AEO -->
     <script type="application/ld+json">
     {
@@ -95,7 +71,81 @@
     </script>
 
     <title>Vercel gehackt: Wie ein KI-Tool zum Einfallstor wurde | M2 Cybersec Blog</title>
-    <link rel="canonical" href="https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit/">
+    <link rel="canonical" href="https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit#article",
+                "headline": "Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde",
+                "description": "Der Vercel-Hack begann bei einem KI-Tool mit zu weitreichenden OAuth-Berechtigungen. Was Unternehmen jetzt über App-Berechtigungen wissen müssen.",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://m2cybersec.de/assets/logo.png",
+                    "width": 1669,
+                    "height": 1235
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Marlon Scheer",
+                    "@id": "https://m2cybersec.de/das-team/#marlon-scheer",
+                    "url": "https://m2cybersec.de/das-team/"
+                },
+                "publisher": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "datePublished": "2026-04-20",
+                "dateModified": "2026-04-20",
+                "mainEntityOfPage": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit",
+                "inLanguage": "de-DE",
+                "articleSection": "Cybersecurity",
+                "keywords": [
+                    "Vercel Hack",
+                    "KI-Tool Sicherheit",
+                    "OAuth",
+                    "ShinyHunters",
+                    "App-Berechtigungen",
+                    "Cybersecurity"
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://m2cybersec.de/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde",
+                        "item": "https://m2cybersec.de/blog/vercel-hack-ki-tool-sicherheit"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -216,7 +266,7 @@
             font-weight: 600;
         }
 
-        h4 {
+        h4, h3.box-h {
             font-size: 1.2rem;
             margin: 1.5rem 0 0.8rem;
             color: var(--secondary-light-cyan);
@@ -274,7 +324,7 @@
             border-radius: 8px;
         }
 
-        .attack-chain h4 { color: #ff6b6b; }
+        .attack-chain h4, .attack-chain h3.box-h { color: #ff6b6b; }
 
         .cta-box {
             background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
@@ -308,7 +358,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .article-meta { flex-direction: column; gap: 0.5rem; }
+            .article-meta { flex-direction: column; align-items: center; gap: 0.5rem; }
             .article-hero { min-height: 50vh; }
         
         
@@ -318,7 +368,7 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo" aria-label="M2 Cybersec Startseite">
-            <img src="../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -340,8 +390,8 @@
         <div class="article-header-content">
             <div class="category-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Incident Analysis</div>
             <div class="article-meta">
-                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
-                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> April 2026</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <a href="/das-team/" rel="author">Marlon Scheer</a></span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <time datetime="2026-04-20">20. April 2026</time></span>
                 <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> KI-Sicherheit · OAuth · Datenschutz</span>
             </div>
             <h1>Vercel gehackt: Wie ein KI-Tool zum Einfallstor für Angreifer wurde</h1>
@@ -376,7 +426,7 @@
         <p>Genau diese Verbindung wurde zum Angriffspunkt. Die Hackergruppe <strong>ShinyHunters</strong> – bekannt durch vorherige Angriffe auf Ticketmaster, Santander und andere Großunternehmen – kompromittierte diese OAuth-Verbindung. Damit hatten sie plötzlich Zugriff mit den vollen Berechtigungen des Tools: Zugang zu E-Mails, internen Systemen, potenziell zu API Keys und Kundendaten.</p>
 
         <div class="attack-chain">
-            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Die Angriffskette im Überblick</h4>
+            <h3 class="box-h"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Die Angriffskette im Überblick</h3>
             <ol style="color: var(--secondary-light-gray); margin-left: 1.5rem;">
                 <li>Mitarbeiter verbindet Context.ai mit seinem Google-Account (OAuth)</li>
                 <li>Context.ai erhält weitreichende Berechtigungen (Lesen, Schreiben, Zugriff auf Workspace)</li>
@@ -394,7 +444,7 @@
         <p>Stattdessen authentifizieren sich die Angreifer mit einem gültigen Token, der von einer vertrauenswürdigen Verbindung ausgestellt wurde. Aus Sicht der Systeme sieht alles völlig legitim aus. Genau das macht diese Angriffsmethode so effektiv – und so schwer zu erkennen.</p>
 
         <div class="warning-box">
-            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Das unterschätzte Risiko in Ihrem Unternehmen</h4>
+            <h3 class="box-h"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Das unterschätzte Risiko in Ihrem Unternehmen</h3>
             <p>In fast jedem Unternehmen existieren Dutzende solcher OAuth-Verbindungen. Tools, die Mitarbeiter vor Monaten oder Jahren verknüpft haben – Slack-Integrationen, Kalender-Sync-Tools, KI-Assistenten, Productivity-Apps. Viele davon ohne Wissen der IT-Abteilung. Viele mit Rechten, die weit über das Notwendige hinausgehen.</p>
         </div>
 
@@ -428,7 +478,7 @@
         <p>In der Praxis sieht das oft anders aus. Apps fordern bei der Einrichtung maximale Berechtigungen an – und Mitarbeiter klicken auf "Erlauben", weil sie das Tool nutzen möchten und nicht die Zeit haben, jede Berechtigung einzeln zu prüfen. Das Ergebnis: Tools mit Admin-ähnlichen Rechten, die eigentlich nur Lesezugriff auf einen Kalender bräuchten.</p>
 
         <div class="info-box">
-            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Best Practices für sichere KI-Tool-Integration</h4>
+            <h3 class="box-h"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Best Practices für sichere KI-Tool-Integration</h3>
             <p><strong>Berechtigungen minimieren:</strong> Prüfen Sie bei jeder neuen App-Verbindung, ob alle angeforderten Berechtigungen wirklich notwendig sind. Viele Tools funktionieren auch mit eingeschränkten Rechten.</p>
             <p style="margin-top: 1rem;"><strong>Zentrale Verwaltung:</strong> Definieren Sie, welche Tools in Ihrem Unternehmen für die Verbindung mit Unternehmenskonten freigegeben sind. Nicht genehmigte Apps sollten blockiert werden.</p>
             <p style="margin-top: 1rem;"><strong>Regelmäßige Audits:</strong> Planen Sie quartalsweise Reviews aller OAuth-Verbindungen. Nicht mehr genutzte Apps sollten sofort widerrufen werden.</p>
@@ -467,7 +517,7 @@
         <p>Besonders relevant im deutschen Kontext: Die <strong>DSGVO</strong> verpflichtet Unternehmen dazu, technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten zu ergreifen. Unkontrollierte OAuth-Verbindungen mit Zugriff auf Kundendaten können als unzureichende Schutzmaßnahme gewertet werden und zu erheblichen Bußgeldern führen – zusätzlich zum Reputationsschaden eines Datenlecks.</p>
 
         <div class="warning-box">
-            <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> DSGVO-Relevanz</h4>
+            <h3 class="box-h"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> DSGVO-Relevanz</h3>
             <p>Können Sie als Unternehmen nachweisen, welche Drittanbieter-Apps Zugriff auf personenbezogene Daten haben und wie dieser Zugriff kontrolliert wird? Eine fehlende Übersicht der OAuth-Verbindungen kann bei einer DSGVO-Prüfung problematisch werden.</p>
         </div>
 
@@ -478,6 +528,13 @@
         <p>Die gute Nachricht: Anders als viele andere Sicherheitsbedrohungen ist dieses Risiko gut beherrschbar. Ein systematisches Audit der OAuth-Verbindungen, klare Governance-Prozesse für neue Tool-Integrationen und ein Monitoring auf ungewöhnliche Zugriffsmuster können das Risiko erheblich reduzieren. Doch der erste Schritt muss sein, sich überhaupt einen Überblick zu verschaffen – denn was man nicht kennt, kann man nicht schützen.</p>
 
         <p>Wissen Sie, welche Apps gerade Zugriff auf Ihren Google Workspace oder Microsoft 365 haben? Falls nicht, ist jetzt ein guter Zeitpunkt, damit anzufangen.</p>
+        <p class="related"><strong>Passend dazu:</strong> Wie weit ein Angreifer mit den Rechten einer verbundenen App kommt, lässt sich gezielt prüfen, zum Beispiel in einem <a href="/penetrationstest-kmu/">Penetrationstest</a> Ihrer Cloud- und Workspace-Umgebung. Mitarbeitende sensibilisiert das <a href="/awareness-training-fuer-kmu/">Security Awareness Training</a>.</p>
+
+        <h2>Quellen</h2>
+        <ul class="sources">
+            <li><a href="https://vercel.com/kb/bulletin/vercel-april-2026-security-incident" rel="noopener">Vercel Knowledge Base: April 2026 Security Incident (offizielles Bulletin)</a></li>
+        </ul>
+
 
         <div class="cta-box">
             <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Blinde Flecken in Ihrer App-Sicherheit schließen?</h3>

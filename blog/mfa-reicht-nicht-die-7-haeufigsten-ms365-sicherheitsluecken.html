@@ -15,9 +15,82 @@
 
     <title>MFA reicht nicht! | M2 Cybersec Blog</title>
     <link rel="canonical"
-        href="https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken/">
+        href="https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken">
             <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
+
+    <meta name="author" content="Max Brinkmann">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MFA reicht nicht! | M2 Cybersec">
+    <meta property="og:description" content="MFA allein schützt Microsoft 365 nicht ausreichend. Das sind die 7 häufigsten Sicherheitslücken in M365 – und wie Unternehmen sie schließen können.">
+    <meta property="og:url" content="https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="article:published_time" content="2026-02-06">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken#article",
+                "headline": "MFA reicht nicht!",
+                "description": "MFA allein schützt Microsoft 365 nicht ausreichend. Das sind die 7 häufigsten Sicherheitslücken in M365 – und wie Unternehmen sie schließen können.",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://m2cybersec.de/assets/logo.png",
+                    "width": 1669,
+                    "height": 1235
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Max Brinkmann"
+                },
+                "publisher": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "datePublished": "2026-02-06",
+                "dateModified": "2026-02-06",
+                "mainEntityOfPage": "https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken",
+                "inLanguage": "de-DE",
+                "articleSection": "IT-Sicherheit"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://m2cybersec.de/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "MFA reicht nicht!",
+                        "item": "https://m2cybersec.de/blog/mfa-reicht-nicht-die-7-haeufigsten-ms365-sicherheitsluecken"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -136,7 +209,7 @@
             font-weight: 600;
         }
 
-        h4 {
+        h4, h3.box-h {
             font-size: 1.2rem;
             margin: 1.5rem 0 0.8rem;
             color: var(--secondary-light-cyan);
@@ -266,6 +339,7 @@
 
             .article-meta {
                 flex-direction: column;
+                align-items: center;
                 gap: 0.5rem;
             }
 
@@ -281,7 +355,7 @@
 <body>
     <nav class="navbar" role="navigation">
         <a href="/" class="logo">
-            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -304,7 +378,7 @@
         <div class="article-header-content">
             <div class="article-meta">
                 <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Max Brinkmann</span>
-                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 6.Februar.2026</span>
+                <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <time datetime="2026-02-06">6. Februar 2026</time></span>
                 <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Information</span>
             </div>
             <h1>MFA reicht nicht!</h1>
@@ -353,7 +427,7 @@
             <li>Legacy Authentication weiterhin aktiv</li>
             <li>Fehlende Conditional-Access-Regeln</li>
         </ul>
-        <h2>Warum normale Benutzer das Hauptziel sind</h3>
+        <h2>Warum normale Benutzer das Hauptziel sind</h2>
 
             <p>
                 Ein normaler Benutzeraccount reicht häufig aus, um Rechnungen, Kundenkommunikation
@@ -383,7 +457,7 @@
             </ol>
 
             <div class="info-box">
-                <h4><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Empfehlung</h4>
+                <h3 class="box-h"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Empfehlung</h3>
                 <p>Best Practices</p>
                 <ul>
                     <li><strong>Legacy Authentication deaktivieren</strong></li>
@@ -406,11 +480,19 @@
             <!-- HAUPTINHALT ENDET HIER -->
 
             <!-- Call-to-Action Box -->
+        <p class="related"><strong>Passend dazu:</strong> Phishing bleibt der häufigste Weg zu den Zugangsdaten. Wie Sie Ihr Team dagegen schulen, steht beim <a href="/awareness-training-fuer-kmu/">Security Awareness Training</a>; weitere Grundlagen in unserer <a href="/sicherheit-fuer-kmu/">Checkliste für KMU</a>.</p>
+
+        <h2>Quellen</h2>
+        <ul class="sources">
+            <li><a href="https://learn.microsoft.com/de-de/entra/identity/conditional-access/policy-block-legacy-authentication" rel="noopener">Microsoft Learn: Legacy-Authentifizierung mit bedingtem Zugriff blockieren</a></li>
+            <li><a href="https://learn.microsoft.com/de-de/entra/fundamentals/security-defaults" rel="noopener">Microsoft Learn: Sicherheitsstandards in Microsoft Entra ID</a></li>
+        </ul>
+
             <div class="cta-box">
                 <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Unser Microsoft 365 Sicherheitscheck</h3>
                 <p>Wir analysieren deinen Microsoft-365-Tenant gezielt auf diese Schwachstellen
                     und zeigen dir konkrete Maßnahmen zur Absicherung.</p>
-                <a href="/#contact" class="btn btn-primary">Zum Kostenloses Erstgespräch</a>
+                <a href="/#contact" class="btn btn-primary">Zum kostenlosen Erstgespräch</a>
             </div>
     </main>
 

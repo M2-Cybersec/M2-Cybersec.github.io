@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CRA-Meldepflicht nach Artikel 14: aktiv ausgenutzte Schwachstellen binnen 24 Stunden melden. Der CRA-Meldefähigkeits-Sprint macht Hersteller vernetzter Produkte in 10 Arbeitstagen meldefähig – Festpreis 12.500 € netto.">
+    <meta name="description" content="CRA-Meldepflicht ab 11.09.2026: ausgenutzte Schwachstellen binnen 24 Stunden melden. Der Sprint macht Hersteller in 10 Arbeitstagen meldefähig, 12.500 € netto.">
     <meta name="keywords" content="CRA Meldepflicht, Cyber Resilience Act Artikel 14, 24 Stunden Meldung, ENISA CSIRT Meldung, Hersteller vernetzter Produkte, Maschinenbau CRA, SBOM, Produktcompliance">
     <meta name="robots" content="index, follow">
 
@@ -16,9 +16,30 @@
     <meta property="og:url" content="https://m2cybersec.de/cra-meldepflicht/">
     <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
 
-    <title>CRA-Meldepflicht nach Artikel 14 – in 10 Tagen meldefähig | M2 Cybersec UG</title>
+    <title>CRA-Meldepflicht nach Artikel 14: in 10 Tagen meldefähig | M2 Cybersec</title>
     <link rel="canonical" href="https://m2cybersec.de/cra-meldepflicht/">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Startseite",
+                "item": "https://m2cybersec.de/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "CRA-Meldepflicht",
+                "item": "https://m2cybersec.de/cra-meldepflicht/"
+            }
+        ]
+    }
+    </script>
 
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,8 +52,11 @@
         "@type": "Service",
         "name": "CRA-Meldefähigkeits-Sprint",
         "serviceType": "Beratung zur Meldefähigkeit nach Artikel 14 Cyber Resilience Act",
+        "@id": "https://m2cybersec.de/cra-meldepflicht/#service",
+        "url": "https://m2cybersec.de/cra-meldepflicht/",
         "provider": {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
+            "@id": "https://m2cybersec.de/#organization",
             "name": "M2 Cybersec UG (haftungsbeschränkt)",
             "url": "https://m2cybersec.de/"
         },
@@ -575,7 +599,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">

@@ -5,15 +5,90 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Die NIS2-Richtlinie erklärt: Was Sie wissen müssen, wer betroffen ist und wie M2 Cybersec bei der Umsetzung hilft. Kostenloser Betroffenheitscheck.">
-    <meta name="keywords" content="NIS2-Richtlinie, NIS2 Compliance, EU Cybersecurity, KRITIS, IT-Sicherheitsgesetz, Betroffenheitscheck">
+    <meta name="description" content="NIS2 in Deutschland, Stand 2026: Wer betroffen ist, BSI-Registrierung, Meldefristen, Haftung der Geschäftsleitung und Bußgelder nach dem NIS2UmsuCG.">
+    <meta name="keywords" content="NIS2-Richtlinie, NIS2UmsuCG, NIS2 Deutschland, BSI Registrierung, NIS2 Meldepflicht, NIS2 Zulieferer, BSIG">
     <meta name="robots" content="index, follow">
     
-    <title>NIS2-Richtlinie: Was Sie wissen müssen | M2 Cybersec Blog</title>
-    <link rel="canonical" href="https://m2cybersec.de/blog/nis2-richtlinie/">
+    <title>NIS2 in Deutschland 2026: Pflichten und Fristen | M2 Cybersec Blog</title>
+    <link rel="canonical" href="https://m2cybersec.de/blog/nis2-richtlinie">
         <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
     
+    <meta name="author" content="Marlon Scheer">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NIS2 in Deutschland 2026: Pflichten, Fristen, Betroffene | M2 Cybersec">
+    <meta property="og:description" content="NIS2 in Deutschland, Stand 2026: Wer betroffen ist, BSI-Registrierung, Meldefristen, Haftung der Geschäftsleitung und Bußgelder nach dem NIS2UmsuCG.">
+    <meta property="og:url" content="https://m2cybersec.de/blog/nis2-richtlinie">
+    <meta property="og:image" content="https://m2cybersec.de/assets/logo.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="article:published_time" content="2024-10-31">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://m2cybersec.de/blog/nis2-richtlinie#article",
+                "headline": "NIS2 in Deutschland: Was Unternehmen 2026 wissen müssen",
+                "description": "NIS2 in Deutschland, Stand 2026: Wer betroffen ist, BSI-Registrierung, Meldefristen, Haftung der Geschäftsleitung und Bußgelder nach dem NIS2UmsuCG.",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://m2cybersec.de/assets/logo.png",
+                    "width": 1669,
+                    "height": 1235
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Marlon Scheer",
+                    "@id": "https://m2cybersec.de/das-team/#marlon-scheer",
+                    "url": "https://m2cybersec.de/das-team/"
+                },
+                "publisher": {
+                    "@type": "ProfessionalService",
+                    "@id": "https://m2cybersec.de/#organization",
+                    "name": "M2 Cybersec UG (haftungsbeschränkt)",
+                    "url": "https://m2cybersec.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://m2cybersec.de/assets/logo.png",
+                        "width": 1669,
+                        "height": 1235
+                    }
+                },
+                "datePublished": "2024-10-31",
+                "dateModified": "2026-09-13",
+                "mainEntityOfPage": "https://m2cybersec.de/blog/nis2-richtlinie",
+                "inLanguage": "de-DE",
+                "articleSection": "IT-Sicherheit"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://m2cybersec.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://m2cybersec.de/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "NIS2 in Deutschland: Was Unternehmen 2026 wissen müssen",
+                        "item": "https://m2cybersec.de/blog/nis2-richtlinie"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <link rel="preload" href="/assets/fonts/nekst-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/helvetica-now-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/base.css">
@@ -98,12 +173,12 @@
             font-size: 1.05rem;
         }
 
-        ul, ol {
+        .content ul, .content ol {
             margin: 1.5rem 0 1.5rem 2rem;
             color: var(--secondary-light-gray);
         }
 
-        li {
+        .content li {
             margin-bottom: 0.8rem;
         }
 
@@ -122,6 +197,11 @@
             text-decoration: underline;
         }
 
+        .update-note {
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 1rem;
+        }
+
         .cta-box {
             background: linear-gradient(135deg, rgba(0, 252, 246, 0.05) 0%, rgba(0, 252, 246, 0.02) 100%);
             padding: 2.5rem;
@@ -138,6 +218,7 @@
 
             .article-meta {
                 flex-direction: column;
+                align-items: center;
                 gap: 0.5rem;
             }
         
@@ -148,7 +229,7 @@
 <body>
     <nav class="navbar" role="navigation">
         <a href="/" class="logo">
-            <img src="../../assets/logo.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
+            <img src="/assets/logo-nav.png" alt="M2 Cybersec Logo" class="logo-image" width="61" height="45">
             <span>M2 Cybersec</span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
@@ -166,69 +247,69 @@
 
     <header class="article-header">
         <div class="article-meta">
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Marlon Scheer</span>
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 31. Oktober 2024</span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <a href="/das-team/" rel="author">Marlon Scheer</a></span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <time datetime="2024-10-31">31. Oktober 2024</time>, aktualisiert am <time datetime="2026-09-13">13. September 2026</time></span>
             <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Information</span>
         </div>
-        <h1>Die NIS2-Richtlinie: Was Sie wissen müssen und wie wir Ihnen helfen können</h1>
+        <h1>NIS2 in Deutschland: Was Unternehmen 2026 wissen müssen</h1>
     </header>
 
     <main class="content">
         <a href="/blog/" class="back-link">← Zurück zum Blog</a>
 
-        <p>Mit der Verabschiedung der NIS2-Richtlinie steht Europa ein weiterer Schritt hin zu einer sichereren digitalen Infrastruktur bevor. Doch was genau bedeutet NIS2, welche Herausforderungen und Pflichten entstehen für Unternehmen, und wie kann M2 Cybersec UG Sie dabei unterstützen? In diesem Beitrag klären wir die wichtigsten Fragen und bieten eine Lösung, um herauszufinden, ob Ihr Unternehmen betroffen ist.</p>
+        <p class="update-note"><strong>Aktualisiert am 13. September 2026:</strong> Dieser Beitrag erschien im Oktober 2024, als Deutschland die NIS2-Richtlinie noch nicht umgesetzt hatte. Inzwischen gilt das Umsetzungsgesetz. Wir haben den Text auf den aktuellen Stand gebracht.</p>
+
+        <p>Seit dem 6. Dezember 2025 ist die NIS2-Richtlinie in Deutschland geltendes Recht. Das NIS2-Umsetzungs- und Cybersicherheitsstärkungsgesetz (NIS2UmsuCG) hat das BSI-Gesetz grundlegend neu gefasst. Nach Schätzungen des BSI fallen rund 30.000 Unternehmen darunter, die meisten davon hatten vorher keine gesetzlichen Pflichten zur IT-Sicherheit. Hier steht, wer betroffen ist, was konkret verlangt wird und wie Sie jetzt vorgehen.</p>
 
         <h2>Was ist die NIS2-Richtlinie?</h2>
 
-        <p>Die NIS2-Richtlinie ist eine europäische Gesetzgebung, die darauf abzielt, die Cybersicherheit für kritische und wichtige Infrastrukturen in Europa zu stärken. Sie baut auf der ursprünglichen NIS-Richtlinie auf, erweitert jedoch die Anforderungen und den Kreis der verpflichteten Unternehmen erheblich. Das Ziel: eine widerstandsfähigere digitale Infrastruktur, die gegen Cyberbedrohungen gut gerüstet ist und eine einheitliche Sicherheitsbasis für Unternehmen schafft, die eine zentrale Rolle in der Versorgung und Sicherheit der Gesellschaft spielen.</p>
+        <p>Die NIS2-Richtlinie (EU) 2022/2555 ist eine europäische Vorgabe, die ein einheitlich hohes Niveau der Cybersicherheit in der EU schaffen soll. Sie löst die erste NIS-Richtlinie von 2016 ab und erweitert den Kreis der verpflichteten Unternehmen erheblich: statt nur klassischer kritischer Infrastrukturen jetzt auch mittlere Unternehmen aus 18 Sektoren. Die Mitgliedstaaten hätten sie bis zum 17. Oktober 2024 umsetzen müssen. Deutschland hat diese Frist verpasst, das Gesetz trat erst im Dezember 2025 in Kraft.</p>
 
-        <h2>Was bedeutet die Umsetzung der NIS2-Richtlinie in nationales Recht?</h2>
+        <h2>Wer ist in Deutschland betroffen?</h2>
 
-        <p>Wie bei allen EU-Richtlinien ist es erforderlich, dass die NIS2-Richtlinie in nationales Recht überführt wird, damit die Anforderungen in jedem Mitgliedsstaat der EU rechtsverbindlich werden. Dies erfolgt durch die Gesetzgeber der einzelnen Länder, die dafür sorgen, dass die Richtlinie entsprechend den nationalen Gegebenheiten umgesetzt wird.</p>
-
-        <p>In Deutschland wird die Umsetzung durch eine Anpassung bestehender Gesetze und gegebenenfalls durch die Einführung neuer Vorschriften erfolgen. Es ist zu erwarten, dass auch spezifische Sektorvorgaben, wie sie z. B. für die Bereiche Energie, Finanzen und Transport gelten, angepasst werden. Da die Anforderungen der NIS2-Richtlinie recht weitreichend sind, könnten in Deutschland erhebliche Investitionen in die Cybersicherheit nötig werden, insbesondere für Unternehmen, die bisher keinen oder nur minimalen Berührungspunkt mit Cybersicherheitsvorgaben hatten.</p>
-
-        <h2>Wer ist betroffen?</h2>
-
-        <p>Die NIS2-Richtlinie betrifft nicht nur große Infrastrukturen, sondern auch viele kleine und mittlere Unternehmen (KMU), die als „kritisch" oder „wichtig" eingestuft werden. Dazu zählen unter anderem Unternehmen in den Bereichen:</p>
+        <p>Ob ein Unternehmen unter NIS2 fällt, hängt von zwei Fragen ab: In welchem Sektor ist es tätig, und wie groß ist es? Das Gesetz unterscheidet zwei Gruppen:</p>
 
         <ul>
-            <li>Energie</li>
-            <li>Transport</li>
-            <li>Gesundheit</li>
-            <li>Trinkwasserversorgung</li>
-            <li>Finanzdienstleistungen</li>
-            <li>Öffentliche Verwaltung</li>
+            <li><strong>Wichtige Einrichtungen:</strong> in der Regel ab 50 Beschäftigten oder mehr als 10 Mio. € Jahresumsatz und Jahresbilanzsumme in einem der erfassten Sektoren.</li>
+            <li><strong>Besonders wichtige Einrichtungen:</strong> in der Regel ab 250 Beschäftigten oder mehr als 50 Mio. € Umsatz und mehr als 43 Mio. € Bilanzsumme in einem besonders kritischen Sektor, außerdem Betreiber kritischer Anlagen.</li>
         </ul>
 
-        <p>Besonders bemerkenswert ist, dass die neuen Regelungen Unternehmen betreffen könnten, die bisher keine Berührungspunkte mit Cybersicherheitsanforderungen hatten. Da die genauen Kriterien zur Einstufung als „kritisch" oder „wichtig" ebenfalls national festgelegt werden, ist in den kommenden Monaten mit weiteren Konkretisierungen zu rechnen.</p>
+        <p>Zu den besonders kritischen Sektoren zählen unter anderem Energie, Transport und Verkehr, Finanzwesen, Gesundheit, Trinkwasser, Abwasser, digitale Infrastruktur und IT-Dienstleister, die Leistungen für andere Unternehmen verwalten. Weitere erfasste Sektoren sind etwa Post- und Kurierdienste, Abfallwirtschaft, Chemie, Lebensmittel, Forschung, digitale Dienste wie Online-Marktplätze und das verarbeitende Gewerbe, zum Beispiel Maschinenbau, Elektrotechnik, Fahrzeugbau und Medizinprodukte.</p>
 
-        <h2>Was steht betroffenen Unternehmen bevor?</h2>
+        <p>Für einige Anbieter, etwa DNS-Dienste oder Vertrauensdiensteanbieter, gilt NIS2 unabhängig von der Größe. Die genaue Zuordnung ist im Einzelfall kniffliger, als die Schwellenwerte vermuten lassen, weil es auf die tatsächliche Geschäftstätigkeit ankommt. Das BSI bietet dafür eine Betroffenheitsprüfung auf seiner <a href="https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/nis-2-regulierte-unternehmen_node.html" rel="noopener">Informationsseite zu NIS-2</a> an.</p>
 
-        <p>Unternehmen, die unter die NIS2-Richtlinie fallen, werden verpflichtet, strenge Sicherheitsmaßnahmen umzusetzen, darunter:</p>
+        <h2>Auch als Zulieferer betroffen?</h2>
+
+        <p>Direkt verpflichtet ist nur, wer Sektor und Größe erfüllt. Indirekt trifft NIS2 aber deutlich mehr Unternehmen: Betroffene Einrichtungen müssen die Sicherheit ihrer Lieferkette steuern. In der Praxis landen die Anforderungen deshalb über Verträge, Fragebögen und Nachweispflichten bei kleineren Dienstleistern und Zulieferern. Wer einen großen Kunden aus Energie, Gesundheit oder Industrie beliefert, sollte damit rechnen, nach Sicherheitsmaßnahmen und Prüfberichten gefragt zu werden.</p>
+
+        <h2>Welche Pflichten gelten jetzt?</h2>
 
         <ul>
-            <li><strong>Sicherheitsmanagement:</strong> Einführung und Dokumentation von Sicherheitsrichtlinien und Verfahren.</li>
-            <li><strong>Risikomanagement:</strong> Identifizierung und Bewertung von Cybersicherheitsrisiken.</li>
-            <li><strong>Meldung von Vorfällen:</strong> Unternehmen müssen sicherheitsrelevante Vorfälle innerhalb enger Fristen an die zuständigen Behörden melden.</li>
-            <li><strong>Schulungen:</strong> Regelmäßige Schulungen im Bereich der Cybersicherheit für Mitarbeiter.</li>
+            <li><strong>Registrierung beim BSI:</strong> Betroffene Unternehmen müssen sich selbst beim BSI registrieren. Die gesetzliche Frist endete am 6. März 2026, das BSI hat eine Nachfrist bis Ende Juli 2026 eingeräumt. Wer sich bis heute nicht registriert hat, sollte das umgehend nachholen.</li>
+            <li><strong>Risikomanagementmaßnahmen:</strong> Das Gesetz verlangt geeignete technische und organisatorische Maßnahmen, darunter Risikoanalyse, Umgang mit Sicherheitsvorfällen, Backup und Notfallmanagement, Sicherheit der Lieferkette, sichere Entwicklung und Wartung von Systemen, Schulungen, Kryptografie, Zugriffskontrolle und Multi-Faktor-Authentifizierung.</li>
+            <li><strong>Meldepflichten:</strong> Erhebliche Sicherheitsvorfälle werden gestuft gemeldet: eine erste Meldung binnen 24 Stunden, eine Bewertung binnen 72 Stunden und ein Abschlussbericht nach einem Monat.</li>
+            <li><strong>Verantwortung der Geschäftsleitung:</strong> Die Geschäftsleitung muss die Maßnahmen billigen, ihre Umsetzung überwachen und regelmäßig an Schulungen teilnehmen. Sie kann bei Pflichtverletzungen persönlich haften.</li>
         </ul>
 
-        <p>Die Nichteinhaltung der NIS2-Anforderungen kann zu empfindlichen Bußgeldern und anderen rechtlichen Sanktionen führen. Unternehmen stehen hier vor der Aufgabe, die neuen Anforderungen rechtzeitig und umfassend umzusetzen, um sich vor Sanktionen und Cyberangriffen zu schützen.</p>
+        <p>Verstöße können mit empfindlichen Bußgeldern geahndet werden: bei besonders wichtigen Einrichtungen bis zu 10 Mio. € oder 2 % des weltweiten Jahresumsatzes, bei wichtigen Einrichtungen bis zu 7 Mio. € oder 1,4 %. Maßgeblich ist jeweils der höhere Betrag.</p>
 
-        <h2>Kostenloser NIS2-Betroffenheitscheck bei M2 Cybersec UG</h2>
+        <h2>Was Sie jetzt tun sollten</h2>
 
-        <p>Um Unternehmen bei der Einhaltung der NIS2-Richtlinie zu unterstützen, bieten wir bei M2 Cybersec UG einen kostenlosen Betroffenheitscheck an. Gemeinsam mit Ihnen analysieren wir, ob Ihr Unternehmen zu den betroffenen Sektoren gehört und welche Schritte Sie ergreifen müssen, um die Anforderungen der NIS2-Richtlinie zu erfüllen.</p>
+        <p>Wer vermutet, betroffen zu sein, geht am besten in dieser Reihenfolge vor: Zuerst klären, ob das Unternehmen nach Sektor und Größe unter das Gesetz fällt. Dann die Registrierung beim BSI nachholen, falls noch nicht geschehen. Anschließend eine ehrliche Bestandsaufnahme der technischen Maßnahmen machen und einen Meldeprozess festlegen, damit im Ernstfall klar ist, wer innerhalb von 24 Stunden was meldet.</p>
 
-        <p>Dieser Check hilft Ihnen, die Lage und eventuelle gesetzliche Pflichten rechtzeitig zu erkennen und in Ruhe die nötigen Sicherheitsvorkehrungen zu planen.</p>
+        <p>Für den ersten Schritt bieten wir einen kostenlosen NIS2-Betroffenheitscheck an. Bei der Bestandsaufnahme danach helfen wir ebenfalls. Unsere Security-Checks prüfen Ihre Systeme regelmäßig von außen und liefern datierte, CVSS-bewertete Reports. <a href="/growth-paket/">Growth Guard</a> ergänzt das um Compliance-Dokumentation und Schulungen, <a href="/scale-paket/">Scale Secure</a> zusätzlich um Code Reviews und einen Notfallplan. Wichtig: Wir leisten technische Sicherheitsberatung, keine Rechtsberatung. Die verbindliche Einstufung Ihres Unternehmens sollten Sie mit Ihrer Rechtsberatung klären.</p>
 
-        <h2>Warum M2 Cybersec UG?</h2>
+        <h2>Quellen</h2>
 
-        <p>Mit unserer Erfahrung und Expertise im Bereich IT-Sicherheit sind wir ein verlässlicher Partner für Unternehmen, die die Herausforderungen der NIS2-Richtlinie proaktiv angehen möchten. Wir begleiten Sie durch die Anforderungen der Richtlinie, analysieren die Schwachstellen und unterstützen Sie dabei, ein nachhaltiges Sicherheitskonzept zu entwickeln.</p>
+        <ul class="sources">
+            <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" rel="noopener">Richtlinie (EU) 2022/2555 (NIS-2) auf EUR-Lex</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/bsig_2025/" rel="noopener">BSI-Gesetz in der Fassung des NIS2UmsuCG (gesetze-im-internet.de)</a></li>
+            <li><a href="https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/nis-2-regulierte-unternehmen_node.html" rel="noopener">BSI: Informationen für NIS-2-regulierte Unternehmen</a></li>
+        </ul>
 
         <div class="cta-box">
-            <h3 style="color: var(--primary-cyan); margin-bottom: 1rem;">Kostenloser NIS2-Betroffenheitscheck</h3>
-            <p>Vereinbaren Sie jetzt Ihren kostenfreien Betroffenheitscheck und verschaffen Sie sich Klarheit darüber, ob und in welcher Form Sie von der NIS2-Richtlinie betroffen sind.</p>
+            <h3 style="margin-bottom: 1rem;">Kostenloser NIS2-Betroffenheitscheck</h3>
+            <p>Gemeinsam klären wir, ob Ihr Unternehmen nach Sektor und Größe unter NIS2 fällt und welche Schritte jetzt anstehen. Kostenlos und unverbindlich, als technische Einordnung, nicht als Rechtsberatung.</p>
             <a href="/#contact" class="btn btn-primary">Jetzt Check anfragen</a>
         </div>
     </main>

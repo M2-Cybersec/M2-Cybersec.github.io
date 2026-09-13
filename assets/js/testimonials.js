@@ -39,14 +39,14 @@ var M2_TESTIMONIALS_DATA = [
          quote: 'Als Gründerin eines Startups habe ich viele Fragen rund um die Sicherheit unserer IT und den Schutz von Kundendaten. Mit M2 habe ich einen Partner an meiner Seite, der unsere Situation versteht und schnell die passende Lösungen findet. Besonders schätze ich die schnelle und persönliche Unterstützung – auf Fragen erhalte ich oft noch am selben Tag kompetente Antworten. M2 hilft uns dabei, unsere IT-Infrastruktur sicherer aufzustellen und mögliche Schwachstellen zu schließen. Die Zusammenarbeit ist pragmatisch, lösungsorientiert und findet auf Augenhöhe statt.',
          name: 'Daniela Zakowski',
          role: 'Gründerin der Vertriebsberatung Zakcess UG (haftungsbeschränkt)',
-         image: '/assets/testimonials/daniela-zakowski.png',
+         image: '/assets/testimonials/daniela-zakowski.webp',
          fit: 'portrait'
      },
      {
      	 quote: 'Als Gründerin hatte ich Cybersecurity bisher immer aufgeschoben. Der Security Check bei M2 Cybersec hat das Thema plötzlich greifbar gemacht. Meine IP-Adresse wurde tiefgehend analysiert, inklusive erweiterter Schwachstellenprüfung und Service- und Sicherheitsanalyse. Das Ergebnis stand in einem strukturierten, wirklich verständlichen Report. So konnte ich die gefundenen Schwachstellen endlich ernst nehmen und handeln. Besonders gut: die Kombination aus Fachtiefe und Kommunikation auf Augenhöhe. M2 Cybersec erklärt so, dass auch IT-Laien fundierte Entscheidungen treffen können. Für alle, die ihr Unternehmen professionell absichern wollen, ohne ein riesiges Budget einzuplanen: sehr empfehlenswert!',
          name: 'Larissa Ost',
          role: 'Geschäftsführerin, Immosthetics',
-         image: '/assets/testimonials/larissa-ost.jpeg',
+         image: '/assets/testimonials/larissa-ost.webp',
          fit: 'portrait'
      },
 
