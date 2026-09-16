@@ -4,6 +4,7 @@ User-agent: *
 Allow: /
 Disallow: /prompts/
 Disallow: /templates/
+Disallow: /docs/
 
 # KI-Crawler und KI-Suche ausdrücklich erlaubt
 User-agent: GPTBot
@@ -19,6 +20,7 @@ User-agent: CCBot
 Allow: /
 Disallow: /prompts/
 Disallow: /templates/
+Disallow: /docs/
 
 # Sitemaps
 Sitemap: https://m2cybersec.de/sitemap.xml
