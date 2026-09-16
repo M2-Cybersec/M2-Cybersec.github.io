@@ -175,6 +175,9 @@ h1, h2, h3 {
     color: var(--primary-white);
     line-height: 1.15;
     text-wrap: balance;
+    /* Lange Komposita (z. B. „Universalschlichtungsstelle") brechen um,
+       statt auf schmalen Displays seitwärts hinauszuragen */
+    overflow-wrap: break-word;
 }
 
 /* Verhindert Schusterjungen am Absatzende */
@@ -654,6 +657,14 @@ h3 { font-weight: 600; }
     .note-box,
     .upgrade-box {
         padding: 1.4rem 1.2rem;
+    }
+
+    /* Auf dem Handy volle Breite statt starrer Button, der seitwärts hinausragt */
+    .upgrade-box .btn {
+        flex-shrink: 1;
+        width: 100%;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
     }
 
     /* Zwei Spalten passen auch aufs Handy – kein Seitwärtsscrollen nötig */

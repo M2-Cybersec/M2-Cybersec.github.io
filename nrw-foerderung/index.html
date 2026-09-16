@@ -282,14 +282,15 @@
 
         @media (max-width: 768px) {
             .hero-nrw h1 { font-size: 2.2rem; }
-            .kenndaten-grid { grid-template-columns: repeat(2, 1fr); }
+            .kenndaten-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .kenndaten-value { font-size: 2rem; }
             .steps-grid { grid-template-columns: repeat(2, 1fr); }
             .berechtigung-box { padding: 2rem; }
             .cta-section { padding: 2.5rem 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .kenndaten-grid { grid-template-columns: 1fr 1fr; }
+            .kenndaten-grid { grid-template-columns: 1fr; }
             .steps-grid { grid-template-columns: 1fr; }
         }
     </style>
