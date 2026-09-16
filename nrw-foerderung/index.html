@@ -282,14 +282,15 @@
 
         @media (max-width: 768px) {
             .hero-nrw h1 { font-size: 2.2rem; }
-            .kenndaten-grid { grid-template-columns: repeat(2, 1fr); }
+            .kenndaten-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .kenndaten-value { font-size: 2rem; }
             .steps-grid { grid-template-columns: repeat(2, 1fr); }
             .berechtigung-box { padding: 2rem; }
             .cta-section { padding: 2.5rem 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .kenndaten-grid { grid-template-columns: 1fr 1fr; }
+            .kenndaten-grid { grid-template-columns: 1fr; }
             .steps-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -319,7 +320,7 @@
             <div class="hero-content">
                 <span class="nrw-badge">MID-DIGITALE SICHERHEIT &middot; NRW.BANK</span>
                 <h1>50 % Zuschuss <span>für Ihre IT-Sicherheit</span></h1>
-                <p>Das Land NRW fördert Cybersecurity-Maßnahmen von KMU über das Programm MID-Digitale Sicherheit mit 50 % der Kosten – bis zu 15.000 €. Ideal kombinierbar mit unseren Paketen Growth Guard und Scale Secure sowie unseren Red-Team-Audits (Plus &amp; Pro).</p>
+                <p>Das Land NRW fördert Cybersecurity-Maßnahmen von KMU über das Programm MID-Digitale Sicherheit mit 50 % der Kosten – bis zu 15.000 €. Ideal kombinierbar mit Scale Secure, mit Growth Guard ab einer 24-Monats-Laufzeit sowie mit unseren Red-Team-Audits (Plus &amp; Pro).</p>
             </div>
         </section>
 
@@ -386,6 +387,32 @@
                     <li>De-minimis-Grenze: maximal 300.000 € Beihilfen in den letzten drei Steuerjahren</li>
                     <li>Keine Doppelförderung derselben Ausgaben durch andere Programme</li>
                 </ul>
+            </div>
+
+            <h2 class="section-title">Was das für unsere Pakete bedeutet</h2>
+            <p class="section-subtitle">Beispielrechnungen, alle Beträge netto – gefördert wird erst ab 8.000 € Projektvolumen</p>
+
+            <div class="foerder-grid">
+                <div class="foerder-card">
+                    <h3>Startup Shield, 12 Monate</h3>
+                    <p><strong>1.788 €</strong> Projektvolumen – liegt unter der Schwelle von 8.000 € und ist allein nicht förderfähig.</p>
+                </div>
+                <div class="foerder-card">
+                    <h3>Growth Guard, 12 Monate</h3>
+                    <p><strong>5.388 €</strong> Projektvolumen – allein noch nicht förderfähig, erreicht die Schwelle aber in Kombination.</p>
+                </div>
+                <div class="foerder-card">
+                    <h3>Growth Guard, 24 Monate</h3>
+                    <p><strong>10.776 €</strong> Projektvolumen, bis zu <strong>5.388 €</strong> Zuschuss – effektiv 5.388 € oder rund 224,50 € im Monat.</p>
+                </div>
+                <div class="foerder-card">
+                    <h3>Scale Secure, 12 Monate</h3>
+                    <p><strong>15.480 €</strong> Projektvolumen, bis zu <strong>7.740 €</strong> Zuschuss – effektiv 7.740 € oder rund 645 € im Monat.</p>
+                </div>
+            </div>
+
+            <div class="hinweis-box">
+                <strong>Zu den Beispielen:</strong> Gerechnet ist jeweils das Abo ohne Zusatzleistungen, zur Veranschaulichung der 50-%-Quote. Die einmalige Onboarding-Pauschale von Scale Secure ist nicht eingerechnet – ob sie förderfähig ist, klären wir für Ihr Vorhaben mit der NRW.BANK. Auch Awareness+ Trainings, Pentests und Red-Team-Audits zählen zum Projektvolumen und helfen, die Schwelle von 8.000 € zu erreichen. Ein Anspruch auf Förderung besteht nicht.
             </div>
 
             <h2 class="section-title">So geht's in 4 Schritten</h2>

@@ -175,6 +175,9 @@ h1, h2, h3 {
     color: var(--primary-white);
     line-height: 1.15;
     text-wrap: balance;
+    /* Lange Komposita (z. B. „Universalschlichtungsstelle") brechen um,
+       statt auf schmalen Displays seitwärts hinauszuragen */
+    overflow-wrap: break-word;
 }
 
 /* Verhindert Schusterjungen am Absatzende */
@@ -488,6 +491,196 @@ h3 { font-weight: 600; }
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-top: 1.5rem;
+}
+
+/* --- Paketseiten: Grenzen, Add-ons, Hinweise -------------------------------
+   Genutzt von /starter-paket/, /growth-paket/ und /scale-paket/. Zeigt, was
+   ein Paket NICHT enthält, was zubuchbar ist und welche Regeln gelten.
+   Cyan bleibt den Links vorbehalten, die Ausschlussliste bleibt grau. */
+
+.exclude-list {
+    list-style: none;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Marker absolut statt per Flex: sonst wird jeder Inline-Link im
+   Listenpunkt zu einem eigenen Flex-Item und reißt den Satz auseinander */
+.exclude-list li {
+    position: relative;
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.exclude-list li::before {
+    content: '\2013';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-gray);
+    font-weight: 700;
+}
+
+/* Tabellen-Wrapper: hält die Tabelle auf schmalen Displays scrollbar,
+   ohne dass die Seite selbst horizontal scrollt */
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 3rem;
+}
+
+.addon-table {
+    width: 100%;
+    min-width: 420px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.addon-table th,
+.addon-table td {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.addon-table thead th {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom-color: rgba(0, 252, 246, 0.25);
+}
+
+.addon-table td {
+    color: var(--secondary-light-gray);
+}
+
+.addon-table tbody tr:last-child th,
+.addon-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.addon-table .addon-price {
+    text-align: right;
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--primary-white);
+}
+
+/* „auf Anfrage“ statt Betrag: zurückgenommen, damit Preise sichtbar bleiben */
+.addon-table .addon-price.on-request {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* Gut zu wissen: die Leistungsgrenzen in ruhigem Grau, bewusst ohne Akzent */
+.note-box {
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Der Kasten trägt auch einen Einleitungssatz (Onboarding, Scale Secure) */
+.note-box > p {
+    font-size: 0.92rem;
+    color: var(--secondary-light-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.note-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.note-box li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.note-box li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-gray);
+}
+
+/* Upgrade-Box: der eine Cyan-Akzent am Seitenende */
+.upgrade-box {
+    border: 1px solid rgba(0, 252, 246, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    background: rgba(0, 252, 246, 0.03);
+}
+
+.upgrade-box-text {
+    flex: 1 1 300px;
+}
+
+.upgrade-box .btn {
+    flex-shrink: 0;
+}
+
+.upgrade-box-text strong {
+    display: block;
+    font-size: 0.98rem;
+    color: var(--primary-white);
+    margin-bottom: 0.2rem;
+}
+
+.upgrade-box-text span {
+    font-size: 0.88rem;
+    color: var(--secondary-light-gray);
+}
+
+@media (max-width: 600px) {
+    .note-box,
+    .upgrade-box {
+        padding: 1.4rem 1.2rem;
+    }
+
+    /* Auf dem Handy volle Breite statt starrer Button, der seitwärts hinausragt */
+    .upgrade-box .btn {
+        flex-shrink: 1;
+        width: 100%;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    /* Zwei Spalten passen auch aufs Handy – kein Seitwärtsscrollen nötig */
+    .addon-table {
+        min-width: 0;
+        font-size: 0.85rem;
+    }
+
+    .addon-table th,
+    .addon-table td {
+        padding: 0.7rem 0.4rem;
+    }
+
+    .addon-table .addon-price.on-request {
+        white-space: normal;
+    }
 }
 
 /* --- Footer ----------------------------------------------------------------
