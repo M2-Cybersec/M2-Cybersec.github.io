@@ -145,8 +145,13 @@
     display: inline-block;
 }
 
+/* Nur 'backwards', nicht 'both': Nach dem Einblenden darf an den Wörtern
+   kein Filter und kein Transform hängen bleiben. Sonst hält der Browser
+   jedes Wort als eigene GPU-Ebene, und Mobilgeräte rastern einzelne davon
+   in niedriger Auflösung – die Wörter bleiben dann sichtbar unscharf.
+   Das Script nimmt die Klasse is-in nach dem Durchlauf zusätzlich wieder ab. */
 .tm-slide.is-in .tm-word {
-    animation: tm-word-in 220ms ease-in-out both;
+    animation: tm-word-in 220ms ease-in-out backwards;
     animation-delay: calc(var(--tm-i) * 25ms);
 }
 
@@ -158,8 +163,8 @@
     }
     to {
         opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
+        filter: none;
+        transform: none;
     }
 }
 

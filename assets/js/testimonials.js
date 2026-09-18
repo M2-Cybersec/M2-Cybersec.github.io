@@ -211,6 +211,20 @@ var M2_TESTIMONIALS_DATA = [
     section.removeAttribute('hidden');
 
     // --- Wechsel ----------------------------------------------------------
+    // Nach dem letzten Wort kommt die Animationsklasse wieder weg, damit die
+    // Wörter als normaler Text gerendert werden (sonst auf Mobilgeräten teils
+    // unscharf). Die Zeit reicht auch, wenn animationend ausbleibt.
+    var settleTimer = null;
+
+    function settle(slide) {
+        if (settleTimer) window.clearTimeout(settleTimer);
+        var words = slide.querySelectorAll('.tm-word').length;
+        settleTimer = window.setTimeout(function () {
+            settleTimer = null;
+            slide.classList.remove('is-in');
+        }, words * 25 + 220 + 200);
+    }
+
     function show(index) {
         active = (index + items.length) % items.length;
 
@@ -221,6 +235,7 @@ var M2_TESTIMONIALS_DATA = [
             if (isActive) {
                 void slide.offsetWidth;     // Wort-Animation neu starten
                 slide.classList.add('is-in');
+                settle(slide);
             }
         });
 
