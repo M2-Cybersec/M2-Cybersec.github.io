@@ -49,6 +49,13 @@ var M2_TESTIMONIALS_DATA = [
          image: '/assets/testimonials/larissa-ost.webp',
          fit: 'portrait'
      },
+     {
+     	 quote: 'Cybersecurity hat bei MEGATECH hohe Priorität. Da wir unter anderem im Umfeld kritischer Infrastruktur arbeiten, ist es für uns entscheidend, Sicherheit von Anfang an mitzudenken. Mit M2 Cybersec haben wir dafür einen sehr guten Partner gefunden. Marlon arbeitet schnell, zuverlässig und vor allem mit einer sehr klaren Einschätzung von Risiken. Kritische Punkte werden klar benannt, gleichzeitig aber auch realistisch eingeordnet. Gerade in der Cybersecurity ist diese Differenzierung entscheidend. Die Zusammenarbeit ist direkt und unkompliziert. Rückmeldungen kommen schnell, Abstimmungen funktionieren ohne lange Wege und die Kommunikation ist jederzeit offen und verlässlich. M2 ist für uns damit ein Partner, bei dem sowohl die fachliche Qualität als auch die Zusammenarbeit stimmen.',
+         name: 'Jim Bröchler',
+         role: 'Founder & CEO, MEGATECH',
+         image: '/assets/testimonials/jim-broechler.png',
+         fit: 'portrait'
+     },
 
 ];
 
