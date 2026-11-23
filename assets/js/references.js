@@ -30,7 +30,8 @@ var M2_REFERENCES_DATA = [
     { src: '/assets/references/kado-mono.png', alt: 'KaDo Haustechnik', width: 245, height: 200 },
     { src: '/assets/references/he-solutions-mono.png', alt: 'HE Solutions', width: 260, height: 200 },
     { src: '/assets/references/immosthetics-mono.png', alt: 'Immosthetics', width: 500, height: 279 },
-    { src: '/assets/references/megatech-logo.svg', alt: 'Megatech', width: 500, height: 279 }
+    { src: '/assets/references/megatech-logo.svg', alt: 'Megatech', width: 500, height: 279 },
+    { src: '/assets/references/banana-crm-logo-full.svg', alt: 'BananaCRM', width: 500, height: 200 }
 ];
 
 /* --------------------------------------------------------------------------
