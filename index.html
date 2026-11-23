@@ -141,6 +141,19 @@
             animation: fadeInUp 0.8s var(--ease-out) 0.15s backwards;
         }
 
+        /* Suchbegriff im H1, optisch als ruhige Zeile über dem Claim (kein Cyan: der Badge trägt den Akzent) */
+        .hero-kicker {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            line-height: 1.4;
+            color: var(--secondary-light-gray);
+            margin-bottom: 1rem;
+        }
+
         .hero-word-container {
             display: block;
             position: relative;
@@ -1682,11 +1695,12 @@
                     Kostenloser Quick-Scan verfügbar <span aria-hidden="true">→</span>
                 </a>
                 <h1>
+                    <span class="hero-kicker">IT-Sicherheit für KMU aus Köln</span>
                     Ihr Unternehmen.
-                    <span class="hero-word-container" aria-label="Sicher. Resilient. Compliant.">
-                        <span class="hero-word" aria-hidden="true">Sicher.</span>
-                        <span class="hero-word" aria-hidden="true">Resilient.</span>
-                        <span class="hero-word" aria-hidden="true">Compliant.</span>
+                    <span class="hero-word-container">
+                        <span class="hero-word">Sicher.</span>
+                        <span class="hero-word">Resilient.</span>
+                        <span class="hero-word">Compliant.</span>
                     </span>
                 </h1>
                 <p>Wir vereinbaren ein Ziel und prüfen, ob ein Angreifer es erreicht – auf dem Weg des geringsten Widerstands. Was danach in Ihrer Hand liegt: ein datierter, CVSS-bewerteter Report für Kunden, Auditoren und Cyberversicherer.</p>

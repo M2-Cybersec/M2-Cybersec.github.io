@@ -9,3 +9,6 @@ DESIGN.md
 
 # Claude-Code-Sitzungsdateien – bleiben lokal
 .claude/
+
+# Interne Planungsdokumente – bleiben lokal (wären sonst auf GitHub Pages öffentlich)
+docs/
